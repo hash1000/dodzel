@@ -79,7 +79,7 @@ export function Footer() {
               {sectors.map((name) => (
                 <li key={name}>
                   <Link href={sectorHref(name)} className="hover:text-on-dark">
-                    {name}
+                    {name} <ReviewBadge confirm={name === "Cement"} />
                   </Link>
                 </li>
               ))}

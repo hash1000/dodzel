@@ -48,7 +48,7 @@ export function MobileMenu({ onNavigate }: { onNavigate: () => void }) {
                       onClick={onNavigate}
                       className="block min-h-11 py-3"
                     >
-                      {name}
+                      {name} <ReviewBadge confirm={name === "Cement"} />
                     </Link>
                   ))}
             </details>

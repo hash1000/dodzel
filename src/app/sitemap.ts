@@ -1,6 +1,6 @@
 import { IS_PRODUCTION } from "@/lib/constants";
 import type { MetadataRoute } from "next";
-import { navLinks, secondaryLinks, serviceNames, serviceHref } from "@/lib/nav";
+import { navLinks, secondaryLinks, serviceNames, serviceHref, sectorData, sectorDetailHref } from "@/lib/nav";
 import { real } from "@/content/real";
 export default function sitemap(): MetadataRoute.Sitemap {
   if (!IS_PRODUCTION) return [];
@@ -11,6 +11,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       ...secondaryLinks.map((link) => link.href),
       "/request-a-quote",
       ...serviceNames.map(serviceHref),
+      ...sectorData.map(sector => sectorDetailHref(sector.name)),
     ]),
   ].map((path) => ({ url: new URL(path, real.company.url).href }));
 }

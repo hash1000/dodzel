@@ -22,7 +22,13 @@ export const serviceGroups = [
     ],
   },
 ];
-export const sectors = ["Oil & Gas", "Refining", "Power", "Cement"];
+export const sectorData = [
+  { id: "oil-gas", name: "Oil & Gas", confirm: false },
+  { id: "refining", name: "Refining", confirm: false },
+  { id: "power", name: "Power", confirm: false },
+  { id: "cement", name: "Cement", confirm: true },
+] as const;
+export const sectors: string[] = sectorData.map(sector => sector.name);
 export const navLinks = [
   "About",
   "Services",
@@ -44,8 +50,9 @@ export const serviceHref = (name: string) =>
     .toLowerCase()
     .replace(/[^a-z0-9]+/g, "-")
     .replace(/-$/, "")}`;
-export const sectorHref = (name: string) =>
-  `/sectors#${name.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`;
+export const sectorSlug = (name: string) => sectorData.find(sector => sector.name === name)?.id ?? name.toLowerCase().replace(/[^a-z0-9]+/g, "-");
+export const sectorHref = (name: string) => `/sectors#${sectorSlug(name)}`;
+export const sectorDetailHref = (name: string) => `/sectors/${sectorSlug(name)}`;
 
 export const serviceNames = serviceGroups.flatMap((group) => group.services);
 export const serviceSlug = (name: string) =>

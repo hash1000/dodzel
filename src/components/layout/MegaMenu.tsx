@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import { useState } from "react";
-import { serviceGroups, serviceHref, sectors, sectorHref } from "@/lib/nav";
+import { serviceGroups, serviceHref, sectors, sectorHref, sectorDetailHref } from "@/lib/nav";
 import { getService } from "@/lib/services";
 import { placeholders } from "@/content/placeholder";
 import { ReviewBadge } from "@/components/ui/ReviewBadge";
@@ -109,12 +109,13 @@ export function MegaMenu({
                   onClick={onNavigate}
                   className="inline-flex min-h-11 items-center text-xl hover:underline"
                 >
-                  {name}
+                  {name} <ReviewBadge confirm={name === "Cement"} />
                 </Link>
+                <Link href={sectorDetailHref(name)} onClick={onNavigate} className="mt-2 flex min-h-11 items-center text-sm text-accent underline underline-offset-4">Explore {name} →</Link>
                 {name === "Oil & Gas" && (
                   <ul className="mt-4 space-y-2 text-sm text-on-dark-muted">
                     {placeholders.oilGasSubitems.map((item) => (
-                      <li key={item.title}>
+                      <li key={item.title} data-review-badge className="review-badge">
                         {item.title} <ReviewBadge {...item} />
                       </li>
                     ))}

@@ -1,0 +1,317 @@
+{
+  "screenshots": [
+    {
+      "width": 1440,
+      "id": "oil-gas",
+      "mode": "tabs",
+      "hash": "#oil-gas",
+      "active": "_R_2av5tlb_-tab-oil-gas",
+      "open": 1,
+      "overflow": false,
+      "broken": false,
+      "duplicates": [],
+      "image": "http://localhost:3100/media/images/Sectors-1080.avif",
+      "sticky": "sticky"
+    },
+    {
+      "width": 1440,
+      "id": "refining",
+      "mode": "tabs",
+      "hash": "#refining",
+      "active": "_R_2av5tlb_-tab-refining",
+      "open": 1,
+      "overflow": false,
+      "broken": false,
+      "duplicates": [],
+      "image": "http://localhost:3100/media/images/9339478-uhd_3840_2160_24fps-poster-1080.avif",
+      "sticky": "sticky"
+    },
+    {
+      "width": 1440,
+      "id": "power",
+      "mode": "tabs",
+      "hash": "#power",
+      "active": "_R_2av5tlb_-tab-power",
+      "open": 1,
+      "overflow": false,
+      "broken": false,
+      "duplicates": [],
+      "image": "http://localhost:3100/media/images/power-plant-poster-1080.avif",
+      "sticky": "sticky"
+    },
+    {
+      "width": 1440,
+      "id": "cement",
+      "mode": "tabs",
+      "hash": "#cement",
+      "active": "_R_2av5tlb_-tab-cement",
+      "open": 1,
+      "overflow": false,
+      "broken": false,
+      "duplicates": [],
+      "image": "http://localhost:3100/media/images/cement-plant-poster-1080.avif",
+      "sticky": "sticky"
+    },
+    {
+      "width": 1024,
+      "id": "oil-gas",
+      "mode": "tabs",
+      "hash": "#oil-gas",
+      "active": "_R_2av5tlb_-tab-oil-gas",
+      "open": 1,
+      "overflow": false,
+      "broken": false,
+      "duplicates": [],
+      "image": "http://localhost:3100/media/images/Sectors-1080.avif",
+      "sticky": "sticky"
+    },
+    {
+      "width": 1024,
+      "id": "refining",
+      "mode": "tabs",
+      "hash": "#refining",
+      "active": "_R_2av5tlb_-tab-refining",
+      "open": 1,
+      "overflow": false,
+      "broken": false,
+      "duplicates": [],
+      "image": "http://localhost:3100/media/images/9339478-uhd_3840_2160_24fps-poster-1080.avif",
+      "sticky": "sticky"
+    },
+    {
+      "width": 1024,
+      "id": "power",
+      "mode": "tabs",
+      "hash": "#power",
+      "active": "_R_2av5tlb_-tab-power",
+      "open": 1,
+      "overflow": false,
+      "broken": false,
+      "duplicates": [],
+      "image": "http://localhost:3100/media/images/power-plant-poster-1080.avif",
+      "sticky": "sticky"
+    },
+    {
+      "width": 1024,
+      "id": "cement",
+      "mode": "tabs",
+      "hash": "#cement",
+      "active": "_R_2av5tlb_-tab-cement",
+      "open": 1,
+      "overflow": false,
+      "broken": false,
+      "duplicates": [],
+      "image": "http://localhost:3100/media/images/cement-plant-poster-1080.avif",
+      "sticky": "sticky"
+    },
+    {
+      "width": 390,
+      "id": "oil-gas",
+      "mode": "accordion",
+      "hash": "#oil-gas",
+      "active": "_R_2av5tlb_-tab-oil-gas",
+      "open": 1,
+      "overflow": false,
+      "broken": false,
+      "duplicates": [],
+      "image": "http://localhost:3100/media/images/Sectors-640.avif",
+      "sticky": "static"
+    },
+    {
+      "width": 390,
+      "id": "refining",
+      "mode": "accordion",
+      "hash": "#refining",
+      "active": "_R_2av5tlb_-tab-refining",
+      "open": 1,
+      "overflow": false,
+      "broken": false,
+      "duplicates": [],
+      "image": "http://localhost:3100/media/images/9339478-uhd_3840_2160_24fps-poster-640.avif",
+      "sticky": "static"
+    },
+    {
+      "width": 390,
+      "id": "power",
+      "mode": "accordion",
+      "hash": "#power",
+      "active": "_R_2av5tlb_-tab-power",
+      "open": 1,
+      "overflow": false,
+      "broken": false,
+      "duplicates": [],
+      "image": "http://localhost:3100/media/images/power-plant-poster-640.avif",
+      "sticky": "static"
+    },
+    {
+      "width": 390,
+      "id": "cement",
+      "mode": "accordion",
+      "hash": "#cement",
+      "active": "_R_2av5tlb_-tab-cement",
+      "open": 1,
+      "overflow": false,
+      "broken": false,
+      "duplicates": [],
+      "image": "http://localhost:3100/media/images/cement-plant-poster-640.avif",
+      "sticky": "static"
+    }
+  ],
+  "keyboard": {
+    "ArrowDownRefining": {
+      "name": "Refining 02",
+      "hash": "#refining"
+    },
+    "ArrowUpOil & Gas": {
+      "name": "Oil & Gas 01",
+      "hash": "#oil-gas"
+    },
+    "EndCement": {
+      "name": "Cement CONFIRM04",
+      "hash": "#cement"
+    },
+    "ArrowDownOil & Gas": {
+      "name": "Oil & Gas 01",
+      "hash": "#oil-gas"
+    },
+    "HomeOil & Gas": {
+      "name": "Oil & Gas 01",
+      "hash": "#oil-gas"
+    },
+    "panel": {
+      "role": "tabpanel",
+      "label": "_R_2av5tlb_-tab-cement"
+    },
+    "firstLink": "Civil & Buildings CONFIRM"
+  },
+  "hover": {
+    "beforeIntent": "false",
+    "afterIntent": "true",
+    "noAutoplay": "#refining"
+  },
+  "deepLinks": [
+    {
+      "width": 1440,
+      "selected": "true"
+    },
+    {
+      "width": 1024,
+      "selected": "true"
+    },
+    {
+      "width": 390,
+      "selected": "true"
+    }
+  ],
+  "reduced": [
+    {
+      "width": 1440,
+      "hash": "#cement",
+      "transforms": [
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none"
+      ],
+      "transitions": [
+        "0s",
+        "0s",
+        "0s",
+        "0s"
+      ]
+    },
+    {
+      "width": 390,
+      "hash": "#cement",
+      "transforms": [
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none"
+      ],
+      "transitions": [
+        "0s",
+        "0s",
+        "0s",
+        "0s"
+      ]
+    }
+  ],
+  "details": [
+    {
+      "slug": "oil-gas",
+      "status": 200,
+      "h1": "Oil & Gas",
+      "related": 3,
+      "rfq": 1
+    },
+    {
+      "slug": "refining",
+      "status": 200,
+      "h1": "Refining",
+      "related": 3,
+      "rfq": 1
+    },
+    {
+      "slug": "power",
+      "status": 200,
+      "h1": "Power",
+      "related": 3,
+      "rfq": 1
+    },
+    {
+      "slug": "cement",
+      "status": 200,
+      "h1": "Cement",
+      "related": 3,
+      "rfq": 1
+    }
+  ],
+  "dev": [
+    {
+      "route": "/sectors",
+      "issues": null,
+      "warnings": []
+    },
+    {
+      "route": "/sectors/oil-gas",
+      "issues": null,
+      "warnings": []
+    },
+    {
+      "route": "/sectors/refining",
+      "issues": null,
+      "warnings": []
+    },
+    {
+      "route": "/sectors/power",
+      "issues": null,
+      "warnings": []
+    },
+    {
+      "route": "/sectors/cement",
+      "issues": null,
+      "warnings": []
+    }
+  ],
+  "review": {
+    "clean": "none",
+    "enabled": "flex"
+  },
+  "contrast": {
+    "rowText": "rgb(233, 169, 58)",
+    "rowBackground": "rgb(10, 35, 66)",
+    "description": 14.34,
+    "surface": "rgb(246, 244, 239)",
+    "activeRow": 7.66
+  },
+  "errors": []
+}
