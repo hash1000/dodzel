@@ -34,7 +34,7 @@ export function MobileMenu({ onNavigate }: { onNavigate: () => void }) {
                           key={name}
                           href={serviceHref(name)}
                           onClick={onNavigate}
-                          className="block py-2"
+                          className="block min-h-11 py-3"
                         >
                           {name} <ReviewBadge {...getService(name)} />
                         </Link>
@@ -46,7 +46,7 @@ export function MobileMenu({ onNavigate }: { onNavigate: () => void }) {
                       key={name}
                       href={sectorHref(name)}
                       onClick={onNavigate}
-                      className="block py-2"
+                      className="block min-h-11 py-3"
                     >
                       {name}
                     </Link>

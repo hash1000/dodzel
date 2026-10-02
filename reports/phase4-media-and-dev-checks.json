@@ -1,0 +1,43 @@
+{
+  "saveData": 0,
+  "3g": 0,
+  "mobileSources": [
+    "http://localhost:3100/media/videos/oil-refinery-720.mp4",
+    "http://localhost:3100/media/videos/pipeline-welding-720.mp4"
+  ],
+  "filter": "1 illustrative media card. Filters describe the stock imagery; approved project sectors are pending.",
+  "dev": {
+    "/": {
+      "issues": null,
+      "errors": []
+    },
+    "/about": {
+      "issues": null,
+      "errors": []
+    },
+    "/services": {
+      "issues": null,
+      "errors": []
+    },
+    "/careers": {
+      "issues": null,
+      "errors": []
+    },
+    "/qhse": {
+      "issues": null,
+      "errors": []
+    },
+    "/conduct": {
+      "issues": null,
+      "errors": []
+    },
+    "/contact": {
+      "issues": null,
+      "errors": []
+    },
+    "/projects": {
+      "issues": null,
+      "errors": []
+    }
+  }
+}

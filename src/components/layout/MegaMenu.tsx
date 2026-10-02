@@ -17,6 +17,7 @@ export function MegaMenu({
   const featured = getService(selected);
   return (
     <div
+      data-tone="dark"
       className="absolute start-0 end-0 top-full rounded-b-[2.5rem] max-h-[calc(100dvh-6rem)] overflow-y-auto border-t border-dark-line bg-surface-dark p-8 text-on-dark shadow-xl"
       onKeyDown={(event) => {
         if (
@@ -75,7 +76,7 @@ export function MegaMenu({
                             onClick={onNavigate}
                             onMouseEnter={() => setSelected(name)}
                             onFocus={() => setSelected(name)}
-                            className="inline-block py-1 text-sm hover:text-accent hover:underline"
+                            className="inline-flex min-h-11 items-center py-3 text-sm hover:text-accent hover:underline"
                           >
                             {name} <ReviewBadge {...service} />
                           </Link>
@@ -107,7 +108,7 @@ export function MegaMenu({
                   data-menu-link
                   href={sectorHref(name)}
                   onClick={onNavigate}
-                  className="text-xl hover:underline"
+                  className="inline-flex min-h-11 items-center text-xl hover:underline"
                 >
                   {name}
                 </Link>

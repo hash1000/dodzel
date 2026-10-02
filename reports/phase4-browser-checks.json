@@ -1,0 +1,110 @@
+{
+  "clean": {
+    "review": "0",
+    "badges": 0,
+    "issues": null
+  },
+  "megaFirst": {
+    "expanded": "true",
+    "focus": "Engineering TODO: CONFIRM"
+  },
+  "megaLast": "Maintenance TODO: CONFIRM",
+  "megaEscape": {
+    "closed": true,
+    "focus": "Open Services menu"
+  },
+  "overlay": {
+    "open": true,
+    "focus": "Close navigation menu"
+  },
+  "overlayShiftTab": "Novex CONFIRM",
+  "overlayEscape": true,
+  "hero": {
+    "headline": "We help you build your infrastructure reliably.",
+    "selected": "true",
+    "playing": 1,
+    "playingSrc": [
+      "http://localhost:3100/media/videos/14529100_3840_2160_30fps-1080.mp4"
+    ]
+  },
+  "documentState": {
+    "visibility": "visible",
+    "motion": false,
+    "pin": ""
+  },
+  "scroll": [
+    {
+      "scrollY": 6784,
+      "pinned": 100.046875,
+      "active": 0,
+      "height": 539.765625,
+      "playing": 0
+    },
+    {
+      "scrollY": 6904,
+      "pinned": 100.046875,
+      "active": 1,
+      "height": 540,
+      "playing": 0
+    },
+    {
+      "scrollY": 7024,
+      "pinned": 100.046875,
+      "active": 2,
+      "height": 540,
+      "playing": 0
+    },
+    {
+      "scrollY": 7144,
+      "pinned": 100.046875,
+      "active": 3,
+      "height": 540,
+      "playing": 0
+    },
+    {
+      "scrollY": 7264,
+      "pinned": 100.046875,
+      "active": 4,
+      "height": 539.765625,
+      "playing": 0
+    }
+  ],
+  "review": {
+    "flag": "1",
+    "cookie": "dodzel-review=1",
+    "badges": 110
+  },
+  "reviewPersists": "1",
+  "reduced": {
+    "width": 390,
+    "scrollWidth": 390,
+    "videos": 0,
+    "pin": false,
+    "wordAnimation": 0,
+    "stats": [
+      "6",
+      "350+",
+      "12+",
+      "0"
+    ]
+  },
+  "mobileMenu": {
+    "open": true,
+    "services": true
+  },
+  "rfqNext": "company",
+  "rfq": {
+    "alerts": [
+      "Enter your full name.",
+      "Enter your company name.",
+      "Enter a valid email address.",
+      "Enter a phone number.",
+      "Choose a sector.",
+      "Choose a service.",
+      "Describe your scope in at least 20 characters."
+    ],
+    "focus": "name",
+    "invalid": 7
+  },
+  "events": []
+}

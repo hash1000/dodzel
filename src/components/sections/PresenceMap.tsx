@@ -64,11 +64,20 @@ export function PresenceMap() {
                     strokeWidth="1.3"
                     className="cursor-pointer"
                   />
+                  <rect
+                    x={labels[country.name].x - 56}
+                    y={labels[country.name].y - 18}
+                    width="112"
+                    height="26"
+                    rx="5"
+                    fill="var(--color-paper)"
+                    className="pointer-events-none"
+                  />
                   <text
                     x={labels[country.name].x}
                     y={labels[country.name].y}
                     textAnchor="middle"
-                    fontSize="16"
+                    fontSize="14"
                     fill="var(--color-ink)"
                     className="pointer-events-none"
                   >
@@ -97,6 +106,13 @@ export function PresenceMap() {
                   </text>
                 </g>
               ))}
+              <path
+                d="M384,273L428,310L470,310"
+                fill="none"
+                stroke="var(--color-accent-2)"
+                strokeWidth="2"
+                aria-hidden="true"
+              />
             </svg>
             <p className="mt-3 text-xs text-muted">
               Natural Earth · public-domain boundaries · simplified{" "}
@@ -115,7 +131,7 @@ export function PresenceMap() {
                     onFocus={() => setActive(country.name)}
                     onClick={() => setActive(country.name)}
                     aria-pressed={active === country.name}
-                    className="w-full text-start font-display text-xl font-semibold hover:underline"
+                    className="min-h-11 w-full text-start font-display text-xl font-semibold hover:underline"
                   >
                     {country.name} <ReviewBadge {...country} />
                   </button>

@@ -1,3 +1,4 @@
+import { MediaCollection } from "@/components/ui/MediaCollection";
 import { real } from "@/content/real";
 import { ReviewBadge } from "@/components/ui/ReviewBadge";
 import { MediaFrame } from "@/components/ui/MediaFrame";
@@ -25,6 +26,7 @@ export default function Page() {
             className="mt-8 border-t border-line pt-6"
           >
             <MediaFrame slot={name} className="mb-6 max-w-2xl aspect-video" />
+            <MediaCollection slot={name} />
             <h2 className="mb-3 text-2xl">
               {name} <ReviewBadge confirm />
             </h2>

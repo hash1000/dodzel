@@ -1,10 +1,23 @@
+import { MediaFrame } from "@/components/ui/MediaFrame";
 import { placeholders } from "@/content/placeholder";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { TodoBadge } from "@/components/ui/TodoBadge";
 export function ClosingCta() {
   return (
-    <section className="bg-surface-dark py-section text-on-dark">
+    <section
+      data-tone="dark"
+      className="relative isolate overflow-hidden bg-surface-dark py-section text-on-dark"
+    >
+      <MediaFrame
+        slot="cta-background"
+        className="absolute inset-0 -z-20 h-full w-full rounded-none"
+        sizes="100vw"
+      />
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 -z-10 bg-surface-dark/90"
+      />
       <Container className="flex flex-col justify-between gap-10 lg:flex-row lg:items-end">
         <div>
           <p className="mb-5 text-xs uppercase tracking-widest text-accent">

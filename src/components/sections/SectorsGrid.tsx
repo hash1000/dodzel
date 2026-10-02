@@ -9,10 +9,13 @@ import { ReviewBadge } from "@/components/ui/ReviewBadge";
 import { real } from "@/content/real";
 export function SectorsGrid() {
   return (
-    <section className="border-y border-line bg-surface py-section">
+    <section
+      data-tone="dark"
+      className="bg-surface-dark py-section text-on-dark"
+    >
       <Container>
         <SectionHeading {...placeholders.headings.sectors} />
-        <p className="mb-10 text-muted">
+        <p className="mb-10 text-on-dark-muted">
           {real.industries.description} <ReviewBadge {...real.industries} />
         </p>
         <div className="grid gap-5 sm:grid-cols-2">
@@ -20,11 +23,12 @@ export function SectorsGrid() {
             <Link
               key={name}
               href={sectorHref(name)}
-              className="sector-tile relative block overflow-hidden rounded-card bg-surface-dark text-on-dark"
+              className="sector-tile media-hover relative block overflow-hidden rounded-card bg-surface-dark text-on-dark"
             >
               <MediaFrame
                 slot={name}
-                blueprint
+                video
+                scrim
                 className="aspect-[16/9] pb-20 [&>div:last-child]:items-start"
               />
               <span className="absolute start-6 end-6 bottom-6 flex items-center justify-between gap-4 font-display text-3xl font-semibold">

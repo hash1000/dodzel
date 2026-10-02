@@ -18,6 +18,18 @@ export function Navbar() {
   const [menu, setMenu] = useState<"Services" | "Sectors" | null>(null);
   const header = useRef<HTMLElement>(null);
   const dialog = useRef<HTMLDialogElement>(null);
+  const pendingFocus = useRef<"first" | "last" | null>(null);
+  useEffect(() => {
+    if (!menu || !pendingFocus.current) return;
+    const links = document.querySelectorAll<HTMLAnchorElement>(
+      "#mega-menu [data-menu-link]",
+    );
+    (pendingFocus.current === "last"
+      ? links[links.length - 1]
+      : links[0]
+    )?.focus();
+    pendingFocus.current = null;
+  }, [menu]);
   useEffect(() => {
     const close = (event: PointerEvent) => {
       if (header.current && !header.current.contains(event.target as Node))
@@ -57,7 +69,7 @@ export function Navbar() {
         </Link>
         <nav
           aria-label="Main navigation"
-          className="hidden items-center gap-1 xl:flex"
+          className="hidden items-center xl:flex"
           onKeyDown={(event) => {
             if (!["ArrowLeft", "ArrowRight", "Home", "End"].includes(event.key))
               return;
@@ -107,17 +119,9 @@ export function Navbar() {
                     if (event.key !== "ArrowDown" && event.key !== "ArrowUp")
                       return;
                     event.preventDefault();
+                    pendingFocus.current =
+                      event.key === "ArrowUp" ? "last" : "first";
                     setMenu(link.label as "Services" | "Sectors");
-                    requestAnimationFrame(() => {
-                      const links =
-                        document.querySelectorAll<HTMLAnchorElement>(
-                          "#mega-menu [data-menu-link]",
-                        );
-                      (event.key === "ArrowUp"
-                        ? links[links.length - 1]
-                        : links[0]
-                      )?.focus();
-                    });
                   }}
                   aria-label={`Open ${link.label} menu`}
                   aria-expanded={menu === link.label}
@@ -129,7 +133,7 @@ export function Navbar() {
                         : (link.label as "Services" | "Sectors"),
                     )
                   }
-                  className="p-2"
+                  className="grid min-h-11 min-w-11 place-items-center"
                 >
                   <ChevronDown size={14} />
                 </button>
@@ -140,9 +144,10 @@ export function Navbar() {
         <div className="flex items-center gap-2 sm:gap-3">
           <Button
             href="/request-a-quote"
-            className="min-h-10 gap-2 px-3 text-xs sm:gap-4 sm:px-5 sm:text-sm [&>svg]:hidden sm:[&>svg]:block"
+            className="min-h-11 gap-2 px-3 text-xs sm:gap-4 sm:px-5 sm:text-sm [&>svg]:hidden sm:[&>svg]:block"
           >
-            <span className="sm:hidden">Quote</span><span className="hidden sm:inline">Request a Quote</span>
+            <span className="sm:hidden">Quote</span>
+            <span className="hidden sm:inline">Request a Quote</span>
           </Button>
           <button
             aria-label="Open navigation menu"
@@ -164,11 +169,17 @@ export function Navbar() {
         </div>
       )}
       <dialog
+        data-tone="dark"
         ref={dialog}
         id="navigation-dialog"
         aria-labelledby="navigation-title"
         className="fixed inset-0 m-0 h-dvh max-h-none w-screen max-w-none overflow-y-auto overscroll-contain bg-surface-dark text-on-dark backdrop:bg-surface-dark/80"
         onKeyDown={(event) => {
+          if (event.key === "Escape") {
+            event.preventDefault();
+            closeDialog();
+            return;
+          }
           if (event.key !== "Tab") return;
           const controls = Array.from(
             event.currentTarget.querySelectorAll<HTMLElement>(

@@ -1,3 +1,4 @@
+import { MediaFrame } from "@/components/ui/MediaFrame";
 import { ShieldCheck } from "lucide-react";
 import { placeholders } from "@/content/placeholder";
 import { real } from "@/content/real";
@@ -7,7 +8,19 @@ import { ReviewBadge } from "@/components/ui/ReviewBadge";
 import { Button } from "@/components/ui/Button";
 export function QhseCertifications() {
   return (
-    <section className="bg-surface-raised py-section text-on-dark">
+    <section
+      data-tone="dark"
+      className="relative isolate overflow-hidden bg-surface-raised py-section text-on-dark"
+    >
+      <MediaFrame
+        slot="qhse-background"
+        className="absolute inset-0 -z-20 h-full w-full rounded-none"
+        sizes="100vw"
+      />
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 -z-10 bg-surface-raised/90"
+      />
       <Container className="grid grid-cols-1 gap-12 lg:grid-cols-[.8fr_1.2fr]">
         <div>
           <p className="mb-5 text-xs uppercase tracking-widest text-accent">

@@ -1,50 +1,17 @@
 "use client";
 import { useEffect, type ReactNode } from "react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useGSAP } from "@gsap/react";
-import Lenis from "lenis";
 import { usePathname } from "next/navigation";
-gsap.registerPlugin(ScrollTrigger, useGSAP);
-export function SmoothScrollProvider({ children }: { children: ReactNode }) {
-  const pathname = usePathname();
-  useEffect(() => {
-    const media = matchMedia("(prefers-reduced-motion: reduce)");
-    let dispose = () => {};
-    const setup = () => {
-      dispose();
-      if (media.matches) return;
-      const lenis = new Lenis({
-        anchors: true,
-        prevent: (node) =>
-          node.tagName === "DIALOG" || !!node.closest("dialog"),
-      });
-      const tick = (time: number) => lenis.raf(time * 1000);
-      lenis.on("scroll", ScrollTrigger.update);
-      gsap.ticker.add(tick);
-      dispose = () => {
-        gsap.ticker.remove(tick);
-        lenis.off("scroll", ScrollTrigger.update);
-        lenis.destroy();
-      };
-    };
-    setup();
-    media.addEventListener("change", setup);
-    return () => {
-      dispose();
-      media.removeEventListener("change", setup);
-    };
-  }, []);
-  useEffect(() => {
-    let alive = true;
-    const frame = requestAnimationFrame(() => ScrollTrigger.refresh());
-    void document.fonts.ready.then(() => {
-      if (alive) ScrollTrigger.refresh();
-    });
-    return () => {
-      alive = false;
-      cancelAnimationFrame(frame);
-    };
-  }, [pathname]);
-  return children;
+import { loadScrollAnimations } from "@/lib/animations";
+export function SmoothScrollProvider({children}:{children:ReactNode}) {
+ const pathname=usePathname();
+ useEffect(()=>{
+  let disposed=false,cleanup=()=>{};
+  const policy=matchMedia("(min-width:1024px) and (prefers-reduced-motion:no-preference)");
+  const start=async()=>{if(!policy.matches||disposed)return;window.removeEventListener('wheel',intent);const [{gsap,ScrollTrigger},{default:Lenis}]=await Promise.all([loadScrollAnimations(),import('lenis')]);if(disposed||!policy.matches)return;const lenis=new Lenis({anchors:true,prevent:node=>node.tagName==='DIALOG'||!!node.closest('dialog')});const tick=(time:number)=>lenis.raf(time*1000);lenis.on('scroll',ScrollTrigger.update);gsap.ticker.add(tick);ScrollTrigger.refresh();cleanup=()=>{gsap.ticker.remove(tick);lenis.off('scroll',ScrollTrigger.update);lenis.destroy()}};
+  const intent=()=>void start();
+  const sync=()=>{cleanup();cleanup=()=>{};window.removeEventListener('wheel',intent);if(policy.matches)window.addEventListener('wheel',intent,{once:true,passive:true})};
+  sync();policy.addEventListener('change',sync);
+  return()=>{disposed=true;cleanup();policy.removeEventListener('change',sync);window.removeEventListener('wheel',intent)};
+ },[pathname]);
+ return children;
 }

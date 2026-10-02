@@ -1,3 +1,5 @@
+import { ReviewModeSync } from "@/components/layout/ReviewModeSync";
+import { IS_PRODUCTION, SHOW_TODO_BADGES } from "@/lib/constants";
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import { Navbar } from "@/components/layout/Navbar";
@@ -22,6 +24,9 @@ const text = localFont({
   display: "swap",
 });
 export const metadata: Metadata = {
+  robots: IS_PRODUCTION
+    ? { index: true, follow: true }
+    : { index: false, follow: false },
   metadataBase: new URL("https://dodzel.com"),
   title: {
     default: "Dodzel Engineering | Engineering, Procurement & Construction",
@@ -46,9 +51,11 @@ export default function RootLayout({
   return (
     <html
       lang="en"
+      data-review={SHOW_TODO_BADGES ? "1" : "0"}
       className={`${heading.variable} ${text.variable} antialiased`}
     >
       <body className="font-sans">
+        <ReviewModeSync />
         <SiteShell
           chrome={
             <>

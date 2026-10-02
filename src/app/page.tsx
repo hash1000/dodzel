@@ -1,5 +1,6 @@
 import { pageMetadata } from "@/lib/metadata";
 import { OrganizationJsonLd } from "@/components/seo/OrganizationJsonLd";
+import { CompanyIntro } from "@/components/sections/CompanyIntro";
 import { Hero } from "@/components/sections/Hero";
 import { IntentSelector } from "@/components/sections/IntentSelector";
 import { TrustStats } from "@/components/sections/TrustStats";
@@ -21,13 +22,14 @@ export default function Home() {
       <OrganizationJsonLd />
       <Hero />
       <IntentSelector />
+      <CompanyIntro />
       <TrustStats />
       <ServicesGroups />
       <SectorsGrid />
-      <HowWeWork />
       <FeaturedProjects />
       <QhseCertifications />
       <InsightsGrid />
+      <HowWeWork />
       <PresenceMap />
       <CareersTeaser />
       <ClosingCta />

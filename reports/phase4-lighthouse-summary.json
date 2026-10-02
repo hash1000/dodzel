@@ -1,0 +1,25 @@
+{
+  "url": "http://localhost:3100/",
+  "method": "simulate",
+  "formFactor": "mobile",
+  "version": "13.5.0",
+  "categories": {
+    "performance": 86,
+    "accessibility": 100,
+    "seo": 69
+  },
+  "metrics": {
+    "largest-contentful-paint": {
+      "value": 4230.3624500000005,
+      "display": "4.2 s"
+    },
+    "cumulative-layout-shift": {
+      "value": 0,
+      "display": "0"
+    },
+    "total-blocking-time": {
+      "value": 57,
+      "display": "60 ms"
+    }
+  }
+}

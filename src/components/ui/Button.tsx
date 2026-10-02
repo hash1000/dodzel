@@ -10,8 +10,9 @@ export function Button({
 }: ComponentProps<typeof Link> & { variant?: "primary" | "outline" }) {
   return (
     <Link
+      prefetch={false}
       className={cn(
-        "inline-flex min-h-12 items-center justify-center gap-4 rounded-card border px-5 py-3 text-sm font-semibold",
+        "action inline-flex min-h-12 items-center justify-center gap-4 rounded-card border px-5 py-3 text-sm font-semibold",
         variant === "primary"
           ? "border-accent bg-accent text-surface-dark hover:bg-accent-hover hover:border-accent-hover"
           : "border-current bg-transparent hover:underline",
@@ -20,7 +21,11 @@ export function Button({
       {...props}
     >
       {children}
-      <ArrowUpRight size={17} aria-hidden="true" />
+      <ArrowUpRight
+        size={17}
+        className="action-arrow rtl:-scale-x-100"
+        aria-hidden="true"
+      />
     </Link>
   );
 }

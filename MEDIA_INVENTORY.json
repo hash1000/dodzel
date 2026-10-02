@@ -1,98 +1,1254 @@
-[
-  {
-    "file": "offshore1.jpg",
-    "bytes": 2899076
+{
+  "originals": [
+    {
+      "file": "12966194_4096_2160_25fps.mp4",
+      "bytes": 24585310,
+      "width": 4096,
+      "height": 2160,
+      "duration": 9.36,
+      "classification": "Black-and-white industrial processing equipment and piping",
+      "portrait": false
+    },
+    {
+      "file": "14529100_3840_2160_30fps.mp4",
+      "bytes": 41246633,
+      "width": 3840,
+      "height": 2160,
+      "duration": 17.6,
+      "classification": "Offshore platform and vessel at sunset",
+      "portrait": false
+    },
+    {
+      "file": "15122253_2160_3840_30fps.mp4",
+      "bytes": 25269309,
+      "width": 2160,
+      "height": 3840,
+      "duration": 10.833333,
+      "classification": "Portrait clip of a worker among industrial pipes",
+      "portrait": true
+    },
+    {
+      "file": "4392869-uhd_3840_2160_30fps.mp4",
+      "bytes": 41039785,
+      "width": 3840,
+      "height": 2160,
+      "duration": 15,
+      "classification": "Crane vessel at an offshore worksite",
+      "portrait": false
+    },
+    {
+      "file": "9339478-uhd_3840_2160_24fps.mp4",
+      "bytes": 175556390,
+      "width": 3840,
+      "height": 2160,
+      "duration": 58.111667,
+      "classification": "Daytime aerial view of refinery processing units",
+      "portrait": false
+    },
+    {
+      "file": "Electrical & Instrumentation.jpg",
+      "bytes": 8860965,
+      "classification": "Electrical & Instrumentation"
+    },
+    {
+      "file": "Procurement-supply-chain.jpg",
+      "bytes": 1434784,
+      "classification": "Procurement supply chain"
+    },
+    {
+      "file": "alex-kotliarskyi-QBpZGqEMsKg-unsplash.jpg",
+      "bytes": 3812357,
+      "classification": "alex kotliarskyi QBpZGqEMsKg unsplash"
+    },
+    {
+      "file": "cement-plant.jpg",
+      "bytes": 1900646,
+      "classification": "Cement manufacturing facility and processing structures"
+    },
+    {
+      "file": "cement-plant.mp4",
+      "bytes": 122528013,
+      "width": 3840,
+      "height": 2160,
+      "duration": 17.801117,
+      "classification": "Cement manufacturing facility and processing structures",
+      "portrait": false
+    },
+    {
+      "file": "engineering.jpg",
+      "bytes": 2013749,
+      "classification": "engineering"
+    },
+    {
+      "file": "frank-mckenna-tjX_sniNzgQ-unsplash.jpg",
+      "bytes": 1221238,
+      "classification": "frank mckenna tjX_sniNzgQ unsplash"
+    },
+    {
+      "file": "haydn-n8TBTzFIRzs-unsplash.jpg",
+      "bytes": 4044965,
+      "classification": "haydn n8TBTzFIRzs unsplash"
+    },
+    {
+      "file": "industrial-plant-night.jpg",
+      "bytes": 1494475,
+      "classification": "Industrial processing plant illuminated at night"
+    },
+    {
+      "file": "industrial-plant-night.mp4",
+      "bytes": 72316403,
+      "width": 1920,
+      "height": 1080,
+      "duration": 106.646667,
+      "classification": "Industrial processing plant illuminated at night",
+      "portrait": false
+    },
+    {
+      "file": "offshore.jpg",
+      "bytes": 2382559,
+      "classification": "Small offshore structure standing above the sea"
+    },
+    {
+      "file": "offshore1.jpg",
+      "bytes": 2899076,
+      "classification": "Offshore drilling platform beside a shoreline"
+    },
+    {
+      "file": "oil-refinery.mp4",
+      "bytes": 170060913,
+      "width": 3840,
+      "height": 2160,
+      "duration": 55.273333,
+      "classification": "Aerial view of an illuminated oil refinery at night",
+      "portrait": false
+    },
+    {
+      "file": "pexels-joseph-russo-430180075-29590119.jpg",
+      "bytes": 2461567,
+      "classification": "Industrial processing facility illuminated at dusk"
+    },
+    {
+      "file": "pipe-rack.jpg",
+      "bytes": 1321252,
+      "classification": "Steel pipes stacked in a fabrication/storage yard"
+    },
+    {
+      "file": "pipe-rack1.jpg",
+      "bytes": 907896,
+      "classification": "Stacked steel pipes beside a gantry crane"
+    },
+    {
+      "file": "pipe-welding.jpg",
+      "bytes": 1789902,
+      "classification": "Worker welding a steel pipe, wearing protective gloves"
+    },
+    {
+      "file": "pipeline-welding.mp4",
+      "bytes": 10246434,
+      "width": 1920,
+      "height": 1080,
+      "duration": 13.353333,
+      "classification": "Automated welding around an industrial pipe",
+      "portrait": false
+    },
+    {
+      "file": "power-plant.jpg",
+      "bytes": 3061365,
+      "classification": "Power station cooling towers releasing steam"
+    },
+    {
+      "file": "power-plant.mp4",
+      "bytes": 93111297,
+      "width": 3840,
+      "height": 2160,
+      "duration": 25.483792,
+      "classification": "Power station cooling towers releasing steam",
+      "portrait": false
+    },
+    {
+      "file": "project-management.jpg",
+      "bytes": 4858025,
+      "classification": "project management"
+    },
+    {
+      "file": "scaffolding.jpg",
+      "bytes": 918966,
+      "classification": "Residential house scaffolding (video); multi-storey building frame (photo)"
+    },
+    {
+      "file": "scaffolding.mp4",
+      "bytes": 3880882,
+      "width": 1920,
+      "height": 1080,
+      "duration": 8.4,
+      "classification": "Residential house scaffolding (video); multi-storey building frame (photo)",
+      "portrait": false
+    },
+    {
+      "file": "steel-structure-construction-1.jpg",
+      "bytes": 2940612,
+      "classification": "Structural steel building framework under construction"
+    },
+    {
+      "file": "steel-structure-construction.jpg",
+      "bytes": 3302029,
+      "classification": "Interior of a building with structural steel roof framing"
+    }
+  ],
+  "slots": {
+    "hero-1": "video:oil-refinery",
+    "hero-2": "video:pipeline-welding",
+    "hero-3": "video:14529100_3840_2160_30fps",
+    "Oil & Gas": "video:14529100_3840_2160_30fps",
+    "Refining": "video:9339478-uhd_3840_2160_24fps",
+    "Power": "video:power-plant",
+    "Cement": "video:cement-plant",
+    "refining-photo": "image:pexels-joseph-russo-430180075-29590119",
+    "power-photo": "image:power-plant",
+    "cement-photo": "image:cement-plant",
+    "Civil & Buildings": "image:scaffolding",
+    "Mechanical & Piping": "image:pipe-welding",
+    "Structural Steel": "image:steel-structure-construction-1",
+    "Plant Services (Turnaround & Shutdown)": "image:scaffolding",
+    "Maintenance": "image:scaffolding",
+    "Offshore": "video:4392869-uhd_3840_2160_30fps",
+    "offshore-photo": "image:offshore",
+    "offshore-platform": "image:offshore1",
+    "piping-yard": "image:pipe-rack",
+    "piping-yard-alternate": "image:pipe-rack1",
+    "mechanical-texture": "video:12966194_4096_2160_25fps",
+    "civil-scaffolding-video": "video:scaffolding",
+    "Plan & Procure": "image:pexels-joseph-russo-430180075-29590119",
+    "Build & Maintain": "image:steel-structure-construction-1",
+    "About": "image:steel-structure-construction-1",
+    "Services": "image:steel-structure-construction",
+    "QHSE": "image:industrial-plant-night",
+    "Conduct": "image:pipe-welding",
+    "Contact": "image:pexels-joseph-russo-430180075-29590119",
+    "qhse-story": "video:15122253_2160_3840_30fps",
+    "qhse-background": "image:industrial-plant-night",
+    "cta-background": "video:industrial-plant-night",
+    "project-1": "image:pexels-joseph-russo-430180075-29590119",
+    "project-2": "image:power-plant",
+    "project-3": "image:cement-plant",
+    "insight-1": "image:pipe-welding",
+    "insight-2": "image:scaffolding",
+    "insight-3": "image:industrial-plant-night"
   },
-  {
-    "file": "cement-plant.jpg",
-    "bytes": 1900646
+  "collections": {
+    "Mechanical & Piping": [
+      "piping-yard",
+      "piping-yard-alternate",
+      "mechanical-texture"
+    ],
+    "Structural Steel": [
+      "Services"
+    ],
+    "Civil & Buildings": [
+      "civil-scaffolding-video"
+    ],
+    "Offshore": [
+      "offshore-photo",
+      "offshore-platform"
+    ],
+    "Refining": [
+      "refining-photo"
+    ],
+    "Power": [
+      "power-photo"
+    ],
+    "Cement": [
+      "cement-photo"
+    ]
   },
-  {
-    "file": "steel-structure-construction.jpg",
-    "bytes": 3302029
-  },
-  {
-    "file": ".DS_Store",
-    "bytes": 8196
-  },
-  {
-    "file": "oil-refinery.mp4",
-    "bytes": 170060913
-  },
-  {
-    "file": "4392869-uhd_3840_2160_30fps.mp4",
-    "bytes": 41039785
-  },
-  {
-    "file": "industrial-plant-night.mp4",
-    "bytes": 72316403
-  },
-  {
-    "file": "scaffolding.jpg",
-    "bytes": 918966
-  },
-  {
-    "file": "power-plant.mp4",
-    "bytes": 93111297
-  },
-  {
-    "file": "pipe-rack1.jpg",
-    "bytes": 907896
-  },
-  {
-    "file": "12966194_4096_2160_25fps.mp4",
-    "bytes": 24585310
-  },
-  {
-    "file": "pipe-welding.jpg",
-    "bytes": 1789902
-  },
-  {
-    "file": "9339478-uhd_3840_2160_24fps.mp4",
-    "bytes": 175556390
-  },
-  {
-    "file": "15122253_2160_3840_30fps.mp4",
-    "bytes": 25269309
-  },
-  {
-    "file": "power-plant.jpg",
-    "bytes": 3061365
-  },
-  {
-    "file": "scaffolding.mp4",
-    "bytes": 3880882
-  },
-  {
-    "file": "industrial-plant-night.jpg",
-    "bytes": 1494475
-  },
-  {
-    "file": "pipe-rack.jpg",
-    "bytes": 1321252
-  },
-  {
-    "file": "14529100_3840_2160_30fps.mp4",
-    "bytes": 41246633
-  },
-  {
-    "file": "offshore.jpg",
-    "bytes": 2382559
-  },
-  {
-    "file": "cement-plant.mp4",
-    "bytes": 122528013
-  },
-  {
-    "file": "pexels-joseph-russo-430180075-29590119.jpg",
-    "bytes": 2461567
-  },
-  {
-    "file": "steel-structure-construction-1.jpg",
-    "bytes": 2940612
-  },
-  {
-    "file": "pipeline-welding.mp4",
-    "bytes": 10246434
-  }
-]
+  "needImage": [
+    "Electrical & Instrumentation",
+    "Project Facilities",
+    "Careers",
+    "careers-people"
+  ],
+  "outputs": [
+    {
+      "file": "images/12966194_4096_2160_25fps-poster-1080.avif",
+      "bytes": 65406
+    },
+    {
+      "file": "images/12966194_4096_2160_25fps-poster-1080.webp",
+      "bytes": 66354
+    },
+    {
+      "file": "images/12966194_4096_2160_25fps-poster-1920.avif",
+      "bytes": 135846
+    },
+    {
+      "file": "images/12966194_4096_2160_25fps-poster-1920.webp",
+      "bytes": 130090
+    },
+    {
+      "file": "images/12966194_4096_2160_25fps-poster-2560.avif",
+      "bytes": 187142
+    },
+    {
+      "file": "images/12966194_4096_2160_25fps-poster-2560.webp",
+      "bytes": 176116
+    },
+    {
+      "file": "images/12966194_4096_2160_25fps-poster-640.avif",
+      "bytes": 29892
+    },
+    {
+      "file": "images/12966194_4096_2160_25fps-poster-640.webp",
+      "bytes": 31794
+    },
+    {
+      "file": "images/14529100_3840_2160_30fps-poster-1080.avif",
+      "bytes": 45632
+    },
+    {
+      "file": "images/14529100_3840_2160_30fps-poster-1080.webp",
+      "bytes": 34682
+    },
+    {
+      "file": "images/14529100_3840_2160_30fps-poster-1920.avif",
+      "bytes": 102277
+    },
+    {
+      "file": "images/14529100_3840_2160_30fps-poster-1920.webp",
+      "bytes": 77266
+    },
+    {
+      "file": "images/14529100_3840_2160_30fps-poster-2560.avif",
+      "bytes": 142968
+    },
+    {
+      "file": "images/14529100_3840_2160_30fps-poster-2560.webp",
+      "bytes": 108894
+    },
+    {
+      "file": "images/14529100_3840_2160_30fps-poster-640.avif",
+      "bytes": 20035
+    },
+    {
+      "file": "images/14529100_3840_2160_30fps-poster-640.webp",
+      "bytes": 15638
+    },
+    {
+      "file": "images/15122253_2160_3840_30fps-poster-1080.avif",
+      "bytes": 148993
+    },
+    {
+      "file": "images/15122253_2160_3840_30fps-poster-1080.webp",
+      "bytes": 122176
+    },
+    {
+      "file": "images/15122253_2160_3840_30fps-poster-1920.avif",
+      "bytes": 302311
+    },
+    {
+      "file": "images/15122253_2160_3840_30fps-poster-1920.webp",
+      "bytes": 225746
+    },
+    {
+      "file": "images/15122253_2160_3840_30fps-poster-640.avif",
+      "bytes": 69261
+    },
+    {
+      "file": "images/15122253_2160_3840_30fps-poster-640.webp",
+      "bytes": 61840
+    },
+    {
+      "file": "images/4392869-uhd_3840_2160_30fps-poster-1080.avif",
+      "bytes": 52349
+    },
+    {
+      "file": "images/4392869-uhd_3840_2160_30fps-poster-1080.webp",
+      "bytes": 48118
+    },
+    {
+      "file": "images/4392869-uhd_3840_2160_30fps-poster-1920.avif",
+      "bytes": 136264
+    },
+    {
+      "file": "images/4392869-uhd_3840_2160_30fps-poster-1920.webp",
+      "bytes": 122652
+    },
+    {
+      "file": "images/4392869-uhd_3840_2160_30fps-poster-2560.avif",
+      "bytes": 197862
+    },
+    {
+      "file": "images/4392869-uhd_3840_2160_30fps-poster-2560.webp",
+      "bytes": 169234
+    },
+    {
+      "file": "images/4392869-uhd_3840_2160_30fps-poster-640.avif",
+      "bytes": 19915
+    },
+    {
+      "file": "images/4392869-uhd_3840_2160_30fps-poster-640.webp",
+      "bytes": 18444
+    },
+    {
+      "file": "images/9339478-uhd_3840_2160_24fps-poster-1080.avif",
+      "bytes": 64635
+    },
+    {
+      "file": "images/9339478-uhd_3840_2160_24fps-poster-1080.webp",
+      "bytes": 59658
+    },
+    {
+      "file": "images/9339478-uhd_3840_2160_24fps-poster-1920.avif",
+      "bytes": 156601
+    },
+    {
+      "file": "images/9339478-uhd_3840_2160_24fps-poster-1920.webp",
+      "bytes": 139944
+    },
+    {
+      "file": "images/9339478-uhd_3840_2160_24fps-poster-2560.avif",
+      "bytes": 231101
+    },
+    {
+      "file": "images/9339478-uhd_3840_2160_24fps-poster-2560.webp",
+      "bytes": 198226
+    },
+    {
+      "file": "images/9339478-uhd_3840_2160_24fps-poster-640.avif",
+      "bytes": 26426
+    },
+    {
+      "file": "images/9339478-uhd_3840_2160_24fps-poster-640.webp",
+      "bytes": 25542
+    },
+    {
+      "file": "images/Electrical & Instrumentation-1080.avif",
+      "bytes": 74059
+    },
+    {
+      "file": "images/Electrical & Instrumentation-1080.webp",
+      "bytes": 61410
+    },
+    {
+      "file": "images/Electrical & Instrumentation-1920.avif",
+      "bytes": 267008
+    },
+    {
+      "file": "images/Electrical & Instrumentation-1920.webp",
+      "bytes": 224196
+    },
+    {
+      "file": "images/Electrical & Instrumentation-2560.avif",
+      "bytes": 597870
+    },
+    {
+      "file": "images/Electrical & Instrumentation-2560.webp",
+      "bytes": 530924
+    },
+    {
+      "file": "images/Electrical & Instrumentation-640.avif",
+      "bytes": 32044
+    },
+    {
+      "file": "images/Electrical & Instrumentation-640.webp",
+      "bytes": 28674
+    },
+    {
+      "file": "images/Procurement-supply-chain-1080.avif",
+      "bytes": 135350
+    },
+    {
+      "file": "images/Procurement-supply-chain-1080.webp",
+      "bytes": 134392
+    },
+    {
+      "file": "images/Procurement-supply-chain-1920.avif",
+      "bytes": 353460
+    },
+    {
+      "file": "images/Procurement-supply-chain-1920.webp",
+      "bytes": 339462
+    },
+    {
+      "file": "images/Procurement-supply-chain-640.avif",
+      "bytes": 55353
+    },
+    {
+      "file": "images/Procurement-supply-chain-640.webp",
+      "bytes": 51940
+    },
+    {
+      "file": "images/alex-kotliarskyi-QBpZGqEMsKg-unsplash-1080.avif",
+      "bytes": 64654
+    },
+    {
+      "file": "images/alex-kotliarskyi-QBpZGqEMsKg-unsplash-1080.webp",
+      "bytes": 61850
+    },
+    {
+      "file": "images/alex-kotliarskyi-QBpZGqEMsKg-unsplash-1920.avif",
+      "bytes": 166365
+    },
+    {
+      "file": "images/alex-kotliarskyi-QBpZGqEMsKg-unsplash-1920.webp",
+      "bytes": 146208
+    },
+    {
+      "file": "images/alex-kotliarskyi-QBpZGqEMsKg-unsplash-2560.avif",
+      "bytes": 270159
+    },
+    {
+      "file": "images/alex-kotliarskyi-QBpZGqEMsKg-unsplash-2560.webp",
+      "bytes": 211992
+    },
+    {
+      "file": "images/alex-kotliarskyi-QBpZGqEMsKg-unsplash-640.avif",
+      "bytes": 29311
+    },
+    {
+      "file": "images/alex-kotliarskyi-QBpZGqEMsKg-unsplash-640.webp",
+      "bytes": 30074
+    },
+    {
+      "file": "images/cement-plant-1080.avif",
+      "bytes": 78732
+    },
+    {
+      "file": "images/cement-plant-1080.webp",
+      "bytes": 75284
+    },
+    {
+      "file": "images/cement-plant-1920.avif",
+      "bytes": 206940
+    },
+    {
+      "file": "images/cement-plant-1920.webp",
+      "bytes": 214886
+    },
+    {
+      "file": "images/cement-plant-2560.avif",
+      "bytes": 336622
+    },
+    {
+      "file": "images/cement-plant-2560.webp",
+      "bytes": 344136
+    },
+    {
+      "file": "images/cement-plant-640.avif",
+      "bytes": 32788
+    },
+    {
+      "file": "images/cement-plant-640.webp",
+      "bytes": 29372
+    },
+    {
+      "file": "images/cement-plant-poster-1080.avif",
+      "bytes": 103279
+    },
+    {
+      "file": "images/cement-plant-poster-1080.webp",
+      "bytes": 109966
+    },
+    {
+      "file": "images/cement-plant-poster-1920.avif",
+      "bytes": 268839
+    },
+    {
+      "file": "images/cement-plant-poster-1920.webp",
+      "bytes": 287582
+    },
+    {
+      "file": "images/cement-plant-poster-2560.avif",
+      "bytes": 400988
+    },
+    {
+      "file": "images/cement-plant-poster-2560.webp",
+      "bytes": 421402
+    },
+    {
+      "file": "images/cement-plant-poster-640.avif",
+      "bytes": 40111
+    },
+    {
+      "file": "images/cement-plant-poster-640.webp",
+      "bytes": 43618
+    },
+    {
+      "file": "images/engineering-1080.avif",
+      "bytes": 45398
+    },
+    {
+      "file": "images/engineering-1080.webp",
+      "bytes": 38206
+    },
+    {
+      "file": "images/engineering-1920.avif",
+      "bytes": 99476
+    },
+    {
+      "file": "images/engineering-1920.webp",
+      "bytes": 78574
+    },
+    {
+      "file": "images/engineering-2560.avif",
+      "bytes": 149536
+    },
+    {
+      "file": "images/engineering-2560.webp",
+      "bytes": 116800
+    },
+    {
+      "file": "images/engineering-640.avif",
+      "bytes": 22928
+    },
+    {
+      "file": "images/engineering-640.webp",
+      "bytes": 20160
+    },
+    {
+      "file": "images/frank-mckenna-tjX_sniNzgQ-unsplash-1080.avif",
+      "bytes": 73347
+    },
+    {
+      "file": "images/frank-mckenna-tjX_sniNzgQ-unsplash-1080.webp",
+      "bytes": 73336
+    },
+    {
+      "file": "images/frank-mckenna-tjX_sniNzgQ-unsplash-1920.avif",
+      "bytes": 160458
+    },
+    {
+      "file": "images/frank-mckenna-tjX_sniNzgQ-unsplash-1920.webp",
+      "bytes": 153548
+    },
+    {
+      "file": "images/frank-mckenna-tjX_sniNzgQ-unsplash-2560.avif",
+      "bytes": 231081
+    },
+    {
+      "file": "images/frank-mckenna-tjX_sniNzgQ-unsplash-2560.webp",
+      "bytes": 209280
+    },
+    {
+      "file": "images/frank-mckenna-tjX_sniNzgQ-unsplash-640.avif",
+      "bytes": 31032
+    },
+    {
+      "file": "images/frank-mckenna-tjX_sniNzgQ-unsplash-640.webp",
+      "bytes": 31586
+    },
+    {
+      "file": "images/haydn-n8TBTzFIRzs-unsplash-1080.avif",
+      "bytes": 106827
+    },
+    {
+      "file": "images/haydn-n8TBTzFIRzs-unsplash-1080.webp",
+      "bytes": 87056
+    },
+    {
+      "file": "images/haydn-n8TBTzFIRzs-unsplash-1920.avif",
+      "bytes": 250737
+    },
+    {
+      "file": "images/haydn-n8TBTzFIRzs-unsplash-1920.webp",
+      "bytes": 198572
+    },
+    {
+      "file": "images/haydn-n8TBTzFIRzs-unsplash-2560.avif",
+      "bytes": 383634
+    },
+    {
+      "file": "images/haydn-n8TBTzFIRzs-unsplash-2560.webp",
+      "bytes": 297144
+    },
+    {
+      "file": "images/haydn-n8TBTzFIRzs-unsplash-640.avif",
+      "bytes": 44530
+    },
+    {
+      "file": "images/haydn-n8TBTzFIRzs-unsplash-640.webp",
+      "bytes": 36108
+    },
+    {
+      "file": "images/industrial-plant-night-1080.avif",
+      "bytes": 52409
+    },
+    {
+      "file": "images/industrial-plant-night-1080.webp",
+      "bytes": 49380
+    },
+    {
+      "file": "images/industrial-plant-night-1920.avif",
+      "bytes": 131792
+    },
+    {
+      "file": "images/industrial-plant-night-1920.webp",
+      "bytes": 126676
+    },
+    {
+      "file": "images/industrial-plant-night-2560.avif",
+      "bytes": 208892
+    },
+    {
+      "file": "images/industrial-plant-night-2560.webp",
+      "bytes": 199502
+    },
+    {
+      "file": "images/industrial-plant-night-640.avif",
+      "bytes": 22194
+    },
+    {
+      "file": "images/industrial-plant-night-640.webp",
+      "bytes": 20484
+    },
+    {
+      "file": "images/industrial-plant-night-poster-1080.avif",
+      "bytes": 58283
+    },
+    {
+      "file": "images/industrial-plant-night-poster-1080.webp",
+      "bytes": 43922
+    },
+    {
+      "file": "images/industrial-plant-night-poster-1920.avif",
+      "bytes": 127562
+    },
+    {
+      "file": "images/industrial-plant-night-poster-1920.webp",
+      "bytes": 94882
+    },
+    {
+      "file": "images/industrial-plant-night-poster-640.avif",
+      "bytes": 26011
+    },
+    {
+      "file": "images/industrial-plant-night-poster-640.webp",
+      "bytes": 19358
+    },
+    {
+      "file": "images/offshore-1080.avif",
+      "bytes": 161779
+    },
+    {
+      "file": "images/offshore-1080.webp",
+      "bytes": 167932
+    },
+    {
+      "file": "images/offshore-1920.avif",
+      "bytes": 413963
+    },
+    {
+      "file": "images/offshore-1920.webp",
+      "bytes": 418840
+    },
+    {
+      "file": "images/offshore-2560.avif",
+      "bytes": 644351
+    },
+    {
+      "file": "images/offshore-2560.webp",
+      "bytes": 619594
+    },
+    {
+      "file": "images/offshore-640.avif",
+      "bytes": 63636
+    },
+    {
+      "file": "images/offshore-640.webp",
+      "bytes": 65068
+    },
+    {
+      "file": "images/offshore1-1080.avif",
+      "bytes": 86544
+    },
+    {
+      "file": "images/offshore1-1080.webp",
+      "bytes": 83150
+    },
+    {
+      "file": "images/offshore1-1920.avif",
+      "bytes": 304031
+    },
+    {
+      "file": "images/offshore1-1920.webp",
+      "bytes": 279500
+    },
+    {
+      "file": "images/offshore1-2560.avif",
+      "bytes": 574811
+    },
+    {
+      "file": "images/offshore1-2560.webp",
+      "bytes": 546264
+    },
+    {
+      "file": "images/offshore1-640.avif",
+      "bytes": 29902
+    },
+    {
+      "file": "images/offshore1-640.webp",
+      "bytes": 29144
+    },
+    {
+      "file": "images/oil-refinery-poster-1080.avif",
+      "bytes": 91646
+    },
+    {
+      "file": "images/oil-refinery-poster-1080.webp",
+      "bytes": 91718
+    },
+    {
+      "file": "images/oil-refinery-poster-1920.avif",
+      "bytes": 241605
+    },
+    {
+      "file": "images/oil-refinery-poster-1920.webp",
+      "bytes": 242126
+    },
+    {
+      "file": "images/oil-refinery-poster-2560.avif",
+      "bytes": 374161
+    },
+    {
+      "file": "images/oil-refinery-poster-2560.webp",
+      "bytes": 369900
+    },
+    {
+      "file": "images/oil-refinery-poster-640.avif",
+      "bytes": 35738
+    },
+    {
+      "file": "images/oil-refinery-poster-640.webp",
+      "bytes": 36674
+    },
+    {
+      "file": "images/pexels-joseph-russo-430180075-29590119-1080.avif",
+      "bytes": 69266
+    },
+    {
+      "file": "images/pexels-joseph-russo-430180075-29590119-1080.webp",
+      "bytes": 64372
+    },
+    {
+      "file": "images/pexels-joseph-russo-430180075-29590119-1920.avif",
+      "bytes": 181081
+    },
+    {
+      "file": "images/pexels-joseph-russo-430180075-29590119-1920.webp",
+      "bytes": 158508
+    },
+    {
+      "file": "images/pexels-joseph-russo-430180075-29590119-2560.avif",
+      "bytes": 332999
+    },
+    {
+      "file": "images/pexels-joseph-russo-430180075-29590119-2560.webp",
+      "bytes": 262372
+    },
+    {
+      "file": "images/pexels-joseph-russo-430180075-29590119-640.avif",
+      "bytes": 29899
+    },
+    {
+      "file": "images/pexels-joseph-russo-430180075-29590119-640.webp",
+      "bytes": 26976
+    },
+    {
+      "file": "images/pipe-rack-1080.avif",
+      "bytes": 76114
+    },
+    {
+      "file": "images/pipe-rack-1080.webp",
+      "bytes": 65812
+    },
+    {
+      "file": "images/pipe-rack-1920.avif",
+      "bytes": 201336
+    },
+    {
+      "file": "images/pipe-rack-1920.webp",
+      "bytes": 159956
+    },
+    {
+      "file": "images/pipe-rack-2560.avif",
+      "bytes": 327230
+    },
+    {
+      "file": "images/pipe-rack-2560.webp",
+      "bytes": 244192
+    },
+    {
+      "file": "images/pipe-rack-640.avif",
+      "bytes": 30991
+    },
+    {
+      "file": "images/pipe-rack-640.webp",
+      "bytes": 27814
+    },
+    {
+      "file": "images/pipe-rack1-1080.avif",
+      "bytes": 58610
+    },
+    {
+      "file": "images/pipe-rack1-1080.webp",
+      "bytes": 52974
+    },
+    {
+      "file": "images/pipe-rack1-1920.avif",
+      "bytes": 144118
+    },
+    {
+      "file": "images/pipe-rack1-1920.webp",
+      "bytes": 127796
+    },
+    {
+      "file": "images/pipe-rack1-2560.avif",
+      "bytes": 223785
+    },
+    {
+      "file": "images/pipe-rack1-2560.webp",
+      "bytes": 190252
+    },
+    {
+      "file": "images/pipe-rack1-640.avif",
+      "bytes": 24806
+    },
+    {
+      "file": "images/pipe-rack1-640.webp",
+      "bytes": 22770
+    },
+    {
+      "file": "images/pipe-welding-1080.avif",
+      "bytes": 109786
+    },
+    {
+      "file": "images/pipe-welding-1080.webp",
+      "bytes": 102854
+    },
+    {
+      "file": "images/pipe-welding-1920.avif",
+      "bytes": 327842
+    },
+    {
+      "file": "images/pipe-welding-1920.webp",
+      "bytes": 309146
+    },
+    {
+      "file": "images/pipe-welding-2560.avif",
+      "bytes": 550419
+    },
+    {
+      "file": "images/pipe-welding-2560.webp",
+      "bytes": 517600
+    },
+    {
+      "file": "images/pipe-welding-640.avif",
+      "bytes": 43998
+    },
+    {
+      "file": "images/pipe-welding-640.webp",
+      "bytes": 41424
+    },
+    {
+      "file": "images/pipeline-welding-poster-1080.avif",
+      "bytes": 52092
+    },
+    {
+      "file": "images/pipeline-welding-poster-1080.webp",
+      "bytes": 38776
+    },
+    {
+      "file": "images/pipeline-welding-poster-1920.avif",
+      "bytes": 106004
+    },
+    {
+      "file": "images/pipeline-welding-poster-1920.webp",
+      "bytes": 77698
+    },
+    {
+      "file": "images/pipeline-welding-poster-640.avif",
+      "bytes": 23835
+    },
+    {
+      "file": "images/pipeline-welding-poster-640.webp",
+      "bytes": 18208
+    },
+    {
+      "file": "images/power-plant-1080.avif",
+      "bytes": 47112
+    },
+    {
+      "file": "images/power-plant-1080.webp",
+      "bytes": 37580
+    },
+    {
+      "file": "images/power-plant-1920.avif",
+      "bytes": 122904
+    },
+    {
+      "file": "images/power-plant-1920.webp",
+      "bytes": 94234
+    },
+    {
+      "file": "images/power-plant-2560.avif",
+      "bytes": 202719
+    },
+    {
+      "file": "images/power-plant-2560.webp",
+      "bytes": 149974
+    },
+    {
+      "file": "images/power-plant-640.avif",
+      "bytes": 21090
+    },
+    {
+      "file": "images/power-plant-640.webp",
+      "bytes": 16796
+    },
+    {
+      "file": "images/power-plant-poster-1080.avif",
+      "bytes": 64011
+    },
+    {
+      "file": "images/power-plant-poster-1080.webp",
+      "bytes": 53864
+    },
+    {
+      "file": "images/power-plant-poster-1920.avif",
+      "bytes": 148994
+    },
+    {
+      "file": "images/power-plant-poster-1920.webp",
+      "bytes": 122862
+    },
+    {
+      "file": "images/power-plant-poster-2560.avif",
+      "bytes": 211603
+    },
+    {
+      "file": "images/power-plant-poster-2560.webp",
+      "bytes": 172846
+    },
+    {
+      "file": "images/power-plant-poster-640.avif",
+      "bytes": 25446
+    },
+    {
+      "file": "images/power-plant-poster-640.webp",
+      "bytes": 22680
+    },
+    {
+      "file": "images/project-management-1080.avif",
+      "bytes": 129106
+    },
+    {
+      "file": "images/project-management-1080.webp",
+      "bytes": 136314
+    },
+    {
+      "file": "images/project-management-1920.avif",
+      "bytes": 399037
+    },
+    {
+      "file": "images/project-management-1920.webp",
+      "bytes": 422562
+    },
+    {
+      "file": "images/project-management-2560.avif",
+      "bytes": 660901
+    },
+    {
+      "file": "images/project-management-2560.webp",
+      "bytes": 701706
+    },
+    {
+      "file": "images/project-management-640.avif",
+      "bytes": 49773
+    },
+    {
+      "file": "images/project-management-640.webp",
+      "bytes": 53056
+    },
+    {
+      "file": "images/scaffolding-1080.avif",
+      "bytes": 138713
+    },
+    {
+      "file": "images/scaffolding-1080.webp",
+      "bytes": 153912
+    },
+    {
+      "file": "images/scaffolding-1920.avif",
+      "bytes": 340175
+    },
+    {
+      "file": "images/scaffolding-1920.webp",
+      "bytes": 307314
+    },
+    {
+      "file": "images/scaffolding-640.avif",
+      "bytes": 66723
+    },
+    {
+      "file": "images/scaffolding-640.webp",
+      "bytes": 74610
+    },
+    {
+      "file": "images/scaffolding-poster-1080.avif",
+      "bytes": 79556
+    },
+    {
+      "file": "images/scaffolding-poster-1080.webp",
+      "bytes": 76864
+    },
+    {
+      "file": "images/scaffolding-poster-1920.avif",
+      "bytes": 187696
+    },
+    {
+      "file": "images/scaffolding-poster-1920.webp",
+      "bytes": 169756
+    },
+    {
+      "file": "images/scaffolding-poster-640.avif",
+      "bytes": 33482
+    },
+    {
+      "file": "images/scaffolding-poster-640.webp",
+      "bytes": 32984
+    },
+    {
+      "file": "images/steel-structure-construction-1-1080.avif",
+      "bytes": 40262
+    },
+    {
+      "file": "images/steel-structure-construction-1-1080.webp",
+      "bytes": 41284
+    },
+    {
+      "file": "images/steel-structure-construction-1-1920.avif",
+      "bytes": 101867
+    },
+    {
+      "file": "images/steel-structure-construction-1-1920.webp",
+      "bytes": 92782
+    },
+    {
+      "file": "images/steel-structure-construction-1-2560.avif",
+      "bytes": 185055
+    },
+    {
+      "file": "images/steel-structure-construction-1-2560.webp",
+      "bytes": 143424
+    },
+    {
+      "file": "images/steel-structure-construction-1-640.avif",
+      "bytes": 19250
+    },
+    {
+      "file": "images/steel-structure-construction-1-640.webp",
+      "bytes": 20748
+    },
+    {
+      "file": "images/steel-structure-construction-1080.avif",
+      "bytes": 63804
+    },
+    {
+      "file": "images/steel-structure-construction-1080.webp",
+      "bytes": 71628
+    },
+    {
+      "file": "images/steel-structure-construction-1920.avif",
+      "bytes": 149187
+    },
+    {
+      "file": "images/steel-structure-construction-1920.webp",
+      "bytes": 148994
+    },
+    {
+      "file": "images/steel-structure-construction-2560.avif",
+      "bytes": 251544
+    },
+    {
+      "file": "images/steel-structure-construction-2560.webp",
+      "bytes": 220784
+    },
+    {
+      "file": "images/steel-structure-construction-640.avif",
+      "bytes": 31115
+    },
+    {
+      "file": "images/steel-structure-construction-640.webp",
+      "bytes": 36668
+    },
+    {
+      "file": "videos/12966194_4096_2160_25fps-720.mp4",
+      "bytes": 566762
+    },
+    {
+      "file": "videos/14529100_3840_2160_30fps-1080-vp9.webm",
+      "bytes": 2472831
+    },
+    {
+      "file": "videos/14529100_3840_2160_30fps-1080.mp4",
+      "bytes": 1370149
+    },
+    {
+      "file": "videos/14529100_3840_2160_30fps-720.mp4",
+      "bytes": 355795
+    },
+    {
+      "file": "videos/15122253_2160_3840_30fps-720.mp4",
+      "bytes": 275337
+    },
+    {
+      "file": "videos/4392869-uhd_3840_2160_30fps-720.mp4",
+      "bytes": 255105
+    },
+    {
+      "file": "videos/9339478-uhd_3840_2160_24fps-720.mp4",
+      "bytes": 822155
+    },
+    {
+      "file": "videos/cement-plant-720.mp4",
+      "bytes": 1585152
+    },
+    {
+      "file": "videos/industrial-plant-night-720.mp4",
+      "bytes": 578095
+    },
+    {
+      "file": "videos/oil-refinery-1080-vp9.webm",
+      "bytes": 2924600
+    },
+    {
+      "file": "videos/oil-refinery-1080.mp4",
+      "bytes": 3090795
+    },
+    {
+      "file": "videos/oil-refinery-720.mp4",
+      "bytes": 936260
+    },
+    {
+      "file": "videos/pipeline-welding-1080-vp9.webm",
+      "bytes": 1931408
+    },
+    {
+      "file": "videos/pipeline-welding-1080.mp4",
+      "bytes": 2022795
+    },
+    {
+      "file": "videos/pipeline-welding-720.mp4",
+      "bytes": 1479689
+    },
+    {
+      "file": "videos/power-plant-720.mp4",
+      "bytes": 146226
+    },
+    {
+      "file": "videos/scaffolding-720.mp4",
+      "bytes": 218286
+    }
+  ],
+  "totalBytes": 54723910,
+  "videoBytes": 21031440
+}

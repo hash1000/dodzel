@@ -16,8 +16,14 @@ import { TodoBadge } from "@/components/ui/TodoBadge";
 import { Container } from "@/components/ui/Container";
 export function Footer() {
   return (
-    <footer className="border-t border-dark-line bg-surface-dark py-14 text-on-dark">
+    <footer
+      data-tone="dark"
+      className="border-t-4 border-accent-shape bg-surface-dark py-14 text-on-dark"
+    >
       <Container>
+        <p className="preview-note mb-8 text-xs text-on-dark-muted">
+          Preview — placeholder media
+        </p>
         <div className="mb-12 flex flex-wrap items-end justify-between gap-6">
           <p className="font-display text-3xl">
             Dodzel Engineering
@@ -97,7 +103,7 @@ export function Footer() {
             </div>
           </div>
         </div>
-        <div className="mt-12 flex flex-wrap gap-6 border-t border-dark-line py-6 text-sm">
+        <div className="mt-12 flex flex-wrap gap-6 border-t-4 border-accent-shape py-6 text-sm">
           <span className="text-on-dark-muted">Our subsidiaries</span>
           {subsidiaries.map((s) => (
             <Link key={s.name} href={s.url} className="hover:underline">
@@ -105,7 +111,7 @@ export function Footer() {
             </Link>
           ))}
         </div>
-        <div className="flex flex-wrap justify-between gap-4 border-t border-dark-line pt-6 text-xs text-on-dark-muted">
+        <div className="flex flex-wrap justify-between gap-4 border-t-4 border-accent-shape pt-6 text-xs text-on-dark-muted">
           <p>© 2026 Dodzel Engineering Limited.</p>
           <p>
             {placeholders.legal.text} <TodoBadge />

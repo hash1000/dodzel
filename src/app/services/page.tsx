@@ -32,7 +32,7 @@ export default function Page() {
                   <h3 className="mb-3 text-xl font-semibold">
                     <Link
                       href={serviceHref(name)}
-                      className="hover:text-brand-red hover:underline"
+                      className="hover:text-accent-2 hover:underline"
                     >
                       {name}
                     </Link>{" "}

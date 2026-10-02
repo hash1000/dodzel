@@ -47,16 +47,16 @@ export default function Page() {
           ))}
         </div>
         <div className="mt-16 grid gap-8 md:grid-cols-2">
-          <section className="rounded-card border-t-4 border-brand-red bg-surface p-8">
-            <h2 className="mb-5 text-3xl text-brand-red">
+          <section className="rounded-card border-t-4 border-accent-2 bg-surface p-8">
+            <h2 className="mb-5 text-3xl text-accent-2">
               {real.mission.title} <ReviewBadge {...real.mission} />
             </h2>
             <p className="leading-relaxed text-muted">
               {real.mission.description}
             </p>
           </section>
-          <section className="rounded-card border-t-4 border-brand-red bg-surface p-8">
-            <h2 className="mb-5 text-3xl text-brand-red">
+          <section className="rounded-card border-t-4 border-accent-2 bg-surface p-8">
+            <h2 className="mb-5 text-3xl text-accent-2">
               {real.success.title} <ReviewBadge {...real.success} />
             </h2>
             <ul className="list-disc space-y-3 ps-5 text-muted">
@@ -66,7 +66,7 @@ export default function Page() {
             </ul>
           </section>
         </div>
-        <section className="my-16 border-s-4 border-brand-red bg-surface p-8">
+        <section className="my-16 border-s-4 border-accent-2 bg-surface p-8">
           <h2 className="mb-6 text-3xl">
             {real.ceoMessage.title} <ReviewBadge {...real.ceoMessage} />
           </h2>
@@ -85,7 +85,7 @@ export default function Page() {
               >
                 <div
                   aria-hidden="true"
-                  className="mb-5 grid aspect-square place-items-center rounded-full bg-paper font-display text-4xl text-brand-red"
+                  className="mb-5 grid aspect-square place-items-center rounded-full bg-paper font-display text-4xl text-accent-2"
                 >
                   {person.name
                     .replace("Mrs. ", "")

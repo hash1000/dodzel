@@ -10,10 +10,17 @@ export function ProjectCard({
   return (
     <article
       data-project-card
-      className="overflow-hidden rounded-card border border-line bg-surface"
+      className="media-hover overflow-hidden rounded-card border border-line border-t-2 border-t-accent-2 bg-surface"
     >
-      <MediaFrame slot={`project-${project.id}`} />
+      <MediaFrame
+        slot={`project-${project.id}`}
+        className="aspect-[4/3]"
+        sizes="(max-width: 768px) 100vw, 33vw"
+      />
       <div className="p-6">
+        <p className="mb-3 text-xs text-accent-on-light">
+          Illustrative stock media · project details pending
+        </p>
         <p className="mb-3 text-xs uppercase tracking-wider text-muted">
           {project.sector} · {project.country}
         </p>

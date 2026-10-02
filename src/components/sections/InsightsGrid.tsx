@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/Button";
 import { TodoBadge } from "@/components/ui/TodoBadge";
 export function InsightsGrid() {
   return (
-    <section className="py-section">
+    <section className="bg-paper py-section">
       <Container>
         <SectionHeading {...placeholders.headings.insights}>
           <Button href="/insights" variant="outline">

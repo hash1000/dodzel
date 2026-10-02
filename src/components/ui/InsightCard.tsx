@@ -13,8 +13,8 @@ export function InsightCard({
     <article
       className={
         featured
-          ? "border-b border-line pb-6 lg:row-span-2"
-          : "grid items-start gap-5 border-b border-line pb-6 sm:grid-cols-[.8fr_1fr]"
+          ? "media-hover border-b border-line pb-6 lg:row-span-2"
+          : "grid items-start gap-5 media-hover border-b border-line pb-6 sm:grid-cols-[.8fr_1fr]"
       }
     >
       <MediaFrame

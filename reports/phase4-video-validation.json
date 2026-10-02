@@ -1,0 +1,189 @@
+[
+  {
+    "file": "videos/12966194_4096_2160_25fps-720.mp4",
+    "bytes": 566762,
+    "width": 1280,
+    "height": 720,
+    "duration": "8.000000",
+    "codec": "h264",
+    "audio": false,
+    "budget": 2000000,
+    "passed": true
+  },
+  {
+    "file": "videos/14529100_3840_2160_30fps-1080-vp9.webm",
+    "bytes": 2472831,
+    "width": 1920,
+    "height": 1080,
+    "duration": "8.000000",
+    "codec": "vp9",
+    "audio": false,
+    "budget": 4000000,
+    "passed": true
+  },
+  {
+    "file": "videos/14529100_3840_2160_30fps-1080.mp4",
+    "bytes": 1370149,
+    "width": 1920,
+    "height": 1080,
+    "duration": "8.000000",
+    "codec": "h264",
+    "audio": false,
+    "budget": 4000000,
+    "passed": true
+  },
+  {
+    "file": "videos/14529100_3840_2160_30fps-720.mp4",
+    "bytes": 355795,
+    "width": 1280,
+    "height": 720,
+    "duration": "8.000000",
+    "codec": "h264",
+    "audio": false,
+    "budget": 1500000,
+    "passed": true
+  },
+  {
+    "file": "videos/15122253_2160_3840_30fps-720.mp4",
+    "bytes": 275337,
+    "width": 406,
+    "height": 720,
+    "duration": "8.000000",
+    "codec": "h264",
+    "audio": false,
+    "budget": 2000000,
+    "passed": true
+  },
+  {
+    "file": "videos/4392869-uhd_3840_2160_30fps-720.mp4",
+    "bytes": 255105,
+    "width": 1280,
+    "height": 720,
+    "duration": "8.000000",
+    "codec": "h264",
+    "audio": false,
+    "budget": 2000000,
+    "passed": true
+  },
+  {
+    "file": "videos/9339478-uhd_3840_2160_24fps-720.mp4",
+    "bytes": 822155,
+    "width": 1280,
+    "height": 720,
+    "duration": "8.000000",
+    "codec": "h264",
+    "audio": false,
+    "budget": 2000000,
+    "passed": true
+  },
+  {
+    "file": "videos/cement-plant-720.mp4",
+    "bytes": 1585152,
+    "width": 1280,
+    "height": 720,
+    "duration": "8.000000",
+    "codec": "h264",
+    "audio": false,
+    "budget": 2000000,
+    "passed": true
+  },
+  {
+    "file": "videos/industrial-plant-night-720.mp4",
+    "bytes": 578095,
+    "width": 1280,
+    "height": 720,
+    "duration": "8.000000",
+    "codec": "h264",
+    "audio": false,
+    "budget": 2000000,
+    "passed": true
+  },
+  {
+    "file": "videos/oil-refinery-1080-vp9.webm",
+    "bytes": 2924600,
+    "width": 1920,
+    "height": 1080,
+    "duration": "8.000000",
+    "codec": "vp9",
+    "audio": false,
+    "budget": 4000000,
+    "passed": true
+  },
+  {
+    "file": "videos/oil-refinery-1080.mp4",
+    "bytes": 3090795,
+    "width": 1920,
+    "height": 1080,
+    "duration": "8.000000",
+    "codec": "h264",
+    "audio": false,
+    "budget": 4000000,
+    "passed": true
+  },
+  {
+    "file": "videos/oil-refinery-720.mp4",
+    "bytes": 936260,
+    "width": 1280,
+    "height": 720,
+    "duration": "8.000000",
+    "codec": "h264",
+    "audio": false,
+    "budget": 1500000,
+    "passed": true
+  },
+  {
+    "file": "videos/pipeline-welding-1080-vp9.webm",
+    "bytes": 1931408,
+    "width": 1920,
+    "height": 1080,
+    "duration": "8.000000",
+    "codec": "vp9",
+    "audio": false,
+    "budget": 4000000,
+    "passed": true
+  },
+  {
+    "file": "videos/pipeline-welding-1080.mp4",
+    "bytes": 2022795,
+    "width": 1920,
+    "height": 1080,
+    "duration": "6.000000",
+    "codec": "h264",
+    "audio": false,
+    "budget": 4000000,
+    "passed": true
+  },
+  {
+    "file": "videos/pipeline-welding-720.mp4",
+    "bytes": 1479689,
+    "width": 1280,
+    "height": 720,
+    "duration": "8.000000",
+    "codec": "h264",
+    "audio": false,
+    "budget": 1500000,
+    "passed": true
+  },
+  {
+    "file": "videos/power-plant-720.mp4",
+    "bytes": 146226,
+    "width": 1280,
+    "height": 720,
+    "duration": "8.000000",
+    "codec": "h264",
+    "audio": false,
+    "budget": 2000000,
+    "passed": true
+  },
+  {
+    "file": "videos/scaffolding-720.mp4",
+    "bytes": 218286,
+    "width": 1280,
+    "height": 720,
+    "duration": "8.000000",
+    "codec": "h264",
+    "audio": false,
+    "budget": 2000000,
+    "passed": true
+  }
+]

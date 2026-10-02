@@ -1,3 +1,4 @@
+import { MediaCollection } from "@/components/ui/MediaCollection";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { serviceNames, serviceSlug, sectors, sectorHref } from "@/lib/nav";
@@ -69,6 +70,7 @@ export default async function Page({
         </div>
         <MediaFrame slot={service.name} className="aspect-[4/3]" />
       </Container>
+      <Container className="pb-section"><MediaCollection slot={service.name} /></Container>
     </main>
   );
 }
