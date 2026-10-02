@@ -13,7 +13,7 @@ export function Button({
       className={cn(
         "inline-flex min-h-12 items-center justify-center gap-4 rounded-card border px-5 py-3 text-sm font-semibold",
         variant === "primary"
-          ? "border-amber bg-amber text-navy hover:bg-on-dark hover:border-on-dark"
+          ? "border-accent bg-accent text-surface-dark hover:bg-accent-hover hover:border-accent-hover"
           : "border-current bg-transparent hover:underline",
         className,
       )}

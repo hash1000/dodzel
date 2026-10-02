@@ -9,7 +9,7 @@ export function ReviewBadge({
   if (!SHOW_TODO_BADGES || (!todo && !confirm)) return null;
   return (
     <span
-      className="inline-flex rounded-card bg-amber px-1.5 py-0.5 align-middle text-[10px] font-semibold tracking-wider text-navy"
+      className="inline-flex rounded-card bg-accent px-1.5 py-0.5 align-middle text-[10px] font-semibold tracking-wider text-surface-dark"
       title={
         todo
           ? "Client input required"

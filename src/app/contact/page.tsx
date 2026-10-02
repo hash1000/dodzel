@@ -4,7 +4,7 @@ import { placeholders } from "@/content/placeholder";
 import { PageHero } from "@/components/ui/PageHero";
 import { Container } from "@/components/ui/Container";
 import { ReviewBadge } from "@/components/ui/ReviewBadge";
-import { Button } from "@/components/ui/Button";
+import { RfqForm } from "@/components/forms/RfqForm";
 export function generateMetadata() {
   return pageMetadata("Contact", "/contact");
 }
@@ -24,6 +24,9 @@ export default function Page() {
           >
             {real.contact.email}
           </a>
+          <a href={real.company.url} className="mt-4 block underline">
+            www.dodzel.com
+          </a>
           <div className="mt-4">
             <ReviewBadge {...real.contact} />
           </div>
@@ -32,7 +35,8 @@ export default function Page() {
           </p>
         </div>
         <div>
-          <Button href="/request-a-quote">Request a Quote</Button>
+          <h2 className="mb-6 text-3xl">Tell us about your project</h2>
+          <RfqForm />
         </div>
       </Container>
     </main>

@@ -18,6 +18,21 @@ export default function Page() {
         <p className="max-w-2xl text-xl leading-relaxed">
           {real.qhse.description}
         </p>
+        <div className="mt-12 grid gap-8">
+          {real.policies.map((policy) => (
+            <section
+              key={policy.title}
+              className="border-s-4 border-brand-red bg-surface p-8"
+            >
+              <h2 className="mb-4 text-3xl text-brand-red">
+                {policy.title} <ReviewBadge {...policy} />
+              </h2>
+              <p className="max-w-4xl leading-relaxed text-muted">
+                {policy.description}
+              </p>
+            </section>
+          ))}
+        </div>
         <p className="mt-8 text-muted">
           {placeholders.qhse.hoursLabel}: {placeholders.qhse.hours}{" "}
           <ReviewBadge todo />

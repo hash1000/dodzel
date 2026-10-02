@@ -1,3 +1,4 @@
+import { MediaFrame } from "@/components/ui/MediaFrame";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { serviceGroups, serviceHref } from "@/lib/nav";
@@ -27,6 +28,12 @@ export function ServicesGroups() {
               className="flex h-full min-w-0 flex-col rounded-card border border-line bg-surface p-6 sm:p-8"
             >
               <span className="text-xs text-muted">0{index + 1}</span>
+              <MediaFrame
+                slot={
+                  group.title === "Build & Maintain" ? "Services" : undefined
+                }
+                className="mb-6 aspect-[16/7]"
+              />
               <h3 className="mb-8 mt-3 text-3xl font-semibold">
                 {group.title}
               </h3>
@@ -36,11 +43,15 @@ export function ServicesGroups() {
                   return (
                     <li
                       key={name}
-                      className="service-row flex flex-1 flex-col justify-center py-3"
+                      className="service-row grid flex-1 grid-cols-[4rem_1fr] items-center gap-x-4 py-3"
                     >
+                      <MediaFrame
+                        slot={name}
+                        className="row-span-2 aspect-square w-16"
+                      />
                       <Link
                         href={serviceHref(name)}
-                        aria-describedby={`summary-${serviceHref(name).split("#")[1]}`}
+                        aria-describedby={`summary-${serviceHref(name).split("/").pop()}`}
                         className="flex items-center justify-between gap-3 text-sm font-medium hover:underline"
                       >
                         <span>
@@ -49,8 +60,8 @@ export function ServicesGroups() {
                         <ArrowUpRight size={17} aria-hidden="true" />
                       </Link>
                       <p
-                        id={`summary-${serviceHref(name).split("#")[1]}`}
-                        className="service-description mt-2 min-h-4 truncate text-xs leading-relaxed text-muted"
+                        id={`summary-${serviceHref(name).split("/").pop()}`}
+                        className="service-description mt-2 min-h-4 text-xs leading-relaxed text-muted"
                         title={service.description}
                       >
                         {service.description}

@@ -39,3 +39,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# User-supplied multi-MB media originals (optimized copies in public/media)
+/content/originals/

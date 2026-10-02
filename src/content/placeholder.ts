@@ -31,6 +31,8 @@ export const placeholders = {
     }),
   },
   unconfirmedServices: [
+    "Offshore",
+    "Maintenance",
     "Engineering",
     "Procurement & Supply Chain",
     "Project Management",
@@ -42,7 +44,7 @@ export const placeholders = {
     }),
   ),
   rfqServiceReview: pending({
-    text: "Engineering, Procurement & Supply Chain, and Project Management require client confirmation.",
+    text: "Offshore and Maintenance descriptions, and Plan & Procure services require client confirmation.",
     confirm: true,
   }),
   belgrassMerger: pending({
@@ -168,6 +170,12 @@ export const placeholders = {
   legal: pending({
     text: "Legal notices and privacy policy pending client review.",
   }),
+  serviceBullets: [
+    "Approved scope of work pending",
+    "Deliverables and execution approach pending",
+    "Service-specific capabilities pending",
+  ],
+  teamPhoto: "Photo + consent needed",
   stub: pending({
     body: "This page is reserved for client-approved content. Details will be added in the next phase.",
   }),

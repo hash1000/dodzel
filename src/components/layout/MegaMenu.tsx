@@ -17,7 +17,7 @@ export function MegaMenu({
   const featured = getService(selected);
   return (
     <div
-      className="absolute start-0 end-0 top-full max-h-[calc(100dvh-6rem)] overflow-y-auto border-t border-dark-line bg-navy p-8 text-on-dark shadow-xl"
+      className="absolute start-0 end-0 top-full rounded-b-[2.5rem] max-h-[calc(100dvh-6rem)] overflow-y-auto border-t border-dark-line bg-surface-dark p-8 text-on-dark shadow-xl"
       onKeyDown={(event) => {
         if (
           ![
@@ -61,7 +61,7 @@ export function MegaMenu({
             <div className="grid grid-cols-2 gap-8">
               {serviceGroups.map((group) => (
                 <div key={group.title}>
-                  <p className="mb-4 text-xs uppercase tracking-widest text-amber">
+                  <p className="mb-4 text-xs uppercase tracking-widest text-accent">
                     {group.title}
                   </p>
                   <ul className="space-y-2">
@@ -75,7 +75,7 @@ export function MegaMenu({
                             onClick={onNavigate}
                             onMouseEnter={() => setSelected(name)}
                             onFocus={() => setSelected(name)}
-                            className="inline-block py-1 text-sm hover:text-amber hover:underline"
+                            className="inline-block py-1 text-sm hover:text-accent hover:underline"
                           >
                             {name} <ReviewBadge {...service} />
                           </Link>
@@ -87,13 +87,13 @@ export function MegaMenu({
               ))}
             </div>
             <aside className="border-s border-dark-line ps-8">
-              <MediaFrame blueprint />
+              <MediaFrame slot={selected} blueprint />
               <p className="mt-5 font-display text-xl font-semibold">
                 {featured.name} <ReviewBadge {...featured} />
               </p>
               <p
                 aria-live="polite"
-                className="mt-3 min-h-20 text-sm leading-relaxed text-muted-dark"
+                className="mt-3 min-h-20 text-sm leading-relaxed text-on-dark-muted"
               >
                 {featured.description}
               </p>
@@ -112,7 +112,7 @@ export function MegaMenu({
                   {name}
                 </Link>
                 {name === "Oil & Gas" && (
-                  <ul className="mt-4 space-y-2 text-sm text-muted-dark">
+                  <ul className="mt-4 space-y-2 text-sm text-on-dark-muted">
                     {placeholders.oilGasSubitems.map((item) => (
                       <li key={item.title}>
                         {item.title} <ReviewBadge {...item} />

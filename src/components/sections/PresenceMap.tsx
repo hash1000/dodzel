@@ -57,7 +57,7 @@ export function PresenceMap() {
                     }}
                     fill={
                       active === country.name
-                        ? "var(--color-amber)"
+                        ? "var(--color-accent)"
                         : "var(--color-map)"
                     }
                     stroke="var(--color-muted)"
@@ -85,7 +85,7 @@ export function PresenceMap() {
                     cx={pin.x}
                     cy={pin.y}
                     r="5"
-                    fill="var(--color-navy)"
+                    fill="var(--color-surface-dark)"
                   />
                   <text
                     x={pin.x + 10}

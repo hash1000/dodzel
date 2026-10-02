@@ -20,7 +20,7 @@ export function InsightsGrid() {
           {placeholders.insightFilters.map((filter, index) => (
             <span
               key={filter.label}
-              className={`rounded-card border px-4 py-2 text-xs ${index === 0 ? "border-navy bg-navy text-on-dark" : "border-line bg-surface text-muted"}`}
+              className={`rounded-card border px-4 py-2 text-xs ${index === 0 ? "border-surface-dark bg-surface-dark text-on-dark" : "border-line bg-surface text-muted"}`}
             >
               {filter.label}
             </span>

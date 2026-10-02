@@ -18,6 +18,7 @@ export const serviceGroups = [
       "Plant Services (Turnaround & Shutdown)",
       "Offshore",
       "Project Facilities",
+      "Maintenance",
     ],
   },
 ];
@@ -31,6 +32,7 @@ export const navLinks = [
   "Insights",
   "Careers",
 ].map((label) => ({ label, href: `/${label.toLowerCase()}` }));
+navLinks.unshift({ label: "Home", href: "/" });
 export const secondaryLinks = [
   { label: "Conduct", href: "/conduct" },
   { label: "Become a Vendor", href: "/vendors" },
@@ -38,9 +40,13 @@ export const secondaryLinks = [
 ];
 export const subsidiaries = real.subsidiaries;
 export const serviceHref = (name: string) =>
-  `/services#${name
+  `/services/${name
     .toLowerCase()
     .replace(/[^a-z0-9]+/g, "-")
     .replace(/-$/, "")}`;
 export const sectorHref = (name: string) =>
   `/sectors#${name.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`;
+
+export const serviceNames = serviceGroups.flatMap((group) => group.services);
+export const serviceSlug = (name: string) =>
+  serviceHref(name).split("/").pop()!;

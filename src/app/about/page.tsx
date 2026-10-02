@@ -43,14 +43,67 @@ export default function Page() {
               >
                 {entity.name} website ↗
               </a>
-              {entity.name === "Belgrass" && (
-                <p className="mt-5 border-s-2 border-amber ps-4 text-sm text-muted">
-                  {placeholders.belgrassMerger.question} <ReviewBadge todo />
-                </p>
-              )}
             </section>
           ))}
         </div>
+        <div className="mt-16 grid gap-8 md:grid-cols-2">
+          <section className="rounded-card border-t-4 border-brand-red bg-surface p-8">
+            <h2 className="mb-5 text-3xl text-brand-red">
+              {real.mission.title} <ReviewBadge {...real.mission} />
+            </h2>
+            <p className="leading-relaxed text-muted">
+              {real.mission.description}
+            </p>
+          </section>
+          <section className="rounded-card border-t-4 border-brand-red bg-surface p-8">
+            <h2 className="mb-5 text-3xl text-brand-red">
+              {real.success.title} <ReviewBadge {...real.success} />
+            </h2>
+            <ul className="list-disc space-y-3 ps-5 text-muted">
+              {real.success.items.map((item) => (
+                <li key={item}>{item}</li>
+              ))}
+            </ul>
+          </section>
+        </div>
+        <section className="my-16 border-s-4 border-brand-red bg-surface p-8">
+          <h2 className="mb-6 text-3xl">
+            {real.ceoMessage.title} <ReviewBadge {...real.ceoMessage} />
+          </h2>
+          <blockquote className="max-w-4xl text-xl leading-relaxed">
+            {real.ceoMessage.description}
+          </blockquote>
+          <p className="mt-6 text-muted">Syed Tahir Hussain · CEO</p>
+        </section>
+        <section>
+          <h2 className="mb-8 text-heading font-semibold">Corporate Team</h2>
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-5">
+            {real.team.map((person) => (
+              <article
+                key={person.name}
+                className="rounded-card border border-line bg-surface p-6"
+              >
+                <div
+                  aria-hidden="true"
+                  className="mb-5 grid aspect-square place-items-center rounded-full bg-paper font-display text-4xl text-brand-red"
+                >
+                  {person.name
+                    .replace("Mrs. ", "")
+                    .split(" ")
+                    .slice(0, 2)
+                    .map((word) => word[0])
+                    .join("")}
+                </div>
+                <h3 className="text-lg font-semibold">{person.name}</h3>
+                <p className="my-3 text-sm text-muted">{person.title}</p>
+                <ReviewBadge {...person} />
+                <p className="mt-4 text-xs text-muted">
+                  {placeholders.teamPhoto} <ReviewBadge todo />
+                </p>
+              </article>
+            ))}
+          </div>
+        </section>
       </Container>
     </main>
   );

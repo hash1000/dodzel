@@ -5,7 +5,7 @@ export function OverlayMenu({ onNavigate }: { onNavigate: () => void }) {
   return (
     <div className="grid gap-12 md:grid-cols-2">
       <div>
-        <p className="mb-6 text-xs uppercase tracking-widest text-amber">
+        <p className="mb-6 text-xs uppercase tracking-widest text-accent">
           Explore more
         </p>
         <ul className="space-y-5">
@@ -23,7 +23,7 @@ export function OverlayMenu({ onNavigate }: { onNavigate: () => void }) {
         </ul>
       </div>
       <div>
-        <p className="mb-6 text-xs uppercase tracking-widest text-amber">
+        <p className="mb-6 text-xs uppercase tracking-widest text-accent">
           Subsidiaries
         </p>
         <ul className="space-y-6">
@@ -36,7 +36,7 @@ export function OverlayMenu({ onNavigate }: { onNavigate: () => void }) {
               >
                 {item.name} <ReviewBadge {...item} />
               </Link>
-              <p className="mt-2 text-sm text-muted-dark">{item.detail}</p>
+              <p className="mt-2 text-sm text-on-dark-muted">{item.detail}</p>
             </li>
           ))}
         </ul>

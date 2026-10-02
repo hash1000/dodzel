@@ -60,22 +60,22 @@ export function HowWeWork() {
     },
     { scope: band },
   );
-  // The wrapper owns the entire pin spacer: scroll travel stays navy, never exposed paper.
+  // The wrapper owns the entire pin spacer: scroll travel stays surface-dark, never exposed paper.
   return (
-    <div ref={band} className="process-band bg-navy">
+    <div ref={band} className="process-band bg-surface-dark">
       <section
         ref={ref}
         id="how-we-work"
-        className="bg-navy py-section text-on-dark lg:min-h-[calc(100svh-6rem)]"
+        className="bg-surface-dark py-section text-on-dark lg:min-h-[calc(100svh-6rem)]"
       >
         <Container>
           <SectionHeading {...placeholders.headings.process} />
           <ol className="grid gap-4 lg:grid-cols-5">
             {placeholders.steps.map((step, index) => (
               <li key={step.title} data-step className="rounded-card p-5">
-                <span className="text-sm text-amber">0{index + 1}</span>
+                <span className="text-sm text-accent">0{index + 1}</span>
                 <h3 className="mb-4 mt-8 text-xl">{step.title}</h3>
-                <p className="mb-5 text-sm leading-relaxed text-muted-dark">
+                <p className="mb-5 text-sm leading-relaxed text-on-dark-muted">
                   {step.description}
                 </p>
                 <TodoBadge />

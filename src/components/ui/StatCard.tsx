@@ -29,7 +29,7 @@ export function StatCard({
         },
         (context) => {
           if (context.conditions?.reduced) {
-            setValue(target.toLocaleString());
+            setValue(stat.value);
             return;
           }
           setValue("0");
@@ -41,7 +41,10 @@ export function StatCard({
               value: target,
               duration: 1.2,
               onUpdate: () =>
-                setValue(Math.round(count.value).toLocaleString()),
+                setValue(
+                  Math.round(count.value).toLocaleString() +
+                    (stat.value.endsWith("+") ? "+" : ""),
+                ),
             });
             observer.disconnect();
           });
@@ -58,10 +61,10 @@ export function StatCard({
   );
   return (
     <div ref={ref} className="border-s border-dark-line ps-6">
-      <p className="mb-3 font-display text-3xl sm:text-4xl text-amber">
+      <p className="mb-3 font-display text-3xl sm:text-4xl text-accent">
         {value}
       </p>
-      <p className="mb-4 text-sm text-muted-dark">{stat.label}</p>
+      <p className="mb-4 text-sm text-on-dark-muted">{stat.label}</p>
       <ReviewBadge {...stat} />
     </div>
   );

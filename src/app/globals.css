@@ -6,24 +6,35 @@
   --font-display: var(--font-saira);
 }
 @theme {
-  --color-navy: #0c1c2c;
-  --color-navy-light: #142b40;
-  --color-navy-raised: #1b3347;
+  --color-blue-950: #0b2545;
+  --color-blue-900: #10315c;
+  --color-blue-700: #1d4e89;
+  --color-honey-400: #e9a93a;
+  --color-honey-300: #f2bf65;
+  --color-rust-600: #a74425;
+  --color-brand-red: #b60016;
+  --color-white: #ffffff;
+  --color-surface-dark: #0b2545;
+  --color-surface-raised: #10315c;
+  --color-surface-elevated: #1d4e89;
+  --color-surface: #ffffff;
+  --color-paper: #f6f4ef;
+  --color-on-dark: #ffffff;
+  --color-on-dark-muted: #cdd8e5;
+  --color-accent: #e9a93a;
+  --color-accent-hover: #f2bf65;
+  --color-accent-2: #a74425;
+  --color-accent-on-light: #8c391f;
+  --color-focus: #1d4e89;
+  --color-ink: #0b2545;
+  --color-muted: #52616b;
+  --color-line: #d8dedf;
+  --color-dark-line: #51677f;
   --color-map: #d8dedf;
+  --color-error: #b60016;
   --text-hero: clamp(2.7rem, 5.4vw, 5.5rem);
   --text-heading: clamp(2rem, 3.3vw, 3.5rem);
   --text-page: clamp(2.8rem, 5vw, 5rem);
-  --color-amber: #ffc15a;
-  --color-amber-dark: #755016;
-  --color-paper: #f5f4ef;
-  --color-surface: #ffffff;
-  --color-ink: #172939;
-  --color-muted: #52616b;
-  --color-line: #d8dedf;
-  --color-on-dark: #f7f7f2;
-  --color-muted-dark: #bbc8d1;
-  --color-dark-line: #375064;
-  --color-error: #ad2525;
   --spacing-section: 6rem;
   --spacing-gutter: 1.5rem;
   --radius-card: 0.25rem;
@@ -37,16 +48,16 @@ body {
   color: var(--color-ink);
 }
 ::selection {
-  background: var(--color-amber);
-  color: var(--color-navy);
+  background: var(--color-accent);
+  color: var(--color-surface-dark);
 }
 :focus-visible {
-  outline: 3px solid var(--color-amber-dark);
+  outline: 3px solid var(--color-focus);
   outline-offset: 5px;
 }
-.bg-navy :focus-visible,
-.bg-navy-light :focus-visible {
-  outline-color: var(--color-amber);
+.bg-surface-dark :focus-visible,
+.bg-surface-raised :focus-visible {
+  outline-color: var(--color-accent);
 }
 button,
 summary {
@@ -93,34 +104,31 @@ textarea {
 .hero-shade {
   background: linear-gradient(
     100deg,
-    var(--color-navy) 20%,
-    color-mix(in srgb, var(--color-navy) 92%, transparent) 60%,
-    color-mix(in srgb, var(--color-navy) 86%, transparent)
+    var(--color-surface-dark) 20%,
+    color-mix(in srgb, var(--color-surface-dark) 92%, transparent) 60%,
+    color-mix(in srgb, var(--color-surface-dark) 86%, transparent)
   );
 }
 .media-shade {
-  background: linear-gradient(
-    0deg,
-    var(--color-navy),
-    color-mix(in srgb, var(--color-navy) 35%, transparent)
-  );
+  background: linear-gradient(0deg, var(--color-surface-dark) 0%, color-mix(in srgb, var(--color-surface-dark) 86%, transparent) 35%, color-mix(in srgb, var(--color-surface-dark) 10%, transparent) 100%);
 }
+
 [data-step] {
   border-block-start: 3px solid var(--color-dark-line);
-  background: var(--color-navy);
+  background: var(--color-surface-dark);
 }
 [data-step][data-completed="true"] {
-  border-block-start-color: var(--color-amber);
+  border-block-start-color: var(--color-accent);
 }
 [data-step][data-active="true"] {
-  border-block-start-color: var(--color-amber);
-  background: var(--color-navy-raised);
+  border-block-start-color: var(--color-accent);
+  background: var(--color-surface-elevated);
 }
 [data-step][data-active="true"] p {
   color: var(--color-on-dark);
 }
 .process-band .pin-spacer {
-  background: var(--color-navy);
+  background: var(--color-surface-dark);
 }
 .service-row .service-description {
   visibility: hidden;
@@ -138,4 +146,8 @@ textarea {
   .sector-tile:hover [data-media-image] {
     transform: scale(1.03);
   }
+}
+
+[data-step][data-active="true"] {
+  background: var(--color-surface-raised);
 }

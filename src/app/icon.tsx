@@ -13,8 +13,8 @@ export default function Icon() {
         justifyContent: "center",
         width: "100%",
         height: "100%",
-        background: themeColor("navy"),
-        color: themeColor("amber"),
+        background: themeColor("surface-dark"),
+        color: themeColor("accent"),
         fontSize: 17,
         fontWeight: 700,
       }}

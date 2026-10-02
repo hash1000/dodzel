@@ -17,7 +17,10 @@ export function InsightCard({
           : "grid items-start gap-5 border-b border-line pb-6 sm:grid-cols-[.8fr_1fr]"
       }
     >
-      <MediaFrame className={featured ? "aspect-[16/10]" : "aspect-[4/3]"} />
+      <MediaFrame
+        slot={`insight-${insight.id}`}
+        className={featured ? "aspect-[16/10]" : "aspect-[4/3]"}
+      />
       <div>
         <p
           className={`${featured ? "mt-5" : "mt-3 sm:mt-0"} text-xs uppercase tracking-wider text-muted`}

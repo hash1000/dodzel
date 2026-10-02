@@ -17,7 +17,7 @@ export default function Image() {
         width: "100%",
         height: "100%",
         padding: 80,
-        background: themeColor("navy"),
+        background: themeColor("surface-dark"),
         color: themeColor("on-dark"),
         fontFamily: "sans-serif",
       }}
@@ -30,7 +30,7 @@ export default function Image() {
           display: "flex",
           marginTop: 28,
           fontSize: 25,
-          color: themeColor("amber"),
+          color: themeColor("accent"),
         }}
       >
         Engineering · Procurement · Construction
@@ -40,7 +40,7 @@ export default function Image() {
           display: "flex",
           marginTop: 70,
           fontSize: 19,
-          color: themeColor("muted-dark"),
+          color: themeColor("on-dark-muted"),
         }}
       >
         {placeholders.og.label}

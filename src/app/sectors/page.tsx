@@ -1,3 +1,6 @@
+import { real } from "@/content/real";
+import { ReviewBadge } from "@/components/ui/ReviewBadge";
+import { MediaFrame } from "@/components/ui/MediaFrame";
 import { pageMetadata } from "@/lib/metadata";
 import { PageHero } from "@/components/ui/PageHero";
 import { Container } from "@/components/ui/Container";
@@ -13,7 +16,7 @@ export default function Page() {
       <PageHero title="Sectors" />
       <Container className="min-h-80 py-16">
         <p className="max-w-2xl text-lg leading-relaxed text-muted">
-          {placeholders.stub.body} <TodoBadge />
+          {real.industries.description} <ReviewBadge {...real.industries} />
         </p>
         {sectors.map((name) => (
           <section
@@ -21,7 +24,10 @@ export default function Page() {
             id={sectorHref(name).split("#")[1]}
             className="mt-8 border-t border-line pt-6"
           >
-            <h2 className="mb-3 text-2xl">{name}</h2>
+            <MediaFrame slot={name} className="mb-6 max-w-2xl aspect-video" />
+            <h2 className="mb-3 text-2xl">
+              {name} <ReviewBadge confirm />
+            </h2>
             <p className="text-muted">
               {placeholders.stub.body} <TodoBadge />
             </p>

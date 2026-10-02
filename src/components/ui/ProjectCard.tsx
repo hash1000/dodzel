@@ -12,7 +12,7 @@ export function ProjectCard({
       data-project-card
       className="overflow-hidden rounded-card border border-line bg-surface"
     >
-      <MediaFrame />
+      <MediaFrame slot={`project-${project.id}`} />
       <div className="p-6">
         <p className="mb-3 text-xs uppercase tracking-wider text-muted">
           {project.sector} · {project.country}

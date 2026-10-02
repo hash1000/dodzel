@@ -19,7 +19,7 @@ export function MobileMenu({ onNavigate }: { onNavigate: () => void }) {
             <details key={link.href} className="py-4">
               <summary className="text-2xl">{link.label}</summary>
               <Link
-                className="mt-4 block text-amber"
+                className="mt-4 block text-accent"
                 href={link.href}
                 onClick={onNavigate}
               >
@@ -28,7 +28,7 @@ export function MobileMenu({ onNavigate }: { onNavigate: () => void }) {
               {link.label === "Services"
                 ? serviceGroups.map((group) => (
                     <div key={group.title} className="mt-6">
-                      <p className="mb-3 text-sm text-amber">{group.title}</p>
+                      <p className="mb-3 text-sm text-accent">{group.title}</p>
                       {group.services.map((name) => (
                         <Link
                           key={name}

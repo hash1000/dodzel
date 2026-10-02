@@ -5,7 +5,7 @@ export function TrustStats() {
   return (
     <section
       aria-label="Company facts for client confirmation"
-      className="bg-navy py-14 text-on-dark"
+      className="bg-surface-dark py-14 text-on-dark"
     >
       <Container className="grid grid-cols-2 gap-x-6 gap-y-10 lg:grid-cols-4">
         {real.stats.map((stat) => (

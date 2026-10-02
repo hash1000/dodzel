@@ -56,7 +56,7 @@ export function RfqForm() {
   });
   return (
     <div className="max-w-3xl">
-      <p className="mb-8 border-s-4 border-amber bg-surface p-5 text-sm leading-relaxed">
+      <p className="mb-8 border-s-4 border-accent bg-surface p-5 text-sm leading-relaxed">
         {placeholders.rfq.notice} <TodoBadge />
       </p>
       <form
@@ -198,7 +198,7 @@ export function RfqForm() {
           <button
             type="submit"
             disabled={isSubmitting}
-            className="min-h-12 rounded-card bg-amber px-6 py-3 font-semibold text-navy disabled:cursor-wait disabled:opacity-60"
+            className="min-h-12 rounded-card bg-accent px-6 py-3 font-semibold text-surface-dark disabled:cursor-wait disabled:opacity-60"
           >
             {isSubmitting ? "Validating…" : "Validate quote request"}
           </button>
