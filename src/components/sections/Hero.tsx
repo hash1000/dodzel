@@ -1,5 +1,6 @@
 "use client";
 import Image from "next/image";
+import { MediaFrame } from "@/components/ui/MediaFrame";
 import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
@@ -66,15 +67,25 @@ export function Hero({ videoSrc }: { videoSrc?: string }) {
     if (!visible || paused) video.current.pause();
     else void video.current.play().catch(() => {});
   }, [visible, paused, reduced]);
+  const firstMoment = useRef(true);
   useGSAP(
     () => {
+      const first = firstMoment.current;
+      firstMoment.current = false;
       const mm = gsap.matchMedia();
       mm.add("(prefers-reduced-motion: no-preference)", () => {
-        gsap.fromTo(
-          "[data-hero-text]",
-          { y: 30, opacity: 0 },
-          { y: 0, opacity: 1, duration: 0.85, ease: "power3.out" },
-        );
+        if (first)
+          gsap.fromTo(
+            "[data-hero-media]",
+            { scale: 1.06 },
+            { scale: 1, duration: 1, ease: "power3.out" },
+          );
+        else
+          gsap.fromTo(
+            "[data-hero-text]",
+            { y: 20, opacity: 0 },
+            { y: 0, opacity: 1, duration: 0.7, ease: "power3.out" },
+          );
       });
       return () => mm.revert();
     },
@@ -100,7 +111,7 @@ export function Hero({ videoSrc }: { videoSrc?: string }) {
           src={placeholders.media.src}
           alt=""
           fill
-          priority
+          preload
           sizes="100vw"
           className="object-cover opacity-20"
         />
@@ -116,9 +127,9 @@ export function Hero({ videoSrc }: { videoSrc?: string }) {
             className="h-full w-full object-cover"
           />
         )}
-        <div className="absolute inset-0 bg-navy/85" />
+        <div className="hero-shade absolute inset-0" />
       </div>
-      <Container className="relative pb-10 pt-40 sm:pt-48">
+      <Container className="relative pb-24 pt-40 sm:pt-48">
         <div className="mb-8 flex flex-wrap items-center gap-4">
           <p className="text-xs uppercase tracking-[0.18em] text-amber">
             Pakistan / Qatar / Saudi Arabia / Iraq
@@ -130,7 +141,7 @@ export function Hero({ videoSrc }: { videoSrc?: string }) {
             <p className="mb-6 text-xs uppercase tracking-widest text-muted-dark">
               {slide.category}
             </p>
-            <h1 className="whitespace-pre-line text-5xl font-medium leading-[1.03] tracking-tight sm:text-7xl xl:text-8xl">
+            <h1 className="whitespace-pre-line text-hero font-semibold leading-[1.06] tracking-tight">
               {slide.headline}
             </h1>
             <p className="mb-8 mt-6 max-w-lg text-base leading-relaxed text-muted-dark">
@@ -138,29 +149,20 @@ export function Hero({ videoSrc }: { videoSrc?: string }) {
             </p>
             <Button href={slide.href}>{slide.cta}</Button>
           </div>
-          <div className="relative hidden min-h-80 items-end border-s border-dark-line ps-10 pb-10 lg:flex">
-            <div className="hero-grid absolute inset-0 opacity-30" />
-            <div className="relative">
-              <span className="font-display text-8xl text-amber">
-                EPC<span className="text-on-dark">.</span>
-              </span>
-              <p className="mt-5 max-w-xs text-sm text-muted-dark">
-                {placeholders.media.label} <TodoBadge />
-              </p>
-              <div className="mt-8 h-px w-16 bg-amber" />
-            </div>
+          <div data-hero-media className="flex items-center lg:ps-8">
+            <MediaFrame priority blueprint className="w-full aspect-[4/3]" />
           </div>
         </div>
-        <div className="mt-12 flex items-end justify-between gap-5 border-t border-dark-line pt-7">
-          <div className="flex items-center gap-5">
+        <div className="mt-12 flex items-end justify-between gap-3 sm:gap-5 border-t border-dark-line pt-7">
+          <div className="flex items-center gap-3 sm:gap-5">
             <div className="flex gap-4">
               {placeholders.hero.map((item, index) => (
                 <button
                   key={item.headline}
                   onClick={() => setActive(index)}
-                  aria-label={`Show slide ${index + 1}: ${item.category}`}
+                  aria-label={`0${index + 1} — Show slide ${index + 1}: ${item.category}`}
                   aria-pressed={active === index}
-                  className="w-12 py-3 text-start sm:w-20"
+                  className="w-10 py-3 text-start sm:w-20"
                 >
                   <span
                     className={
@@ -193,9 +195,11 @@ export function Hero({ videoSrc }: { videoSrc?: string }) {
           </div>
           <a
             href="#intent"
+            aria-label="Explore the homepage"
             className="flex items-center gap-3 text-xs uppercase tracking-widest text-muted-dark"
           >
-            Explore <ArrowDown size={16} />
+            <span className="hidden sm:inline">Explore</span>{" "}
+            <ArrowDown size={16} />
           </a>
         </div>
       </Container>

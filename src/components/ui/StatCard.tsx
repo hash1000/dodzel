@@ -2,12 +2,18 @@
 import { useRef, useState } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import { placeholders } from "@/content/placeholder";
-import { TodoBadge } from "./TodoBadge";
+import { ReviewBadge } from "./ReviewBadge";
+
 export function StatCard({
   stat,
 }: {
-  stat: (typeof placeholders.stats)[number];
+  stat: {
+    value: string;
+    label: string;
+    numericValue: number | null;
+    todo?: boolean;
+    confirm?: boolean;
+  };
 }) {
   const ref = useRef<HTMLDivElement>(null);
   const [value, setValue] = useState(stat.value);
@@ -52,9 +58,11 @@ export function StatCard({
   );
   return (
     <div ref={ref} className="border-s border-dark-line ps-6">
-      <p className="mb-3 font-display text-5xl text-amber">{value}</p>
+      <p className="mb-3 font-display text-3xl sm:text-4xl text-amber">
+        {value}
+      </p>
       <p className="mb-4 text-sm text-muted-dark">{stat.label}</p>
-      <TodoBadge />
+      <ReviewBadge {...stat} />
     </div>
   );
 }

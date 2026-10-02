@@ -1,24 +1,21 @@
 "use client";
 import { useState } from "react";
-import { placeholders } from "@/content/placeholder";
+import { real } from "@/content/real";
+import { countryPaths } from "@/lib/country-paths";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import { TodoBadge } from "@/components/ui/TodoBadge";
-const countries = [
-  {
-    name: "Pakistan",
-    x: 480,
-    y: 145,
-    entities: ["Dodzel Engineering Ltd", "Novex"],
-  },
-  {
-    name: "Qatar",
-    x: 345,
-    y: 225,
-    entities: ["Dodzel Engineering Qatar WLL", "Belgrass", "Bimex"],
-  },
-  { name: "Saudi Arabia", x: 240, y: 235, entities: [] },
-  { name: "Iraq", x: 270, y: 105, entities: [] },
+import { ReviewBadge } from "@/components/ui/ReviewBadge";
+import { placeholders } from "@/content/placeholder";
+const labels: Record<string, { x: number; y: number }> = {
+  Pakistan: { x: 745, y: 180 },
+  Qatar: { x: 427, y: 326 },
+  "Saudi Arabia": { x: 235, y: 350 },
+  Iraq: { x: 240, y: 100 },
+};
+// Only Lahore has confirmed city coordinates. Qatar is a country-level location, not an invented office city.
+const pins = [
+  { label: "Lahore", x: (74.3587 - 32) * 20, y: (39 - 31.5204) * 20 },
+  { label: "Qatar", x: (51.18 - 32) * 20, y: (39 - 25.35) * 20 },
 ];
 export function PresenceMap() {
   const [active, setActive] = useState("Pakistan");
@@ -27,85 +24,110 @@ export function PresenceMap() {
       <Container>
         <SectionHeading {...placeholders.headings.presence} />
         <div className="grid gap-10 lg:grid-cols-[1.4fr_1fr]">
-          <div className="relative aspect-[3/2] rounded-card bg-paper">
+          <div className="rounded-card border border-line bg-paper p-3">
             <svg
-              viewBox="0 0 600 400"
-              role="img"
-              aria-labelledby="map-title"
-              className="h-full w-full"
+              viewBox="0 0 980 520"
+              role="group"
+              aria-labelledby="presence-title presence-description"
+              className="aspect-[49/26] w-full"
             >
-              <title id="map-title">
-                Stylized indicative map of Pakistan, Qatar, Saudi Arabia and
-                Iraq
+              <title id="presence-title">
+                Dodzel presence in four countries
               </title>
-              <path
-                d="M60 80L165 50L255 65L295 30L365 70L390 100L510 65L555 110L535 190L455 215L400 285L335 290L280 350L180 310L140 240L70 210Z"
-                fill="var(--color-line)"
-              />
-              <path
-                d="M190 90L265 75L310 110L280 170L200 140Z M160 170L275 150L350 250L300 320L195 275Z M440 95L500 100L515 160L465 200L420 175Z"
-                stroke="var(--color-muted)"
-                fill="none"
-                strokeWidth="1"
-                strokeDasharray="4 5"
-              />
-              {countries.map((country) => (
+              <desc id="presence-description">
+                Natural Earth country outlines. Use Tab and Enter to highlight a
+                country. Only Lahore and Qatar have location markers.
+              </desc>
+              {countryPaths.map((country) => (
                 <g key={country.name}>
-                  <circle
-                    cx={country.x}
-                    cy={country.y}
-                    r={active === country.name ? 10 : 6}
+                  <path
+                    d={country.path}
+                    role="button"
+                    tabIndex={0}
+                    aria-label={`Highlight ${country.name}`}
+                    aria-pressed={active === country.name}
+                    onMouseEnter={() => setActive(country.name)}
+                    onFocus={() => setActive(country.name)}
+                    onClick={() => setActive(country.name)}
+                    onKeyDown={(event) => {
+                      if (event.key === "Enter" || event.key === " ") {
+                        event.preventDefault();
+                        setActive(country.name);
+                      }
+                    }}
                     fill={
                       active === country.name
-                        ? "var(--color-amber-dark)"
-                        : "var(--color-navy)"
+                        ? "var(--color-amber)"
+                        : "var(--color-map)"
                     }
+                    stroke="var(--color-muted)"
+                    strokeWidth="1.3"
+                    className="cursor-pointer"
                   />
                   <text
-                    x={country.x}
-                    y={country.y + 30}
+                    x={labels[country.name].x}
+                    y={labels[country.name].y}
                     textAnchor="middle"
-                    fontSize="12"
+                    fontSize="16"
                     fill="var(--color-ink)"
+                    className="pointer-events-none"
                   >
                     {country.name}
                   </text>
                 </g>
               ))}
+              {pins.map((pin) => (
+                <g
+                  key={pin.label}
+                  aria-label={`Confirmed location: ${pin.label}`}
+                >
+                  <circle
+                    cx={pin.x}
+                    cy={pin.y}
+                    r="5"
+                    fill="var(--color-navy)"
+                  />
+                  <text
+                    x={pin.x + 10}
+                    y={pin.y + 5}
+                    fontSize="13"
+                    fill="var(--color-ink)"
+                  >
+                    {pin.label}
+                  </text>
+                </g>
+              ))}
             </svg>
-            <span className="absolute start-4 bottom-4 text-xs text-muted">
-              {placeholders.presence.mapLabel} <TodoBadge />
-            </span>
+            <p className="mt-3 text-xs text-muted">
+              Natural Earth · public-domain boundaries · simplified{" "}
+              <ReviewBadge confirm />
+            </p>
           </div>
           <div>
-            <p className="mb-6 text-sm leading-relaxed text-muted">
-              {placeholders.presence.description} <TodoBadge />
+            <p className="mb-4 text-sm leading-relaxed text-muted">
+              {placeholders.presence.description} <ReviewBadge todo />
             </p>
             <ul className="divide-y divide-line">
-              {countries.map((country) => (
+              {real.countries.map((country) => (
                 <li key={country.name} className="py-5">
                   <button
                     onMouseEnter={() => setActive(country.name)}
                     onFocus={() => setActive(country.name)}
                     onClick={() => setActive(country.name)}
                     aria-pressed={active === country.name}
-                    className="w-full text-start font-display text-xl underline-offset-4 hover:underline"
+                    className="w-full text-start font-display text-xl font-semibold hover:underline"
                   >
-                    {country.name}
-                    <span
-                      className="ms-3 text-xs text-amber-dark"
-                      aria-hidden="true"
-                    >
-                      {active === country.name ? "●" : "○"}
-                    </span>
+                    {country.name} <ReviewBadge {...country} />
                   </button>
-                  {country.entities.length > 0 && (
-                    <ul className="mt-3 space-y-2 text-sm text-muted">
-                      {country.entities.map((entity) => (
-                        <li key={entity}>{entity}</li>
+                  <ul className="mt-3 space-y-2 text-sm text-muted">
+                    {real.entities
+                      .filter((entity) => entity.country === country.name)
+                      .map((entity) => (
+                        <li key={entity.name}>
+                          {entity.name} <ReviewBadge {...entity} />
+                        </li>
                       ))}
-                    </ul>
-                  )}
+                  </ul>
                 </li>
               ))}
             </ul>

@@ -1,3 +1,5 @@
+import { pageMetadata } from "@/lib/metadata";
+import { OrganizationJsonLd } from "@/components/seo/OrganizationJsonLd";
 import { Hero } from "@/components/sections/Hero";
 import { IntentSelector } from "@/components/sections/IntentSelector";
 import { TrustStats } from "@/components/sections/TrustStats";
@@ -10,9 +12,13 @@ import { InsightsGrid } from "@/components/sections/InsightsGrid";
 import { PresenceMap } from "@/components/sections/PresenceMap";
 import { CareersTeaser } from "@/components/sections/CareersTeaser";
 import { ClosingCta } from "@/components/sections/ClosingCta";
+export function generateMetadata() {
+  return pageMetadata("Engineering & Industrial Construction", "/");
+}
 export default function Home() {
   return (
     <main id="main-content">
+      <OrganizationJsonLd />
       <Hero />
       <IntentSelector />
       <TrustStats />

@@ -6,6 +6,7 @@ import { rfqSchema, type RfqValues } from "@/lib/rfq-schema";
 import { sectors, serviceGroups } from "@/lib/nav";
 import { submitRfq } from "@/app/request-a-quote/actions";
 import { placeholders } from "@/content/placeholder";
+import { ReviewBadge } from "@/components/ui/ReviewBadge";
 import { TodoBadge } from "@/components/ui/TodoBadge";
 export function RfqForm() {
   const [success, setSuccess] = useState(false);
@@ -142,6 +143,10 @@ export function RfqForm() {
             ))}
           </select>
           {error("service")}
+          <p className="mt-3 text-xs text-muted">
+            {placeholders.rfqServiceReview.text}{" "}
+            <ReviewBadge {...placeholders.rfqServiceReview} />
+          </p>
         </div>
         <div className="sm:col-span-2">
           <label htmlFor="scope" className="text-sm font-medium">

@@ -5,23 +5,24 @@ import { Footer } from "@/components/layout/Footer";
 import { SkipLink } from "@/components/layout/SkipLink";
 import { SiteShell, SiteOnly } from "@/components/layout/SiteShell";
 import "./globals.css";
+// Saira variable weights 500–700, bundled at semi-condensed 87.5% width.
 const heading = localFont({
-  src: [
-    { path: "./fonts/barlow-400.woff2", weight: "400" },
-    { path: "./fonts/barlow-500.woff2", weight: "500" },
-    { path: "./fonts/barlow-600.woff2", weight: "600" },
-    { path: "./fonts/barlow-700.woff2", weight: "700" },
-  ],
-  variable: "--font-heading",
+  src: "./fonts/saira-500-700.woff2",
+  weight: "500 700",
+  variable: "--font-saira",
   display: "swap",
 });
 const text = localFont({
-  src: "./fonts/inter-100-900.woff2",
-  weight: "100 900",
-  variable: "--font-text",
+  src: [
+    { path: "./fonts/ibm-plex-sans-400.woff2", weight: "400" },
+    { path: "./fonts/ibm-plex-sans-500.woff2", weight: "500" },
+    { path: "./fonts/ibm-plex-sans-600.woff2", weight: "600" },
+  ],
+  variable: "--font-plex",
   display: "swap",
 });
 export const metadata: Metadata = {
+  metadataBase: new URL("https://dodzel.com"),
   title: {
     default: "Dodzel Engineering | Engineering, Procurement & Construction",
     template: "%s | Dodzel Engineering",

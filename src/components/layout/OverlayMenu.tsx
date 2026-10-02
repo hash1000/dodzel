@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { ReviewBadge } from "@/components/ui/ReviewBadge";
 import { secondaryLinks, subsidiaries } from "@/lib/nav";
 export function OverlayMenu({ onNavigate }: { onNavigate: () => void }) {
   return (
@@ -33,7 +34,7 @@ export function OverlayMenu({ onNavigate }: { onNavigate: () => void }) {
                 className="text-2xl hover:underline"
                 onClick={onNavigate}
               >
-                {item.name}
+                {item.name} <ReviewBadge {...item} />
               </Link>
               <p className="mt-2 text-sm text-muted-dark">{item.detail}</p>
             </li>

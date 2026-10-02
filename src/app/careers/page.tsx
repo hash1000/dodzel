@@ -1,10 +1,12 @@
-import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/metadata";
 import { PageHero } from "@/components/ui/PageHero";
 import { Container } from "@/components/ui/Container";
 import { TodoBadge } from "@/components/ui/TodoBadge";
 import { placeholders } from "@/content/placeholder";
 
-export const metadata: Metadata = { title: "Careers" };
+export function generateMetadata() {
+  return pageMetadata("Careers", "/careers");
+}
 export default function Page() {
   return (
     <main id="main-content">

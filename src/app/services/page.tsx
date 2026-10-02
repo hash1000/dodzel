@@ -1,33 +1,37 @@
-import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/metadata";
 import { PageHero } from "@/components/ui/PageHero";
 import { Container } from "@/components/ui/Container";
-import { TodoBadge } from "@/components/ui/TodoBadge";
-import { placeholders } from "@/content/placeholder";
+import { ReviewBadge } from "@/components/ui/ReviewBadge";
 import { serviceGroups, serviceHref } from "@/lib/nav";
-export const metadata: Metadata = { title: "Services" };
+import { getService } from "@/lib/services";
+export function generateMetadata() {
+  return pageMetadata("Services", "/services");
+}
 export default function Page() {
   return (
     <main id="main-content">
       <PageHero title="Services" />
-      <Container className="min-h-80 py-16">
-        <p className="max-w-2xl text-lg leading-relaxed text-muted">
-          {placeholders.stub.body} <TodoBadge />
-        </p>
+      <Container className="py-16">
         {serviceGroups.map((group) => (
-          <section key={group.title} className="mt-10">
-            <h2 className="mb-5 text-2xl">{group.title}</h2>
-            {group.services.map((name) => (
-              <article
-                key={name}
-                id={serviceHref(name).split("#")[1]}
-                className="border-t border-line py-5"
-              >
-                <h3 className="mb-3 text-xl">{name}</h3>
-                <p className="text-muted">
-                  {placeholders.stub.body} <TodoBadge />
-                </p>
-              </article>
-            ))}
+          <section key={group.title} className="mb-12">
+            <h2 className="mb-6 text-3xl font-semibold">{group.title}</h2>
+            {group.services.map((name) => {
+              const service = getService(name);
+              return (
+                <article
+                  key={name}
+                  id={serviceHref(name).split("#")[1]}
+                  className="border-t border-line py-6"
+                >
+                  <h3 className="mb-3 text-xl font-semibold">
+                    {name} <ReviewBadge {...service} />
+                  </h3>
+                  <p className="max-w-3xl leading-relaxed text-muted">
+                    {service.description}
+                  </p>
+                </article>
+              );
+            })}
           </section>
         ))}
       </Container>

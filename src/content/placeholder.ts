@@ -30,6 +30,32 @@ export const placeholders = {
       title: "Regional reach. Local understanding.",
     }),
   },
+  unconfirmedServices: [
+    "Engineering",
+    "Procurement & Supply Chain",
+    "Project Management",
+  ].map((name) =>
+    pending({
+      name,
+      description: "Confirm this service and provide an approved description.",
+      confirm: true,
+    }),
+  ),
+  rfqServiceReview: pending({
+    text: "Engineering, Procurement & Supply Chain, and Project Management require client confirmation.",
+    confirm: true,
+  }),
+  belgrassMerger: pending({
+    question:
+      "Is Belgrass merging into Dodzel? Please confirm its current name, status and website.",
+  }),
+  safetyChart: pending({
+    label: "Safety trend data pending — no values plotted",
+  }),
+  insightFilters: ["All insights", "Category pending"].map((label) =>
+    pending({ label }),
+  ),
+  og: pending({ label: "Social preview artwork awaiting approval" }),
   brand: pending({
     text: "DE",
     note: "Temporary typographic mark; replace with approved logo.",
@@ -79,7 +105,7 @@ export const placeholders = {
     description: "Specialist capabilities for essential industries.",
   }),
   oilGasSubitems: ["Upstream", "Midstream", "Refining"].map((title) =>
-    pending({ title }),
+    pending({ title, confirm: title === "Upstream" || title === "Midstream" }),
   ),
   steps: ["Engineer", "Procure", "Fabricate", "Construct", "Commission"].map(
     (title) =>

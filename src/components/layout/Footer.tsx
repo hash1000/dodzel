@@ -1,4 +1,7 @@
 import Link from "next/link";
+import { real } from "@/content/real";
+import { ReviewBadge } from "@/components/ui/ReviewBadge";
+import { getService } from "@/lib/services";
 import {
   navLinks,
   serviceGroups,
@@ -58,7 +61,7 @@ export function Footer() {
                       href={serviceHref(name)}
                       className="hover:text-on-dark"
                     >
-                      {name}
+                      {name} <ReviewBadge {...getService(name)} />
                     </Link>
                   </li>
                 ))}
@@ -79,9 +82,17 @@ export function Footer() {
           <div>
             <h2 className="mb-5 text-sm text-amber">Contact</h2>
             <div className="space-y-3 text-sm text-muted-dark">
-              <p>{placeholders.contact.email}</p>
+              <a
+                href={`mailto:${real.contact.email}`}
+                className="block text-amber hover:underline"
+              >
+                {real.contact.email}
+              </a>
               <p>{placeholders.contact.phone}</p>
-              <p>{placeholders.contact.address}</p>
+              <address className="not-italic leading-relaxed">
+                {real.contact.address}
+              </address>
+              <ReviewBadge {...real.contact} />
               <TodoBadge />
             </div>
           </div>
@@ -89,12 +100,8 @@ export function Footer() {
         <div className="mt-12 flex flex-wrap gap-6 border-t border-dark-line py-6 text-sm">
           <span className="text-muted-dark">Our subsidiaries</span>
           {subsidiaries.map((s) => (
-            <Link
-              key={s.name}
-              href={`/about#${s.name.toLowerCase()}`}
-              className="hover:underline"
-            >
-              {s.name}
+            <Link key={s.name} href={s.url} className="hover:underline">
+              {s.name} <ReviewBadge {...s} />
             </Link>
           ))}
         </div>

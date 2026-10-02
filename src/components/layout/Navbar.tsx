@@ -55,11 +55,7 @@ export function Navbar() {
       }}
     >
       <Container className="flex h-24 items-center justify-between gap-2 px-4 sm:gap-4 sm:px-gutter">
-        <Link
-          href="/"
-          aria-label="Dodzel Engineering home"
-          className="flex items-center gap-2 sm:gap-3"
-        >
+        <Link href="/" className="flex items-center gap-2 sm:gap-3">
           <span className="hidden h-11 w-11 place-items-center border border-amber sm:grid font-display text-lg text-amber">
             {placeholders.brand.text}
           </span>
@@ -70,10 +66,33 @@ export function Navbar() {
             </span>
           </span>
           <TodoBadge />
+          <span className="sr-only">home</span>
         </Link>
         <nav
           aria-label="Main navigation"
-          className="hidden items-center gap-5 xl:flex"
+          className="hidden items-center gap-4 xl:flex"
+          onKeyDown={(event) => {
+            if (!["ArrowLeft", "ArrowRight", "Home", "End"].includes(event.key))
+              return;
+            event.preventDefault();
+            const controls = Array.from(
+              event.currentTarget.querySelectorAll<HTMLElement>("a,button"),
+            );
+            const index = controls.indexOf(
+              document.activeElement as HTMLElement,
+            );
+            const rtl =
+              getComputedStyle(event.currentTarget).direction === "rtl";
+            const forward = event.key === (rtl ? "ArrowLeft" : "ArrowRight");
+            const next =
+              event.key === "Home"
+                ? 0
+                : event.key === "End"
+                  ? controls.length - 1
+                  : (index + (forward ? 1 : -1) + controls.length) %
+                    controls.length;
+            controls[next]?.focus();
+          }}
         >
           {navLinks.map((link) => (
             <div key={link.href} className="flex items-center gap-1">
@@ -81,13 +100,34 @@ export function Navbar() {
                 href={link.href}
                 onClick={() => setMenu(null)}
                 aria-current={pathname === link.href ? "page" : undefined}
-                className="py-3 text-sm hover:text-amber"
+                className={cn(
+                  "border-b-2 py-3 text-sm hover:text-amber",
+                  pathname === link.href
+                    ? "border-amber"
+                    : "border-transparent",
+                )}
               >
                 {link.label}
               </Link>
               {(link.label === "Services" || link.label === "Sectors") && (
                 <button
                   data-menu={link.label}
+                  onKeyDown={(event) => {
+                    if (event.key !== "ArrowDown" && event.key !== "ArrowUp")
+                      return;
+                    event.preventDefault();
+                    setMenu(link.label as "Services" | "Sectors");
+                    requestAnimationFrame(() => {
+                      const links =
+                        document.querySelectorAll<HTMLAnchorElement>(
+                          "#mega-menu [data-menu-link]",
+                        );
+                      (event.key === "ArrowUp"
+                        ? links[links.length - 1]
+                        : links[0]
+                      )?.focus();
+                    });
+                  }}
                   aria-label={`Open ${link.label} menu`}
                   aria-expanded={menu === link.label}
                   aria-controls="mega-menu"

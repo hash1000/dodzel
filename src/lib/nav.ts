@@ -1,3 +1,4 @@
+import { real } from "@/content/real";
 export const serviceGroups = [
   {
     title: "Plan & Procure",
@@ -35,11 +36,7 @@ export const secondaryLinks = [
   { label: "Become a Vendor", href: "/vendors" },
   { label: "Contact", href: "/contact" },
 ];
-export const subsidiaries = [
-  { name: "Belgrass", detail: "Construction · Qatar" },
-  { name: "Bimex", detail: "Trading · Qatar" },
-  { name: "Novex", detail: "Trading · Pakistan" },
-];
+export const subsidiaries = real.subsidiaries;
 export const serviceHref = (name: string) =>
   `/services#${name
     .toLowerCase()

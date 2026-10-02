@@ -6,7 +6,7 @@ export function PageHero({ title }: { title: string }) {
         <p className="mb-5 text-xs uppercase tracking-widest text-amber">
           Dodzel Engineering
         </p>
-        <h1 className="text-5xl sm:text-7xl">{title}</h1>
+        <h1 className="text-page font-semibold">{title}</h1>
       </Container>
     </section>
   );

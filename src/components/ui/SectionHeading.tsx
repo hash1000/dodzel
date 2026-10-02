@@ -17,7 +17,7 @@ export function SectionHeading({
         <p className="mb-4 text-xs font-semibold uppercase tracking-[0.18em]">
           {eyebrow}
         </p>
-        <h2 className="max-w-3xl text-3xl font-medium tracking-tight sm:text-4xl lg:text-5xl">
+        <h2 className="max-w-3xl text-heading font-semibold tracking-tight">
           {title} {todo && <TodoBadge />}
         </h2>
       </div>

@@ -1,11 +1,18 @@
 @import "tailwindcss";
 @theme inline {
   --font-sans: var(--font-text);
-  --font-display: var(--font-heading);
+  --font-text: var(--font-plex);
+  /* Add IBM Plex Sans Arabic for the future RTL locale. */
+  --font-display: var(--font-saira);
 }
 @theme {
   --color-navy: #0c1c2c;
   --color-navy-light: #142b40;
+  --color-navy-raised: #1b3347;
+  --color-map: #d8dedf;
+  --text-hero: clamp(2.7rem, 5.4vw, 5.5rem);
+  --text-heading: clamp(2rem, 3.3vw, 3.5rem);
+  --text-page: clamp(2.8rem, 5vw, 5rem);
   --color-amber: #ffc15a;
   --color-amber-dark: #755016;
   --color-paper: #f5f4ef;
@@ -48,7 +55,8 @@ summary {
 h1,
 h2,
 h3 {
-  font-family: var(--font-heading), sans-serif;
+  font-family: var(--font-display), sans-serif;
+  letter-spacing: -0.025em;
 }
 .hero-grid {
   background-image:
@@ -79,5 +87,55 @@ textarea {
     animation: none !important;
     transition: none !important;
     scroll-behavior: auto !important;
+  }
+}
+
+.hero-shade {
+  background: linear-gradient(
+    100deg,
+    var(--color-navy) 20%,
+    color-mix(in srgb, var(--color-navy) 92%, transparent) 60%,
+    color-mix(in srgb, var(--color-navy) 86%, transparent)
+  );
+}
+.media-shade {
+  background: linear-gradient(
+    0deg,
+    var(--color-navy),
+    color-mix(in srgb, var(--color-navy) 35%, transparent)
+  );
+}
+[data-step] {
+  border-block-start: 3px solid var(--color-dark-line);
+  background: var(--color-navy);
+}
+[data-step][data-completed="true"] {
+  border-block-start-color: var(--color-amber);
+}
+[data-step][data-active="true"] {
+  border-block-start-color: var(--color-amber);
+  background: var(--color-navy-raised);
+}
+[data-step][data-active="true"] p {
+  color: var(--color-on-dark);
+}
+.process-band .pin-spacer {
+  background: var(--color-navy);
+}
+.service-row .service-description {
+  visibility: hidden;
+}
+.service-row:hover .service-description,
+.service-row:focus-within .service-description {
+  visibility: visible;
+}
+@media (hover: none) {
+  .service-row .service-description {
+    visibility: visible;
+  }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .sector-tile:hover [data-media-image] {
+    transform: scale(1.03);
   }
 }

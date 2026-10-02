@@ -4,8 +4,10 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import Lenis from "lenis";
+import { usePathname } from "next/navigation";
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 export function SmoothScrollProvider({ children }: { children: ReactNode }) {
+  const pathname = usePathname();
   useEffect(() => {
     const media = matchMedia("(prefers-reduced-motion: reduce)");
     let dispose = () => {};
@@ -33,5 +35,16 @@ export function SmoothScrollProvider({ children }: { children: ReactNode }) {
       media.removeEventListener("change", setup);
     };
   }, []);
+  useEffect(() => {
+    let alive = true;
+    const frame = requestAnimationFrame(() => ScrollTrigger.refresh());
+    void document.fonts.ready.then(() => {
+      if (alive) ScrollTrigger.refresh();
+    });
+    return () => {
+      alive = false;
+      cancelAnimationFrame(frame);
+    };
+  }, [pathname]);
   return children;
 }

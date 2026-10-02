@@ -1,4 +1,6 @@
 import Link from "next/link";
+import { getService } from "@/lib/services";
+import { ReviewBadge } from "@/components/ui/ReviewBadge";
 import {
   navLinks,
   serviceGroups,
@@ -34,7 +36,7 @@ export function MobileMenu({ onNavigate }: { onNavigate: () => void }) {
                           onClick={onNavigate}
                           className="block py-2"
                         >
-                          {name}
+                          {name} <ReviewBadge {...getService(name)} />
                         </Link>
                       ))}
                     </div>
