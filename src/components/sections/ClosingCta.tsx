@@ -13,10 +13,7 @@ export function ClosingCta() {
         slot="cta-background"
         className="absolute inset-0 -z-20 h-full w-full rounded-none"
         sizes="100vw"
-      />
-      <div
-        aria-hidden="true"
-        className="absolute inset-0 -z-10 bg-surface-dark/90"
+        scrim
       />
       <Container className="flex flex-col justify-between gap-10 lg:flex-row lg:items-end">
         <div>

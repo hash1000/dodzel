@@ -16,10 +16,7 @@ export function QhseCertifications() {
         slot="qhse-background"
         className="absolute inset-0 -z-20 h-full w-full rounded-none"
         sizes="100vw"
-      />
-      <div
-        aria-hidden="true"
-        className="absolute inset-0 -z-10 bg-surface-raised/90"
+        scrim
       />
       <Container className="grid grid-cols-1 gap-12 lg:grid-cols-[.8fr_1.2fr]">
         <div>
@@ -47,7 +44,7 @@ export function QhseCertifications() {
               </p>
             </div>
             <div
-              className="hero-grid flex aspect-[2/1] items-center justify-center border border-dark-line p-4 text-center text-xs text-on-dark-muted"
+              className="bg-surface-raised flex aspect-[2/1] items-center justify-center border border-dark-line p-4 text-center text-xs text-on-dark-muted"
               aria-label={placeholders.safetyChart.label}
             >
               <span>

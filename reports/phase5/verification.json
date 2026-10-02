@@ -1,0 +1,964 @@
+{
+  "routes": [
+    {
+      "width": 1440,
+      "route": "/",
+      "errors": [],
+      "overflow": false,
+      "duplicate": [],
+      "broken": [],
+      "images": [
+        {
+          "slot": "hero",
+          "file": "/media/images/oil-refinery-poster"
+        },
+        {
+          "slot": "Plan & Procure",
+          "file": "/media/images/frank-mckenna-tjX_sniNzgQ-unsplash"
+        },
+        {
+          "slot": "Build & Maintain",
+          "file": "/media/images/steel-structure-construction-1"
+        },
+        {
+          "slot": "Oil & Gas",
+          "file": "/media/images/Sectors"
+        },
+        {
+          "slot": "Refining",
+          "file": "/media/images/9339478-uhd_3840_2160_24fps-poster"
+        },
+        {
+          "slot": "Power",
+          "file": "/media/images/power-plant-poster"
+        },
+        {
+          "slot": "Cement",
+          "file": "/media/images/cement-plant-poster"
+        },
+        {
+          "slot": "project-1",
+          "file": "/media/images/pexels-joseph-russo-430180075-29590119"
+        },
+        {
+          "slot": "project-2",
+          "file": "/media/images/power-plant"
+        },
+        {
+          "slot": "project-3",
+          "file": "/media/images/cement-plant"
+        },
+        {
+          "slot": "qhse-background",
+          "file": "/media/images/industrial-plant-night"
+        },
+        {
+          "slot": "insight-1",
+          "file": "/media/images/project-management"
+        },
+        {
+          "slot": "insight-2",
+          "file": "/media/images/15122253_2160_3840_30fps-poster"
+        },
+        {
+          "slot": "insight-3",
+          "file": "/media/images/engineering"
+        },
+        {
+          "slot": "cta-background",
+          "file": "/media/images/offshore"
+        }
+      ],
+      "serviceCards": null
+    },
+    {
+      "width": 1440,
+      "route": "/services",
+      "errors": [],
+      "overflow": false,
+      "duplicate": [],
+      "broken": [],
+      "images": [
+        {
+          "slot": "Services",
+          "file": "/media/images/steel-structure-construction"
+        },
+        {
+          "slot": "Engineering",
+          "file": "/media/images/engineering"
+        },
+        {
+          "slot": "Procurement & Supply Chain",
+          "file": "/media/images/Procurement-supply-chain"
+        },
+        {
+          "slot": "Project Management",
+          "file": "/media/images/project-management"
+        },
+        {
+          "slot": "Civil & Buildings",
+          "file": "/media/images/scaffolding"
+        },
+        {
+          "slot": "Mechanical & Piping",
+          "file": "/media/images/pipe-welding"
+        },
+        {
+          "slot": "Electrical & Instrumentation",
+          "file": "/media/images/Electrical%20%26%20Instrumentation"
+        },
+        {
+          "slot": "Structural Steel",
+          "file": "/media/images/steel-structure-construction-1"
+        },
+        {
+          "slot": "Plant Services (Turnaround & Shutdown)",
+          "file": "/media/images/12966194_4096_2160_25fps-poster"
+        },
+        {
+          "slot": "Offshore",
+          "file": "/media/images/4392869-uhd_3840_2160_30fps-poster"
+        },
+        {
+          "slot": "Project Facilities",
+          "file": "/media/images/project-facilities"
+        },
+        {
+          "slot": "Maintenance",
+          "file": "/media/images/industrial-plant-night-poster"
+        }
+      ],
+      "serviceCards": 11
+    },
+    {
+      "width": 1440,
+      "route": "/about",
+      "errors": [],
+      "overflow": false,
+      "duplicate": [],
+      "broken": [],
+      "images": [
+        {
+          "slot": "About",
+          "file": "/media/images/industrial-plant-night"
+        }
+      ],
+      "serviceCards": null
+    },
+    {
+      "width": 1440,
+      "route": "/qhse",
+      "errors": [],
+      "overflow": false,
+      "duplicate": [],
+      "broken": [],
+      "images": [
+        {
+          "slot": "QHSE",
+          "file": "/media/images/pipe-welding"
+        },
+        {
+          "slot": "qhse-story",
+          "file": "/media/images/15122253_2160_3840_30fps-poster"
+        }
+      ],
+      "serviceCards": null
+    },
+    {
+      "width": 1440,
+      "route": "/conduct",
+      "errors": [],
+      "overflow": false,
+      "duplicate": [],
+      "broken": [],
+      "images": [
+        {
+          "slot": "Conduct",
+          "file": "/media/images/pipe-rack"
+        }
+      ],
+      "serviceCards": null
+    },
+    {
+      "width": 1440,
+      "route": "/careers",
+      "errors": [],
+      "overflow": false,
+      "duplicate": [],
+      "broken": [],
+      "images": [
+        {
+          "slot": "Careers",
+          "file": "/media/images/scaffolding"
+        }
+      ],
+      "serviceCards": null
+    },
+    {
+      "width": 1440,
+      "route": "/contact",
+      "errors": [],
+      "overflow": false,
+      "duplicate": [],
+      "broken": [],
+      "images": [
+        {
+          "slot": "Contact",
+          "file": "/media/images/industrial-plant-night-poster"
+        }
+      ],
+      "serviceCards": null
+    },
+    {
+      "width": 1440,
+      "route": "/services/mechanical-piping",
+      "errors": [],
+      "overflow": false,
+      "duplicate": [],
+      "broken": [],
+      "images": [
+        {
+          "slot": "Mechanical & Piping",
+          "file": "/media/images/pipe-welding"
+        },
+        {
+          "slot": "piping-yard",
+          "file": "/media/images/pipe-rack"
+        },
+        {
+          "slot": "piping-yard-alternate",
+          "file": "/media/images/pipe-rack1"
+        },
+        {
+          "slot": "mechanical-texture",
+          "file": "/media/images/12966194_4096_2160_25fps-poster"
+        }
+      ],
+      "serviceCards": null
+    },
+    {
+      "width": 1440,
+      "route": "/sectors",
+      "errors": [],
+      "overflow": false,
+      "duplicate": [],
+      "broken": [],
+      "images": [
+        {
+          "slot": "Sectors",
+          "file": "/media/images/oil-refinery-poster"
+        },
+        {
+          "slot": "Oil & Gas",
+          "file": "/media/images/Sectors"
+        },
+        {
+          "slot": "Refining",
+          "file": "/media/images/9339478-uhd_3840_2160_24fps-poster"
+        },
+        {
+          "slot": "refining-photo",
+          "file": "/media/images/pexels-joseph-russo-430180075-29590119"
+        },
+        {
+          "slot": "Power",
+          "file": "/media/images/power-plant-poster"
+        },
+        {
+          "slot": "power-photo",
+          "file": "/media/images/power-plant"
+        },
+        {
+          "slot": "Cement",
+          "file": "/media/images/cement-plant-poster"
+        },
+        {
+          "slot": "cement-photo",
+          "file": "/media/images/cement-plant"
+        }
+      ],
+      "serviceCards": null
+    },
+    {
+      "width": 1440,
+      "route": "/projects",
+      "errors": [],
+      "overflow": false,
+      "duplicate": [],
+      "broken": [],
+      "images": [
+        {
+          "slot": "Projects",
+          "file": "/media/images/offshore1"
+        },
+        {
+          "slot": "project-1",
+          "file": "/media/images/pexels-joseph-russo-430180075-29590119"
+        },
+        {
+          "slot": "project-2",
+          "file": "/media/images/power-plant"
+        },
+        {
+          "slot": "project-3",
+          "file": "/media/images/cement-plant"
+        }
+      ],
+      "serviceCards": null
+    },
+    {
+      "width": 1440,
+      "route": "/insights",
+      "errors": [],
+      "overflow": false,
+      "duplicate": [],
+      "broken": [],
+      "images": [
+        {
+          "slot": "Insights",
+          "file": "/media/images/pexels-joseph-russo-430180075-29590119"
+        }
+      ],
+      "serviceCards": null
+    },
+    {
+      "width": 1440,
+      "route": "/vendors",
+      "errors": [],
+      "overflow": false,
+      "duplicate": [],
+      "broken": [],
+      "images": [
+        {
+          "slot": "Become a Vendor",
+          "file": "/media/images/pipe-rack1"
+        }
+      ],
+      "serviceCards": null
+    },
+    {
+      "width": 1440,
+      "route": "/request-a-quote",
+      "errors": [],
+      "overflow": false,
+      "duplicate": [],
+      "broken": [],
+      "images": [
+        {
+          "slot": "Request a Quote",
+          "file": "/media/images/cement-plant"
+        }
+      ],
+      "serviceCards": null
+    },
+    {
+      "width": 390,
+      "route": "/",
+      "errors": [],
+      "overflow": false,
+      "duplicate": [],
+      "broken": [],
+      "images": [
+        {
+          "slot": "hero",
+          "file": "/media/images/oil-refinery-poster"
+        },
+        {
+          "slot": "Plan & Procure",
+          "file": "/media/images/frank-mckenna-tjX_sniNzgQ-unsplash"
+        },
+        {
+          "slot": "Build & Maintain",
+          "file": "/media/images/steel-structure-construction-1"
+        },
+        {
+          "slot": "Oil & Gas",
+          "file": "/media/images/Sectors"
+        },
+        {
+          "slot": "Refining",
+          "file": "/media/images/9339478-uhd_3840_2160_24fps-poster"
+        },
+        {
+          "slot": "Power",
+          "file": "/media/images/power-plant-poster"
+        },
+        {
+          "slot": "Cement",
+          "file": "/media/images/cement-plant-poster"
+        },
+        {
+          "slot": "project-1",
+          "file": "/media/images/pexels-joseph-russo-430180075-29590119"
+        },
+        {
+          "slot": "project-2",
+          "file": "/media/images/power-plant"
+        },
+        {
+          "slot": "project-3",
+          "file": "/media/images/cement-plant"
+        },
+        {
+          "slot": "qhse-background",
+          "file": "/media/images/industrial-plant-night"
+        },
+        {
+          "slot": "insight-1",
+          "file": "/media/images/project-management"
+        },
+        {
+          "slot": "insight-2",
+          "file": "/media/images/15122253_2160_3840_30fps-poster"
+        },
+        {
+          "slot": "insight-3",
+          "file": "/media/images/engineering"
+        },
+        {
+          "slot": "cta-background",
+          "file": "/media/images/offshore"
+        }
+      ],
+      "serviceCards": null
+    },
+    {
+      "width": 390,
+      "route": "/services",
+      "errors": [],
+      "overflow": false,
+      "duplicate": [],
+      "broken": [],
+      "images": [
+        {
+          "slot": "Services",
+          "file": "/media/images/steel-structure-construction"
+        },
+        {
+          "slot": "Engineering",
+          "file": "/media/images/engineering"
+        },
+        {
+          "slot": "Procurement & Supply Chain",
+          "file": "/media/images/Procurement-supply-chain"
+        },
+        {
+          "slot": "Project Management",
+          "file": "/media/images/project-management"
+        },
+        {
+          "slot": "Civil & Buildings",
+          "file": "/media/images/scaffolding"
+        },
+        {
+          "slot": "Mechanical & Piping",
+          "file": "/media/images/pipe-welding"
+        },
+        {
+          "slot": "Electrical & Instrumentation",
+          "file": "/media/images/Electrical%20%26%20Instrumentation"
+        },
+        {
+          "slot": "Structural Steel",
+          "file": "/media/images/steel-structure-construction-1"
+        },
+        {
+          "slot": "Plant Services (Turnaround & Shutdown)",
+          "file": "/media/images/12966194_4096_2160_25fps-poster"
+        },
+        {
+          "slot": "Offshore",
+          "file": "/media/images/4392869-uhd_3840_2160_30fps-poster"
+        },
+        {
+          "slot": "Project Facilities",
+          "file": "/media/images/project-facilities"
+        },
+        {
+          "slot": "Maintenance",
+          "file": "/media/images/industrial-plant-night-poster"
+        }
+      ],
+      "serviceCards": 11
+    },
+    {
+      "width": 390,
+      "route": "/about",
+      "errors": [],
+      "overflow": false,
+      "duplicate": [],
+      "broken": [],
+      "images": [
+        {
+          "slot": "About",
+          "file": "/media/images/industrial-plant-night"
+        }
+      ],
+      "serviceCards": null
+    },
+    {
+      "width": 390,
+      "route": "/qhse",
+      "errors": [],
+      "overflow": false,
+      "duplicate": [],
+      "broken": [],
+      "images": [
+        {
+          "slot": "QHSE",
+          "file": "/media/images/pipe-welding"
+        },
+        {
+          "slot": "qhse-story",
+          "file": "/media/images/15122253_2160_3840_30fps-poster"
+        }
+      ],
+      "serviceCards": null
+    },
+    {
+      "width": 390,
+      "route": "/conduct",
+      "errors": [],
+      "overflow": false,
+      "duplicate": [],
+      "broken": [],
+      "images": [
+        {
+          "slot": "Conduct",
+          "file": "/media/images/pipe-rack"
+        }
+      ],
+      "serviceCards": null
+    },
+    {
+      "width": 390,
+      "route": "/careers",
+      "errors": [],
+      "overflow": false,
+      "duplicate": [],
+      "broken": [],
+      "images": [
+        {
+          "slot": "Careers",
+          "file": "/media/images/scaffolding"
+        }
+      ],
+      "serviceCards": null
+    },
+    {
+      "width": 390,
+      "route": "/contact",
+      "errors": [],
+      "overflow": false,
+      "duplicate": [],
+      "broken": [],
+      "images": [
+        {
+          "slot": "Contact",
+          "file": "/media/images/industrial-plant-night-poster"
+        }
+      ],
+      "serviceCards": null
+    },
+    {
+      "width": 390,
+      "route": "/services/mechanical-piping",
+      "errors": [],
+      "overflow": false,
+      "duplicate": [],
+      "broken": [],
+      "images": [
+        {
+          "slot": "Mechanical & Piping",
+          "file": "/media/images/pipe-welding"
+        },
+        {
+          "slot": "piping-yard",
+          "file": "/media/images/pipe-rack"
+        },
+        {
+          "slot": "piping-yard-alternate",
+          "file": "/media/images/pipe-rack1"
+        },
+        {
+          "slot": "mechanical-texture",
+          "file": "/media/images/12966194_4096_2160_25fps-poster"
+        }
+      ],
+      "serviceCards": null
+    },
+    {
+      "width": 390,
+      "route": "/sectors",
+      "errors": [],
+      "overflow": false,
+      "duplicate": [],
+      "broken": [],
+      "images": [
+        {
+          "slot": "Sectors",
+          "file": "/media/images/oil-refinery-poster"
+        },
+        {
+          "slot": "Oil & Gas",
+          "file": "/media/images/Sectors"
+        },
+        {
+          "slot": "Refining",
+          "file": "/media/images/9339478-uhd_3840_2160_24fps-poster"
+        },
+        {
+          "slot": "refining-photo",
+          "file": "/media/images/pexels-joseph-russo-430180075-29590119"
+        },
+        {
+          "slot": "Power",
+          "file": "/media/images/power-plant-poster"
+        },
+        {
+          "slot": "power-photo",
+          "file": "/media/images/power-plant"
+        },
+        {
+          "slot": "Cement",
+          "file": "/media/images/cement-plant-poster"
+        },
+        {
+          "slot": "cement-photo",
+          "file": "/media/images/cement-plant"
+        }
+      ],
+      "serviceCards": null
+    },
+    {
+      "width": 390,
+      "route": "/projects",
+      "errors": [],
+      "overflow": false,
+      "duplicate": [],
+      "broken": [],
+      "images": [
+        {
+          "slot": "Projects",
+          "file": "/media/images/offshore1"
+        },
+        {
+          "slot": "project-1",
+          "file": "/media/images/pexels-joseph-russo-430180075-29590119"
+        },
+        {
+          "slot": "project-2",
+          "file": "/media/images/power-plant"
+        },
+        {
+          "slot": "project-3",
+          "file": "/media/images/cement-plant"
+        }
+      ],
+      "serviceCards": null
+    },
+    {
+      "width": 390,
+      "route": "/insights",
+      "errors": [],
+      "overflow": false,
+      "duplicate": [],
+      "broken": [],
+      "images": [
+        {
+          "slot": "Insights",
+          "file": "/media/images/pexels-joseph-russo-430180075-29590119"
+        }
+      ],
+      "serviceCards": null
+    },
+    {
+      "width": 390,
+      "route": "/vendors",
+      "errors": [],
+      "overflow": false,
+      "duplicate": [],
+      "broken": [],
+      "images": [
+        {
+          "slot": "Become a Vendor",
+          "file": "/media/images/pipe-rack1"
+        }
+      ],
+      "serviceCards": null
+    },
+    {
+      "width": 390,
+      "route": "/request-a-quote",
+      "errors": [],
+      "overflow": false,
+      "duplicate": [],
+      "broken": [],
+      "images": [
+        {
+          "slot": "Request a Quote",
+          "file": "/media/images/cement-plant"
+        }
+      ],
+      "serviceCards": null
+    }
+  ],
+  "process": [
+    {
+      "scrollY": 6784,
+      "top": 100.046875,
+      "bottom": 639.8125,
+      "active": 0,
+      "nextTop": 1120.046875,
+      "pin": true
+    },
+    {
+      "scrollY": 6904,
+      "top": 100.046875,
+      "bottom": 640.046875,
+      "active": 1,
+      "nextTop": 1000.046875,
+      "pin": true
+    },
+    {
+      "scrollY": 7024,
+      "top": 100.046875,
+      "bottom": 640.046875,
+      "active": 2,
+      "nextTop": 880.046875,
+      "pin": true
+    },
+    {
+      "scrollY": 7144,
+      "top": 100.046875,
+      "bottom": 640.046875,
+      "active": 3,
+      "nextTop": 760.046875,
+      "pin": true
+    },
+    {
+      "scrollY": 7264,
+      "top": 100.046875,
+      "bottom": 639.8125,
+      "active": 4,
+      "nextTop": 640.046875,
+      "pin": true
+    },
+    {
+      "scrollY": 7456,
+      "top": -91.953125,
+      "bottom": 447.8125,
+      "active": 4,
+      "nextTop": 448.046875,
+      "pin": true
+    }
+  ],
+  "reduced": {
+    "home": {
+      "videos": 0,
+      "pin": false,
+      "words": 0,
+      "stats": [
+        "6",
+        "350+",
+        "12+",
+        "0"
+      ]
+    },
+    "banner": {
+      "motion": null,
+      "words": 0,
+      "clip": "none",
+      "transform": "none"
+    }
+  },
+  "development": [
+    {
+      "route": "/",
+      "issues": null,
+      "errors": []
+    },
+    {
+      "route": "/services",
+      "issues": null,
+      "errors": []
+    },
+    {
+      "route": "/about",
+      "issues": null,
+      "errors": []
+    },
+    {
+      "route": "/qhse",
+      "issues": null,
+      "errors": []
+    },
+    {
+      "route": "/conduct",
+      "issues": null,
+      "errors": []
+    },
+    {
+      "route": "/careers",
+      "issues": null,
+      "errors": []
+    },
+    {
+      "route": "/contact",
+      "issues": null,
+      "errors": []
+    },
+    {
+      "route": "/services/mechanical-piping",
+      "issues": null,
+      "errors": []
+    },
+    {
+      "route": "/services/project-facilities",
+      "issues": null,
+      "errors": []
+    }
+  ],
+  "details": [
+    {
+      "slug": "engineering",
+      "duplicates": [],
+      "broken": []
+    },
+    {
+      "slug": "procurement-supply-chain",
+      "duplicates": [],
+      "broken": []
+    },
+    {
+      "slug": "project-management",
+      "duplicates": [],
+      "broken": []
+    },
+    {
+      "slug": "civil-buildings",
+      "duplicates": [],
+      "broken": []
+    },
+    {
+      "slug": "mechanical-piping",
+      "duplicates": [],
+      "broken": []
+    },
+    {
+      "slug": "electrical-instrumentation",
+      "duplicates": [],
+      "broken": []
+    },
+    {
+      "slug": "structural-steel",
+      "duplicates": [],
+      "broken": []
+    },
+    {
+      "slug": "plant-services-turnaround-shutdown",
+      "duplicates": [],
+      "broken": []
+    },
+    {
+      "slug": "offshore",
+      "duplicates": [],
+      "broken": []
+    },
+    {
+      "slug": "project-facilities",
+      "duplicates": [],
+      "broken": []
+    },
+    {
+      "slug": "maintenance",
+      "duplicates": [],
+      "broken": []
+    }
+  ],
+  "hover": [
+    {
+      "row": "Civil & Buildings",
+      "duplicates": [],
+      "broken": []
+    },
+    {
+      "row": "Mechanical & Piping",
+      "duplicates": [],
+      "broken": []
+    },
+    {
+      "row": "Electrical & Instrumentation",
+      "duplicates": [],
+      "broken": []
+    },
+    {
+      "row": "Structural Steel",
+      "duplicates": [],
+      "broken": []
+    },
+    {
+      "row": "Plant Services (Turnaround & Shutdown)",
+      "duplicates": [],
+      "broken": []
+    },
+    {
+      "row": "Offshore",
+      "duplicates": [],
+      "broken": []
+    },
+    {
+      "row": "Project Facilities",
+      "duplicates": [],
+      "broken": []
+    },
+    {
+      "row": "Maintenance",
+      "duplicates": [],
+      "broken": []
+    }
+  ],
+  "motion": {
+    "visibleStart": "matrix(1.0041, 0, 0, 1.0041, 0, 0)",
+    "visibleEnd": "matrix(1.0071, 0, 0, 1.0071, 0, 0)",
+    "offscreenStart": "matrix(1.0072, 0, 0, 1.0072, 0, 0)",
+    "offscreenEnd": "matrix(1.0072, 0, 0, 1.0072, 0, 0)",
+    "hiddenEventStart": "matrix(1.0077, 0, 0, 1.0077, 0, 0)",
+    "hiddenEventEnd": "matrix(1.0077, 0, 0, 1.0077, 0, 0)"
+  },
+  "finalSingleWidthCheck": [
+    {
+      "route": "/services",
+      "width": 1440,
+      "errors": [],
+      "broken": [],
+      "duplicates": [],
+      "overflow": false
+    },
+    {
+      "route": "/services/project-facilities",
+      "width": 1440,
+      "errors": [],
+      "broken": [],
+      "duplicates": [],
+      "overflow": false
+    },
+    {
+      "route": "/services",
+      "width": 390,
+      "errors": [],
+      "broken": [],
+      "duplicates": [],
+      "overflow": false
+    },
+    {
+      "route": "/services/project-facilities",
+      "width": 390,
+      "errors": [],
+      "broken": [],
+      "duplicates": [],
+      "overflow": false
+    }
+  ],
+  "finalFix": "Single-width media bypasses the responsive loader; all original screenshot/layout/motion checks remain valid and affected pages were rechecked."
+}

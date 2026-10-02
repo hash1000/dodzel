@@ -5,7 +5,6 @@ import { serviceGroups, serviceHref, sectors, sectorHref } from "@/lib/nav";
 import { getService } from "@/lib/services";
 import { placeholders } from "@/content/placeholder";
 import { ReviewBadge } from "@/components/ui/ReviewBadge";
-import { MediaFrame } from "@/components/ui/MediaFrame";
 export function MegaMenu({
   kind,
   onNavigate,
@@ -88,7 +87,7 @@ export function MegaMenu({
               ))}
             </div>
             <aside className="border-s border-dark-line ps-8">
-              <MediaFrame slot={selected} blueprint />
+
               <p className="mt-5 font-display text-xl font-semibold">
                 {featured.name} <ReviewBadge {...featured} />
               </p>

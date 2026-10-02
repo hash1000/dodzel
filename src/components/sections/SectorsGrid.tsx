@@ -26,6 +26,7 @@ export function SectorsGrid() {
               className="sector-tile media-hover relative block overflow-hidden rounded-card bg-surface-dark text-on-dark"
             >
               <MediaFrame
+        reveal
                 slot={name}
                 video
                 scrim

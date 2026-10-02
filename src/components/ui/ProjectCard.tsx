@@ -13,6 +13,7 @@ export function ProjectCard({
       className="media-hover overflow-hidden rounded-card border border-line border-t-2 border-t-accent-2 bg-surface"
     >
       <MediaFrame
+        reveal
         slot={`project-${project.id}`}
         className="aspect-[4/3]"
         sizes="(max-width: 768px) 100vw, 33vw"

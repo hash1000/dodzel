@@ -7,13 +7,14 @@ Every supplied asset is STOCK, not evidence of Dodzel projects. All source URLs,
 - `15122253_2160_3840_30fps.mp4`: Portrait clip of a worker among industrial pipes. User supplied; source URL and licence needed.
 - `4392869-uhd_3840_2160_30fps.mp4`: Crane vessel at an offshore worksite. User supplied; source URL and licence needed.
 - `9339478-uhd_3840_2160_24fps.mp4`: Daytime aerial view of refinery processing units. User supplied; source URL and licence needed.
-- `Electrical & Instrumentation.jpg`: Electrical & Instrumentation. User supplied; source URL and licence needed.
-- `Procurement-supply-chain.jpg`: Procurement supply chain. User supplied; source URL and licence needed.
+- `Electrical & Instrumentation.jpg`: Electrical control-panel wiring and instrumentation. User supplied; source URL and licence needed.
+- `Procurement-supply-chain.jpg`: Container vessel illustrating procurement and supply chains. User supplied; source URL and licence needed.
+- `Sectors.jpg`: Offshore structures at sunset. User supplied; source URL and licence needed.
 - `alex-kotliarskyi-QBpZGqEMsKg-unsplash.jpg`: alex kotliarskyi QBpZGqEMsKg unsplash. User supplied; source URL and licence needed.
 - `cement-plant.jpg`: Cement manufacturing facility and processing structures. User supplied; source URL and licence needed.
 - `cement-plant.mp4`: Cement manufacturing facility and processing structures. User supplied; source URL and licence needed.
-- `engineering.jpg`: engineering. User supplied; source URL and licence needed.
-- `frank-mckenna-tjX_sniNzgQ-unsplash.jpg`: frank mckenna tjX_sniNzgQ unsplash. User supplied; source URL and licence needed.
+- `engineering.jpg`: Industrial engineering and machine equipment. User supplied; source URL and licence needed.
+- `frank-mckenna-tjX_sniNzgQ-unsplash.jpg`: Shipping containers stacked in a logistics yard. User supplied; source URL and licence needed.
 - `haydn-n8TBTzFIRzs-unsplash.jpg`: haydn n8TBTzFIRzs unsplash. User supplied; source URL and licence needed.
 - `industrial-plant-night.jpg`: Industrial processing plant illuminated at night. User supplied; source URL and licence needed.
 - `industrial-plant-night.mp4`: Industrial processing plant illuminated at night. User supplied; source URL and licence needed.
@@ -27,7 +28,8 @@ Every supplied asset is STOCK, not evidence of Dodzel projects. All source URLs,
 - `pipeline-welding.mp4`: Automated welding around an industrial pipe. User supplied; source URL and licence needed.
 - `power-plant.jpg`: Power station cooling towers releasing steam. User supplied; source URL and licence needed.
 - `power-plant.mp4`: Power station cooling towers releasing steam. User supplied; source URL and licence needed.
-- `project-management.jpg`: project management. User supplied; source URL and licence needed.
+- `project-facilities.webp`: Illustrative facility-management graphic with a worker. User supplied; source URL and licence needed.
+- `project-management.jpg`: Construction team reviewing a building worksite. User supplied; source URL and licence needed.
 - `scaffolding.jpg`: Residential house scaffolding (video); multi-storey building frame (photo). User supplied; source URL and licence needed.
 - `scaffolding.mp4`: Residential house scaffolding (video); multi-storey building frame (photo). User supplied; source URL and licence needed.
 - `steel-structure-construction-1.jpg`: Structural steel building framework under construction. User supplied; source URL and licence needed.

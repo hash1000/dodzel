@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { ArrowDown, Pause, Play } from "lucide-react";
 import { real } from "@/content/real";
 import { heroMedia } from "@/content/media";
-import { loadGsap } from "@/lib/animations";
+import { loadBannerAnimations } from "@/lib/animations";
 import { useMediaPolicy } from "@/lib/use-media-policy";
 import { ReviewBadge } from "@/components/ui/ReviewBadge";
 import { StockBadge } from "@/components/ui/StockBadge";
@@ -85,9 +85,8 @@ export function Hero() {
     let alive = true;
     let cleanup = () => {};
     const animate = async () => {
-      const [{ gsap }, { SplitText }] = await Promise.all([loadGsap(), import("gsap/SplitText")]);
+      const { gsap, SplitText } = await loadBannerAnimations();
       if (!alive || !headline.current) return;
-      gsap.registerPlugin(SplitText);
       const split = SplitText.create(headline.current, { type: "words", wordsClass: "hero-word", aria: "auto" });
       const tween = gsap.fromTo(split.words, { y: 10 }, { y: 0, duration: .5, stagger: .025, ease: "power3.out" });
       cleanup = () => { tween.kill(); split.revert(); };
@@ -166,15 +165,8 @@ export function Hero() {
       </div>
       <div
         aria-hidden="true"
-        className="hero-shade pointer-events-none absolute inset-0 -z-10 rtl:-scale-x-100"
-      />
-      <div
-        aria-hidden="true"
-        className="hero-bottom-shade pointer-events-none absolute inset-0 -z-10"
-      />
-      <div
-        aria-hidden="true"
-        className="hero-top-shade pointer-events-none absolute inset-0 -z-10"
+        className="hero-shade pointer-events-none absolute inset-0 -z-10"
+        style={{ opacity: asset.scrimStrength ?? .64 }}
       />
       <Container className="flex min-h-[48rem] flex-col justify-end pb-28 pt-36 lg:min-h-[52rem]">
         <div className="mb-6 flex flex-wrap items-center gap-3">

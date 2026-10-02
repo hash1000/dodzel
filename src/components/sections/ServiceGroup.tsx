@@ -46,6 +46,7 @@ export function ServiceGroup({
             className={`absolute inset-0 transition-opacity duration-500 motion-reduce:transition-none ${selected === slot ? "opacity-100" : "opacity-0"}`}
           >
             <MediaFrame
+              reveal
               slot={slot}
               className="h-full w-full rounded-none"
               sizes="(max-width: 768px) 100vw, 50vw"

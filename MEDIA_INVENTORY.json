@@ -48,12 +48,17 @@
     {
       "file": "Electrical & Instrumentation.jpg",
       "bytes": 8860965,
-      "classification": "Electrical & Instrumentation"
+      "classification": "Electrical control-panel wiring and instrumentation"
     },
     {
       "file": "Procurement-supply-chain.jpg",
       "bytes": 1434784,
-      "classification": "Procurement supply chain"
+      "classification": "Container vessel illustrating procurement and supply chains"
+    },
+    {
+      "file": "Sectors.jpg",
+      "bytes": 1343928,
+      "classification": "Offshore structures at sunset"
     },
     {
       "file": "alex-kotliarskyi-QBpZGqEMsKg-unsplash.jpg",
@@ -77,12 +82,12 @@
     {
       "file": "engineering.jpg",
       "bytes": 2013749,
-      "classification": "engineering"
+      "classification": "Industrial engineering and machine equipment"
     },
     {
       "file": "frank-mckenna-tjX_sniNzgQ-unsplash.jpg",
       "bytes": 1221238,
-      "classification": "frank mckenna tjX_sniNzgQ unsplash"
+      "classification": "Shipping containers stacked in a logistics yard"
     },
     {
       "file": "haydn-n8TBTzFIRzs-unsplash.jpg",
@@ -166,9 +171,14 @@
       "portrait": false
     },
     {
+      "file": "project-facilities.webp",
+      "bytes": 226392,
+      "classification": "Illustrative facility-management graphic with a worker"
+    },
+    {
       "file": "project-management.jpg",
       "bytes": 4858025,
-      "classification": "project management"
+      "classification": "Construction team reviewing a building worksite"
     },
     {
       "file": "scaffolding.jpg",
@@ -196,10 +206,21 @@
     }
   ],
   "slots": {
+    "Engineering": "image:engineering",
+    "Procurement & Supply Chain": "image:Procurement-supply-chain",
+    "Project Management": "image:project-management",
+    "Electrical & Instrumentation": "image:Electrical & Instrumentation",
+    "Project Facilities": "image:project-facilities",
+    "Sectors": "video:oil-refinery",
+    "Projects": "image:offshore1",
+    "Insights": "image:pexels-joseph-russo-430180075-29590119",
+    "Careers": "image:scaffolding",
+    "Become a Vendor": "image:pipe-rack1",
+    "Request a Quote": "image:cement-plant",
     "hero-1": "video:oil-refinery",
     "hero-2": "video:pipeline-welding",
     "hero-3": "video:14529100_3840_2160_30fps",
-    "Oil & Gas": "video:14529100_3840_2160_30fps",
+    "Oil & Gas": "image:Sectors",
     "Refining": "video:9339478-uhd_3840_2160_24fps",
     "Power": "video:power-plant",
     "Cement": "video:cement-plant",
@@ -209,8 +230,8 @@
     "Civil & Buildings": "image:scaffolding",
     "Mechanical & Piping": "image:pipe-welding",
     "Structural Steel": "image:steel-structure-construction-1",
-    "Plant Services (Turnaround & Shutdown)": "image:scaffolding",
-    "Maintenance": "image:scaffolding",
+    "Plant Services (Turnaround & Shutdown)": "video:12966194_4096_2160_25fps",
+    "Maintenance": "video:industrial-plant-night",
     "Offshore": "video:4392869-uhd_3840_2160_30fps",
     "offshore-photo": "image:offshore",
     "offshore-platform": "image:offshore1",
@@ -218,22 +239,22 @@
     "piping-yard-alternate": "image:pipe-rack1",
     "mechanical-texture": "video:12966194_4096_2160_25fps",
     "civil-scaffolding-video": "video:scaffolding",
-    "Plan & Procure": "image:pexels-joseph-russo-430180075-29590119",
+    "Plan & Procure": "image:frank-mckenna-tjX_sniNzgQ-unsplash",
     "Build & Maintain": "image:steel-structure-construction-1",
-    "About": "image:steel-structure-construction-1",
+    "About": "image:industrial-plant-night",
     "Services": "image:steel-structure-construction",
-    "QHSE": "image:industrial-plant-night",
-    "Conduct": "image:pipe-welding",
-    "Contact": "image:pexels-joseph-russo-430180075-29590119",
+    "QHSE": "image:pipe-welding",
+    "Conduct": "image:pipe-rack",
+    "Contact": "video:industrial-plant-night",
     "qhse-story": "video:15122253_2160_3840_30fps",
     "qhse-background": "image:industrial-plant-night",
-    "cta-background": "video:industrial-plant-night",
+    "cta-background": "image:offshore",
     "project-1": "image:pexels-joseph-russo-430180075-29590119",
     "project-2": "image:power-plant",
     "project-3": "image:cement-plant",
-    "insight-1": "image:pipe-welding",
-    "insight-2": "image:scaffolding",
-    "insight-3": "image:industrial-plant-night"
+    "insight-1": "image:project-management",
+    "insight-2": "video:15122253_2160_3840_30fps",
+    "insight-3": "image:engineering"
   },
   "collections": {
     "Mechanical & Piping": [
@@ -261,10 +282,361 @@
       "cement-photo"
     ]
   },
+  "bannerContrast": {
+    "video:12966194_4096_2160_25fps": {
+      "brightestRGB": [
+        224,
+        224,
+        224
+      ],
+      "scrimStrength": 0.81,
+      "whiteRatio": 9.51,
+      "honeyRatio": 4.62,
+      "method": "Brightest averaged 8x8 patch of 512px-wide decoded poster; flat blue-950 composite"
+    },
+    "video:14529100_3840_2160_30fps": {
+      "brightestRGB": [
+        207,
+        192,
+        153
+      ],
+      "scrimStrength": 0.77,
+      "whiteRatio": 9.54,
+      "honeyRatio": 4.63,
+      "method": "Brightest averaged 8x8 patch of 512px-wide decoded poster; flat blue-950 composite"
+    },
+    "video:15122253_2160_3840_30fps": {
+      "brightestRGB": [
+        251,
+        248,
+        235
+      ],
+      "scrimStrength": 0.83,
+      "whiteRatio": 9.5,
+      "honeyRatio": 4.61,
+      "method": "Brightest averaged 8x8 patch of 512px-wide decoded poster; flat blue-950 composite"
+    },
+    "video:4392869-uhd_3840_2160_30fps": {
+      "brightestRGB": [
+        238,
+        234,
+        215
+      ],
+      "scrimStrength": 0.82,
+      "whiteRatio": 9.58,
+      "honeyRatio": 4.65,
+      "method": "Brightest averaged 8x8 patch of 512px-wide decoded poster; flat blue-950 composite"
+    },
+    "video:9339478-uhd_3840_2160_24fps": {
+      "brightestRGB": [
+        246,
+        241,
+        223
+      ],
+      "scrimStrength": 0.83,
+      "whiteRatio": 9.68,
+      "honeyRatio": 4.7,
+      "method": "Brightest averaged 8x8 patch of 512px-wide decoded poster; flat blue-950 composite"
+    },
+    "image:Electrical & Instrumentation": {
+      "brightestRGB": [
+        253,
+        253,
+        253
+      ],
+      "scrimStrength": 0.84,
+      "whiteRatio": 9.67,
+      "honeyRatio": 4.7,
+      "method": "Brightest averaged 8x8 patch of 512px-wide decoded poster; flat blue-950 composite"
+    },
+    "image:Procurement-supply-chain": {
+      "brightestRGB": [
+        211,
+        226,
+        221
+      ],
+      "scrimStrength": 0.81,
+      "whiteRatio": 9.53,
+      "honeyRatio": 4.63,
+      "method": "Brightest averaged 8x8 patch of 512px-wide decoded poster; flat blue-950 composite"
+    },
+    "image:Sectors": {
+      "brightestRGB": [
+        212,
+        177,
+        135
+      ],
+      "scrimStrength": 0.75,
+      "whiteRatio": 9.5,
+      "honeyRatio": 4.62,
+      "method": "Brightest averaged 8x8 patch of 512px-wide decoded poster; flat blue-950 composite"
+    },
+    "image:alex-kotliarskyi-QBpZGqEMsKg-unsplash": {
+      "brightestRGB": [
+        248,
+        252,
+        253
+      ],
+      "scrimStrength": 0.84,
+      "whiteRatio": 9.71,
+      "honeyRatio": 4.72,
+      "method": "Brightest averaged 8x8 patch of 512px-wide decoded poster; flat blue-950 composite"
+    },
+    "image:cement-plant": {
+      "brightestRGB": [
+        255,
+        254,
+        252
+      ],
+      "scrimStrength": 0.84,
+      "whiteRatio": 9.64,
+      "honeyRatio": 4.68,
+      "method": "Brightest averaged 8x8 patch of 512px-wide decoded poster; flat blue-950 composite"
+    },
+    "video:cement-plant": {
+      "brightestRGB": [
+        233,
+        231,
+        233
+      ],
+      "scrimStrength": 0.82,
+      "whiteRatio": 9.6,
+      "honeyRatio": 4.66,
+      "method": "Brightest averaged 8x8 patch of 512px-wide decoded poster; flat blue-950 composite"
+    },
+    "image:engineering": {
+      "brightestRGB": [
+        242,
+        241,
+        246
+      ],
+      "scrimStrength": 0.83,
+      "whiteRatio": 9.62,
+      "honeyRatio": 4.67,
+      "method": "Brightest averaged 8x8 patch of 512px-wide decoded poster; flat blue-950 composite"
+    },
+    "image:frank-mckenna-tjX_sniNzgQ-unsplash": {
+      "brightestRGB": [
+        252,
+        252,
+        252
+      ],
+      "scrimStrength": 0.84,
+      "whiteRatio": 9.68,
+      "honeyRatio": 4.7,
+      "method": "Brightest averaged 8x8 patch of 512px-wide decoded poster; flat blue-950 composite"
+    },
+    "image:haydn-n8TBTzFIRzs-unsplash": {
+      "brightestRGB": [
+        141,
+        127,
+        68
+      ],
+      "scrimStrength": 0.6,
+      "whiteRatio": 9.53,
+      "honeyRatio": 4.63,
+      "method": "Brightest averaged 8x8 patch of 512px-wide decoded poster; flat blue-950 composite"
+    },
+    "image:industrial-plant-night": {
+      "brightestRGB": [
+        255,
+        255,
+        252
+      ],
+      "scrimStrength": 0.84,
+      "whiteRatio": 9.64,
+      "honeyRatio": 4.68,
+      "method": "Brightest averaged 8x8 patch of 512px-wide decoded poster; flat blue-950 composite"
+    },
+    "video:industrial-plant-night": {
+      "brightestRGB": [
+        184,
+        183,
+        178
+      ],
+      "scrimStrength": 0.76,
+      "whiteRatio": 9.58,
+      "honeyRatio": 4.65,
+      "method": "Brightest averaged 8x8 patch of 512px-wide decoded poster; flat blue-950 composite"
+    },
+    "image:offshore": {
+      "brightestRGB": [
+        226,
+        231,
+        248
+      ],
+      "scrimStrength": 0.82,
+      "whiteRatio": 9.57,
+      "honeyRatio": 4.65,
+      "method": "Brightest averaged 8x8 patch of 512px-wide decoded poster; flat blue-950 composite"
+    },
+    "image:offshore1": {
+      "brightestRGB": [
+        229,
+        227,
+        228
+      ],
+      "scrimStrength": 0.82,
+      "whiteRatio": 9.7,
+      "honeyRatio": 4.71,
+      "method": "Brightest averaged 8x8 patch of 512px-wide decoded poster; flat blue-950 composite"
+    },
+    "video:oil-refinery": {
+      "brightestRGB": [
+        253,
+        251,
+        212
+      ],
+      "scrimStrength": 0.83,
+      "whiteRatio": 9.5,
+      "honeyRatio": 4.62,
+      "method": "Brightest averaged 8x8 patch of 512px-wide decoded poster; flat blue-950 composite"
+    },
+    "image:pexels-joseph-russo-430180075-29590119": {
+      "brightestRGB": [
+        235,
+        205,
+        152
+      ],
+      "scrimStrength": 0.79,
+      "whiteRatio": 9.55,
+      "honeyRatio": 4.64,
+      "method": "Brightest averaged 8x8 patch of 512px-wide decoded poster; flat blue-950 composite"
+    },
+    "image:pipe-rack": {
+      "brightestRGB": [
+        224,
+        236,
+        248
+      ],
+      "scrimStrength": 0.82,
+      "whiteRatio": 9.48,
+      "honeyRatio": 4.61,
+      "method": "Brightest averaged 8x8 patch of 512px-wide decoded poster; flat blue-950 composite"
+    },
+    "image:pipe-rack1": {
+      "brightestRGB": [
+        207,
+        219,
+        227
+      ],
+      "scrimStrength": 0.81,
+      "whiteRatio": 9.68,
+      "honeyRatio": 4.7,
+      "method": "Brightest averaged 8x8 patch of 512px-wide decoded poster; flat blue-950 composite"
+    },
+    "image:pipe-welding": {
+      "brightestRGB": [
+        224,
+        197,
+        184
+      ],
+      "scrimStrength": 0.79,
+      "whiteRatio": 9.7,
+      "honeyRatio": 4.71,
+      "method": "Brightest averaged 8x8 patch of 512px-wide decoded poster; flat blue-950 composite"
+    },
+    "video:pipeline-welding": {
+      "brightestRGB": [
+        255,
+        255,
+        255
+      ],
+      "scrimStrength": 0.84,
+      "whiteRatio": 9.62,
+      "honeyRatio": 4.67,
+      "method": "Brightest averaged 8x8 patch of 512px-wide decoded poster; flat blue-950 composite"
+    },
+    "image:power-plant": {
+      "brightestRGB": [
+        222,
+        217,
+        221
+      ],
+      "scrimStrength": 0.81,
+      "whiteRatio": 9.68,
+      "honeyRatio": 4.7,
+      "method": "Brightest averaged 8x8 patch of 512px-wide decoded poster; flat blue-950 composite"
+    },
+    "video:power-plant": {
+      "brightestRGB": [
+        255,
+        255,
+        255
+      ],
+      "scrimStrength": 0.84,
+      "whiteRatio": 9.62,
+      "honeyRatio": 4.67,
+      "method": "Brightest averaged 8x8 patch of 512px-wide decoded poster; flat blue-950 composite"
+    },
+    "image:project-facilities": {
+      "brightestRGB": [
+        242,
+        244,
+        215
+      ],
+      "scrimStrength": 0.83,
+      "whiteRatio": 9.66,
+      "honeyRatio": 4.69,
+      "method": "Brightest averaged 8x8 patch of 512px-wide decoded poster; flat blue-950 composite"
+    },
+    "image:project-management": {
+      "brightestRGB": [
+        236,
+        233,
+        228
+      ],
+      "scrimStrength": 0.82,
+      "whiteRatio": 9.56,
+      "honeyRatio": 4.64,
+      "method": "Brightest averaged 8x8 patch of 512px-wide decoded poster; flat blue-950 composite"
+    },
+    "image:scaffolding": {
+      "brightestRGB": [
+        244,
+        244,
+        244
+      ],
+      "scrimStrength": 0.83,
+      "whiteRatio": 9.57,
+      "honeyRatio": 4.65,
+      "method": "Brightest averaged 8x8 patch of 512px-wide decoded poster; flat blue-950 composite"
+    },
+    "video:scaffolding": {
+      "brightestRGB": [
+        255,
+        255,
+        255
+      ],
+      "scrimStrength": 0.84,
+      "whiteRatio": 9.62,
+      "honeyRatio": 4.67,
+      "method": "Brightest averaged 8x8 patch of 512px-wide decoded poster; flat blue-950 composite"
+    },
+    "image:steel-structure-construction-1": {
+      "brightestRGB": [
+        188,
+        198,
+        200
+      ],
+      "scrimStrength": 0.78,
+      "whiteRatio": 9.56,
+      "honeyRatio": 4.65,
+      "method": "Brightest averaged 8x8 patch of 512px-wide decoded poster; flat blue-950 composite"
+    },
+    "image:steel-structure-construction": {
+      "brightestRGB": [
+        230,
+        230,
+        230
+      ],
+      "scrimStrength": 0.82,
+      "whiteRatio": 9.64,
+      "honeyRatio": 4.68,
+      "method": "Brightest averaged 8x8 patch of 512px-wide decoded poster; flat blue-950 composite"
+    }
+  },
   "needImage": [
-    "Electrical & Instrumentation",
-    "Project Facilities",
-    "Careers",
     "careers-people"
   ],
   "outputs": [
@@ -475,6 +847,38 @@
     {
       "file": "images/Procurement-supply-chain-640.webp",
       "bytes": 51940
+    },
+    {
+      "file": "images/Sectors-1080.avif",
+      "bytes": 35413
+    },
+    {
+      "file": "images/Sectors-1080.webp",
+      "bytes": 32756
+    },
+    {
+      "file": "images/Sectors-1920.avif",
+      "bytes": 87241
+    },
+    {
+      "file": "images/Sectors-1920.webp",
+      "bytes": 78990
+    },
+    {
+      "file": "images/Sectors-2560.avif",
+      "bytes": 137162
+    },
+    {
+      "file": "images/Sectors-2560.webp",
+      "bytes": 120548
+    },
+    {
+      "file": "images/Sectors-640.avif",
+      "bytes": 15127
+    },
+    {
+      "file": "images/Sectors-640.webp",
+      "bytes": 13836
     },
     {
       "file": "images/alex-kotliarskyi-QBpZGqEMsKg-unsplash-1080.avif",
@@ -1037,6 +1441,14 @@
       "bytes": 22680
     },
     {
+      "file": "images/project-facilities-640.avif",
+      "bytes": 24278
+    },
+    {
+      "file": "images/project-facilities-640.webp",
+      "bytes": 22594
+    },
+    {
       "file": "images/project-management-1080.avif",
       "bytes": 129106
     },
@@ -1249,6 +1661,6 @@
       "bytes": 218286
     }
   ],
-  "totalBytes": 54723910,
+  "totalBytes": 55291855,
   "videoBytes": 21031440
 }
