@@ -5,6 +5,13 @@ const reviewed = <T extends object>(item: T) => ({
   source: "dodzel.com (current site)" as const,
   confirm: true as const,
 });
+const entities: { name: string; country: string; url?: string }[] = [
+  { name: "Dodzel Engineering Limited", country: "Pakistan", url: "https://dodzel.com" },
+  { name: "Novex Trading Company", country: "Pakistan", url: "https://novex.com.pk" },
+  { name: "Dodzel Engineering Qatar WLL", country: "Qatar" },
+  { name: "Belgrass Construction Company WLL", country: "Qatar", url: "https://belgrass.com.qa" },
+  { name: "Bimex Trading Company", country: "Qatar", url: "https://bimex.com.qa" },
+];
 export const real = {
   company: reviewed({
     name: "Dodzel Engineering Limited",
@@ -26,13 +33,7 @@ export const real = {
   countries: ["Pakistan", "Qatar", "Saudi Arabia", "Iraq"].map((name) =>
     reviewed({ name }),
   ),
-  entities: [
-    reviewed({ name: "Dodzel Engineering Limited", country: "Pakistan" }),
-    reviewed({ name: "Novex Trading Company", country: "Pakistan" }),
-    reviewed({ name: "Dodzel Engineering Qatar WLL", country: "Qatar" }),
-    reviewed({ name: "Belgrass Construction Company WLL", country: "Qatar" }),
-    reviewed({ name: "Bimex Trading Company", country: "Qatar" }),
-  ],
+  entities: entities.map(reviewed),
   subsidiaries: [
     reviewed({
       name: "Belgrass",
@@ -70,7 +71,7 @@ export const real = {
     reviewed({
       name: "Mechanical & Piping",
       description:
-        "Mechanical construction focused on piping contracting and EPIC delivery.",
+        "Mechanical construction with a focus on piping contracting and EPIC delivery.",
     }),
     reviewed({
       name: "Electrical & Instrumentation",
@@ -80,7 +81,7 @@ export const real = {
     reviewed({
       name: "Structural Steel",
       description:
-        "Supply, fabrication and erection of structural steel for warehouses, workshops and pipe racks.",
+        "Supply, fabrication and erection of structural steel, e.g. warehouses, workshops and pipe racks.",
     }),
     reviewed({
       name: "Plant Services (Turnaround & Shutdown)",
@@ -143,7 +144,7 @@ export const real = {
   ceoMessage: reviewed({
     title: "A message from our CEO",
     description:
-      "We firmly believe that our success is tied to the quality of our services and client satisfaction. Our management and resources are committed to customer satisfaction. Our primary objective is to eliminate stress within the construction industry by supplying, delivering and managing projects for high-quality, timely completion, while maintaining a commitment to Zero Harm to employees, the public and the environment.",
+      "We firmly believe that our success is tied to the quality of our services and client satisfaction. Our management and resources are committed to customer satisfaction. Our primary objective is to eliminate all stress within the construction industry by supplying, delivering and managing projects to ensure high-quality, timely completion, while maintaining a commitment to Zero Harm to employees, the public and the environment.",
   }),
   team: [
     ["Syed Tahir Hussain", "CEO"],
@@ -166,7 +167,7 @@ export const real = {
     reviewed({
       title: "Quality Management",
       description:
-        "Dodzel has an independent QA/QC Department. Its head reports directly to the CEO, is based at head office and assigns quality staff to sites and projects. The department is supported by top management.",
+        "Dodzel has an independent QA/QC Department. Its head reports directly to the CEO. The department is based at the head office, assigns quality staff to sites and projects, and is supported by top management.",
     }),
   ],
   conduct: reviewed({

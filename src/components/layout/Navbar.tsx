@@ -12,6 +12,7 @@ import { Container } from "@/components/ui/Container";
 import { MegaMenu } from "./MegaMenu";
 import { MobileMenu } from "./MobileMenu";
 import { OverlayMenu } from "./OverlayMenu";
+import Image from "next/image";
 export function Navbar() {
   const pathname = usePathname();
 
@@ -41,9 +42,7 @@ export function Navbar() {
   const closeDialog = () => dialog.current?.close();
   return (
     <header
-      ref={header}
-      className="fixed start-3 end-3 top-3 z-50 rounded-[2.5rem] border border-line bg-paper/95 text-ink shadow-xl backdrop-blur-md sm:start-5 sm:end-5"
-
+      ref={header}className="fixed start-3 end-3 top-3 z-50 rounded-[2.5rem] border-2 border-[#A3201A] bg-paper/95 text-ink shadow-[0_0_0_4px_rgba(163,32,26,0.12),0_0_28px_rgba(163,32,26,0.28),0_16px_40px_-8px_rgba(163,32,26,0.55)] backdrop-blur-md sm:start-5 sm:end-5"
       onKeyDown={(event) => {
         if (event.key === "Escape" && menu) {
           header.current
@@ -58,14 +57,15 @@ export function Navbar() {
     >
       <div className="flex min-h-20 w-full items-center justify-between gap-2 px-5 sm:gap-4 sm:px-8">
         <Link href="/" className="flex items-center gap-2 sm:gap-3">
-          <span className="border-s-4 border-brand-red ps-3 font-display text-xl font-bold tracking-wider text-brand-red">
-            DODZEL
-            <span className="block text-[9px] tracking-[0.2em] text-muted">
-              ENGINEERING
-            </span>
-          </span>
-          <TodoBadge />
-          <span className="sr-only">home</span>
+          <Image
+            src="/media/images/dodzel-logo.jpeg"
+            alt="Dodzel"
+            width={160}
+            height={160}
+            priority
+            className="h-14 w-auto sm:h-16"
+          />
+          <span className="sr-only">Dodzel home</span>
         </Link>
         <nav
           aria-label="Main navigation"
@@ -100,7 +100,7 @@ export function Navbar() {
                 onClick={() => setMenu(null)}
                 aria-current={pathname === link.href ? "page" : undefined}
                 className={cn(
-                  "rounded-full px-3 py-3 text-sm transition-colors hover:bg-surface hover:text-brand-red",
+                  "rounded-full px-3 py-3 text-sm transition-colors hover:bg-surface hover:text-accent-on-light",
                   (
                     link.href === "/"
                       ? pathname === "/"

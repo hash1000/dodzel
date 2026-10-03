@@ -28,6 +28,10 @@ export const metadata: Metadata = {
     ? { index: true, follow: true }
     : { index: false, follow: false },
   metadataBase: new URL("https://dodzel.com"),
+  icons: {
+    icon: "/media/images/dodzel-favicon.jpeg",
+    apple: "/media/images/dodzel-favicon.jpeg",
+  },
   title: {
     default: "Dodzel Engineering | Engineering, Procurement & Construction",
     template: "%s | Dodzel Engineering",

@@ -26,23 +26,24 @@ export default function Page() {
           </p>
         </div>
         <div className="mt-14 grid gap-8 md:grid-cols-3">
-          {real.subsidiaries.map((entity) => (
+          {real.entities.map((entity) => (
             <section
               key={entity.name}
               id={entity.name.toLowerCase()}
               className="border-t border-line pt-6"
             >
               <h2 className="text-2xl font-semibold">
-                {entity.fullName} <ReviewBadge {...entity} />
+                {entity.name} <ReviewBadge {...entity} />
               </h2>
-              <p className="my-4 text-sm text-muted">{entity.detail}</p>
-              <p className="leading-relaxed text-muted">{entity.description}</p>
-              <a
-                className="mt-5 inline-block underline underline-offset-4"
-                href={entity.url}
-              >
-                {entity.name} website ↗
-              </a>
+              <p className="my-4 text-sm text-muted">{entity.country}</p>
+              {entity.url && (
+                <a
+                  className="mt-5 inline-block underline underline-offset-4"
+                  href={entity.url}
+                >
+                  Visit website ↗
+                </a>
+              )}
             </section>
           ))}
         </div>
