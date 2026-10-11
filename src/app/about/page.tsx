@@ -1,6 +1,6 @@
 import { pageMetadata } from "@/lib/metadata";
 import { real } from "@/content/real";
-import { placeholders } from "@/content/placeholder";
+import Image from "next/image";
 import { PageHero } from "@/components/ui/PageHero";
 import { Container } from "@/components/ui/Container";
 import { ReviewBadge } from "@/components/ui/ReviewBadge";
@@ -26,12 +26,26 @@ export default function Page() {
           </p>
         </div>
         <div className="mt-14 grid gap-8 md:grid-cols-3">
-          {real.entities.map((entity) => (
+          {real.entities.map((entity) => {
+            const subsidiary = real.subsidiaries.find((item) => item.fullName === entity.name);
+            return (
             <section
               key={entity.name}
-              id={entity.name.toLowerCase()}
+              id={subsidiary?.name.toLowerCase() ?? entity.name.toLowerCase().replaceAll(" ", "-")}
               className="border-t border-line pt-6"
             >
+              {subsidiary && (
+                <div className="mb-6 flex h-24 w-48 items-center justify-center rounded-card border border-line bg-white px-4 py-3">
+                  <Image
+                    src={subsidiary.logo}
+                    alt={`${entity.name} logo`}
+                    width={1401}
+                    height={752}
+                    sizes="160px"
+                    className="h-full w-full object-contain"
+                  />
+                </div>
+              )}
               <h2 className="text-2xl font-semibold">
                 {entity.name} <ReviewBadge {...entity} />
               </h2>
@@ -45,7 +59,8 @@ export default function Page() {
                 </a>
               )}
             </section>
-          ))}
+            );
+          })}
         </div>
         <div className="mt-16 grid gap-8 md:grid-cols-2">
           <section className="rounded-card border-t-4 border-accent-2 bg-surface p-8">
@@ -67,40 +82,51 @@ export default function Page() {
             </ul>
           </section>
         </div>
-        <section className="my-16 border-s-4 border-accent-2 bg-surface p-8">
+        <section className="my-16 grid gap-8 rounded-card border-s-4 border-accent-2 bg-surface p-6 sm:p-8 lg:grid-cols-[15rem_1fr] lg:items-center lg:gap-12">
+          <figure className="mx-auto w-full max-w-60">
+            <div className="relative mx-auto aspect-[4/5] w-48 overflow-hidden rounded-[50%] border border-line bg-white ring-4 ring-white sm:w-52">
+              <Image
+                src="/images/team/syed-tahir-hussain.jpeg"
+                alt="Syed Tahir Hussain, Chief Executive Officer"
+                fill
+                sizes="(min-width: 640px) 208px, 192px"
+                className="object-cover object-center"
+              />
+            </div>
+            <figcaption className="mt-4 text-center">
+              <span className="block text-lg font-semibold">Syed Tahir Hussain</span>
+              <span className="mt-1 block text-sm text-muted">Chief Executive Officer</span>
+            </figcaption>
+          </figure>
+          <div>
           <h2 className="mb-6 text-3xl">
             {real.ceoMessage.title} <ReviewBadge {...real.ceoMessage} />
           </h2>
           <blockquote className="max-w-4xl text-xl leading-relaxed">
             {real.ceoMessage.description}
           </blockquote>
-          <p className="mt-6 text-muted">Syed Tahir Hussain · CEO</p>
+          </div>
         </section>
-        <section>
-          <h2 className="mb-8 text-heading font-semibold">Corporate Team</h2>
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-5">
+        <section aria-labelledby="corporate-team-heading" className="rounded-card bg-white px-6 py-12 sm:px-10">
+          <h2 id="corporate-team-heading" className="mb-10 text-center text-heading font-semibold">Corporate Team</h2>
+          <div className="mx-auto grid max-w-5xl grid-cols-1 gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-8">
             {real.team.map((person) => (
               <article
                 key={person.name}
-                className="rounded-card border border-line bg-surface p-6"
+                className="mx-auto w-full max-w-60 text-center last:sm:col-span-2 lg:col-span-2 last:lg:col-start-4"
               >
-                <div
-                  aria-hidden="true"
-                  className="mb-5 grid aspect-square place-items-center rounded-full bg-paper font-display text-4xl text-accent-2"
-                >
-                  {person.name
-                    .replace("Mrs. ", "")
-                    .split(" ")
-                    .slice(0, 2)
-                    .map((word) => word[0])
-                    .join("")}
+                <div className="relative mx-auto mb-6 aspect-[4/5] w-40 overflow-hidden rounded-[50%] border border-line bg-white ring-4 ring-paper/60 sm:w-44">
+                  <Image
+                    src={person.image}
+                    alt={`Portrait of ${person.name}`}
+                    fill
+                    sizes="(min-width: 640px) 176px, 160px"
+                    className={person.name === "Syed Tahir Hussain" ? "object-cover object-center" : "object-cover object-top"}
+                  />
                 </div>
                 <h3 className="text-lg font-semibold">{person.name}</h3>
-                <p className="my-3 text-sm text-muted">{person.title}</p>
+                <p className="mt-1 text-sm leading-relaxed text-muted">{person.title}</p>
                 <ReviewBadge {...person} />
-                <p className="mt-4 text-xs text-muted">
-                  {placeholders.teamPhoto} <ReviewBadge todo />
-                </p>
               </article>
             ))}
           </div>

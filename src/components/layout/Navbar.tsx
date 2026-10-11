@@ -5,8 +5,6 @@ import { useEffect, useRef, useState } from "react";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { navLinks } from "@/lib/nav";
 import { cn } from "@/lib/utils";
-
-import { TodoBadge } from "@/components/ui/TodoBadge";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { MegaMenu } from "./MegaMenu";
@@ -42,7 +40,8 @@ export function Navbar() {
   const closeDialog = () => dialog.current?.close();
   return (
     <header
-      ref={header}className="fixed start-3 end-3 top-3 z-50 rounded-[2.5rem] border-2 border-[#A3201A] bg-paper/95 text-ink shadow-[0_0_0_4px_rgba(163,32,26,0.12),0_0_28px_rgba(163,32,26,0.28),0_16px_40px_-8px_rgba(163,32,26,0.55)] backdrop-blur-md sm:start-5 sm:end-5"
+      ref={header}
+      className="fixed z-50  bg-paper/95 text-ink w-full backdrop-blur-sm backdrop-saturate-150"
       onKeyDown={(event) => {
         if (event.key === "Escape" && menu) {
           header.current
@@ -55,10 +54,10 @@ export function Navbar() {
         if (!event.currentTarget.contains(event.relatedTarget)) setMenu(null);
       }}
     >
-      <div className="flex min-h-20 w-full items-center justify-between gap-2 px-5 sm:gap-4 sm:px-8">
+      <div className="flex min-h-20 w-full items-center justify-between  gap-2 px-5 sm:gap-4 sm:px-8">
         <Link href="/" className="flex items-center gap-2 sm:gap-3">
           <Image
-            src="/media/images/dodzel-logo.jpeg"
+            src="/assets/images/dodzel-logo.jpeg"
             alt="Dodzel"
             width={160}
             height={160}
@@ -100,13 +99,13 @@ export function Navbar() {
                 onClick={() => setMenu(null)}
                 aria-current={pathname === link.href ? "page" : undefined}
                 className={cn(
-                  "rounded-full px-3 py-3 text-sm transition-colors hover:bg-surface hover:text-accent-on-light",
+                  " px-3 py-3 text-sm transition-colors hover:bg-surface hover:text-accent-on-light border-[#B10304]",
                   (
                     link.href === "/"
                       ? pathname === "/"
                       : pathname.startsWith(link.href)
                   )
-                    ? "bg-surface-dark text-on-dark shadow-md"
+                    ? "border-b-3 "
                     : "text-ink",
                 )}
               >
@@ -213,7 +212,7 @@ export function Navbar() {
               autoFocus
               onClick={closeDialog}
               aria-label="Close navigation menu"
-              className="grid h-12 w-12 place-items-center rounded-full border border-line"
+              className="grid h-12 w-12 place-items-center rounded-full border border-line "
             >
               <X />
             </button>

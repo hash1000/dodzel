@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ReviewBadge } from "@/components/ui/ReviewBadge";
+import Image from "next/image";
 import { secondaryLinks, subsidiaries } from "@/lib/nav";
 export function OverlayMenu({ onNavigate }: { onNavigate: () => void }) {
   return (
@@ -31,10 +31,10 @@ export function OverlayMenu({ onNavigate }: { onNavigate: () => void }) {
             <li key={item.name}>
               <Link
                 href={`/about#${item.name.toLowerCase()}`}
-                className="text-2xl hover:underline"
+                className="inline-flex h-20 w-44 items-center justify-center rounded-card border border-white/15 bg-white px-4 py-3 transition-colors hover:border-accent"
                 onClick={onNavigate}
               >
-                {item.name} <ReviewBadge {...item} />
+                <Image src={item.logo} alt={item.name} width={1401} height={752} sizes="144px" className="h-full w-full object-contain" />
               </Link>
               <p className="mt-2 text-sm text-on-dark-muted">{item.detail}</p>
             </li>

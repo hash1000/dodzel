@@ -1,247 +1,136 @@
 "use client";
+
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
-import { ArrowDown, Pause, Play } from "lucide-react";
-import { real } from "@/content/real";
-import { heroMedia } from "@/content/media";
-import { loadBannerAnimations } from "@/lib/animations";
+import { ArrowDown, ArrowLeft, ArrowRight, Pause, Play } from "lucide-react";
 import { useMediaPolicy } from "@/lib/use-media-policy";
-import { ReviewBadge } from "@/components/ui/ReviewBadge";
-import { StockBadge } from "@/components/ui/StockBadge";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
-import { ActiveVideo } from "@/components/ui/ActiveVideo";
+import slider1 from "../../../public/assets/images/slider-1.jpeg";
+import slider2 from "../../../public/assets/images/slider-2.jpeg";
+import slider3 from "../../../public/assets/images/slider-3.jpeg";
+import slider4 from "../../../public/assets/images/slider-4.jpeg";
+import slider5 from "../../../public/assets/images/slider-5.jpeg";
+import slider6 from "../../../public/assets/images/slider-6.jpeg";
+
+const slides = [
+  { image: slider1, label: "Industrial infrastructure", position: "60% center" },
+  { image: slider2, label: "Structural engineering", position: "60% center" },
+  { image: slider3, label: "Fabrication capabilities", position: "65% center" },
+  { image: slider4, label: "People behind the progress", position: "60% center" },
+  { image: slider5, label: "Construction in focus", position: "65% center" },
+  { image: slider6, label: "Working together on site", position: "65% center" },
+];
+const duration = 7000;
+
 export function Hero() {
-  const ref = useRef<HTMLElement>(null),
-    headline = useRef<HTMLHeadingElement>(null);
-  const [active, setActive] = useState(0),
-    [previous, setPrevious] = useState<number | null>(null),
-    [hovered, setHovered] = useState(false),
-    [focused, setFocused] = useState(false),
-    [paused, setPaused] = useState(false),
-    [visible, setVisible] = useState(true);
-  const { reduced, videoAllowed, mobile } = useMediaPolicy();
-  const [mediaReady, setMediaReady] = useState(false);
-  useEffect(() => {
-    let timer: ReturnType<typeof setTimeout>;
-    const ready = () => {
-      timer = setTimeout(() => setMediaReady(true), 350);
-    };
-    if (document.readyState === "complete") ready();
-    else window.addEventListener("load", ready, { once: true });
-    return () => {
-      clearTimeout(timer);
-      window.removeEventListener("load", ready);
-    };
-  }, []);
-  const remaining = useRef(8000);
-  const select = (index: number) => {
-    if (index === active) return;
-    setPrevious(active);
-    setActive(index);
-    remaining.current = 8000;
-  };
-  const autoplay = !reduced && !hovered && !focused && !paused && visible;
+  const ref = useRef<HTMLElement>(null);
+  const [active, setActive] = useState(0);
+  const [paused, setPaused] = useState(false);
+  const [focused, setFocused] = useState(false);
+  const [visible, setVisible] = useState(true);
+  const { reduced } = useMediaPolicy();
+  const autoplay = !reduced && !paused && !focused && visible;
+
+  function select(index: number) {
+    setActive((index + slides.length) % slides.length);
+  }
+
   useEffect(() => {
     if (!autoplay) return;
-    const started = performance.now();
     const timer = setTimeout(() => {
-      setPrevious(active);
-      setActive((index) => (index + 1) % real.hero.length);
-      remaining.current = 8000;
-    }, remaining.current);
-    return () => {
-      clearTimeout(timer);
-      remaining.current = Math.max(
-        0,
-        remaining.current - (performance.now() - started),
-      );
-    };
-  }, [autoplay, active]);
-  useEffect(() => {
-    if (previous === null) return;
-    const timer = setTimeout(() => setPrevious(null), 750);
+      setActive((index) => (index + 1) % slides.length);
+    }, duration);
     return () => clearTimeout(timer);
-  }, [previous, active]);
+  }, [autoplay, active]);
+
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => setVisible(entry.isIntersecting),
-      { threshold: 0.1 },
-    );
+    const observer = new IntersectionObserver(([entry]) => {
+      setVisible(entry.isIntersecting && document.visibilityState === "visible");
+    }, { threshold: 0.1 });
     if (ref.current) observer.observe(ref.current);
-    const onPage = () =>
-      setVisible(
-        document.visibilityState === "visible" &&
-          (ref.current?.getBoundingClientRect().bottom ?? 0) > 0,
-      );
-    document.addEventListener("visibilitychange", onPage);
+    const sync = () => setVisible(document.visibilityState === "visible" && (ref.current?.getBoundingClientRect().bottom ?? 0) > 0);
+    document.addEventListener("visibilitychange", sync);
     return () => {
       observer.disconnect();
-      document.removeEventListener("visibilitychange", onPage);
+      document.removeEventListener("visibilitychange", sync);
     };
   }, []);
-  useEffect(() => {
-    if (reduced || !mediaReady || !headline.current) return;
-    let alive = true;
-    let cleanup = () => {};
-    const animate = async () => {
-      const { gsap, SplitText } = await loadBannerAnimations();
-      if (!alive || !headline.current) return;
-      const split = SplitText.create(headline.current, { type: "words", wordsClass: "hero-word", aria: "auto" });
-      const tween = gsap.fromTo(split.words, { y: 10 }, { y: 0, duration: .5, stagger: .025, ease: "power3.out" });
-      cleanup = () => { tween.kill(); split.revert(); };
-    };
-    void animate();
-    return () => { alive = false; cleanup(); };
-  }, [active, reduced, mediaReady]);
-  const asset = heroMedia[active],
-    slide = real.hero[active],
-    next = heroMedia[(active + 1) % heroMedia.length];
-  const nextSource = next.sources.find((s) => s.mobile === mobile);
+
   return (
     <section
       ref={ref}
       data-tone="dark"
-      aria-label="Introduction"
-      aria-roledescription="carousel"
-      className="relative isolate min-h-[48rem] overflow-hidden bg-surface-dark text-on-dark lg:min-h-[52rem]"
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
+      aria-label="Dodzel Engineering introduction"
+      className="relative isolate min-h-dvh overflow-hidden bg-surface-dark text-on-dark"
       onFocusCapture={() => setFocused(true)}
-      onBlurCapture={(e) => {
-        if (!e.currentTarget.contains(e.relatedTarget)) setFocused(false);
+      onBlurCapture={(event) => {
+        if (!event.currentTarget.contains(event.relatedTarget)) setFocused(false);
       }}
     >
-      <div className="absolute inset-0 -z-20">
-        {previous !== null && (
-          <Image
-            src={heroMedia[previous].srcset.at(-1)!.avif}
-            alt=""
-            fill
-            sizes="100vw"
-            className="object-cover"
-            aria-hidden="true"
-          />
-        )}
-        <Image
-          key={active}
-          data-hero-poster
-          src={asset.srcset.at(-1)!.avif}
-          alt={asset.alt}
-          fill
-          preload={active === 0}
-          loading="eager"
-          fetchPriority="high"
-          sizes="100vw"
-          placeholder="blur"
-          blurDataURL={asset.blurDataURL}
-          style={{
-            objectPosition: `${asset.focal.x * 100}% ${asset.focal.y * 100}%`,
-          }}
-          className={`object-cover ${previous !== null ? "hero-poster-enter" : ""}`}
-        />
-        {videoAllowed && mediaReady && (
-          <ActiveVideo
-            key={`${active}-${mobile}`}
-            asset={asset}
-            mobile={mobile}
-            paused={paused}
-            visible={visible}
-          />
-        )}
-        {videoAllowed && mediaReady && visible && !paused && nextSource && (
-          <video
-            key={`next-${nextSource.src}`}
-            data-next-video
-            className="hidden"
-            muted
-            playsInline
-            preload="metadata"
-            aria-hidden="true"
-          >
-            <source src={nextSource.src} type={nextSource.type} />
-          </video>
-        )}
+      <div className="absolute inset-0 -z-20" aria-hidden="true">
+        {slides.map((slide, index) => (
+          <div key={slide.label} className={`absolute inset-0 transition-opacity duration-1000 motion-reduce:transition-none ${active === index ? "opacity-100" : "opacity-0"}`}>
+            <Image
+              src={slide.image}
+              alt=""
+              fill
+              preload={index === 0}
+              loading={index === 0 ? undefined : "lazy"}
+              sizes="100vw"
+              placeholder="blur"
+              className="object-cover"
+              style={{ objectPosition: slide.position }}
+            />
+          </div>
+        ))}
       </div>
-      <div
-        aria-hidden="true"
-        className="hero-shade pointer-events-none absolute inset-0 -z-10"
-        style={{ opacity: asset.scrimStrength ?? .64 }}
-      />
-      <Container className="flex min-h-[48rem] flex-col justify-end pb-28 pt-36 lg:min-h-[52rem]">
-        <div className="mb-6 flex flex-wrap items-center gap-3">
-          <p className="text-xs uppercase tracking-[0.15em] text-accent">
-            Pakistan / Qatar / Saudi Arabia / Iraq
-          </p>
-          <ReviewBadge confirm />
+      <div aria-hidden="true" className="absolute inset-0 -z-10 bg-[linear-gradient(90deg,rgba(7,24,44,0.94)_0%,rgba(7,24,44,0.76)_42%,rgba(7,24,44,0.22)_100%)]" />
+      <div aria-hidden="true" className="absolute inset-0 -z-10 bg-[linear-gradient(0deg,rgba(7,24,44,0.92)_0%,transparent_45%)]" />
+      <Container className="flex min-h-dvh flex-col pb-24 pt-32 sm:pt-36">
+        <div className="flex flex-1 items-center py-6 lg:py-8">
+          <div className="max-w-3xl">
+            <p className="mb-6 flex items-center gap-3 text-[0.65rem] font-medium uppercase tracking-[0.22em] text-on-dark-muted sm:text-xs">
+              <span className="h-px w-8 bg-accent" aria-hidden="true" />
+              Engineering. Construction. Commitment.
+            </p>
+            <h1 className="text-[clamp(3rem,6.5vw,6.5rem)] font-semibold leading-[0.98] tracking-[-0.035em]">
+              Engineering<br />
+              progress.<br />
+              <span className="text-accent">Building trust.</span>
+            </h1>
+            <p className="mt-7 max-w-[43ch] text-base leading-relaxed text-on-dark-muted sm:text-lg">
+              Engineering, procurement and construction for the infrastructure that moves industries forward.
+            </p>
+            <div className="mt-8 flex flex-wrap gap-3 sm:gap-4">
+              <Button href="/services" className="min-h-14 px-6">Explore our services</Button>
+              <Button href="/projects" variant="outline" className="min-h-14 border-white/40 px-6 hover:bg-white/10">View our projects</Button>
+            </div>
+          </div>
         </div>
-        <div className="min-w-0 lg:max-w-[49%]">
-          <p className="mb-4 text-xs uppercase tracking-widest text-on-dark-muted">
-            {slide.category}
-          </p>
-          <h1
-            key={active}
-            ref={headline}
-            className="text-hero font-semibold leading-[1.05] tracking-tight"
-          >
-            {slide.headline}
-          </h1>
-          <p className="mb-6 mt-6 max-w-[43ch] text-base leading-relaxed text-on-dark-muted">
-            {slide.description}
-          </p>
-          <Button href={slide.href}>{slide.cta}</Button>
-        </div>
-        <div className="mt-10 flex items-center justify-between gap-4 border-t border-dark-line/50 pt-4">
-          <div className="flex items-center gap-4">
-            <div className="flex gap-3">
-              {real.hero.map((item, index) => (
-                <button
-                  key={item.category}
-                  onClick={() => select(index)}
-                  aria-label={`0${index + 1} — Show slide ${index + 1}: ${item.category}`}
-                  aria-pressed={active === index}
-                  className="min-h-11 w-11 py-2 text-start sm:w-20"
-                >
-                  <span
-                    className={`tabular-nums text-xs ${active === index ? "text-accent" : "text-on-dark-muted"}`}
-                  >
-                    0{index + 1}
-                  </span>
-                  <span className="mt-3 block h-0.5 overflow-hidden bg-dark-line">
-                    <span
-                      key={`${active}-${index}`}
-                      className={`block h-full bg-accent ${active === index ? "hero-progress" : "w-0"}`}
-                      style={{
-                        animationPlayState: autoplay ? "running" : "paused",
-                        width: reduced && active === index ? "100%" : undefined,
-                      }}
-                    />
-                  </span>
+        <div className="mt-6 flex flex-col justify-between gap-6 border-t border-white/20 pt-6 sm:flex-row sm:items-end">
+          <div>
+            <p className="mb-2 text-[0.65rem] uppercase tracking-[0.2em] text-accent">Our presence</p>
+            <p className="text-xs leading-relaxed text-on-dark-muted sm:text-sm">Pakistan <span className="px-1 text-white/40">/</span> Qatar <span className="px-1 text-white/40">/</span> Saudi Arabia <span className="px-1 text-white/40">/</span> Iraq</p>
+          </div>
+          <div className="flex flex-wrap items-center gap-x-3 gap-y-1" role="group" aria-label="Background slideshow controls">
+            <span className="text-xs tabular-nums"><span className="text-accent">0{active + 1}</span><span className="px-2 text-white/40">/</span>06</span>
+            <div className="flex gap-1">
+              {slides.map((slide, index) => (
+                <button key={slide.label} type="button" onClick={() => select(index)} aria-label={`Show image ${index + 1}: ${slide.label}`} aria-pressed={active === index} className="group flex min-h-11 w-5 items-center sm:w-7">
+                  <span className={`h-0.5 w-full transition-colors ${active === index ? "bg-accent" : "bg-white/35 group-hover:bg-white"}`} />
                 </button>
               ))}
             </div>
-            <button
-              aria-label={paused ? "Play slideshow" : "Pause slideshow"}
-              aria-pressed={paused}
-              onClick={() => setPaused(!paused)}
-              className="grid h-11 w-11 place-items-center rounded-full border border-dark-line"
-            >
-              {paused ? <Play size={16} /> : <Pause size={16} />}
-            </button>
+            <div className="flex gap-1">
+              <button type="button" onClick={() => select(active - 1)} aria-label="Previous background image" className="grid h-11 w-11 place-items-center rounded-full border border-white/25 transition-colors hover:border-accent hover:text-accent"><ArrowLeft size={16} aria-hidden="true" /></button>
+              <button type="button" onClick={() => setPaused(!paused)} aria-label={paused ? "Play slideshow" : "Pause slideshow"} aria-pressed={paused} className="grid h-11 w-11 place-items-center rounded-full border border-white/25 transition-colors hover:border-accent hover:text-accent">{paused ? <Play size={15} aria-hidden="true" /> : <Pause size={15} aria-hidden="true" />}</button>
+              <button type="button" onClick={() => select(active + 1)} aria-label="Next background image" className="grid h-11 w-11 place-items-center rounded-full border border-white/25 transition-colors hover:border-accent hover:text-accent"><ArrowRight size={16} aria-hidden="true" /></button>
+            </div>
           </div>
-          <a
-            href="#intent"
-            aria-label="Explore the homepage"
-            className="inline-flex min-h-11 items-center gap-3 text-xs text-on-dark-muted"
-          >
-            <span className="hidden sm:inline">Scroll to explore</span>
-            <ArrowDown size={18} />
-          </a>
+          <a href="#intent" className="hidden min-h-11 items-center gap-3 text-xs text-on-dark-muted transition-colors hover:text-accent xl:inline-flex">Explore Dodzel <ArrowDown size={16} aria-hidden="true" /></a>
         </div>
       </Container>
-      <div className="absolute end-6 bottom-20">
-        <StockBadge credit={asset.credit} />
-      </div>
     </section>
   );
 }

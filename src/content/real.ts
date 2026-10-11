@@ -37,6 +37,7 @@ export const real = {
   subsidiaries: [
     reviewed({
       name: "Belgrass",
+      logo: "/images/belgrass.jpeg",
       fullName: "Belgrass Construction Company WLL",
       country: "Qatar",
       detail: "Construction · Qatar",
@@ -46,6 +47,7 @@ export const real = {
     }),
     reviewed({
       name: "Bimex",
+      logo: "/images/bimex.jpeg",
       fullName: "Bimex Trading Company",
       country: "Qatar",
       detail: "Supply chain · Qatar",
@@ -55,6 +57,7 @@ export const real = {
     }),
     reviewed({
       name: "Novex",
+      logo: "/images/novex.jpeg",
       fullName: "Novex Trading Company",
       country: "Pakistan",
       detail: "Machine technologies · Pakistan",
@@ -147,12 +150,12 @@ export const real = {
       "We firmly believe that our success is tied to the quality of our services and client satisfaction. Our management and resources are committed to customer satisfaction. Our primary objective is to eliminate all stress within the construction industry by supplying, delivering and managing projects to ensure high-quality, timely completion, while maintaining a commitment to Zero Harm to employees, the public and the environment.",
   }),
   team: [
-    ["Syed Tahir Hussain", "CEO"],
-    ["Syed Mazhar Hussain", "Director Operations"],
-    ["Syed Sibet-e-Hasnain", "Director of Legal"],
-    ["Shahzad Hussain", "VP Information & Technology"],
-    ["Mrs. Bushra Shahzad", "Director Human Resource"],
-  ].map(([name, title]) => reviewed({ name, title })),
+    ["Syed Tahir Hussain", "CEO", "/images/team/syed-tahir-hussain.jpeg"],
+    ["Syed Mazhar Hussain", "Director Operations", "/images/team/syed-mazhar-hussain.jpeg"],
+    ["Syed Sibet-e-Hasnain", "Director of Legal", "/images/team/syed-sibet-e-hasnain.jpeg"],
+    ["Shahzad Hussain", "VP Information & Technology", "/images/team/shahzad-hussain.jpeg"],
+    ["Mrs. Bushra Shahzad", "Director Human Resource", "/images/team/bushra-shahzad.jpeg"],
+  ].map(([name, title, image]) => reviewed({ name, title, image })),
   policies: [
     reviewed({
       title: "Our policy",

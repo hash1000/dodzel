@@ -29,8 +29,8 @@ export const metadata: Metadata = {
     : { index: false, follow: false },
   metadataBase: new URL("https://dodzel.com"),
   icons: {
-    icon: "/media/images/dodzel-favicon.jpeg",
-    apple: "/media/images/dodzel-favicon.jpeg",
+    icon: "/assets/images/dodzel-favicon.jpeg",
+    apple: "/assets/images/dodzel-favicon.jpeg",
   },
   title: {
     default: "Dodzel Engineering | Engineering, Procurement & Construction",
@@ -59,11 +59,11 @@ export default function RootLayout({
       className={`${heading.variable} ${text.variable} antialiased`}
     >
       <body className="font-sans">
-        <ReviewModeSync />
+        {/* <ReviewModeSync /> */}
         <SiteShell
           chrome={
             <>
-              <SkipLink />
+              {/* <SkipLink /> */}
               <Navbar />
             </>
           }
