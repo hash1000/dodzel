@@ -21,6 +21,7 @@ export function OrganizationJsonLd() {
       "@type": "Organization",
       name: entity.fullName,
       url: entity.url,
+      email: entity.email,
     })),
   };
   return (

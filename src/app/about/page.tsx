@@ -34,10 +34,9 @@ export default function Page() {
               id={subsidiary?.name.toLowerCase() ?? entity.name.toLowerCase().replaceAll(" ", "-")}
               className="border-t border-line pt-6"
             >
-              {subsidiary && (
                 <div className="mb-6 flex h-24 w-48 items-center justify-center rounded-card border border-line bg-white px-4 py-3">
                   <Image
-                    src={subsidiary.logo}
+                    src={entity.logo}
                     alt={`${entity.name} logo`}
                     width={1401}
                     height={752}
@@ -45,11 +44,13 @@ export default function Page() {
                     className="h-full w-full object-contain"
                   />
                 </div>
-              )}
               <h2 className="text-2xl font-semibold">
                 {entity.name} <ReviewBadge {...entity} />
               </h2>
-              <p className="my-4 text-sm text-muted">{entity.country}</p>
+              <p className="my-4 text-sm text-muted">{[entity.city, entity.country].filter(Boolean).join(" · ")}</p>
+              <a href={`mailto:${entity.email}`} className="block break-words text-sm underline underline-offset-4 hover:text-accent-on-light">
+                {entity.email}
+              </a>
               {entity.url && (
                 <a
                   className="mt-5 inline-block underline underline-offset-4"
