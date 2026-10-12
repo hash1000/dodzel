@@ -6,7 +6,6 @@ import type { MediaAsset } from "@/content/media";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { ReviewBadge } from "@/components/ui/ReviewBadge";
-import { StockBadge } from "@/components/ui/StockBadge";
 export type ShowcaseChip = { label: string; href?: string; confirm?: boolean; todo?: boolean; reviewOnly?: boolean };
 export type ShowcaseItem = { id: string; title: string; image: MediaAsset; description: string; chips: ShowcaseChip[]; href: string; todo?: boolean; confirm?: boolean };
 const desktopQuery = "(min-width: 1024px)";
@@ -38,10 +37,9 @@ function ShowcaseContent({ item }: { item: ShowcaseItem }) {
 function ShowcaseImage({ item, index, active }: { item: ShowcaseItem; index: number; active: boolean }) {
   const asset = item.image;
   return <div className="relative aspect-video overflow-hidden rounded-sm bg-surface-raised">
-    {asset.kind === "placeholder" ? <div className="absolute inset-0 grid place-items-center text-xs text-on-dark">Image needed <ReviewBadge todo /></div> : <>
+    {asset.kind === "placeholder" ? <div className="absolute inset-0 grid place-items-center text-xs text-on-dark"></div> : <>
       <Image data-showcase-image={item.id} src={asset.srcset.at(-1)?.avif ?? asset.src} alt={active ? asset.alt : ""} fill sizes="(max-width: 1023px) 100vw, 66vw" loading={index === 0 ? "eager" : "lazy"} unoptimized={asset.srcset.length === 1} placeholder={asset.blurDataURL ? "blur" : "empty"} blurDataURL={asset.blurDataURL || undefined} className="showcase-image object-cover" style={{ objectPosition: `${asset.focal.x * 100}% ${asset.focal.y * 100}%` }} />
       <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-scrim" style={{ opacity: Math.min(.15, asset.scrimStrength ?? .06) }} />
-      {asset.stock && <div className="absolute start-4 top-4"><StockBadge credit={asset.credit} /></div>}
     </>}
   </div>;
 }

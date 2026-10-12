@@ -42,8 +42,7 @@ export default function Page() {
           <div>
             <h2 className="mb-4 text-3xl">People and working environments</h2>
             <p className="text-muted">
-              An illustrative stock view of an industrial worksite. Dodzel
-              personnel imagery awaits approval.
+              A commitment to Zero Harm for employees, the public and the environment.
             </p>
           </div>
           <MediaFrame

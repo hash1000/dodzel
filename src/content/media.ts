@@ -3,8 +3,8 @@ export type MediaAsset = {kind: 'image' | 'video' | 'placeholder';src:string;src
 const base = (process.env.NEXT_PUBLIC_MEDIA_BASE_URL ?? '').replace(/\/$/, '');
 const url = (src:string) => {const encoded=src.split('/').map(encodeURIComponent).join('/');return src.startsWith('/assets/') && base ? base + encoded : encoded;};
 const assets: Record<string,MediaAsset> = {
-  "video:12966194_4096_2160_25fps": {
-    "kind": "video",
+  "image:12966194_4096_2160_25fps-poster": {
+    "kind": "image",
     "src": "/assets/images/12966194_4096_2160_25fps-poster-1080.avif",
     "srcset": [
       {
@@ -28,16 +28,7 @@ const assets: Record<string,MediaAsset> = {
         "webp": "/assets/images/12966194_4096_2160_25fps-poster-2560.webp"
       }
     ],
-    "sources": [
-      {
-        "src": "/assets/videos/12966194_4096_2160_25fps-720.mp4",
-        "type": "video/mp4",
-        "width": 1280,
-        "height": 720,
-        "bytes": 566762,
-        "mobile": true
-      }
-    ],
+    "sources": [],
     "poster": "/assets/images/12966194_4096_2160_25fps-poster-1080.avif",
     "blurDataURL": "data:image/webp;base64,UklGRlYAAABXRUJQVlA4IEoAAACwAwCdASoYAA0APxFysFAsJqSisAgBgCIJaQAAKvUB2g05eKHQAAD9YxT1iGQA9MzZJI0hFXJ88PJS4M0wYk/JuMijDP8JeP4QAA==",
     "focal": {
@@ -51,72 +42,8 @@ const assets: Record<string,MediaAsset> = {
     "height": 2160,
     "scrimStrength": 0.81
   },
-  "video:14529100_3840_2160_30fps": {
-    "kind": "video",
-    "src": "/assets/images/14529100_3840_2160_30fps-poster-1080.avif",
-    "srcset": [
-      {
-        "width": 640,
-        "avif": "/assets/images/14529100_3840_2160_30fps-poster-640.avif",
-        "webp": "/assets/images/14529100_3840_2160_30fps-poster-640.webp"
-      },
-      {
-        "width": 1080,
-        "avif": "/assets/images/14529100_3840_2160_30fps-poster-1080.avif",
-        "webp": "/assets/images/14529100_3840_2160_30fps-poster-1080.webp"
-      },
-      {
-        "width": 1920,
-        "avif": "/assets/images/14529100_3840_2160_30fps-poster-1920.avif",
-        "webp": "/assets/images/14529100_3840_2160_30fps-poster-1920.webp"
-      },
-      {
-        "width": 2560,
-        "avif": "/assets/images/14529100_3840_2160_30fps-poster-2560.avif",
-        "webp": "/assets/images/14529100_3840_2160_30fps-poster-2560.webp"
-      }
-    ],
-    "sources": [
-      {
-        "src": "/assets/videos/14529100_3840_2160_30fps-1080.mp4",
-        "type": "video/mp4",
-        "width": 1920,
-        "height": 1080,
-        "bytes": 1370149,
-        "mobile": false
-      },
-      {
-        "src": "/assets/videos/14529100_3840_2160_30fps-1080-vp9.webm",
-        "type": "video/webm",
-        "width": 1920,
-        "height": 1080,
-        "bytes": 2472831,
-        "mobile": false
-      },
-      {
-        "src": "/assets/videos/14529100_3840_2160_30fps-720.mp4",
-        "type": "video/mp4",
-        "width": 1280,
-        "height": 720,
-        "bytes": 355795,
-        "mobile": true
-      }
-    ],
-    "poster": "/assets/images/14529100_3840_2160_30fps-poster-1080.avif",
-    "blurDataURL": "data:image/webp;base64,UklGRmQAAABXRUJQVlA4IFgAAADwAwCdASoYAA4APxF2sVAsJ6SisAgBgCIJQBOmUGXShkdZ/YSOWJAAAPBvvmAHRotCbiw5QsX2dXncnalwB8xa06LfQW9+1QMMS/xBNKl7UCcizsbQAAAA",
-    "focal": {
-      "x": 0.5,
-      "y": 0.5
-    },
-    "alt": "Offshore platform and vessel at sunset",
-    "credit": "User-supplied stock. Source URL, author and licence awaiting confirmation.",
-    "stock": true,
-    "width": 3840,
-    "height": 2160,
-    "scrimStrength": 0.77
-  },
-  "video:15122253_2160_3840_30fps": {
-    "kind": "video",
+  "image:15122253_2160_3840_30fps-poster": {
+    "kind": "image",
     "src": "/assets/images/15122253_2160_3840_30fps-poster-1080.avif",
     "srcset": [
       {
@@ -135,16 +62,7 @@ const assets: Record<string,MediaAsset> = {
         "webp": "/assets/images/15122253_2160_3840_30fps-poster-1920.webp"
       }
     ],
-    "sources": [
-      {
-        "src": "/assets/videos/15122253_2160_3840_30fps-720.mp4",
-        "type": "video/mp4",
-        "width": 406,
-        "height": 720,
-        "bytes": 275337,
-        "mobile": true
-      }
-    ],
+    "sources": [],
     "poster": "/assets/images/15122253_2160_3840_30fps-poster-1080.avif",
     "blurDataURL": "data:image/webp;base64,UklGRkIAAABXRUJQVlA4IDYAAADwAQCdASoJABAABABoJZACdADcH7gxQAAA934wTi6xr1iyuP960rNJUk6Gt87TsE1sq9M/AAA=",
     "focal": {
@@ -158,8 +76,8 @@ const assets: Record<string,MediaAsset> = {
     "height": 3840,
     "scrimStrength": 0.83
   },
-  "video:4392869-uhd_3840_2160_30fps": {
-    "kind": "video",
+  "image:4392869-uhd_3840_2160_30fps-poster": {
+    "kind": "image",
     "src": "/assets/images/4392869-uhd_3840_2160_30fps-poster-1080.avif",
     "srcset": [
       {
@@ -183,16 +101,7 @@ const assets: Record<string,MediaAsset> = {
         "webp": "/assets/images/4392869-uhd_3840_2160_30fps-poster-2560.webp"
       }
     ],
-    "sources": [
-      {
-        "src": "/assets/videos/4392869-uhd_3840_2160_30fps-720.mp4",
-        "type": "video/mp4",
-        "width": 1280,
-        "height": 720,
-        "bytes": 255105,
-        "mobile": true
-      }
-    ],
+    "sources": [],
     "poster": "/assets/images/4392869-uhd_3840_2160_30fps-poster-1080.avif",
     "blurDataURL": "data:image/webp;base64,UklGRlAAAABXRUJQVlA4IEQAAACwAwCdASoYAA4APxF4tFGsJyUisAgBgCIJZQAAW+sAeKcqeFinbAD+3nY3FPMOH2wChzvMhKZZLtz2spygC4YVLDQAAA==",
     "focal": {
@@ -206,8 +115,8 @@ const assets: Record<string,MediaAsset> = {
     "height": 2160,
     "scrimStrength": 0.82
   },
-  "video:9339478-uhd_3840_2160_24fps": {
-    "kind": "video",
+  "image:9339478-uhd_3840_2160_24fps-poster": {
+    "kind": "image",
     "src": "/assets/images/9339478-uhd_3840_2160_24fps-poster-1080.avif",
     "srcset": [
       {
@@ -231,16 +140,7 @@ const assets: Record<string,MediaAsset> = {
         "webp": "/assets/images/9339478-uhd_3840_2160_24fps-poster-2560.webp"
       }
     ],
-    "sources": [
-      {
-        "src": "/assets/videos/9339478-uhd_3840_2160_24fps-720.mp4",
-        "type": "video/mp4",
-        "width": 1280,
-        "height": 720,
-        "bytes": 822155,
-        "mobile": true
-      }
-    ],
+    "sources": [],
     "poster": "/assets/images/9339478-uhd_3840_2160_24fps-poster-1080.avif",
     "blurDataURL": "data:image/webp;base64,UklGRloAAABXRUJQVlA4IE4AAAAQBACdASoYAA4APxF0sVAsJySisAgBgCIJZwDA3CHZmvHU6R8d6/uSoAD+w0NoCv/590slDagvCKs3S6l8oyG9cISaEJFk8IAaQACzgAA=",
     "focal": {
@@ -366,45 +266,6 @@ const assets: Record<string,MediaAsset> = {
     "height": 3370,
     "scrimStrength": 0.75
   },
-  "image:alex-kotliarskyi-QBpZGqEMsKg-unsplash": {
-    "kind": "image",
-    "src": "/assets/images/alex-kotliarskyi-QBpZGqEMsKg-unsplash-1080.avif",
-    "srcset": [
-      {
-        "width": 640,
-        "avif": "/assets/images/alex-kotliarskyi-QBpZGqEMsKg-unsplash-640.avif",
-        "webp": "/assets/images/alex-kotliarskyi-QBpZGqEMsKg-unsplash-640.webp"
-      },
-      {
-        "width": 1080,
-        "avif": "/assets/images/alex-kotliarskyi-QBpZGqEMsKg-unsplash-1080.avif",
-        "webp": "/assets/images/alex-kotliarskyi-QBpZGqEMsKg-unsplash-1080.webp"
-      },
-      {
-        "width": 1920,
-        "avif": "/assets/images/alex-kotliarskyi-QBpZGqEMsKg-unsplash-1920.avif",
-        "webp": "/assets/images/alex-kotliarskyi-QBpZGqEMsKg-unsplash-1920.webp"
-      },
-      {
-        "width": 2560,
-        "avif": "/assets/images/alex-kotliarskyi-QBpZGqEMsKg-unsplash-2560.avif",
-        "webp": "/assets/images/alex-kotliarskyi-QBpZGqEMsKg-unsplash-2560.webp"
-      }
-    ],
-    "sources": [],
-    "poster": "/assets/images/alex-kotliarskyi-QBpZGqEMsKg-unsplash-1080.avif",
-    "blurDataURL": "data:image/webp;base64,UklGRmQAAABXRUJQVlA4IFgAAADQAwCdASoYABAAPxFysFAsJqSisAgBgCIJZwDKAAyvHUimXnJ3bCAA/uj/QycWdOGrrAdZtCEocuUxWrRmsBQnPFLtFsi26MIY/tQt2KZxd9/PmlzqAAAA",
-    "focal": {
-      "x": 0.5,
-      "y": 0.5
-    },
-    "alt": "alex kotliarskyi QBpZGqEMsKg unsplash",
-    "credit": "User-supplied stock. Source URL, author and licence awaiting confirmation.",
-    "stock": true,
-    "width": 5472,
-    "height": 3648,
-    "scrimStrength": 0.84
-  },
   "image:cement-plant": {
     "kind": "image",
     "src": "/assets/images/cement-plant-1080.avif",
@@ -444,8 +305,8 @@ const assets: Record<string,MediaAsset> = {
     "height": 3293,
     "scrimStrength": 0.84
   },
-  "video:cement-plant": {
-    "kind": "video",
+  "image:cement-plant-poster": {
+    "kind": "image",
     "src": "/assets/images/cement-plant-poster-1080.avif",
     "srcset": [
       {
@@ -469,16 +330,7 @@ const assets: Record<string,MediaAsset> = {
         "webp": "/assets/images/cement-plant-poster-2560.webp"
       }
     ],
-    "sources": [
-      {
-        "src": "/assets/videos/cement-plant-720.mp4",
-        "type": "video/mp4",
-        "width": 1280,
-        "height": 720,
-        "bytes": 1585152,
-        "mobile": true
-      }
-    ],
+    "sources": [],
     "poster": "/assets/images/cement-plant-poster-1080.avif",
     "blurDataURL": "data:image/webp;base64,UklGRmAAAABXRUJQVlA4IFQAAADQAwCdASoYAA4APxF2slEsJySisAgBgCIJYwCw7CHHHUY3O9+jjAAA/eNCJIYp3TNyup6m8DIuC9ItzIovliFjmQje+y2DXeyNiWNW+wguVRoAAAA=",
     "focal": {
@@ -570,45 +422,6 @@ const assets: Record<string,MediaAsset> = {
     "height": 2595,
     "scrimStrength": 0.84
   },
-  "image:haydn-n8TBTzFIRzs-unsplash": {
-    "kind": "image",
-    "src": "/assets/images/haydn-n8TBTzFIRzs-unsplash-1080.avif",
-    "srcset": [
-      {
-        "width": 640,
-        "avif": "/assets/images/haydn-n8TBTzFIRzs-unsplash-640.avif",
-        "webp": "/assets/images/haydn-n8TBTzFIRzs-unsplash-640.webp"
-      },
-      {
-        "width": 1080,
-        "avif": "/assets/images/haydn-n8TBTzFIRzs-unsplash-1080.avif",
-        "webp": "/assets/images/haydn-n8TBTzFIRzs-unsplash-1080.webp"
-      },
-      {
-        "width": 1920,
-        "avif": "/assets/images/haydn-n8TBTzFIRzs-unsplash-1920.avif",
-        "webp": "/assets/images/haydn-n8TBTzFIRzs-unsplash-1920.webp"
-      },
-      {
-        "width": 2560,
-        "avif": "/assets/images/haydn-n8TBTzFIRzs-unsplash-2560.avif",
-        "webp": "/assets/images/haydn-n8TBTzFIRzs-unsplash-2560.webp"
-      }
-    ],
-    "sources": [],
-    "poster": "/assets/images/haydn-n8TBTzFIRzs-unsplash-1080.avif",
-    "blurDataURL": "data:image/webp;base64,UklGRmIAAABXRUJQVlA4IFYAAACQAwCdASoYABAAPxFwsFAsJiSisAgBgCIJZACdAGWawK0waMPYAP774Xz8XpUl0v7HneZrdqtaYyurKMQBq7ugF0bGU059//gcjWd8CWvUU1vvrbYAAA==",
-    "focal": {
-      "x": 0.5,
-      "y": 0.5
-    },
-    "alt": "haydn n8TBTzFIRzs unsplash",
-    "credit": "User-supplied stock. Source URL, author and licence awaiting confirmation.",
-    "stock": true,
-    "width": 6000,
-    "height": 4000,
-    "scrimStrength": 0.6
-  },
   "image:industrial-plant-night": {
     "kind": "image",
     "src": "/assets/images/industrial-plant-night-1080.avif",
@@ -648,8 +461,8 @@ const assets: Record<string,MediaAsset> = {
     "height": 4000,
     "scrimStrength": 0.84
   },
-  "video:industrial-plant-night": {
-    "kind": "video",
+  "image:industrial-plant-night-poster": {
+    "kind": "image",
     "src": "/assets/images/industrial-plant-night-poster-1080.avif",
     "srcset": [
       {
@@ -668,16 +481,7 @@ const assets: Record<string,MediaAsset> = {
         "webp": "/assets/images/industrial-plant-night-poster-1920.webp"
       }
     ],
-    "sources": [
-      {
-        "src": "/assets/videos/industrial-plant-night-720.mp4",
-        "type": "video/mp4",
-        "width": 1280,
-        "height": 720,
-        "bytes": 578095,
-        "mobile": true
-      }
-    ],
+    "sources": [],
     "poster": "/assets/images/industrial-plant-night-poster-1080.avif",
     "blurDataURL": "data:image/webp;base64,UklGRlIAAABXRUJQVlA4IEYAAACQAwCdASoYAA4APxFyslAsJqSisAgBgCIJZwDA3CHe3zFd/43YAP7ugLEn+REvKDXukENjzj57omgRz2gAbjna/6xMEOAA",
     "focal": {
@@ -769,8 +573,8 @@ const assets: Record<string,MediaAsset> = {
     "height": 3385,
     "scrimStrength": 0.82
   },
-  "video:oil-refinery": {
-    "kind": "video",
+  "image:oil-refinery-poster": {
+    "kind": "image",
     "src": "/assets/images/oil-refinery-poster-1080.avif",
     "srcset": [
       {
@@ -794,32 +598,7 @@ const assets: Record<string,MediaAsset> = {
         "webp": "/assets/images/oil-refinery-poster-2560.webp"
       }
     ],
-    "sources": [
-      {
-        "src": "/assets/videos/oil-refinery-1080.mp4",
-        "type": "video/mp4",
-        "width": 1920,
-        "height": 1080,
-        "bytes": 3090795,
-        "mobile": false
-      },
-      {
-        "src": "/assets/videos/oil-refinery-1080-vp9.webm",
-        "type": "video/webm",
-        "width": 1920,
-        "height": 1080,
-        "bytes": 2924600,
-        "mobile": false
-      },
-      {
-        "src": "/assets/videos/oil-refinery-720.mp4",
-        "type": "video/mp4",
-        "width": 1280,
-        "height": 720,
-        "bytes": 936260,
-        "mobile": true
-      }
-    ],
+    "sources": [],
     "poster": "/assets/images/oil-refinery-poster-1080.avif",
     "blurDataURL": "data:image/webp;base64,UklGRmoAAABXRUJQVlA4IF4AAACwAwCdASoYAA4APxFysVAsJqSisAgBgCIJYwAAW9wCLHjba5lSmAD+6+uOHV7ch+tpSCj6d0ys5lq/6DHGMwOel6/wBhxiqKZUHuqXGCrEnQyFgrpPQ38+gOtDQAAA",
     "focal": {
@@ -989,65 +768,6 @@ const assets: Record<string,MediaAsset> = {
     "height": 3648,
     "scrimStrength": 0.79
   },
-  "video:pipeline-welding": {
-    "kind": "video",
-    "src": "/assets/images/pipeline-welding-poster-1080.avif",
-    "srcset": [
-      {
-        "width": 640,
-        "avif": "/assets/images/pipeline-welding-poster-640.avif",
-        "webp": "/assets/images/pipeline-welding-poster-640.webp"
-      },
-      {
-        "width": 1080,
-        "avif": "/assets/images/pipeline-welding-poster-1080.avif",
-        "webp": "/assets/images/pipeline-welding-poster-1080.webp"
-      },
-      {
-        "width": 1920,
-        "avif": "/assets/images/pipeline-welding-poster-1920.avif",
-        "webp": "/assets/images/pipeline-welding-poster-1920.webp"
-      }
-    ],
-    "sources": [
-      {
-        "src": "/assets/videos/pipeline-welding-1080.mp4",
-        "type": "video/mp4",
-        "width": 1920,
-        "height": 1080,
-        "bytes": 2022795,
-        "mobile": false
-      },
-      {
-        "src": "/assets/videos/pipeline-welding-1080-vp9.webm",
-        "type": "video/webm",
-        "width": 1920,
-        "height": 1080,
-        "bytes": 1931408,
-        "mobile": false
-      },
-      {
-        "src": "/assets/videos/pipeline-welding-720.mp4",
-        "type": "video/mp4",
-        "width": 1280,
-        "height": 720,
-        "bytes": 1479689,
-        "mobile": true
-      }
-    ],
-    "poster": "/assets/images/pipeline-welding-poster-1080.avif",
-    "blurDataURL": "data:image/webp;base64,UklGRnAAAABXRUJQVlA4IGQAAAAQBACdASoYAA4APxFyslCsJqSisAgBgCIJagCdMoR4GB4PZka5cl/hoAD+zKbIPpu36VNfU7Pmmy5NWOepp+Rhe6j1QuKJywdvK9sKtNzjSUVrrf+eRW/JtgFJZayOn2bu4AAA",
-    "focal": {
-      "x": 0.5,
-      "y": 0.5
-    },
-    "alt": "Automated welding around an industrial pipe",
-    "credit": "User-supplied stock. Source URL, author and licence awaiting confirmation.",
-    "stock": true,
-    "width": 1920,
-    "height": 1080,
-    "scrimStrength": 0.84
-  },
   "image:power-plant": {
     "kind": "image",
     "src": "/assets/images/power-plant-1080.avif",
@@ -1087,8 +807,8 @@ const assets: Record<string,MediaAsset> = {
     "height": 4912,
     "scrimStrength": 0.81
   },
-  "video:power-plant": {
-    "kind": "video",
+  "image:power-plant-poster": {
+    "kind": "image",
     "src": "/assets/images/power-plant-poster-1080.avif",
     "srcset": [
       {
@@ -1112,16 +832,7 @@ const assets: Record<string,MediaAsset> = {
         "webp": "/assets/images/power-plant-poster-2560.webp"
       }
     ],
-    "sources": [
-      {
-        "src": "/assets/videos/power-plant-720.mp4",
-        "type": "video/mp4",
-        "width": 1280,
-        "height": 720,
-        "bytes": 146226,
-        "mobile": true
-      }
-    ],
+    "sources": [],
     "poster": "/assets/images/power-plant-poster-1080.avif",
     "blurDataURL": "data:image/webp;base64,UklGRloAAABXRUJQVlA4IE4AAACwAwCdASoYAA4APxFysVAsJqSisAgBgCIJYwC7ABuYVxj3OKnW6AD2e5/rwSqHZxQ271TXAUvD63Y/HDIvxMM1WcWltz25iEYvujaAAAA=",
     "focal": {
@@ -1232,8 +943,8 @@ const assets: Record<string,MediaAsset> = {
     "height": 3486,
     "scrimStrength": 0.83
   },
-  "video:scaffolding": {
-    "kind": "video",
+  "image:scaffolding-poster": {
+    "kind": "image",
     "src": "/assets/images/scaffolding-poster-1080.avif",
     "srcset": [
       {
@@ -1252,16 +963,7 @@ const assets: Record<string,MediaAsset> = {
         "webp": "/assets/images/scaffolding-poster-1920.webp"
       }
     ],
-    "sources": [
-      {
-        "src": "/assets/videos/scaffolding-720.mp4",
-        "type": "video/mp4",
-        "width": 1280,
-        "height": 720,
-        "bytes": 218286,
-        "mobile": true
-      }
-    ],
+    "sources": [],
     "poster": "/assets/images/scaffolding-poster-1080.avif",
     "blurDataURL": "data:image/webp;base64,UklGRmwAAABXRUJQVlA4IGAAAAAQBACdASoYAA4APxF8tFGsKCUisAgBgCIJZQDA3CFr4/KyD/gWMFfrAAD9qXNnedw7devQ3bB2RIyazL0xtjtLNdCNAj00rlz2w8/2kvv4oyU5hjBNEmBOC9JDplAAAAA=",
     "focal": {
@@ -1361,55 +1063,48 @@ const slots:Record<string,string> = {
   "Project Management": "image:project-management",
   "Electrical & Instrumentation": "image:Electrical & Instrumentation",
   "Project Facilities": "image:project-facilities",
-  "Sectors": "video:oil-refinery",
+  "Sectors": "image:oil-refinery-poster",
   "Projects": "image:offshore1",
   "Insights": "image:pexels-joseph-russo-430180075-29590119",
   "Careers": "image:scaffolding",
   "Become a Vendor": "image:pipe-rack1",
   "Request a Quote": "image:cement-plant",
-  "hero-1": "video:oil-refinery",
-  "hero-2": "video:pipeline-welding",
-  "hero-3": "video:14529100_3840_2160_30fps",
   "Oil & Gas": "image:Sectors",
-  "Refining": "video:9339478-uhd_3840_2160_24fps",
-  "Power": "video:power-plant",
-  "Cement": "video:cement-plant",
+  "Refining": "image:9339478-uhd_3840_2160_24fps-poster",
+  "Power": "image:power-plant-poster",
+  "Cement": "image:cement-plant-poster",
   "refining-photo": "image:pexels-joseph-russo-430180075-29590119",
   "power-photo": "image:power-plant",
   "cement-photo": "image:cement-plant",
   "Civil & Buildings": "image:scaffolding",
   "Mechanical & Piping": "image:pipe-welding",
   "Structural Steel": "image:steel-structure-construction-1",
-  "Plant Services (Turnaround & Shutdown)": "video:12966194_4096_2160_25fps",
-  "Maintenance": "video:industrial-plant-night",
-  "Offshore": "video:4392869-uhd_3840_2160_30fps",
+  "Plant Services (Turnaround & Shutdown)": "image:12966194_4096_2160_25fps-poster",
+  "Maintenance": "image:industrial-plant-night-poster",
+  "Offshore": "image:4392869-uhd_3840_2160_30fps-poster",
   "offshore-photo": "image:offshore",
   "offshore-platform": "image:offshore1",
   "piping-yard": "image:pipe-rack",
   "piping-yard-alternate": "image:pipe-rack1",
-  "mechanical-texture": "video:12966194_4096_2160_25fps",
-  "civil-scaffolding-video": "video:scaffolding",
+  "mechanical-texture": "image:12966194_4096_2160_25fps-poster",
+  "civil-scaffolding-video": "image:scaffolding-poster",
   "Plan & Procure": "image:frank-mckenna-tjX_sniNzgQ-unsplash",
   "Build & Maintain": "image:steel-structure-construction-1",
   "About": "image:industrial-plant-night",
   "Services": "image:steel-structure-construction",
   "QHSE": "image:pipe-welding",
   "Conduct": "image:pipe-rack",
-  "Contact": "video:industrial-plant-night",
-  "qhse-story": "video:15122253_2160_3840_30fps",
+  "Contact": "image:industrial-plant-night-poster",
+  "qhse-story": "image:15122253_2160_3840_30fps-poster",
   "qhse-background": "image:industrial-plant-night",
   "cta-background": "image:offshore",
-  "project-1": "image:pexels-joseph-russo-430180075-29590119",
-  "project-2": "image:power-plant",
-  "project-3": "image:cement-plant",
   "insight-1": "image:project-management",
-  "insight-2": "video:15122253_2160_3840_30fps",
+  "insight-2": "image:15122253_2160_3840_30fps-poster",
   "insight-3": "image:engineering"
 };
 export const placeholderMedia:MediaAsset = {"kind":"placeholder","src":"/media-placeholder.svg","srcset":[],"sources":[],"poster":"/media-placeholder.svg","blurDataURL":"","focal":{"x":0.5,"y":0.5},"alt":"Reserved media area; approved imagery needed","credit":"Placeholder; no stock asset assigned","stock":false,"width":1600,"height":1000};
 export const media:Record<string,MediaAsset> = Object.fromEntries(Object.entries(slots).map(([slot,key])=>[slot,resolve(assets[key])]));
 for(const slot of ["careers-people"])media[slot]=placeholderMedia;
-export const heroMedia = [media['hero-1'],media['hero-2'],media['hero-3']];
 export const mediaCollections:Record<string,string[]> = {
   "Mechanical & Piping": [
     "piping-yard",

@@ -23,9 +23,6 @@ export function Footer() {
       className="border-t-4 border-accent-shape bg-surface-dark py-14 text-on-dark"
     >
       <Container>
-        <p className="preview-note mb-8 text-xs text-on-dark-muted">
-          Preview — placeholder media
-        </p>
         <div className="mb-12 flex flex-wrap items-end justify-between gap-6">
           <p className="font-display text-3xl">
             Dodzel Engineering

@@ -7,7 +7,6 @@ import { TrustStats } from "@/components/sections/TrustStats";
 import { ServicesGroups } from "@/components/sections/ServicesGroups";
 import { SectorsGrid } from "@/components/sections/SectorsGrid";
 import { HowWeWork } from "@/components/sections/HowWeWork";
-import { FeaturedProjects } from "@/components/sections/FeaturedProjects";
 import { QhseCertifications } from "@/components/sections/QhseCertifications";
 import { InsightsGrid } from "@/components/sections/InsightsGrid";
 import { PresenceMap } from "@/components/sections/PresenceMap";
@@ -26,7 +25,6 @@ export default function Home() {
       <TrustStats />
       <ServicesGroups />
       <SectorsGrid />
-      <FeaturedProjects />
       <QhseCertifications />
       <InsightsGrid />
       <HowWeWork />
