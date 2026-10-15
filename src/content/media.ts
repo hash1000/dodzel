@@ -1054,6 +1054,40 @@ const assets: Record<string,MediaAsset> = {
     "width": 5972,
     "height": 7956,
     "scrimStrength": 0.82
+  },
+  "image:planning-team": {
+    "kind": "image",
+    "src": "/assets/images/frank-mckenna-tjX_sniNzgQ-unsplash.jpeg",
+    "srcset": [],
+    "sources": [],
+    "poster": "/assets/images/frank-mckenna-tjX_sniNzgQ-unsplash.jpeg",
+    "blurDataURL": "data:image/webp;base64,UklGRmoAAABXRUJQVlA4IF4AAACwAwCdASoYAA0APxFwsFAsJiSisAgBgCIJYwAAXJ2HGSzEtgwQYAD4xDG5+TOXT7SbSLDjDZCgnXEBBuEG7USMeXZF9STG1eA7cJ0HVh64qS++t/PCiiVSLWzH4AAA",
+    "focal": {
+      "x": 0.5,
+      "y": 0.5
+    },
+    "alt": "Engineering team reviewing drawings in an industrial planning office",
+    "credit": "User-provided image",
+    "stock": false,
+    "width": 1376,
+    "height": 768
+  },
+  "image:Gemini_Generated_Image_xjsatjxjsatjxjsa": {
+    "kind": "image",
+    "src": "/assets/images/Gemini_Generated_Image_xjsatjxjsatjxjsa.jpeg",
+    "srcset": [],
+    "sources": [],
+    "poster": "/assets/images/Gemini_Generated_Image_xjsatjxjsatjxjsa.jpeg",
+    "blurDataURL": "data:image/webp;base64,UklGRmQAAABXRUJQVlA4IFgAAADwAwCdASoYAA0APxFysFAsJqSisAgBgCIJYgCdMoACEj79Pyq/lniAAPtgaSpihuLr8bRyiN6x4x5RxC91JOFVpmSoaPtZCMVKt1VKhRJPHWEix0ULWtAA",
+    "focal": {
+      "x": 0.5,
+      "y": 0.5
+    },
+    "alt": "Construction team fabricating structural steel at an industrial site",
+    "credit": "User-provided image",
+    "stock": false,
+    "width": 1376,
+    "height": 768
   }
 };
 function resolve(asset:MediaAsset):MediaAsset{return {...asset,src:url(asset.src),poster:url(asset.poster),srcset:asset.srcset.map(v=>({...v,avif:url(v.avif),webp:url(v.webp)})),sources:asset.sources.map(v=>({...v,src:url(v.src)}))};}
@@ -1088,8 +1122,8 @@ const slots:Record<string,string> = {
   "piping-yard-alternate": "image:pipe-rack1",
   "mechanical-texture": "image:12966194_4096_2160_25fps-poster",
   "civil-scaffolding-video": "image:scaffolding-poster",
-  "Plan & Procure": "image:frank-mckenna-tjX_sniNzgQ-unsplash",
-  "Build & Maintain": "image:steel-structure-construction-1",
+  "Plan & Procure": "image:planning-team",
+  "Build & Maintain": "image:Gemini_Generated_Image_xjsatjxjsatjxjsa",
   "About": "image:industrial-plant-night",
   "Services": "image:steel-structure-construction",
   "QHSE": "image:pipe-welding",

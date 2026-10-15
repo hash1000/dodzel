@@ -59,10 +59,10 @@ export function Navbar() {
           <Image
             src="/assets/images/dodzel-logo.jpeg"
             alt="Dodzel"
-            width={160}
-            height={160}
+            width={180}
+            height={180}
             priority
-            className="h-14 w-auto sm:h-16"
+            className="h-20 w-auto sm:h-24"
           />
           <span className="sr-only">Dodzel home</span>
         </Link>
