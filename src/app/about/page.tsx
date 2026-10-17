@@ -16,11 +16,11 @@ export default function Page() {
           <p className="text-xl leading-relaxed">
             {real.company.description} <ReviewBadge {...real.company} />
           </p>
-          <p className="mt-6 text-muted">
+          <p className="mt-6 text-[var(--fg-body)]">
             Chief Executive Officer: {real.company.ceo}{" "}
             <ReviewBadge {...real.company} />
           </p>
-          <p className="mt-6 text-muted">
+          <p className="mt-6 text-[var(--fg-body)]">
             Presence: {real.countries.map((country) => country.name).join(", ")}
             . <ReviewBadge confirm />
           </p>
@@ -34,7 +34,7 @@ export default function Page() {
               id={subsidiary?.name.toLowerCase() ?? entity.name.toLowerCase().replaceAll(" ", "-")}
               className="border-t border-line pt-6"
             >
-                <div className="mb-6 flex h-24 w-48 items-center justify-center rounded-card border border-line bg-white px-4 py-3">
+                <div className="mb-6 flex h-24 w-48 items-center justify-center rounded-card border border-line on-light bg-white px-4 py-3">
                   <Image
                     src={entity.logo}
                     alt={`${entity.name} logo`}
@@ -44,11 +44,11 @@ export default function Page() {
                     className="h-full w-full object-contain"
                   />
                 </div>
-              <h2 className="text-2xl font-semibold">
+              <h2 className="">
                 {entity.name} <ReviewBadge {...entity} />
               </h2>
-              <p className="my-4 text-sm text-muted">{[entity.city, entity.country].filter(Boolean).join(" · ")}</p>
-              <a href={`mailto:${entity.email}`} className="block break-words text-sm underline underline-offset-4 hover:text-accent-on-light">
+              <p className="my-4 text-description text-[var(--fg-body)]">{[entity.city, entity.country].filter(Boolean).join(" · ")}</p>
+              <a href={`mailto:${entity.email}`} className="block break-words text-sm underline underline-offset-4 hover:text-[var(--fg-eyebrow)]">
                 {entity.email}
               </a>
               {entity.url && (
@@ -64,28 +64,28 @@ export default function Page() {
           })}
         </div>
         <div className="mt-16 grid gap-8 md:grid-cols-2">
-          <section className="rounded-card border-t-4 border-accent-2 bg-surface p-8">
-            <h2 className="mb-5 text-3xl text-accent-2">
+          <section className="rounded-card border-t-4 border-accent-2 on-dark bg-surface p-8">
+            <h2 className="mb-5 text-accent-2">
               {real.mission.title} <ReviewBadge {...real.mission} />
             </h2>
-            <p className="leading-relaxed text-muted">
+            <p className="leading-relaxed text-[var(--fg-body)]">
               {real.mission.description}
             </p>
           </section>
-          <section className="rounded-card border-t-4 border-accent-2 bg-surface p-8">
-            <h2 className="mb-5 text-3xl text-accent-2">
+          <section className="rounded-card border-t-4 border-accent-2 on-dark bg-surface p-8">
+            <h2 className="mb-5 text-accent-2">
               {real.success.title} <ReviewBadge {...real.success} />
             </h2>
-            <ul className="list-disc space-y-3 ps-5 text-muted">
+            <ul className="list-disc space-y-3 ps-5 text-[var(--fg-body)]">
               {real.success.items.map((item) => (
                 <li key={item}>{item}</li>
               ))}
             </ul>
           </section>
         </div>
-        <section className="my-16 grid gap-8 rounded-card border-s-4 border-accent-2 bg-surface p-6 sm:p-8 lg:grid-cols-[15rem_1fr] lg:items-center lg:gap-12">
+        <section className="my-16 grid gap-8 rounded-card border-s-4 border-accent-2 on-dark bg-surface p-6 sm:p-8 lg:grid-cols-[15rem_1fr] lg:items-center lg:gap-12">
           <figure className="mx-auto w-full max-w-60">
-            <div className="relative mx-auto aspect-[4/5] w-48 overflow-hidden rounded-[50%] border border-line bg-white ring-4 ring-white sm:w-52">
+            <div className="relative mx-auto aspect-[4/5] w-48 overflow-hidden rounded-[50%] border border-line on-light bg-white ring-4 ring-white sm:w-52">
               <Image
                 src="/images/team/syed-tahir-hussain.jpeg"
                 alt="Syed Tahir Hussain, Chief Executive Officer"
@@ -96,11 +96,11 @@ export default function Page() {
             </div>
             <figcaption className="mt-4 text-center">
               <span className="block text-lg font-semibold">Syed Tahir Hussain</span>
-              <span className="mt-1 block text-sm text-muted">Chief Executive Officer</span>
+              <span className="mt-1 block text-sm text-[var(--fg-body)]">Chief Executive Officer</span>
             </figcaption>
           </figure>
           <div>
-          <h2 className="mb-6 text-3xl">
+          <h2 className="mb-6">
             {real.ceoMessage.title} <ReviewBadge {...real.ceoMessage} />
           </h2>
           <blockquote className="max-w-4xl text-xl leading-relaxed">
@@ -108,15 +108,15 @@ export default function Page() {
           </blockquote>
           </div>
         </section>
-        <section aria-labelledby="corporate-team-heading" className="rounded-card bg-white px-6 py-12 sm:px-10">
-          <h2 id="corporate-team-heading" className="mb-10 text-center text-heading font-semibold">Corporate Team</h2>
+        <section aria-labelledby="corporate-team-heading" className="rounded-card on-light bg-white px-6 py-12 sm:px-10">
+          <h2 id="corporate-team-heading" className="mb-10 text-center">Corporate Team</h2>
           <div className="mx-auto grid max-w-5xl grid-cols-1 gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-8">
             {real.team.map((person) => (
               <article
                 key={person.name}
                 className="mx-auto w-full max-w-60 text-center last:sm:col-span-2 lg:col-span-2 last:lg:col-start-4"
               >
-                <div className="relative mx-auto mb-6 aspect-[4/5] w-40 overflow-hidden rounded-[50%] border border-line bg-white ring-4 ring-paper/60 sm:w-44">
+                <div className="relative mx-auto mb-6 aspect-[4/5] w-40 overflow-hidden rounded-[50%] border border-line on-light bg-white ring-4 ring-paper/60 sm:w-44">
                   <Image
                     src={person.image}
                     alt={`Portrait of ${person.name}`}
@@ -125,8 +125,8 @@ export default function Page() {
                     className={person.name === "Syed Tahir Hussain" ? "object-cover object-center" : "object-cover object-top"}
                   />
                 </div>
-                <h3 className="text-lg font-semibold">{person.name}</h3>
-                <p className="mt-1 text-sm leading-relaxed text-muted">{person.title}</p>
+                <h3 className="">{person.name}</h3>
+                <p className="mt-1 text-description leading-relaxed text-[var(--fg-body)]">{person.title}</p>
                 <ReviewBadge {...person} />
               </article>
             ))}

@@ -10,11 +10,13 @@ export function SiteShell({
   chrome: ReactNode;
 }) {
   const pathname = usePathname();
-  if (pathname.startsWith("/studio")) return children;
+  if (pathname.startsWith("/studio")) return <div data-studio-theme className="contents">{children}</div>;
   return (
     <SmoothScrollProvider>
-      {chrome}
-      {children}
+      <div className="site-typography on-light">
+        {chrome}
+        {children}
+      </div>
     </SmoothScrollProvider>
   );
 }

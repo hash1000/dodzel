@@ -7,7 +7,7 @@ export function ClosingCta() {
   return (
     <section
       data-tone="dark"
-      className="relative isolate overflow-hidden bg-surface-dark py-section text-on-dark"
+      className="relative isolate overflow-hidden on-navy bg-surface-dark py-section text-[var(--fg-heading)]"
     >
       <MediaFrame
         slot="cta-background"
@@ -17,13 +17,13 @@ export function ClosingCta() {
       />
       <Container className="flex flex-col justify-between gap-10 lg:flex-row lg:items-end">
         <div>
-          <p className="mb-5 text-xs uppercase tracking-widest text-accent">
+          <p className="mb-5 type-label text-[var(--fg-eyebrow)]">
             Start a conversation <TodoBadge />
           </p>
-          <h2 className="max-w-2xl text-5xl tracking-tight sm:text-6xl">
+          <h2 className="max-w-2xl tracking-tight">
             {placeholders.closing.title}
           </h2>
-          <p className="mt-6 max-w-lg text-on-dark-muted">
+          <p className="mt-6 max-w-lg text-[var(--fg-body)]">
             {placeholders.closing.description}
           </p>
         </div>

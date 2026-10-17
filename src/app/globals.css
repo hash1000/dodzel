@@ -1,45 +1,60 @@
 @import "tailwindcss";
+:root {
+  --loader-bg: var(--color-ink);
+}
+
 @theme inline {
-  --font-sans: var(--font-text);
-  --font-text: var(--font-plex);
-  /* Add IBM Plex Sans Arabic for the future RTL locale. */
-  --font-display: var(--font-saira);
+  --font-heading: var(--font-heading);
+  --font-body: var(--font-body);
+  --font-sans: var(--font-body);
+  --font-display: var(--font-heading);
 }
 @theme {
-  --color-brand-red: #A3201A;
+  --text-sm: 0.9375rem;
+  --text-sm--line-height: 1.6;
+  --text-label: 0.8125rem;
+  --text-label--line-height: 1.6;
+  --text-description: 0.9375rem;
+  --text-description--line-height: 1.6;
+  --text-card: clamp(1.25rem, 2vw, 1.75rem);
+  --text-card--line-height: 1.2;
+  --text-lead: clamp(1.125rem, 1.5vw, 1.25rem);
+  --text-lead--line-height: 1.6;
+  --color-brand: #b10304;
+  --color-brand-red: var(--color-brand);
   --color-blue-950: #0b2545;
   --color-blue-900: #10315c;
   --color-blue-600: #174474;
   --color-blue-700: #1d4e89;
-  --color-honey-400: #e9a93a;
-  --color-honey-300: #f2bf65;
-  --color-rust-600: #b5502d;
-  --color-rust-500: #c7603d;
+  --color-honey-400: var(--color-brand);
+  --color-honey-300: var(--color-brand);
+  --color-rust-600: var(--color-brand);
+  --color-rust-500: var(--color-brand);
   --color-white: #ffffff;
   --color-surface-dark: var(--color-blue-950);
   --color-surface-raised: var(--color-blue-900);
   --color-surface-elevated: var(--color-blue-700);
-  --color-surface: #ffffff;
-  --color-paper: #f6f4ef;
+  --color-surface: #1a1d23;
+  --color-paper: #f6f5f3;
   --color-paper-darker: #ece8df;
   --color-on-dark: #ffffff;
   --color-on-dark-muted: #d8e1ec;
-  --color-accent: var(--color-honey-400);
-  --color-accent-hover: var(--color-honey-300);
-  --color-accent-2: var(--color-rust-600);
-  --color-accent-shape: var(--color-rust-500);
-  --color-accent-on-light: var(--color-rust-600);
+  --color-accent: var(--color-brand);
+  --color-accent-hover: var(--color-brand);
+  --color-accent-2: var(--color-brand);
+  --color-accent-shape: var(--color-brand);
+  --color-accent-on-light: var(--color-brand);
   --color-link: var(--color-blue-700);
   --color-focus: var(--color-blue-600);
-  --color-ink: var(--color-blue-950);
-  --color-muted: #52616b;
+  --color-ink: #0f1115;
+  --color-muted: #5b616b;
   --color-line: #d8dedf;
   --color-dark-line: #7c92ac;
-  --color-map: var(--color-rust-600);
-  --color-error: var(--color-rust-600);
-  --text-hero: clamp(2.5rem, 4.5vw, 4.75rem);
-  --text-heading: clamp(2rem, 3.3vw, 3.5rem);
-  --text-page: clamp(2.8rem, 5vw, 5rem);
+  --color-map: var(--color-line);
+  --color-error: var(--color-brand);
+  --text-hero: clamp(2.75rem, 6vw, 5.5rem);
+  --text-heading: clamp(2rem, 4vw, 3.5rem);
+  --text-page: clamp(2.75rem, 6vw, 5.5rem);
   --text-body: clamp(1rem, 1.1vw, 1.125rem);
   --spacing-unit: 0.5rem;
   --spacing-section: clamp(4rem, 7vw, 6rem);
@@ -72,12 +87,6 @@ body {
 button,
 summary {
   cursor: pointer;
-}
-h1,
-h2,
-h3 {
-  font-family: var(--font-display), sans-serif;
-  letter-spacing: -0.025em;
 }
 .hero-progress {
   animation: progress 7s linear forwards;
@@ -131,12 +140,6 @@ textarea {
 }
 [data-step] {
   transition: background 200ms ease;
-}
-.eyebrow {
-  color: var(--color-accent-on-light);
-}
-[data-tone="dark"] .eyebrow {
-  color: var(--color-accent);
 }
 a.link-slide { text-decoration: underline; text-decoration-color: transparent; text-underline-offset: 5px; transition: text-decoration-color 200ms ease; }
 a.link-slide:hover, a.link-slide:focus-visible { text-decoration-color: var(--color-accent-2); }
@@ -202,9 +205,9 @@ p {
 .media-enter { animation: media-enter 900ms cubic-bezier(.65,0,.35,1) both; }
 .service-card:hover .service-title, .service-card:focus-visible .service-title { text-decoration: underline; text-decoration-color: var(--color-accent-2); text-underline-offset: 5px; }
 
-.showcase-row { color: var(--color-ink); background: var(--color-surface); border-inline-start-color: transparent; }
-.showcase-row:hover { background: var(--color-paper-darker); }
-.showcase-row[data-active="true"] { background: var(--color-blue-950); color: var(--color-accent); border-inline-start-color: var(--color-accent-2); }
+.showcase-row { color: var(--fg-heading); background: var(--color-surface); border-inline-start-color: transparent; }
+.showcase-row:hover { background: var(--color-surface-raised); color: var(--fg-link-hover); }
+.showcase-row[data-active="true"] { background: var(--color-blue-950); color: var(--fg-heading); border-inline-start-color: var(--color-accent-2); }
 .showcase-row[data-active="true"]:focus-visible { outline-color: var(--color-accent); outline-offset: -5px; }
 .showcase-panel { opacity: 0; visibility: hidden; pointer-events: none; transition: opacity 300ms ease, visibility 0s 300ms; }
 .showcase-panel[data-active="true"] { opacity: 1; visibility: visible; pointer-events: auto; transition-delay: 0s; }
@@ -222,3 +225,82 @@ p {
   [data-showcase] .showcase-image, [data-showcase] .showcase-copy { transform: none !important; }
   .showcase-panel, .showcase-accordion, .showcase-copy, .showcase-image { transition: none; }
 }
+
+/* Preserve the authoring environment's existing inherited palette. */
+body:has([data-studio-theme]) {
+  --color-brand-red: #A3201A;
+  --color-ink: var(--color-blue-950);
+  --color-surface: #ffffff;
+  --color-paper: #f6f4ef;
+  --color-muted: #52616b;
+}
+
+/* Text contexts follow each surface, including nested cards and the light map. */
+.on-dark {
+  --fg-heading: #ffffff;
+  --fg-body: #c9ced6;
+  --fg-muted: #9aa3af;
+  --fg-eyebrow: #ff5a52;
+  --fg-link: #ffffff;
+  --fg-link-hover: var(--color-brand);
+}
+.on-navy {
+  --fg-heading: #ffffff;
+  --fg-body: #cbd5e6;
+  --fg-muted: #9fb0cc;
+  --fg-eyebrow: #ff5a52;
+  --fg-link: #ffffff;
+  --fg-link-hover: var(--color-brand);
+}
+.on-light {
+  --fg-heading: #0f1115;
+  --fg-body: #3f4650;
+  --fg-muted: #5b616b;
+  --fg-eyebrow: #c70500;
+  --fg-link: #0f1115;
+  --fg-link-hover: var(--color-brand);
+}
+@layer base {
+  body { font-size: 1rem; line-height: 1.65; }
+  :where(.on-dark, .on-navy, .on-light) { color: var(--fg-body); }
+  :where(.site-typography) :is(h1, h2, h3, h4) {
+    font-family: var(--font-heading), sans-serif;
+    font-weight: 600;
+    color: var(--fg-heading);
+    letter-spacing: -0.02em;
+  }
+  :where(.site-typography) h1 { font-size: clamp(2.75rem, 6vw, 5.5rem); line-height: 1.05; }
+  :where(.site-typography) h2 { font-size: clamp(2rem, 4vw, 3.5rem); line-height: 1.1; }
+  :where(.site-typography) :is(h3, h4) { letter-spacing: -0.01em; font-size: clamp(1.25rem, 2vw, 1.75rem); line-height: 1.2; }
+  :where(.site-typography) p { max-inline-size: 65ch; line-height: 1.65; }
+  :where(.site-typography) :is(h3, h4) a { color: var(--fg-link); }
+  :where(.site-typography) a:hover { color: var(--fg-link-hover); }
+  :where(.site-typography) h3 a svg { color: var(--color-brand); }
+}
+.eyebrow, .type-label {
+  font-family: var(--font-heading), sans-serif;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  line-height: 1.6;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--fg-eyebrow);
+}
+@layer components {
+  .action { color: var(--fg-link); }
+  .action:hover { color: var(--fg-link-hover); }
+  .action-arrow { color: var(--color-brand); }
+}
+
+/* Presence map: gradients stay static; GSAP animates only SVG paths and transforms. */
+.presence-map-grid {
+  background-image: linear-gradient(rgb(255 255 255 / 0.045) 1px, transparent 1px), linear-gradient(90deg, rgb(255 255 255 / 0.045) 1px, transparent 1px);
+  background-size: 2rem 2rem;
+  mask-image: radial-gradient(ellipse at center, black, transparent 85%);
+}
+.presence-map-glow {
+  background: radial-gradient(ellipse at 80% 40%, color-mix(in srgb, var(--color-brand) 16%, transparent), transparent 55%);
+}
+.presence-traveller { filter: drop-shadow(0 0 4px white); }
+.presence-country[data-map-emphasis="true"] { filter: brightness(1.8); }
+.presence-connection[data-map-emphasis="true"] { filter: drop-shadow(0 0 4px var(--color-brand)); }

@@ -16,5 +16,5 @@ export function StatCard({stat}:{stat:{value:string;label:string;numericValue:nu
   if(ref.current&&!motion.matches)observer.observe(ref.current);motion.addEventListener('change',reduce);
   return()=>{alive=false;observer.disconnect();kill();motion.removeEventListener('change',reduce)};
  },[stat.numericValue,stat.value]);
- return <div ref={ref} className="border-s border-dark-line ps-6"><p className="mb-3 tabular-nums font-display text-3xl text-accent sm:text-4xl">{value}</p><p className="mb-4 text-sm text-on-dark-muted">{stat.label}</p><ReviewBadge {...stat}/></div>;
+ return <div ref={ref} className="border-s border-dark-line ps-6"><p className="mb-3 tabular-nums font-display text-3xl text-[var(--fg-eyebrow)] sm:text-4xl">{value}</p><p className="mb-4 text-description text-[var(--fg-body)]">{stat.label}</p><ReviewBadge {...stat}/></div>;
 }

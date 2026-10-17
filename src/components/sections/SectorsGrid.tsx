@@ -11,11 +11,11 @@ export function SectorsGrid() {
   return (
     <section
       data-tone="dark"
-      className="bg-surface-dark py-section text-on-dark"
+      className="on-navy bg-surface-dark py-section text-[var(--fg-heading)]"
     >
       <Container>
         <SectionHeading {...placeholders.headings.sectors} />
-        <p className="mb-10 text-on-dark-muted">
+        <p className="mb-10 text-[var(--fg-body)]">
           {real.industries.description} <ReviewBadge {...real.industries} />
         </p>
         <div className="grid gap-5 sm:grid-cols-2">
@@ -23,7 +23,7 @@ export function SectorsGrid() {
             <Link
               key={name}
               href={sectorHref(name)}
-              className="sector-tile media-hover relative block overflow-hidden rounded-card bg-surface-dark text-on-dark"
+              className="sector-tile media-hover relative block overflow-hidden rounded-card on-navy bg-surface-dark text-[var(--fg-heading)]"
             >
               <MediaFrame
         reveal
@@ -32,7 +32,7 @@ export function SectorsGrid() {
                 scrim
                 className="aspect-[16/9] pb-20 [&>div:last-child]:items-start"
               />
-              <span className="absolute start-6 end-6 bottom-6 flex items-center justify-between gap-4 font-display text-3xl font-semibold">
+              <span className="absolute start-6 end-6 bottom-6 flex items-center justify-between gap-4 font-heading text-card font-bold">
                 {name} <ReviewBadge confirm />
                 <ArrowUpRight size={24} aria-hidden="true" />
               </span>

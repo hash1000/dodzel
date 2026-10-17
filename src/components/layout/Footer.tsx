@@ -20,27 +20,27 @@ export function Footer() {
   return (
     <footer
       data-tone="dark"
-      className="border-t-4 border-accent-shape bg-surface-dark py-14 text-on-dark"
+      className="border-t-4 border-accent-shape on-navy bg-surface-dark py-14 text-[var(--fg-heading)]"
     >
       <Container>
         <div className="mb-12 flex flex-wrap items-end justify-between gap-6">
           <p className="font-display text-3xl">
             Dodzel Engineering
-            <span className="mt-2 block font-sans text-xs tracking-widest text-on-dark-muted">
+            <span className="mt-2 block font-sans text-xs tracking-widest text-[var(--fg-body)]">
               ENGINEERING · PROCUREMENT · CONSTRUCTION
             </span>
           </p>
           <Link
             href="/request-a-quote"
-            className="text-accent underline underline-offset-4"
+            className="text-[var(--fg-eyebrow)] underline underline-offset-4"
           >
             Start a conversation ↗
           </Link>
         </div>
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
           <div>
-            <h2 className="mb-5 text-sm text-accent">Company</h2>
-            <ul className="space-y-3 text-sm text-on-dark-muted">
+            <h2 className="type-label mb-5 text-sm text-[var(--fg-eyebrow)]">Company</h2>
+            <ul className="space-y-3 text-sm text-[var(--fg-body)]">
               {[
                 ...navLinks.filter(
                   (x) => !["Services", "Sectors"].includes(x.label),
@@ -48,7 +48,7 @@ export function Footer() {
                 ...secondaryLinks,
               ].map((x) => (
                 <li key={x.href}>
-                  <Link href={x.href} className="hover:text-on-dark">
+                  <Link href={x.href} className="hover:text-[var(--fg-heading)]">
                     {x.label}
                   </Link>
                 </li>
@@ -56,15 +56,15 @@ export function Footer() {
             </ul>
           </div>
           <div>
-            <h2 className="mb-5 text-sm text-accent">Services</h2>
-            <ul className="space-y-3 text-sm text-on-dark-muted">
+            <h2 className="type-label mb-5 text-sm text-[var(--fg-eyebrow)]">Services</h2>
+            <ul className="space-y-3 text-sm text-[var(--fg-body)]">
               {serviceGroups
                 .flatMap((g) => g.services)
                 .map((name) => (
                   <li key={name}>
                     <Link
                       href={serviceHref(name)}
-                      className="hover:text-on-dark"
+                      className="hover:text-[var(--fg-heading)]"
                     >
                       {name} <ReviewBadge {...getService(name)} />
                     </Link>
@@ -73,11 +73,11 @@ export function Footer() {
             </ul>
           </div>
           <div>
-            <h2 className="mb-5 text-sm text-accent">Sectors</h2>
-            <ul className="space-y-3 text-sm text-on-dark-muted">
+            <h2 className="type-label mb-5 text-sm text-[var(--fg-eyebrow)]">Sectors</h2>
+            <ul className="space-y-3 text-sm text-[var(--fg-body)]">
               {sectors.map((name) => (
                 <li key={name}>
-                  <Link href={sectorHref(name)} className="hover:text-on-dark">
+                  <Link href={sectorHref(name)} className="hover:text-[var(--fg-heading)]">
                     {name} <ReviewBadge confirm={name === "Cement"} />
                   </Link>
                 </li>
@@ -85,8 +85,8 @@ export function Footer() {
             </ul>
           </div>
           <div>
-            <h2 className="mb-5 text-sm text-accent">Get in Touch</h2>
-            <div className="space-y-3 text-sm text-on-dark">
+            <h2 className="type-label mb-5 text-sm text-[var(--fg-eyebrow)]">Get in Touch</h2>
+            <div className="space-y-3 text-sm text-[var(--fg-heading)]">
               <address className="flex items-start gap-3 not-italic leading-relaxed">
                 <MapPin size={18} className="mt-0.5 shrink-0" aria-hidden="true" />
                 <span>{real.contact.address}</span>
@@ -114,7 +114,7 @@ export function Footer() {
                     key={label}
                     aria-label={`${label}: official link pending`}
                     title={`${label}: official link pending`}
-                    className="inline-flex h-11 w-11 items-center justify-center text-on-dark"
+                    className="inline-flex h-11 w-11 items-center justify-center text-[var(--fg-heading)]"
                   >
                     <Icon size={20} strokeWidth={1.5} aria-hidden="true" />
                   </span>
@@ -124,14 +124,14 @@ export function Footer() {
           </div>
         </div>
         <div className="mt-12 flex flex-wrap items-center gap-6 border-t-4 border-accent-shape py-6 text-sm">
-          <span className="text-on-dark-muted">Our subsidiaries</span>
+          <span className="text-[var(--fg-body)]">Our subsidiaries</span>
           {subsidiaries.map((s) => (
-            <Link key={s.name} href={s.url} aria-label={`Visit ${s.fullName}`} className="group flex h-20 w-40 items-center justify-center rounded-card border border-white/15 bg-white px-4 py-3 transition-colors hover:border-accent focus-visible:border-accent">
+            <Link key={s.name} href={s.url} aria-label={`Visit ${s.fullName}`} className="group flex h-20 w-40 items-center justify-center rounded-card border border-white/15 on-light bg-white px-4 py-3 transition-colors hover:border-accent focus-visible:border-accent">
               <Image src={s.logo} alt={s.name} width={1401} height={752} sizes="128px" className="h-full w-full object-contain" />
             </Link>
           ))}
         </div>
-        <div className="flex flex-wrap justify-between gap-4 border-t-4 border-accent-shape pt-6 text-xs text-on-dark-muted">
+        <div className="flex flex-wrap justify-between gap-4 border-t-4 border-accent-shape pt-6 text-xs text-[var(--fg-body)]">
           <p>© 2026 Dodzel Engineering Limited.</p>
           <p>
             {placeholders.legal.text} <TodoBadge />

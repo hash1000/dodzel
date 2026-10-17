@@ -15,14 +15,14 @@ export function IntentSelector() {
             <Link
               key={item.href}
               href={item.href}
-              className="flex min-h-36 flex-col justify-between gap-6 rounded-card border border-line border-t-2 border-t-accent-2 bg-surface p-6 text-ink shadow-sm hover:border-accent-on-light"
+              className="flex min-h-36 flex-col justify-between gap-6 rounded-card border border-line border-t-2 border-t-accent-2 on-dark bg-surface p-6 text-[var(--fg-heading)] shadow-sm hover:border-accent-on-light"
             >
-              <span className="text-xs uppercase tracking-widest text-accent-on-light">
+              <span className="type-label text-[var(--fg-eyebrow)]">
                 0{index + 1} / Explore
               </span>
-              <span className="flex items-center justify-between gap-4 font-display text-xl font-semibold">
+              <span className="flex items-center justify-between gap-4 font-heading text-card font-bold">
                 {item.label}
-                <ArrowUpRight size={24} aria-hidden="true" />
+                <ArrowUpRight className="text-brand" size={24} aria-hidden="true" />
               </span>
             </Link>
           ))}

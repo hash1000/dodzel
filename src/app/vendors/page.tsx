@@ -12,7 +12,7 @@ export default function Page() {
     <main id="main-content">
       <PageHero title="Become a Vendor" />
       <Container className="min-h-80 py-16">
-        <p className="max-w-2xl text-lg leading-relaxed text-muted">
+        <p className="max-w-2xl text-lg leading-relaxed text-[var(--fg-body)]">
           {placeholders.stub.body} <TodoBadge />
         </p>
       </Container>

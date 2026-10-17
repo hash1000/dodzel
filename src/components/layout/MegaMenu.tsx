@@ -17,7 +17,7 @@ export function MegaMenu({
   return (
     <div
       data-tone="dark"
-      className="absolute start-0 end-0 top-full rounded-b-[2.5rem] max-h-[calc(100dvh-6rem)] overflow-y-auto border-t border-dark-line bg-surface-dark p-8 text-on-dark shadow-xl"
+      className="absolute start-0 end-0 top-full rounded-b-[2.5rem] max-h-[calc(100dvh-6rem)] overflow-y-auto border-t border-dark-line on-navy bg-surface-dark p-8 text-[var(--fg-heading)] shadow-xl"
       onKeyDown={(event) => {
         if (
           ![
@@ -61,7 +61,7 @@ export function MegaMenu({
             <div className="grid grid-cols-2 gap-8">
               {serviceGroups.map((group) => (
                 <div key={group.title}>
-                  <p className="mb-4 text-xs uppercase tracking-widest text-accent">
+                  <p className="mb-4 type-label text-[var(--fg-eyebrow)]">
                     {group.title}
                   </p>
                   <ul className="space-y-2">
@@ -75,7 +75,7 @@ export function MegaMenu({
                             onClick={onNavigate}
                             onMouseEnter={() => setSelected(name)}
                             onFocus={() => setSelected(name)}
-                            className="inline-flex min-h-11 items-center py-3 text-sm hover:text-accent hover:underline"
+                            className="inline-flex min-h-11 items-center py-3 text-sm hover:text-[var(--fg-eyebrow)] hover:underline"
                           >
                             {name} <ReviewBadge {...service} />
                           </Link>
@@ -93,7 +93,7 @@ export function MegaMenu({
               </p>
               <p
                 aria-live="polite"
-                className="mt-3 min-h-20 text-sm leading-relaxed text-on-dark-muted"
+                className="mt-3 min-h-20 text-description text-[var(--fg-body)]"
               >
                 {featured.description}
               </p>
@@ -111,9 +111,9 @@ export function MegaMenu({
                 >
                   {name} <ReviewBadge confirm={name === "Cement"} />
                 </Link>
-                <Link href={sectorDetailHref(name)} onClick={onNavigate} className="mt-2 flex min-h-11 items-center text-sm text-accent underline underline-offset-4">Explore {name} →</Link>
+                <Link href={sectorDetailHref(name)} onClick={onNavigate} className="mt-2 flex min-h-11 items-center text-sm text-[var(--fg-eyebrow)] underline underline-offset-4">Explore {name} →</Link>
                 {name === "Oil & Gas" && (
-                  <ul className="mt-4 space-y-2 text-sm text-on-dark-muted">
+                  <ul className="mt-4 space-y-2 text-sm text-[var(--fg-body)]">
                     {placeholders.oilGasSubitems.map((item) => (
                       <li key={item.title} data-review-badge className="review-badge">
                         {item.title} <ReviewBadge {...item} />

@@ -1,28 +1,20 @@
-import { ReviewModeSync } from "@/components/layout/ReviewModeSync";
 import { IS_PRODUCTION, SHOW_TODO_BADGES } from "@/lib/constants";
 import type { Metadata } from "next";
-import localFont from "next/font/local";
+import { Space_Grotesk, Inter } from "next/font/google";
+import { Loader } from "@/components/layout/Loader";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
-import { SkipLink } from "@/components/layout/SkipLink";
 import { SiteShell, SiteOnly } from "@/components/layout/SiteShell";
 import "./globals.css";
-// Saira variable weights 500–700, bundled at semi-condensed 87.5% width.
-const heading = localFont({
-  src: "./fonts/saira-500-700.woff2",
-  weight: "500 700",
-  variable: "--font-saira",
+const heading = Space_Grotesk({
+  subsets: ["latin"],
+  weight: ["500", "600", "700"],
+  variable: "--font-heading",
   display: "swap",
+  adjustFontFallback: true,
 });
-const text = localFont({
-  src: [
-    { path: "./fonts/ibm-plex-sans-400.woff2", weight: "400" },
-    { path: "./fonts/ibm-plex-sans-500.woff2", weight: "500" },
-    { path: "./fonts/ibm-plex-sans-600.woff2", weight: "600" },
-  ],
-  variable: "--font-plex",
-  display: "swap",
-});
+const body = Inter({ subsets: ["latin"], variable: "--font-body", display: "swap" });
+
 export const metadata: Metadata = {
   robots: IS_PRODUCTION
     ? { index: true, follow: true }
@@ -56,9 +48,10 @@ export default function RootLayout({
     <html
       lang="en"
       data-review={SHOW_TODO_BADGES ? "1" : "0"}
-      className={`${heading.variable} ${text.variable} antialiased`}
+      className={`${heading.variable} ${body.variable} antialiased`}
     >
-      <body className="font-sans">
+      <body className="font-body">
+        <Loader />
         {/* <ReviewModeSync /> */}
         <SiteShell
           chrome={

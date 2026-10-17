@@ -6,7 +6,7 @@ export function TrustStats() {
     <section
       data-tone="dark"
       aria-label="Company facts"
-      className="bg-surface-raised py-14 text-on-dark"
+      className="on-navy bg-surface-raised py-14 text-[var(--fg-heading)]"
     >
       <Container className="grid grid-cols-2 gap-x-6 gap-y-10 lg:grid-cols-4">
         {real.stats.map((stat) => (

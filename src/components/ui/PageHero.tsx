@@ -18,16 +18,16 @@ const intros: Record<string, string> = {
 };
 export function PageHero({ title, intro, variant = "image", parent, confirm = false }: { title: string; intro?: string; variant?: "image" | "plate"; parent?: { title: string; href: string }; confirm?: boolean }) {
   if (variant === "plate") return <>
-    <section data-tone="dark" className="bg-surface-dark pb-12 pt-36 text-on-dark sm:pb-16">
+    <section data-tone="dark" className="on-navy bg-surface-dark pb-12 pt-36 text-[var(--fg-heading)] sm:pb-16">
       <Container>
         <nav aria-label="Breadcrumb" className="mb-5 flex flex-wrap items-center gap-3 text-xs">
           <Link href="/" className="link-slide inline-flex min-h-11 items-center">Home</Link><span aria-hidden="true">/</span>
           {parent && <><Link href={parent.href} className="link-slide inline-flex min-h-11 items-center">{parent.title}</Link><span aria-hidden="true">/</span></>}
           <span aria-current="page">{title}</span>
         </nav>
-        <p className="mb-4 text-xs uppercase tracking-widest text-accent">Dodzel Engineering</p>
-        <h1 className="max-w-[24ch] text-page font-semibold leading-tight">{title} <ReviewBadge confirm={confirm} /></h1>
-        <p className="mt-4 max-w-[60ch] text-on-dark">{intro ?? intros[title] ?? "Sector information awaiting approval."}</p>
+        <p className="mb-4 type-label text-[var(--fg-eyebrow)]">Dodzel Engineering</p>
+        <h1 className="max-w-[24ch]">{title} <ReviewBadge confirm={confirm} /></h1>
+        <p className="mt-4 max-w-[60ch] text-[var(--fg-heading)]">{intro ?? intros[title] ?? "Sector information awaiting approval."}</p>
       </Container>
     </section>
     <Container><div aria-hidden="true" className="h-[3px] bg-accent-shape" /></Container>
@@ -37,13 +37,13 @@ export function PageHero({ title, intro, variant = "image", parent, confirm = fa
       <MediaFrame slot={title} priority banner sizes="100vw" className="absolute inset-0 -z-20 h-full w-full rounded-none" />
       <Container className="relative grid h-full grid-cols-12 items-end pb-8 pt-32 sm:pb-12">
         <div className="col-span-12 lg:col-span-10">
-          <nav aria-label="Breadcrumb" className="mb-4 flex flex-wrap items-center gap-3 text-xs text-on-dark">
+          <nav aria-label="Breadcrumb" className="mb-4 flex flex-wrap items-center gap-3 text-xs text-[var(--fg-heading)]">
             <Link href="/" className="link-slide inline-flex min-h-11 items-center">Home</Link><span aria-hidden="true">/</span><span aria-current="page">{title}</span>
           </nav>
-          <p data-banner-follow className="mb-2 text-xs uppercase tracking-widest text-accent">Dodzel Engineering</p>
+          <p data-banner-follow className="mb-2 type-label text-[var(--fg-eyebrow)]">Dodzel Engineering</p>
           <span data-banner-rule aria-hidden="true" className="banner-rule mb-4 block h-px w-16 bg-accent-shape" />
-          <h1 className="max-w-[24ch] text-page font-semibold leading-tight">{title} <ReviewBadge confirm={confirm} /></h1>
-          <p data-banner-follow className="mt-4 max-w-[60ch] text-sm text-on-dark sm:text-base">{intro ?? intros[title] ?? "Explore this capability and discuss your project requirements."}</p>
+          <h1 className="max-w-[24ch]">{title} <ReviewBadge confirm={confirm} /></h1>
+          <p data-banner-follow className="mt-4 max-w-[60ch] text-description text-[var(--fg-heading)] sm:text-base">{intro ?? intros[title] ?? "Explore this capability and discuss your project requirements."}</p>
         </div>
       </Container>
     </BannerMotion>

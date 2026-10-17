@@ -4,14 +4,14 @@ import { Button } from "@/components/ui/Button";
 import { TodoBadge } from "@/components/ui/TodoBadge";
 export function CareersTeaser() {
   return (
-    <section className="bg-paper py-section">
+    <section className="on-light bg-paper py-section">
       <Container className="flex flex-col justify-between gap-8 md:flex-row md:items-center">
         <div>
-          <p className="mb-5 eyebrow text-xs uppercase tracking-widest">
+          <p className="mb-5 eyebrow type-label">
             08 / Careers
           </p>
-          <h2 className="mb-5 text-4xl">{placeholders.careers.title}</h2>
-          <p className="max-w-lg text-muted">
+          <h2 className="mb-5">{placeholders.careers.title}</h2>
+          <p className="max-w-lg text-[var(--fg-body)]">
             {placeholders.careers.description} <TodoBadge />
           </p>
         </div>

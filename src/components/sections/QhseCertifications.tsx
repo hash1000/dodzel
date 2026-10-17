@@ -10,7 +10,7 @@ export function QhseCertifications() {
   return (
     <section
       data-tone="dark"
-      className="relative isolate overflow-hidden bg-surface-raised py-section text-on-dark"
+      className="relative isolate overflow-hidden on-navy bg-surface-raised py-section text-[var(--fg-heading)]"
     >
       <MediaFrame
         slot="qhse-background"
@@ -20,31 +20,31 @@ export function QhseCertifications() {
       />
       <Container className="grid grid-cols-1 gap-12 lg:grid-cols-[.8fr_1.2fr]">
         <div>
-          <p className="mb-5 text-xs uppercase tracking-widest text-accent">
+          <p className="mb-5 type-label text-[var(--fg-eyebrow)]">
             05 / Quality, health, safety & environment
           </p>
-          <h2 className="mb-6 text-heading font-semibold">
+          <h2 className="mb-6">
             {real.qhse.title} <ReviewBadge {...real.qhse} />
           </h2>
-          <p className="mb-8 max-w-md leading-relaxed text-on-dark-muted">
+          <p className="mb-8 max-w-md leading-relaxed text-[var(--fg-body)]">
             {real.qhse.description}
           </p>
           <Button href="/qhse" variant="outline">
             Our QHSE approach
           </Button>
         </div>
-        <div className="rounded-card border border-dark-line bg-surface-elevated p-6 sm:p-8">
+        <div className="rounded-card border border-dark-line on-navy bg-surface-elevated p-6 sm:p-8">
           <div className="grid grid-cols-1 gap-8 sm:grid-cols-2">
             <div>
-              <p className="font-display text-6xl text-accent">
+              <p className="font-display text-6xl text-[var(--fg-eyebrow)]">
                 {placeholders.qhse.hours}
               </p>
-              <p className="mt-4 text-sm text-on-dark-muted">
+              <p className="mt-4 text-description text-[var(--fg-body)]">
                 {placeholders.qhse.hoursLabel} <TodoBadge />
               </p>
             </div>
             <div
-              className="bg-surface-raised flex aspect-[2/1] items-center justify-center border border-dark-line p-4 text-center text-xs text-on-dark-muted"
+              className="on-navy bg-surface-raised flex aspect-[2/1] items-center justify-center border border-dark-line p-4 text-center text-xs text-[var(--fg-body)]"
               aria-label={placeholders.safetyChart.label}
             >
               <span>
@@ -56,12 +56,12 @@ export function QhseCertifications() {
             {placeholders.certifications.map((cert) => (
               <div key={cert.title} className="border border-dark-line p-4">
                 <ShieldCheck
-                  className="mb-4 text-on-dark-muted"
+                  className="mb-4 text-[var(--fg-body)]"
                   size={24}
                   aria-hidden="true"
                 />
-                <h3 className="text-sm">{cert.title}</h3>
-                <p className="mb-3 mt-2 text-xs text-on-dark-muted">
+                <h3 className="">{cert.title}</h3>
+                <p className="mb-3 mt-2 text-description text-[var(--fg-body)]">
                   {cert.detail}
                 </p>
                 <TodoBadge />

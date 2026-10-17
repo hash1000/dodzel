@@ -23,12 +23,12 @@ export function InsightCard({
       />
       <div>
         <p
-          className={`${featured ? "mt-5" : "mt-3 sm:mt-0"} text-xs uppercase tracking-wider text-muted`}
+          className={`${featured ? "mt-5" : "mt-3 sm:mt-0"} type-label text-[var(--fg-body)]`}
         >
           {insight.category}
         </p>
         <h3
-          className={`my-3 font-semibold ${featured ? "text-3xl" : "text-xl"}`}
+          className="my-3"
         >
           <Link
             href={`/insights#insight-${insight.id}`}
@@ -37,7 +37,7 @@ export function InsightCard({
             {insight.title}
           </Link>
         </h3>
-        <p className="flex flex-wrap items-center gap-3 text-sm text-muted">
+        <p className="flex flex-wrap items-center gap-3 text-description text-[var(--fg-body)]">
           {insight.date}
           <TodoBadge />
         </p>

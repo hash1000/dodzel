@@ -12,10 +12,10 @@ export default function Page() {
     <main id="main-content">
       <PageHero title="Conduct" />
       <Container className="min-h-80 py-16">
-        <h2 className="mb-6 text-heading text-accent-2">
+        <h2 className="mb-6 text-accent-2">
           {real.conduct.title}
         </h2>
-        <p className="max-w-2xl text-lg leading-relaxed text-muted">
+        <p className="max-w-2xl text-lg leading-relaxed text-[var(--fg-body)]">
           {real.conduct.description} <ReviewBadge {...real.conduct} />
         </p>
       </Container>

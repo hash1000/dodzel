@@ -10,8 +10,8 @@ export default function Page() {
     <main id="main-content">
       <PageHero title="Projects" />
       <Container className="py-section">
-        <h2 className="mb-4 text-heading">Discuss your next project</h2>
-        <p className="mb-8 text-muted">
+        <h2 className="mb-4">Discuss your next project</h2>
+        <p className="mb-8 text-[var(--fg-body)]">
           Contact our team to discuss your scope, requirements and delivery priorities.
         </p>
         <Button href="/contact">Get in touch</Button>

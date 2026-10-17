@@ -14,8 +14,8 @@ export function Button({
       className={cn(
         "action inline-flex min-h-12 items-center justify-center gap-4 rounded-card border px-5 py-3 text-sm font-semibold",
         variant === "primary"
-          ? "border-accent bg-accent text-surface-dark hover:bg-accent-hover hover:border-accent-hover"
-          : "border-current bg-transparent hover:underline",
+          ? "border-brand bg-brand text-white hover:bg-brand/85 hover:border-brand [&>.action-arrow]:text-white"
+          : "border-current bg-transparent text-[var(--fg-link)] hover:text-[var(--fg-link-hover)] hover:underline",
         className,
       )}
       {...props}

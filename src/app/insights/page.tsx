@@ -12,7 +12,7 @@ export default function Page() {
     <main id="main-content">
       <PageHero title="Insights" />
       <Container className="min-h-80 py-16">
-        <p className="max-w-2xl text-lg leading-relaxed text-muted">
+        <p className="max-w-2xl text-lg leading-relaxed text-[var(--fg-body)]">
           {placeholders.stub.body} <TodoBadge />
         </p>
         {placeholders.insights.map((insight) => (
@@ -21,8 +21,8 @@ export default function Page() {
             id={`insight-${insight.id}`}
             className="mt-8 border-t border-line pt-6"
           >
-            <h2 className="mb-3 text-2xl">{insight.title}</h2>
-            <p className="text-muted">
+            <h2 className="mb-3">{insight.title}</h2>
+            <p className="text-[var(--fg-body)]">
               {placeholders.stub.body} <TodoBadge />
             </p>
           </section>

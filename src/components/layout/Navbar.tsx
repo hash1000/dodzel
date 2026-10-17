@@ -14,6 +14,15 @@ import Image from "next/image";
 export function Navbar() {
   const pathname = usePathname();
 
+  const [scrolled, setScrolled] = useState(false);
+  useEffect(() => {
+    const sync = () => setScrolled(window.scrollY > 32);
+    sync();
+    window.addEventListener("scroll", sync, { passive: true });
+    return () => window.removeEventListener("scroll", sync);
+  }, []);
+  const overlay = pathname === "/" && !scrolled;
+
   const [menu, setMenu] = useState<"Services" | "Sectors" | null>(null);
   const header = useRef<HTMLElement>(null);
   const dialog = useRef<HTMLDialogElement>(null);
@@ -41,7 +50,7 @@ export function Navbar() {
   return (
     <header
       ref={header}
-      className="fixed z-50  bg-paper/95 text-ink w-full backdrop-blur-sm backdrop-saturate-150"
+      className={cn("on-dark fixed z-50 w-full text-[var(--fg-heading)] transition-colors [--color-accent:var(--color-brand)] [--color-accent-hover:var(--color-brand)] [--color-accent-on-light:var(--color-brand)] [--color-focus:var(--color-brand)] [--color-surface-dark:var(--color-ink)] [&_.action]:text-white", overlay ? "bg-transparent" : "bg-ink/95 backdrop-blur-sm")}
       onKeyDown={(event) => {
         if (event.key === "Escape" && menu) {
           header.current
@@ -54,7 +63,7 @@ export function Navbar() {
         if (!event.currentTarget.contains(event.relatedTarget)) setMenu(null);
       }}
     >
-      <div className="flex min-h-20 w-full items-center justify-between  gap-2 px-5 sm:gap-4 sm:px-8">
+      <div className="flex min-h-20 w-full items-center justify-between gap-2 px-5 sm:gap-4 sm:px-8">
         <Link href="/" className="flex items-center gap-2 sm:gap-3">
           <Image
             src="/assets/images/dodzel-logo.jpeg"
@@ -68,7 +77,7 @@ export function Navbar() {
         </Link>
         <nav
           aria-label="Main navigation"
-          className="hidden items-center xl:flex"
+          className="hidden items-center rounded-card bg-ink/80 xl:flex"
           onKeyDown={(event) => {
             if (!["ArrowLeft", "ArrowRight", "Home", "End"].includes(event.key))
               return;
@@ -99,14 +108,14 @@ export function Navbar() {
                 onClick={() => setMenu(null)}
                 aria-current={pathname === link.href ? "page" : undefined}
                 className={cn(
-                  " px-3 py-3 text-sm transition-colors hover:bg-surface hover:text-accent-on-light border-[#B10304]",
+                  " px-3 py-3 text-sm transition-colors hover:bg-surface hover:text-white border-brand",
                   (
                     link.href === "/"
                       ? pathname === "/"
                       : pathname.startsWith(link.href)
                   )
                     ? "border-b-3 "
-                    : "text-ink",
+                    : "text-white",
                 )}
               >
                 {link.label}
@@ -143,7 +152,7 @@ export function Navbar() {
         <div className="flex items-center gap-2 sm:gap-3">
           <Button
             href="/request-a-quote"
-            className="min-h-11 gap-2 px-3 text-xs sm:gap-4 sm:px-5 sm:text-sm [&>svg]:hidden sm:[&>svg]:block"
+            className="border-brand bg-brand text-white hover:border-brand hover:bg-brand/85 min-h-11 gap-2 px-3 text-xs sm:gap-4 sm:px-5 sm:text-sm [&>svg]:hidden sm:[&>svg]:block"
           >
             <span className="sm:hidden">Quote</span>
             <span className="hidden sm:inline">Request a Quote</span>
@@ -156,7 +165,7 @@ export function Navbar() {
               setMenu(null);
               dialog.current?.showModal();
             }}
-            className="grid h-11 w-11 place-items-center rounded-full border border-line"
+            className="grid h-11 w-11 place-items-center rounded-full border border-white/20 bg-ink/80"
           >
             <Menu size={22} />
           </button>
@@ -172,7 +181,7 @@ export function Navbar() {
         ref={dialog}
         id="navigation-dialog"
         aria-labelledby="navigation-title"
-        className="fixed inset-0 m-0 h-dvh max-h-none w-screen max-w-none overflow-y-auto overscroll-contain bg-surface-dark text-on-dark backdrop:bg-surface-dark/80"
+        className="fixed inset-0 m-0 h-dvh max-h-none w-screen max-w-none overflow-y-auto overscroll-contain on-dark bg-ink text-white backdrop:bg-ink/80"
         onKeyDown={(event) => {
           if (event.key === "Escape") {
             event.preventDefault();
@@ -205,14 +214,14 @@ export function Navbar() {
       >
         <Container className="py-8">
           <div className="mb-12 flex items-center justify-between">
-            <h2 id="navigation-title" className="text-xl">
+            <h2 id="navigation-title" className="">
               Dodzel / Explore
             </h2>
             <button
               autoFocus
               onClick={closeDialog}
               aria-label="Close navigation menu"
-              className="grid h-12 w-12 place-items-center rounded-full border border-line "
+              className="grid h-12 w-12 place-items-center rounded-full border border-line"
             >
               <X />
             </button>

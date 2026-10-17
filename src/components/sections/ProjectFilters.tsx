@@ -26,13 +26,13 @@ export function ProjectFilters() {
             key={filter}
             aria-pressed={selected === filter}
             onClick={() => setSelected(filter)}
-            className={`min-h-11 rounded-full border px-5 text-sm ${selected === filter ? "border-accent bg-accent text-surface-dark" : "border-line bg-surface text-link hover:border-accent-2"}`}
+            className={`min-h-11 rounded-full border px-5 text-sm ${selected === filter ? "border-accent bg-accent text-surface-dark" : "border-line on-dark bg-surface text-[var(--fg-link)] hover:border-accent-2"}`}
           >
             {filter}
           </button>
         ))}
       </div>
-      <p aria-live="polite" className="mb-5 text-sm text-muted">
+      <p aria-live="polite" className="mb-5 text-description text-[var(--fg-body)]">
         {projects.length} illustrative media{" "}
         {projects.length === 1 ? "card" : "cards"}. Filters describe the stock
         imagery; approved project sectors are pending.

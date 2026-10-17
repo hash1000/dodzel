@@ -13,7 +13,7 @@ export default function Page() {
     <main id="main-content">
       <PageHero title="QHSE" />
       <Container className="py-16">
-        <h2 className="mb-6 text-heading font-semibold">
+        <h2 className="mb-6">
           {real.qhse.title} <ReviewBadge {...real.qhse} />
         </h2>
         <p className="max-w-2xl text-xl leading-relaxed">
@@ -23,25 +23,25 @@ export default function Page() {
           {real.policies.map((policy) => (
             <section
               key={policy.title}
-              className="border-s-4 border-accent-2 bg-surface p-8"
+              className="border-s-4 border-accent-2 on-dark bg-surface p-8"
             >
-              <h2 className="mb-4 text-3xl text-accent-2">
+              <h2 className="mb-4 text-accent-2">
                 {policy.title} <ReviewBadge {...policy} />
               </h2>
-              <p className="max-w-4xl leading-relaxed text-muted">
+              <p className="max-w-4xl leading-relaxed text-[var(--fg-body)]">
                 {policy.description}
               </p>
             </section>
           ))}
         </div>
-        <p className="mt-8 text-muted">
+        <p className="mt-8 text-[var(--fg-body)]">
           {placeholders.qhse.hoursLabel}: {placeholders.qhse.hours}{" "}
           <ReviewBadge todo />
         </p>
         <section className="my-12 grid items-center gap-8 sm:grid-cols-[1fr_20rem]">
           <div>
-            <h2 className="mb-4 text-3xl">People and working environments</h2>
-            <p className="text-muted">
+            <h2 className="mb-4">People and working environments</h2>
+            <p className="text-[var(--fg-body)]">
               A commitment to Zero Harm for employees, the public and the environment.
             </p>
           </div>
@@ -55,8 +55,8 @@ export default function Page() {
         <div className="mt-10 grid gap-6 md:grid-cols-3">
           {placeholders.certifications.map((cert) => (
             <article key={cert.title} className="border border-line p-6">
-              <h3 className="mb-4 text-xl">{cert.title}</h3>
-              <p className="mb-3 text-muted">{cert.detail}</p>
+              <h3 className="mb-4">{cert.title}</h3>
+              <p className="mb-3 text-[var(--fg-body)]">{cert.detail}</p>
               <ReviewBadge todo />
             </article>
           ))}

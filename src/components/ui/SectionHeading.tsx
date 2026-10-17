@@ -14,10 +14,10 @@ export function SectionHeading({
   return (
     <div className="mb-10 flex flex-col justify-between gap-6 md:flex-row md:items-end">
       <div>
-        <p className="eyebrow mb-4 text-xs font-semibold uppercase tracking-[0.18em]">
+        <p className="eyebrow mb-4 type-label">
           {eyebrow}
         </p>
-        <h2 className="max-w-3xl text-heading font-semibold tracking-tight">
+        <h2 className="max-w-3xl tracking-tight">
           {title} {todo && <TodoBadge />}
         </h2>
       </div>

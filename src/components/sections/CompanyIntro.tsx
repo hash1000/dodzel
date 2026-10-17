@@ -4,18 +4,18 @@ import { Button } from "@/components/ui/Button";
 import { real } from "@/content/real";
 export function CompanyIntro() {
   return (
-    <section className="bg-paper py-section">
+    <section className="on-light bg-paper py-section">
       <Container className="grid items-end gap-8 lg:grid-cols-[1.3fr_1fr]">
         <div>
-          <p className="eyebrow mb-5 text-xs font-semibold uppercase tracking-widest">
+          <p className="eyebrow mb-5 type-label">
             Engineering. Construction. Commitment.
           </p>
-          <h2 className="text-heading font-semibold">
+          <h2 className="">
             We help you build your infrastructure reliably.
           </h2>
         </div>
         <div>
-          <p className="mb-6 text-body leading-relaxed text-muted">
+          <p className="mb-6 text-lead text-[var(--fg-body)]">
             {real.company.description} <ReviewBadge {...real.company} />
           </p>
           <Button href="/about" variant="outline">

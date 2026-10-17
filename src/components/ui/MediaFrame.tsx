@@ -7,9 +7,9 @@ export function MediaFrame({ priority = false, className, slot, sizes = "(max-wi
 }) {
   const asset = (slot ? media[slot] : undefined) ?? placeholderMedia;
   const strength = asset.scrimStrength ?? .64;
-  const image = asset.kind === "placeholder" ? <div data-media-placeholder className="absolute inset-0 grid place-items-center bg-surface-raised"></div> : <>
+  const image = asset.kind === "placeholder" ? <div data-media-placeholder className="absolute inset-0 grid place-items-center on-navy bg-surface-raised"></div> : <>
     <Image data-media-image data-banner-image={banner || undefined} data-media-slot={slot} src={asset.srcset.at(-1)?.avif ?? asset.src} alt={asset.alt} fill unoptimized={asset.srcset.length === 1} preload={priority} loading={priority ? "eager" : "lazy"} fetchPriority={priority ? "high" : "auto"} sizes={sizes} placeholder={asset.blurDataURL ? "blur" : "empty"} blurDataURL={asset.blurDataURL || undefined} style={{ objectPosition: `${asset.focal.x * 100}% ${asset.focal.y * 100}%` }} className="object-cover" />
     <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-scrim" style={{ opacity: scrim || banner ? strength : .06 }} />
   </>;
-  return <div className={cn("relative aspect-[16/10] overflow-hidden rounded-card bg-surface-raised text-on-dark", className)}>{reveal && !banner ? <MediaReveal>{image}</MediaReveal> : image}</div>;
+  return <div className={cn("relative aspect-[16/10] overflow-hidden rounded-card on-navy bg-surface-raised text-[var(--fg-heading)]", className)}>{reveal && !banner ? <MediaReveal>{image}</MediaReveal> : image}</div>;
 }

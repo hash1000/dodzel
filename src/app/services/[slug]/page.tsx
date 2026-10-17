@@ -40,18 +40,18 @@ export default async function Page({
         <div className="col-span-12 min-w-0 lg:col-span-8">
           <ReviewBadge {...service} />
           <p className="my-6 text-xl leading-relaxed">{service.description}</p>
-          <h2 className="mb-4 text-3xl">What we do</h2>
-          <ul className="list-disc space-y-4 ps-5 text-muted">
+          <h2 className="mb-4">What we do</h2>
+          <ul className="list-disc space-y-4 ps-5 text-[var(--fg-body)]">
             {placeholders.serviceBullets.map((item) => (
               <li key={item}>
                 {item} <ReviewBadge todo />
               </li>
             ))}
           </ul>
-          <h2 className="mb-4 mt-10 text-2xl">
+          <h2 className="mb-4 mt-10">
             Explore our sectors <ReviewBadge confirm />
           </h2>
-          <p className="mb-4 text-sm text-muted">
+          <p className="mb-4 text-description text-[var(--fg-body)]">
             Service-to-sector applicability requires confirmation.
           </p>
           <div className="mb-10 flex flex-wrap gap-4">
@@ -59,7 +59,7 @@ export default async function Page({
               <Link
                 key={name}
                 href={sectorHref(name)}
-                className="text-accent-on-light underline"
+                className="text-[var(--fg-eyebrow)] underline"
               >
                 {name}
               </Link>
@@ -70,7 +70,7 @@ export default async function Page({
 
       </Container>
       <Container className="pb-section"><MediaCollection slot={service.name} /></Container>
-      <section data-tone="dark" className="bg-surface-raised py-section text-on-dark"><Container className="flex flex-wrap items-center justify-between gap-8"><div><p className="mb-3 text-xs uppercase tracking-widest text-accent">Discuss your requirements</p><h2 className="text-heading">Tell us about your scope</h2></div><Button href="/request-a-quote">Request a Quote</Button></Container></section>
+      <section data-tone="dark" className="on-navy bg-surface-raised py-section text-[var(--fg-heading)]"><Container className="flex flex-wrap items-center justify-between gap-8"><div><p className="mb-3 type-label text-[var(--fg-eyebrow)]">Discuss your requirements</p><h2 className="">Tell us about your scope</h2></div><Button href="/request-a-quote">Request a Quote</Button></Container></section>
     </main>
   );
 }

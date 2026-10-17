@@ -33,8 +33,8 @@ export function ServiceGroup({
     return () => clearTimeout(timer);
   }, [previous, selected]);
   return (
-    <article className="flex h-full min-w-0 flex-col overflow-hidden rounded-card border border-line border-t-2 border-t-accent-2 bg-surface">
-      <div className="relative aspect-[16/9] overflow-hidden bg-surface-raised">
+    <article className="flex h-full min-w-0 flex-col overflow-hidden rounded-card border border-line border-t-2 border-t-accent-2 on-dark bg-surface">
+      <div className="relative aspect-[16/9] overflow-hidden on-navy bg-surface-raised">
         {[
           ...new Set(
             [previous, selected].filter((slot): slot is string => !!slot),
@@ -55,10 +55,10 @@ export function ServiceGroup({
         ))}
       </div>
       <div className="flex flex-1 flex-col p-6 sm:p-8">
-        <p className="eyebrow mb-3 text-xs uppercase tracking-widest">
+        <p className="eyebrow mb-3 type-label">
           0{index + 1} / Capabilities
         </p>
-        <h3 className="mb-6 text-3xl font-semibold">{title}</h3>
+        <h3 className="mb-6 hover:text-[var(--fg-link-hover)]">{title}</h3>
         <ul className="divide-y divide-line">
           {services.map((service) => (
             <li
@@ -73,7 +73,7 @@ export function ServiceGroup({
             >
               <Link
                 href={serviceHref(service.name)}
-                className="link-slide flex min-h-11 items-center justify-between gap-3 text-sm font-semibold text-link"
+                className="link-slide flex min-h-11 items-center justify-between gap-3 text-description font-semibold text-[var(--fg-link)] hover:text-[var(--fg-link-hover)]"
               >
                 <span>
                   {service.name} <ReviewBadge {...service} />
@@ -81,10 +81,10 @@ export function ServiceGroup({
                 <ArrowUpRight
                   size={18}
                   aria-hidden="true"
-                  className="shrink-0 rtl:-scale-x-100"
+                  className="shrink-0 text-brand rtl:-scale-x-100"
                 />
               </Link>
-              <p className="mt-2 text-sm leading-relaxed text-muted">
+              <p className="mt-2 text-description text-[var(--fg-body)]">
                 {service.description}
               </p>
             </li>

@@ -8,14 +8,14 @@ import { TodoBadge } from "@/components/ui/TodoBadge";
 import { ServiceGroup } from "./ServiceGroup";
 export function ServicesGroups() {
   return (
-    <section className="bg-surface py-section">
+    <section className="on-dark bg-surface py-section">
       <Container>
         <SectionHeading {...placeholders.headings.services}>
           <Button href="/services" variant="outline">
             All services
           </Button>
         </SectionHeading>
-        <p className="mb-10 text-muted">
+        <p className="mb-10 text-[var(--fg-body)]">
           {placeholders.services.description} <TodoBadge />
         </p>
         <div className="grid gap-8 md:grid-cols-2">

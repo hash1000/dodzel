@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/Button";
 import { TodoBadge } from "@/components/ui/TodoBadge";
 export function InsightsGrid() {
   return (
-    <section className="bg-paper py-section">
+    <section className="on-light bg-paper py-section">
       <Container>
         <SectionHeading {...placeholders.headings.insights}>
           <Button href="/insights" variant="outline">
@@ -20,7 +20,7 @@ export function InsightsGrid() {
           {placeholders.insightFilters.map((filter, index) => (
             <span
               key={filter.label}
-              className={`rounded-card border px-4 py-2 text-xs ${index === 0 ? "border-surface-dark bg-surface-dark text-on-dark" : "border-line bg-surface text-muted"}`}
+              className={`rounded-card border px-4 py-2 text-xs ${index === 0 ? "border-surface-dark on-navy bg-surface-dark text-[var(--fg-heading)]" : "border-line on-dark bg-surface text-[var(--fg-body)]"}`}
             >
               {filter.label}
             </span>

@@ -43,10 +43,10 @@ export function RfqForm() {
     }
   };
   const fieldClass =
-    "mt-2 min-h-12 w-full border border-line bg-surface px-4 py-3 text-ink";
+    "mt-2 min-h-12 w-full border border-line on-dark bg-surface px-4 py-3 text-[var(--fg-heading)]";
   const error = (name: keyof RfqValues) =>
     errors[name] && (
-      <p id={`${name}-error`} role="alert" className="mt-2 text-sm text-error">
+      <p id={`${name}-error`} role="alert" className="mt-2 text-description text-error">
         {errors[name]?.message}
       </p>
     );
@@ -56,7 +56,7 @@ export function RfqForm() {
   });
   return (
     <div className="max-w-3xl">
-      <p className="mb-8 border-s-4 border-accent bg-surface p-5 text-sm leading-relaxed">
+      <p className="mb-8 border-s-4 border-accent on-dark bg-surface p-5 text-description">
         {placeholders.rfq.notice} <TodoBadge />
       </p>
       <form
@@ -143,7 +143,7 @@ export function RfqForm() {
             ))}
           </select>
           {error("service")}
-          <p className="mt-3 text-xs text-muted">
+          <p className="mt-3 text-xs text-[var(--fg-body)]">
             {placeholders.rfqServiceReview.text}{" "}
             <ReviewBadge {...placeholders.rfqServiceReview} />
           </p>
@@ -166,7 +166,7 @@ export function RfqForm() {
           <label htmlFor="file" className="text-sm font-medium">
             Supporting file (optional)
           </label>
-          <p id="file-help" className="mt-2 text-xs text-muted">
+          <p id="file-help" className="mt-2 text-xs text-[var(--fg-body)]">
             PDF, DOCX or XLSX. Maximum 10 MB.
           </p>
           <input
@@ -194,7 +194,7 @@ export function RfqForm() {
           />
         </div>
         <div className="sm:col-span-2">
-          <p className="mb-4 text-xs text-muted">* Required fields</p>
+          <p className="mb-4 text-xs text-[var(--fg-body)]">* Required fields</p>
           <button
             type="submit"
             disabled={isSubmitting}
@@ -203,12 +203,12 @@ export function RfqForm() {
             {isSubmitting ? "Validating…" : "Validate quote request"}
           </button>
           {errors.root && (
-            <p role="alert" className="mt-4 text-sm text-error">
+            <p role="alert" className="mt-4 text-description text-error">
               {errors.root.message}
             </p>
           )}
           {success && (
-            <p role="status" className="mt-6 border border-line bg-surface p-5">
+            <p role="status" className="mt-6 border border-line on-dark bg-surface p-5">
               {placeholders.rfq.success} <TodoBadge />
             </p>
           )}

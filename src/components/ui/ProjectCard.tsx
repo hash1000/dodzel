@@ -10,7 +10,7 @@ export function ProjectCard({
   return (
     <article
       data-project-card
-      className="media-hover overflow-hidden rounded-card border border-line border-t-2 border-t-accent-2 bg-surface"
+      className="media-hover overflow-hidden rounded-card border border-line border-t-2 border-t-accent-2 on-dark bg-surface"
     >
       <MediaFrame
         reveal
@@ -19,13 +19,13 @@ export function ProjectCard({
         sizes="(max-width: 768px) 100vw, 33vw"
       />
       <div className="p-6">
-        <p className="mb-3 text-xs text-accent-on-light">
+        <p className="mb-3 text-xs text-[var(--fg-eyebrow)]">
           Illustrative stock media · project details pending
         </p>
-        <p className="mb-3 text-xs uppercase tracking-wider text-muted">
+        <p className="mb-3 type-label text-[var(--fg-body)]">
           {project.sector} · {project.country}
         </p>
-        <h3 className="mb-4 text-xl">
+        <h3 className="mb-4">
           <Link
             href={`/projects#project-${project.id}`}
             className="hover:underline"
@@ -33,7 +33,7 @@ export function ProjectCard({
             {project.title}
           </Link>
         </h3>
-        <dl className="grid grid-cols-[auto_1fr] gap-x-4 gap-y-2 text-sm text-muted">
+        <dl className="grid grid-cols-[auto_1fr] gap-x-4 gap-y-2 text-sm text-[var(--fg-body)]">
           <dt>Scope</dt>
           <dd>{project.scope}</dd>
           <dt>Client</dt>

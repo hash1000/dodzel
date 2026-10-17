@@ -5,7 +5,7 @@ export default function Loading() {
     <main id="main-content" aria-busy="true">
       <PageHero title="Loading…" />
       <Container className="min-h-screen py-16">
-        <p role="status" className="text-muted">
+        <p role="status" className="text-[var(--fg-body)]">
           Loading page content…
         </p>
       </Container>

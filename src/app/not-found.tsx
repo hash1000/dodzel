@@ -6,7 +6,7 @@ export default function NotFound() {
     <main id="main-content">
       <PageHero title="Page not found" />
       <Container className="min-h-80 py-16">
-        <p className="mb-8 text-muted">
+        <p className="mb-8 text-[var(--fg-body)]">
           The page you’re looking for could not be found.
         </p>
         <Button href="/">Return home</Button>
