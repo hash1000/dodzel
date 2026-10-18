@@ -162,7 +162,7 @@ export function Navbar() {
           </button>
         </div>
       </div>
-      {menu && (
+      {menu &&  (
         <div id="mega-menu" className="overflow-hidden rounded-b-[2.5rem]">
           <MegaMenu kind={menu} onNavigate={() => setMenu(null)} />
         </div>
