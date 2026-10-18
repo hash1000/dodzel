@@ -17,7 +17,8 @@ export function MegaMenu({
   return (
     <div
       data-tone="dark"
-      className="absolute start-0 end-0 top-full rounded-b-[2.5rem] max-h-[calc(100dvh-6rem)] overflow-y-auto border-t border-dark-line on-navy bg-surface-dark p-8 text-[var(--fg-heading)] shadow-xl"
+      data-lenis-prevent
+      className="header-dropdown max-h-[calc(100dvh-7rem)] overflow-y-auto border border-white/10 on-dark bg-surface p-8 text-white shadow-xl"
       onKeyDown={(event) => {
         if (
           ![
@@ -55,6 +56,7 @@ export function MegaMenu({
         links[next]?.focus();
       }}
     >
+      <Link data-menu-link href={kind === "Services" ? "/services" : "/sectors"} onClick={onNavigate} className="mb-6 inline-flex min-h-11 items-center font-heading text-sm text-white/80 hover:text-white">View all {kind.toLowerCase()}</Link>
       <div className="mx-auto grid max-w-site gap-10 lg:grid-cols-[2fr_1fr]">
         {kind === "Services" ? (
           <>
@@ -75,7 +77,7 @@ export function MegaMenu({
                             onClick={onNavigate}
                             onMouseEnter={() => setSelected(name)}
                             onFocus={() => setSelected(name)}
-                            className="inline-flex min-h-11 items-center py-3 text-sm hover:text-[var(--fg-eyebrow)] hover:underline"
+                            className="inline-flex min-h-11 items-center py-3 text-sm text-white/80 hover:text-white"
                           >
                             {name} <ReviewBadge {...service} />
                           </Link>
@@ -107,11 +109,11 @@ export function MegaMenu({
                   data-menu-link
                   href={sectorHref(name)}
                   onClick={onNavigate}
-                  className="inline-flex min-h-11 items-center text-xl hover:underline"
+                  className="inline-flex min-h-11 items-center text-xl text-white/80 hover:text-white"
                 >
                   {name} <ReviewBadge confirm={name === "Cement"} />
                 </Link>
-                <Link href={sectorDetailHref(name)} onClick={onNavigate} className="mt-2 flex min-h-11 items-center text-sm text-[var(--fg-eyebrow)] underline underline-offset-4">Explore {name} →</Link>
+                <Link data-menu-link href={sectorDetailHref(name)} onClick={onNavigate} className="mt-2 flex min-h-11 items-center text-sm text-white/80 hover:text-white underline underline-offset-4">Explore {name} →</Link>
                 {name === "Oil & Gas" && (
                   <ul className="mt-4 space-y-2 text-sm text-[var(--fg-body)]">
                     {placeholders.oilGasSubitems.map((item) => (

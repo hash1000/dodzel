@@ -194,7 +194,7 @@ export function Hero() {
       data-hero-carousel data-active-slide={active} data-transitioning={isAnimating}
       role="region" aria-roledescription="carousel" aria-live={manualNavigation ? "polite" : "off"}
       aria-label="Dodzel Engineering introduction"
-      className="relative isolate flex min-h-dvh flex-col overflow-hidden on-dark bg-ink text-white [--color-focus:var(--color-brand)] md:block"
+      className="relative isolate flex min-h-dvh flex-col overflow-hidden pt-[var(--site-header-height)] on-dark bg-ink text-white [--color-focus:var(--color-brand)] md:block"
       onPointerEnter={(event) => { if (event.pointerType === "mouse") actions.current?.hover(true); }}
       onPointerLeave={() => actions.current?.hover(false)}
       onFocusCapture={() => actions.current?.focus(true)}
@@ -203,7 +203,7 @@ export function Hero() {
       }}
     >
       {/* Both layers share the same diagonal; the 5px offset exposes the stripe. */}
-      <div data-hero-stripe aria-hidden="true" className="absolute right-0 top-0 hidden h-full w-[55%] bg-brand [clip-path:polygon(18%_0,100%_0,100%_100%,0_100%)] md:block" />
+      <div data-hero-stripe aria-hidden="true" className="absolute right-0 bottom-0 top-[var(--site-header-height)] hidden w-[55%] bg-brand [clip-path:polygon(18%_0,100%_0,100%_100%,0_100%)] md:block" />
       <div
         onPointerDown={(event) => {
           if (!event.isPrimary || event.pointerType === "mouse") return;
@@ -218,7 +218,7 @@ export function Hero() {
           if (Math.abs(dx) >= HERO_TRANSITION.swipeThreshold && Math.abs(dx) > Math.abs(dy) * 1.3) actions.current?.step(dx < 0 ? 1 : -1);
         }}
         onPointerCancel={() => { swipe.current = null; }}
-        className="relative touch-pan-y h-[50svh] shrink-0 overflow-hidden [clip-path:polygon(0_0,100%_0,100%_90%,0_100%)] md:absolute md:inset-y-0 md:right-[-5px] md:h-auto md:w-[55%] md:[clip-path:polygon(18%_0,100%_0,100%_100%,0_100%)]">
+        className="relative touch-pan-y h-[50svh] shrink-0 overflow-hidden [clip-path:polygon(0_0,100%_0,100%_90%,0_100%)] md:absolute md:bottom-0 md:top-[var(--site-header-height)] md:right-[-5px] md:h-auto md:w-[55%] md:[clip-path:polygon(18%_0,100%_0,100%_100%,0_100%)]">
         <div data-hero-image className="absolute inset-0 isolate overflow-hidden">
           {slides.map((slide, index) => (
             <div key={slide.label} data-slide-panel role="group" aria-roledescription="slide" aria-label={`${index + 1} of ${slides.length}: ${slide.label}`} aria-hidden={displayed !== index}
@@ -244,7 +244,7 @@ export function Hero() {
         </div>
         <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-linear-to-r from-ink/15 to-transparent" />
       </div>
-      <div data-hero-copy className="relative flex flex-col justify-center px-6 pb-12 pt-8 sm:px-10 md:min-h-dvh md:w-[45%] md:px-[clamp(1.5rem,4vw,5rem)] md:pb-12 md:pt-36">
+      <div data-hero-copy className="relative flex flex-col justify-center pl-[max(var(--gutter),calc((100vw-var(--page-max-width))/2+var(--gutter)))] pr-[var(--gutter)] pb-12 pt-8 md:min-h-[calc(100dvh-var(--site-header-height))] md:w-[45%] md:pb-12 md:pt-36">
         <div data-hero-detail aria-hidden="true" className="mb-7 h-1 w-12 bg-brand" />
         <h1 aria-label={heroHeading} className="font-heading font-bold uppercase tracking-[-0.02em]">
           {getHeadingWords(heroHeading).map(({ text, highlighted }, index) => (

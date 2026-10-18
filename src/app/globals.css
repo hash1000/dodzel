@@ -1,6 +1,9 @@
 @import "tailwindcss";
 :root {
   --loader-bg: var(--color-ink);
+  --gutter: clamp(1.25rem, 4vw, 4.5rem);
+  --page-max-width: 1600px;
+  --site-header-height: 68px;
 }
 
 @theme inline {
@@ -21,6 +24,8 @@
   --text-lead: clamp(1.125rem, 1.5vw, 1.25rem);
   --text-lead--line-height: 1.6;
   --color-brand: #b10304;
+  --color-brand-hover: #c91415;
+  --color-brand-glow: #ff5a52;
   --color-brand-red: var(--color-brand);
   --color-blue-950: #0b2545;
   --color-blue-900: #10315c;
@@ -304,3 +309,25 @@ body:has([data-studio-theme]) {
 .presence-traveller { filter: drop-shadow(0 0 4px white); }
 .presence-country[data-map-emphasis="true"] { filter: brightness(1.8); }
 .presence-connection[data-map-emphasis="true"] { filter: drop-shadow(0 0 4px var(--color-brand)); }
+
+.site-header { height: var(--site-header-height); --header-icon-size: 36px; }
+@media (min-width: 1100px) {
+  :root { --site-header-height: 88px; }
+  .site-header { --header-icon-size: 44px; }
+}
+.header-toggle span {
+  position: absolute; left: 2px; top: 11px; width: 20px; height: 2px; background: currentColor;
+  transition: transform 180ms ease;
+}
+.header-toggle span:first-child { transform: translateY(-4px); }
+.header-toggle span:last-child { transform: translateY(4px); }
+.header-toggle[data-open="true"] span:first-child { transform: rotate(45deg); }
+.header-toggle[data-open="true"] span:last-child { transform: rotate(-45deg); }
+.header-dropdown a::before {
+  content: ""; display: inline-block; flex-shrink: 0; width: 4px; height: 4px; margin-inline-end: 8px;
+  background: var(--color-brand-glow); opacity: 0; transform: translateX(-3px); transition: opacity 150ms, transform 150ms;
+}
+.header-dropdown a:hover::before, .header-dropdown a:focus-visible::before { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) {
+  .header-toggle span, .header-dropdown a::before { transition: none; }
+}

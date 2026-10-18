@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { ChevronDown } from "lucide-react";
 import { getService } from "@/lib/services";
 import { ReviewBadge } from "@/components/ui/ReviewBadge";
 import {
@@ -9,15 +10,14 @@ import {
   sectorHref,
 } from "@/lib/nav";
 import { OverlayMenu } from "./OverlayMenu";
-import { Button } from "@/components/ui/Button";
 export function MobileMenu({ onNavigate }: { onNavigate: () => void }) {
   return (
     <div className="space-y-10">
-      <nav aria-label="Mobile navigation" className="divide-y divide-dark-line">
-        {navLinks.map((link) =>
+      <nav aria-label="Primary mobile" className="divide-y divide-white/10">
+        {navLinks.map((link, index) =>
           link.label === "Services" || link.label === "Sectors" ? (
-            <details key={link.href} className="py-4">
-              <summary className="text-2xl">{link.label}</summary>
+            <details key={link.href} data-mobile-row className="group py-4">
+              <summary className="flex cursor-pointer list-none items-center gap-4 font-heading text-[2rem] font-semibold leading-tight text-white"><span className="w-6 shrink-0 font-mono text-xs text-brand-glow">{String(index + 1).padStart(2, "0")}</span>{link.label}<ChevronDown size={20} aria-hidden="true" className="ms-auto transition-transform group-open:rotate-180 motion-reduce:transition-none" /></summary>
               <Link
                 className="mt-4 block text-[var(--fg-eyebrow)]"
                 href={link.href}
@@ -57,16 +57,13 @@ export function MobileMenu({ onNavigate }: { onNavigate: () => void }) {
               key={link.href}
               href={link.href}
               onClick={onNavigate}
-              className="block py-4 text-2xl"
+              data-mobile-row className="flex items-center gap-4 py-4 font-heading text-[2rem] font-semibold leading-tight text-white hover:text-white"
             >
-              {link.label}
+              <span className="w-6 shrink-0 font-mono text-xs text-brand-glow">{String(index + 1).padStart(2, "0")}</span>{link.label}
             </Link>
           ),
         )}
       </nav>
-      <Button href="/request-a-quote" onClick={onNavigate}>
-        Request a Quote
-      </Button>
       <OverlayMenu onNavigate={onNavigate} />
     </div>
   );
