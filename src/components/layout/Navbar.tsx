@@ -143,7 +143,7 @@ export function Navbar() {
         ignoreFocus.current = false;
         closeMenu();
       }}>
-      <div data-header-glass aria-hidden="true" className="pointer-events-none absolute inset-0 -z-10 bg-ink opacity-[0.72]" />
+      <div data-header-glass aria-hidden="true" className="pointer-events-none absolute inset-0 -z-10 bg-[#FFFFFF] opacity-[0.72]" />
         <div className="mx-auto w-full relative grid h-full max-w-[1600px] grid-cols-[1fr_auto] items-center gap-2 px-[var(--gutter)] lg:px-[var(--gutter)] min-[1100px]:grid-cols-[1fr_auto_1fr] min-[1100px]:gap-0">
         <BrandLogo onNavigate={closeMenu} />
         <nav aria-label="Primary" onKeyDown={(event) => {
@@ -160,10 +160,10 @@ export function Navbar() {
             return <div key={link.href} className="relative flex h-full shrink-0 items-center gap-1 min-[1100px]:max-xl:gap-0"
               onPointerEnter={(event) => { if (dropdown && event.pointerType !== "touch") openMenu(dropdown); }}
               onFocus={() => { if (dropdown && !ignoreFocus.current) openMenu(dropdown); }}>
-              <Link href={link.href} onClick={closeMenu} aria-current={active ? "page" : undefined} className={`flex h-full items-center whitespace-nowrap text-sm font-medium leading-none transition-colors duration-150 hover:text-white ${active ? "text-white" : "text-white/75"}`}>{link.label}</Link>
+              <Link href={link.href} onClick={closeMenu} aria-current={active ? "page" : undefined} className={`flex h-full items-center whitespace-nowrap text-sm font-medium leading-none transition-colors duration-150 hover:text-white ${active ? "text-[#0F1115]" : "text-[#0F1115]"}`}>{link.label}</Link>
               {dropdown && <button type="button" data-menu={dropdown} aria-label={`Open ${dropdown} menu`} aria-expanded={menu === dropdown} aria-controls="header-dropdown"
                 onClick={() => openMenu(dropdown)} onKeyDown={(event) => { if (event.key === "ArrowDown" || event.key === "ArrowUp") { event.preventDefault(); pendingFocus.current = event.key === "ArrowUp" ? "last" : "first"; if (menu === dropdown) { const links = header.current!.querySelectorAll<HTMLAnchorElement>("[data-header-dropdown] [data-menu-link]"); (pendingFocus.current === "last" ? links[links.length - 1] : links[0])?.focus(); pendingFocus.current = null; } else openMenu(dropdown); } }}
-                className="grid min-h-11 w-3.5 place-items-center text-white/75 hover:text-white"><ChevronDown size={14} aria-hidden="true" className={`transition-transform duration-150 motion-reduce:transition-none ${menu === dropdown ? "rotate-180" : ""}`} /></button>}
+                className="grid min-h-11 w-3.5 place-items-center text-[#0F1115] hover:text-white"><ChevronDown size={14} aria-hidden="true" className={`transition-transform duration-150 motion-reduce:transition-none ${menu === dropdown ? "rotate-180" : ""}`} /></button>}
               {active && <span aria-hidden="true" className="absolute inset-x-0 -bottom-px h-0.5 bg-brand-glow" />}
             </div>;
           })}

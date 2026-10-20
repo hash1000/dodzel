@@ -6,8 +6,8 @@ const reviewed = <T extends object>(item: T) => ({
   confirm: true as const,
 });
 const entities: { name: string; country: string; city?: string; email: string; logo: string; url?: string }[] = [
-  { name: "Dodzel Engineering Limited", country: "Pakistan", city: "Lahore", email: "info@dodzel.com", logo: "/assets/images/dodzel-logo.jpeg", url: "https://dodzel.com" },
-  { name: "Dodzel Engineering WLL", country: "Qatar", city: "Doha", email: "info@dodzel.com", logo: "/assets/images/dodzel-logo.jpeg" },
+  { name: "Dodzel Engineering Limited", country: "Pakistan", city: "Lahore", email: "info@dodzel.com", logo: "/assets/images/dodzel-logo.png", url: "https://dodzel.com" },
+  { name: "Dodzel Engineering WLL", country: "Qatar", city: "Doha", email: "info@dodzel.com", logo: "/assets/images/dodzel-logo.png" },
   { name: "Belgrass Construction Company", country: "Qatar", email: "info@belgrass.com.qa", logo: "/images/belgrass.jpeg", url: "https://belgrass.com.qa" },
   { name: "Bimex Trading Company", country: "Qatar", email: "info@bimex.com.qa", logo: "/images/bimex.jpeg", url: "https://bimex.com.qa" },
   { name: "Novex Trading Private Limited", country: "Pakistan", email: "novex@novex.com.pk", logo: "/images/novex.jpeg", url: "https://novex.com.pk" },
