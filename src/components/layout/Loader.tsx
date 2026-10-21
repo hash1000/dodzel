@@ -4,6 +4,7 @@ import { useRef, useState } from "react";
 import { usePathname } from "next/navigation";
 import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";
+import { BRAND_TAGLINE } from "@/lib/constants";
 import { setLoaderScrollLocked } from "@/lib/loader-scroll";
 
 gsap.registerPlugin(useGSAP);
@@ -12,7 +13,7 @@ const MIN_DURATION_MS = 3000;
 const INTRO_SECONDS = 1.8;
 const HOLD_SECONDS = 0.5;
 const SESSION_KEY = "dodzel_loader_seen";
-const DEFAULT_TAGLINE = "Your tagline here.";
+const DEFAULT_TAGLINE = BRAND_TAGLINE;
 
 export function Loader({ tagline = DEFAULT_TAGLINE }: { tagline?: string }) {
   const overlay = useRef<HTMLDivElement>(null);

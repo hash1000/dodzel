@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import { real } from "@/content/real";
 const descriptions: Record<string, string> = {
-  "/": "Dodzel Engineering Limited: industrial construction and EPC services in Pakistan, Qatar, Saudi Arabia and Iraq.",
+  "/": "Dodzel Engineering Limited: engineering and construction for industrial, infrastructure and energy sectors. Founded in Pakistan, expanding through group companies in Qatar.",
   "/about":
-    "About Dodzel Engineering Limited, founded in 2020 and registered with SECP in Pakistan.",
+    "Founded in 2020 and registered with SECP, Dodzel Engineering Limited is growing in Qatar through Belgrass Construction Company and Bimex Trading Company.",
   "/services":
     "Civil, mechanical, electrical, structural steel, plant, offshore and project facilities services from Dodzel Engineering.",
   "/sectors":

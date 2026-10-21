@@ -5,6 +5,7 @@ export function OrganizationJsonLd() {
     "@type": "Organization",
     name: real.company.name,
     url: real.company.url,
+    description: real.company.description,
     foundingDate: real.company.founded,
     email: real.contact.email,
     address: {
@@ -13,7 +14,7 @@ export function OrganizationJsonLd() {
       addressLocality: real.contact.locality,
       addressCountry: real.contact.country,
     },
-    areaServed: real.countries.map((country) => ({
+    areaServed: real.countries.filter((country) => country.name === "Pakistan" || country.name === "Qatar").map((country) => ({
       "@type": "Country",
       name: country.name,
     })),

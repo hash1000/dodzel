@@ -1,5 +1,9 @@
-// Facts supplied in the Phase 3 brief and current-site screenshots.
-// Client confirmation is mandatory before publication.
+// Legacy site facts retain review flags. Profile facts are sourced from the supplied PDF.
+const profileFact = <T extends object>(item: T) => ({
+  ...item,
+  source: "dodzel-INTRO.pdf, page 1" as const,
+  confirm: false as const,
+});
 const reviewed = <T extends object>(item: T) => ({
   ...item,
   source: "dodzel.com (current site)" as const,
@@ -13,13 +17,13 @@ const entities: { name: string; country: string; city?: string; email: string; l
   { name: "Novex Trading Private Limited", country: "Pakistan", email: "novex@novex.com.pk", logo: "/images/novex.jpeg", url: "https://novex.com.pk" },
 ];
 export const real = {
-  company: reviewed({
+  company: profileFact({
     name: "Dodzel Engineering Limited",
     shortName: "Dodzel Engineering",
     founded: "2020",
     registration: "Public limited company registered with SECP, Pakistan",
     description:
-      "Founded in 2020, Dodzel Engineering Limited is a Pakistan-based public limited company registered with SECP. Its presence includes Saudi Arabia, Qatar and Iraq, and it is expanding into other countries.",
+      "Founded in 2020, Dodzel Engineering Limited is a Pakistan-based engineering and construction company delivering reliable, high-quality solutions across the industrial, infrastructure and energy sectors. Registered with the Securities and Exchange Commission of Pakistan (SECP) as a public limited company, Dodzel is developing strategic partnerships and expanding internationally.",
     ceo: "Syed Tahir Hussain",
     url: "https://dodzel.com",
   }),
@@ -30,9 +34,22 @@ export const real = {
     locality: "Lahore",
     country: "PK",
   }),
-  countries: ["Pakistan", "Qatar", "Saudi Arabia", "Iraq"].map((name) =>
-    reviewed({ name }),
-  ),
+  countries: [
+    profileFact({ name: "Pakistan", status: "Home market" }),
+    profileFact({ name: "Qatar", status: "Group expansion through acquisitions" }),
+    profileFact({ name: "Oman", status: "Expansion opportunities" }),
+    profileFact({ name: "Iraq", status: "Expansion opportunities" }),
+    profileFact({ name: "Saudi Arabia", status: "Expansion opportunities" }),
+  ],
+  expansion: profileFact({
+    title: "Rooted in Pakistan. Growing across the region.",
+    description: "Dodzel is pursuing opportunities in Qatar, Oman, Iraq and Saudi Arabia. In Qatar, the acquisition and integration of Belgrass Construction Company and Bimex Trading Company strengthen the group’s local capabilities and broaden its offering.",
+    commitment: "By combining engineering expertise with local resources and regional business capabilities, we aim to build long-term client relationships, develop strategic partnerships and deliver sustainable value across Qatar and the wider Middle East.",
+  }),
+  qatarPortfolio: [
+    profileFact({ name: "Belgrass", fullName: "Belgrass Construction Company", logo: "/images/belgrass.jpeg", href: "/about#belgrass", role: "Construction & project execution", description: "Supporting construction, engineering, industrial services and project execution activities in Qatar." }),
+    profileFact({ name: "Bimex", fullName: "Bimex Trading Company", logo: "/images/bimex.jpeg", href: "/about#bimex", role: "Imports, procurement & supply", description: "Supporting imports for the group, procurement and supply-related business activities in Qatar." }),
+  ],
   entities: entities.map(reviewed),
   subsidiaries: [
     reviewed({
@@ -43,7 +60,7 @@ export const real = {
       country: "Qatar",
       detail: "Construction · Qatar",
       description:
-        "Construction services in Qatar for Oil & Gas, Power and Cement.",
+        "Supporting construction, engineering, industrial services and project execution activities in Qatar.",
       url: "https://belgrass.com.qa",
     }),
     reviewed({
@@ -54,7 +71,7 @@ export const real = {
       country: "Qatar",
       detail: "Supply chain · Qatar",
       description:
-        "Supply chain services for construction equipment (excavators, forklifts and cranes), piping materials and fittings, and industrial equipment.",
+        "Supporting imports for the group, procurement and supply-related business activities in Qatar.",
       url: "https://bimex.com.qa",
     }),
     reviewed({
@@ -110,7 +127,7 @@ export const real = {
       category: "Engineering services & construction",
       headline: "An Engineering Services & Construction Company.",
       description:
-        "Founded in Pakistan in 2020, with a presence in Saudi Arabia, Qatar and Iraq.",
+        "Founded in Pakistan in 2020, expanding in Qatar and pursuing opportunities in Oman, Iraq and Saudi Arabia.",
       cta: "Explore our services",
       href: "/services",
     }),
@@ -186,25 +203,9 @@ export const real = {
       "Services for oil and gas refineries, power plants, commercial infrastructure and the hydrocarbon industry, specializing in Civil, Mechanical and Electrical & Instrumentation.",
   }),
   stats: [
-    reviewed({
-      value: "6",
-      label: "Years delivering results",
-      numericValue: 6,
-    }),
-    reviewed({
-      value: "350+",
-      label: "Skilled professionals and certified engineers",
-      numericValue: 350,
-    }),
-    reviewed({
-      value: "12+",
-      label: "EPIC services and specialized technical solutions",
-      numericValue: 12,
-    }),
-    reviewed({
-      value: "0",
-      label: "Harm goal under strict HSE standards",
-      numericValue: 0,
-    }),
+    profileFact({ value: "2020", label: "Founded in Pakistan", numericValue: null }),
+    profileFact({ value: "2", label: "Qatar companies acquired and integrated", numericValue: 2 }),
+    profileFact({ value: "4", label: "Markets in the regional expansion strategy", numericValue: 4 }),
+    profileFact({ value: "SECP", label: "Registered public limited company", numericValue: null }),
   ],
 };

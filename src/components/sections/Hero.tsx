@@ -6,6 +6,7 @@ import { ArrowLeft, ArrowRight, Pause, Play } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";
+import { BRAND_TAGLINE } from "@/lib/constants";
 import { getHeadingWords } from "@/lib/heading-words";
 import { HERO_TRANSITION, SLIDE_HOLD_MS } from "@/lib/hero-slider";
 import { observeLoaderScroll } from "@/lib/loader-scroll";
@@ -29,7 +30,7 @@ const slides = [
   { image: slider6, label: "Working together on site", position: "65% center" },
   { image: slider7, label: "night shift", position: "65% center" },
 ];
-const heroHeading = "Build a better tomorrow";
+const heroHeading = BRAND_TAGLINE;
 
 type SliderActions = {
   select: (index: number) => void;
@@ -252,7 +253,7 @@ export function Hero() {
           ))}
         </h1>
         <p data-hero-detail data-hero-subtext className="mt-8 max-w-[44ch] text-lead uppercase text-[var(--fg-body)]">
-          Dodzel delivers engineering, procurement and construction for the infrastructure that moves industries forward.
+          Engineering and construction for industrial, infrastructure and energy projects. Founded in Pakistan. Growing in Qatar.
         </p>
         <div data-hero-detail className="mt-8 flex flex-wrap gap-3">
           <Button href="/request-a-quote" className="border-brand bg-brand text-white hover:border-brand hover:bg-brand/85">Request a Quote</Button>

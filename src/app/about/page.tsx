@@ -18,13 +18,20 @@ export default function Page() {
           </p>
           <p className="mt-6 text-[var(--fg-body)]">
             Chief Executive Officer: {real.company.ceo}{" "}
-            <ReviewBadge {...real.company} />
+            <ReviewBadge confirm />
           </p>
           <p className="mt-6 text-[var(--fg-body)]">
-            Presence: {real.countries.map((country) => country.name).join(", ")}
-            . <ReviewBadge confirm />
+            {real.expansion.description}
           </p>
         </div>
+        <section aria-labelledby="regional-growth-heading" className="mt-12 border-s-4 border-accent-2 on-dark bg-surface p-6 sm:p-8">
+          <p className="eyebrow mb-4 type-label">Our regional strategy</p>
+          <h2 id="regional-growth-heading" className="mb-5">{real.expansion.title}</h2>
+          <p className="max-w-3xl leading-relaxed text-[var(--fg-body)]">{real.expansion.commitment}</p>
+          <ul className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {real.countries.map((country) => <li key={country.name} className="border-t border-line pt-4"><h3>{country.name}</h3><p className="mt-2 text-description text-[var(--fg-body)]">{country.status}</p></li>)}
+          </ul>
+        </section>
         <div className="mt-14 grid gap-8 md:grid-cols-3">
           {real.entities.map((entity) => {
             const subsidiary = real.subsidiaries.find((item) => item.fullName === entity.name);
@@ -47,6 +54,7 @@ export default function Page() {
               <h2 className="">
                 {entity.name} <ReviewBadge {...entity} />
               </h2>
+              {real.qatarPortfolio.find((company) => company.fullName === entity.name) && <p className="mt-4 text-description leading-relaxed text-[var(--fg-body)]">{real.qatarPortfolio.find((company) => company.fullName === entity.name)!.description}</p>}
               <p className="my-4 text-description text-[var(--fg-body)]">{[entity.city, entity.country].filter(Boolean).join(" · ")}</p>
               <a href={`mailto:${entity.email}`} className="block break-words text-sm underline underline-offset-4 hover:text-[var(--fg-eyebrow)]">
                 {entity.email}

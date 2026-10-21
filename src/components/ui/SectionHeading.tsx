@@ -1,11 +1,13 @@
 import { TodoBadge } from "./TodoBadge";
 import type { ReactNode } from "react";
 export function SectionHeading({
+  id,
   eyebrow,
   title,
   children,
   todo = false,
 }: {
+  id?: string;
   eyebrow: string;
   title: string;
   children?: ReactNode;
@@ -17,7 +19,7 @@ export function SectionHeading({
         <p className="eyebrow mb-4 type-label">
           {eyebrow}
         </p>
-        <h2 className="max-w-3xl tracking-tight">
+        <h2 id={id} className="max-w-3xl tracking-tight">
           {title} {todo && <TodoBadge />}
         </h2>
       </div>

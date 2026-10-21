@@ -8,7 +8,7 @@ import { ServicesGroups } from "@/components/sections/ServicesGroups";
 import { SectorsGrid } from "@/components/sections/SectorsGrid";
 import { HowWeWork } from "@/components/sections/HowWeWork";
 import { QhseCertifications } from "@/components/sections/QhseCertifications";
-import { InsightsGrid } from "@/components/sections/InsightsGrid";
+import { GroupPortfolio } from "@/components/sections/GroupPortfolio";
 import { PresenceMap } from "@/components/sections/PresenceMap";
 import { CareersTeaser } from "@/components/sections/CareersTeaser";
 import { ClosingCta } from "@/components/sections/ClosingCta";
@@ -26,7 +26,7 @@ export default function Home() {
       <ServicesGroups />
       <SectorsGrid />
       <QhseCertifications />
-      <InsightsGrid />
+      <GroupPortfolio />
       <HowWeWork />
       <PresenceMap />
       <CareersTeaser />

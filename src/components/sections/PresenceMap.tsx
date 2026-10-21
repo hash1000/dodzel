@@ -6,7 +6,6 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { MotionPathPlugin } from "gsap/MotionPathPlugin";
 import { real } from "@/content/real";
-import { placeholders } from "@/content/placeholder";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { ReviewBadge } from "@/components/ui/ReviewBadge";
@@ -27,7 +26,7 @@ export function PresenceMap() {
   const [selected, setSelected] = useState<string | null>(null);
   const highlighted = hovered ?? focused ?? selected;
   const id = useId().replace(/:/g, "");
-  const countries = real.countries;
+  const countries = real.countries.filter((country) => mapCountries.some((mapped) => mapped.name === country.name));
   const selectedEntities = real.entities.filter((entity) => entity.country === selected);
 
   useGSAP(() => {
@@ -177,13 +176,13 @@ export function PresenceMap() {
   return (
     <section ref={root} data-presence-map data-highlighted={highlighted ?? ""} className="border-y border-line on-dark bg-surface py-section">
       <Container>
-        <SectionHeading {...placeholders.headings.presence} />
+        <SectionHeading eyebrow="07 / Regional growth" title={real.expansion.title} />
         <div className="grid gap-10 lg:grid-cols-[1.4fr_1fr]">
           <div ref={panel} data-map-panel data-map-selected={selected ?? ""} className="presence-map-panel relative isolate aspect-square overflow-hidden rounded-2xl border border-white/10 bg-ink md:aspect-[4/3]">
             <div aria-hidden="true" className="presence-map-grid pointer-events-none absolute inset-0 -z-10" />
             <div aria-hidden="true" className="presence-map-glow pointer-events-none absolute inset-0 -z-10" />
             <svg ref={svg} viewBox={`${REGION_VIEW.x} ${REGION_VIEW.y} ${REGION_VIEW.width} ${REGION_VIEW.height}`} role="img"
-              aria-label={`Dodzel presence in ${countries.map((country) => country.name).join(", ")}. Headquarters in Lahore, Pakistan. Country-level markers elsewhere.`}
+              aria-label={`Dodzel regional strategy: home market in Pakistan, group expansion in Qatar, and expansion opportunities in Oman, Iraq and Saudi Arabia. Country markers do not indicate office locations.`}
               className="absolute inset-0 h-full w-full">
               <defs>
                 <pattern id={`${id}-quiet`} width="8" height="8" patternUnits="userSpaceOnUse"><circle cx="4" cy="4" r="1.4" fill="white" fillOpacity="0.1" /></pattern>
@@ -223,17 +222,17 @@ export function PresenceMap() {
                 {country.name}{country.name === "Pakistan" && <span className="text-xs text-[var(--fg-muted)]">· Lahore HQ</span>}
               </div>)}
             </div>
-            <div className="pointer-events-none absolute left-4 top-4 rounded-full border border-white/10 bg-ink/70 px-3 py-2 font-mono text-xs uppercase tracking-[0.12em] text-[var(--fg-body)] backdrop-blur-md">{countries.length} countries · HQ Lahore</div>
-            {selected && <div data-map-info role="region" aria-label={`${selected} presence details`} className="absolute bottom-14 left-4 right-4 max-h-[45%] overflow-y-auto rounded-xl border border-white/15 bg-surface/90 p-4 text-[var(--fg-body)] shadow-xl backdrop-blur-xl sm:right-auto sm:w-[min(19rem,calc(100%-2rem))]">
+            <div className="pointer-events-none absolute left-4 top-4 rounded-full border border-white/10 bg-ink/70 px-3 py-2 font-mono text-xs uppercase tracking-[0.12em] text-[var(--fg-body)] backdrop-blur-md">Home market · Regional growth</div>
+            {selected && <div data-map-info role="region" aria-label={`${selected} regional strategy`} className="absolute bottom-14 left-4 right-4 max-h-[45%] overflow-y-auto rounded-xl border border-white/15 bg-surface/90 p-4 text-[var(--fg-body)] shadow-xl backdrop-blur-xl sm:right-auto sm:w-[min(19rem,calc(100%-2rem))]">
               <div className="mb-2 flex items-start justify-between gap-3"><span className="font-heading text-lg font-semibold text-[var(--fg-heading)]">{selected}</span><button type="button" onClick={() => setSelected(null)} className="min-h-8 shrink-0 text-xs underline underline-offset-4 hover:text-[var(--fg-link-hover)]">Reset view</button></div>
-              <span className="inline-flex items-center gap-2 rounded-full border border-white/10 px-2 py-1 text-xs"><span className={`size-1.5 rounded-full ${selectedEntities.length ? "bg-brand" : "bg-white/40"}`} />{selectedEntities.length ? "Operating" : "Details coming soon"}</span>
+              <span className="inline-flex items-center gap-2 rounded-full border border-white/10 px-2 py-1 text-xs"><span className={`size-1.5 rounded-full ${selectedEntities.length ? "bg-brand" : "bg-white/40"}`} />{countries.find((country) => country.name === selected)?.status}</span>
               <ul className="mt-3 space-y-2 text-xs">{selectedEntities.map((entity) => <li key={entity.name}>{entity.name}</li>)}</ul>
             </div>}
-            <div className="pointer-events-none absolute bottom-10 right-4 flex gap-4 font-body text-xs text-white/60"><span className="flex items-center gap-1.5"><span className="size-1.5 rounded-full bg-brand" />HQ</span><span className="flex items-center gap-1.5"><span className="size-1.5 rounded-full bg-white" />Presence</span></div>
+            <div className="pointer-events-none absolute bottom-10 right-4 flex gap-4 font-body text-xs text-white/60"><span className="flex items-center gap-1.5"><span className="size-1.5 rounded-full bg-brand" />HQ</span><span className="flex items-center gap-1.5"><span className="size-1.5 rounded-full bg-white" />Regional focus</span></div>
             <p className="pointer-events-none absolute bottom-3 left-4 right-4 text-xs text-white/40">Natural Earth · public-domain boundaries · simplified</p>
           </div>
           <div>
-            <p className="mb-4 text-description text-[var(--fg-body)]">{placeholders.presence.description} <ReviewBadge todo /></p>
+            <p className="mb-4 text-description text-[var(--fg-body)]">{real.expansion.description}</p>
             <ul className="divide-y divide-white/10" onMouseLeave={() => setHovered(null)}>
               {countries.map((country, index) => {
                 const entities = real.entities.filter((entity) => entity.country === country.name);
@@ -245,12 +244,14 @@ export function PresenceMap() {
                     <span className="pt-1 font-mono text-xs text-[var(--fg-muted)]">{String(index + 1).padStart(2, "0")}</span>
                     <span className="font-heading text-card font-semibold text-[var(--fg-heading)] group-hover:text-[var(--fg-eyebrow)]">{country.name} <ReviewBadge {...country} /></span>
                     <span className="col-start-2 mt-3 space-y-2 text-description text-[var(--fg-body)]">
-                      {entities.length ? entities.map((entity) => <span key={entity.name} className="flex items-start gap-2"><span aria-hidden="true" className="mt-2 size-1 shrink-0 bg-brand" /><span>{entity.name} <ReviewBadge {...entity} /></span></span>) : <span className="block text-[var(--fg-muted)]">Entity details coming soon</span>}
+                      <span className="block text-[var(--fg-muted)]">{country.status}</span>
+                      {entities.length ? entities.map((entity) => <span key={entity.name} className="flex items-start gap-2"><span aria-hidden="true" className="mt-2 size-1 shrink-0 bg-brand" /><span>{entity.name} <ReviewBadge {...entity} /></span></span>) : null}
                     </span>
                   </button>
                 </li>;
               })}
             </ul>
+            <p className="mt-6 border-t border-line pt-6 text-description text-[var(--fg-body)]">Oman is also part of Dodzel’s expansion strategy, with opportunities being pursued alongside Qatar, Iraq and Saudi Arabia.</p>
           </div>
         </div>
       </Container>
