@@ -8,7 +8,7 @@ import { TodoBadge } from "@/components/ui/TodoBadge";
 import { ServiceGroup } from "./ServiceGroup";
 export function ServicesGroups() {
   return (
-    <section className="on-dark bg-surface py-section">
+    <section className="on-light bg-surface py-section">
       <Container>
         <SectionHeading {...placeholders.headings.services}>
           <Button href="/services" variant="outline">

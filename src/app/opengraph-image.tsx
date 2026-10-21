@@ -9,18 +9,12 @@ export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 export const dynamic = "force-static";
 
-// Satori sirf seedhe colour values samajhta hai (hex/rgb), "initial" ya var() nahi.
-const safeColor = (token: Parameters<typeof themeColor>[0], fallback: string) => {
-  const value = String(themeColor(token) ?? "");
-  const isPlain = /^(#|rgb|hsl)/i.test(value);
-  return isPlain ? value : fallback;
-};
-
 export default function Image() {
-  const bg = safeColor("surface-dark", "#1a1a1a");
-  const fg = safeColor("on-dark", "#ffffff");
-  const accent = safeColor("accent", "#A3201A");
-  const muted = safeColor("on-dark-muted", "#b8b8b8");
+  const bg = themeColor("surface-dark");
+  const fg = themeColor("on-dark");
+  const accent = themeColor("brand");
+  const accentText = themeColor("brand-glow");
+  const muted = themeColor("on-dark-muted");
 
   return new ImageResponse(
     <div
@@ -45,7 +39,7 @@ export default function Image() {
           display: "flex",
           marginTop: 28,
           fontSize: 25,
-          color: accent,
+          color: accentText,
         }}
       >
         Engineering · Procurement · Construction

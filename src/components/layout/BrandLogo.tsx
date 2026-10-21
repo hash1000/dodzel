@@ -15,7 +15,7 @@ export function BrandLogo({ onNavigate }: { onNavigate?: () => void }) {
         width={240}
         height={80}
         priority
-        className="h-14 w-auto object-contain min-[1100px]:h-16"
+        className="h-12 w-auto object-contain min-[1100px]:h-14"
       />
     </Link>
   );

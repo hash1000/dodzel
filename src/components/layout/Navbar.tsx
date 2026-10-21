@@ -55,8 +55,8 @@ export function Navbar() {
       const shrink = gsap.timeline({ paused: true })
         .to(document.documentElement, { "--site-header-height": "68px", duration: 0.3, ease: "power2.out" }, 0)
         .to(element, { "--header-icon-size": "36px", boxShadow: "0 8px 30px rgb(0 0 0 / 0.18)", duration: 0.3, ease: "power2.out" }, 0)
-        .to("[data-header-glass]", { opacity: 0.9, duration: 0.3 }, 0);
-      // Mobile already starts at 68px/36px; desktop starts at 88px/44px.
+        .to("[data-header-glass]", { opacity: 1, duration: 0.3 }, 0);
+      // Mobile already starts at 68px/36px; desktop starts at 80px/44px.
       if (!desktop) gsap.set(element, { "--header-icon-size": "36px" });
       const hide = gsap.to(element, { yPercent: -100, duration: 0.3, ease: "power3.inOut", paused: true });
       shrink.progress(compact ? 1 : 0);
@@ -130,7 +130,7 @@ export function Navbar() {
   }, []);
 
   return (
-    <header ref={header} data-site-header className="site-header on-dark fixed inset-x-0 top-0 z-[1000] isolate border-b border-white/10 text-white backdrop-blur-xl [--color-focus:var(--color-brand-glow)]"
+    <header ref={header} data-site-header className="site-header on-light fixed inset-x-0 top-0 z-[1000] isolate border-b border-line text-ink"
       onFocusCapture={() => motion.current?.show()}
       onPointerEnter={cancelClose}
       onPointerLeave={() => { cancelClose(); closeTimer.current = setTimeout(() => { if (!header.current?.contains(document.activeElement)) setMenuState(null); }, 120); }}
@@ -143,8 +143,8 @@ export function Navbar() {
         ignoreFocus.current = false;
         closeMenu();
       }}>
-      <div data-header-glass aria-hidden="true" className="pointer-events-none absolute inset-0 -z-10 bg-[#FFFFFF] opacity-[0.72]" />
-        <div className="mx-auto w-full relative grid h-full max-w-[1600px] grid-cols-[1fr_auto] items-center gap-2 px-[var(--gutter)] lg:px-[var(--gutter)] min-[1100px]:grid-cols-[1fr_auto_1fr] min-[1100px]:gap-0">
+      <div data-header-glass aria-hidden="true" className="pointer-events-none absolute inset-0 -z-10 bg-paper opacity-100" />
+        <div className="mx-auto w-full relative grid h-full max-w-site grid-cols-[1fr_auto] items-center gap-2 px-[var(--gutter)] lg:px-[var(--gutter)] min-[1100px]:grid-cols-[auto_1fr_auto] min-[1100px]:gap-0">
         <BrandLogo onNavigate={closeMenu} />
         <nav aria-label="Primary" onKeyDown={(event) => {
           if (!["ArrowLeft", "ArrowRight", "Home", "End"].includes(event.key)) return;
@@ -153,27 +153,27 @@ export function Navbar() {
           const index = controls.indexOf(document.activeElement as HTMLElement);
           const forward = event.key === "ArrowRight";
           controls[event.key === "Home" ? 0 : event.key === "End" ? controls.length - 1 : (index + (forward ? 1 : -1) + controls.length) % controls.length]?.focus();
-        }} className="hidden h-full items-center justify-self-center gap-6 whitespace-nowrap font-body min-[1100px]:flex xl:gap-8">
+        }} className="hidden h-full items-center justify-self-center gap-4 whitespace-nowrap font-body min-[1100px]:flex xl:gap-6">
           {navLinks.map((link) => {
             const dropdown = link.label === "Services" || link.label === "Sectors" ? link.label : null;
             const active = link.href === "/" ? pathname === "/" : pathname.startsWith(link.href);
             return <div key={link.href} className="relative flex h-full shrink-0 items-center gap-1 min-[1100px]:max-xl:gap-0"
               onPointerEnter={(event) => { if (dropdown && event.pointerType !== "touch") openMenu(dropdown); }}
               onFocus={() => { if (dropdown && !ignoreFocus.current) openMenu(dropdown); }}>
-              <Link href={link.href} onClick={closeMenu} aria-current={active ? "page" : undefined} className={`flex h-full items-center whitespace-nowrap text-sm font-medium leading-none transition-colors duration-150 hover:text-white ${active ? "text-[#0F1115]" : "text-[#0F1115]"}`}>{link.label}</Link>
+              <Link href={link.href} onClick={closeMenu} aria-current={active ? "page" : undefined} className="flex h-full items-center whitespace-nowrap text-sm font-medium leading-none text-ink transition-colors duration-150 hover:text-brand">{link.label}</Link>
               {dropdown && <button type="button" data-menu={dropdown} aria-label={`Open ${dropdown} menu`} aria-expanded={menu === dropdown} aria-controls="header-dropdown"
                 onClick={() => openMenu(dropdown)} onKeyDown={(event) => { if (event.key === "ArrowDown" || event.key === "ArrowUp") { event.preventDefault(); pendingFocus.current = event.key === "ArrowUp" ? "last" : "first"; if (menu === dropdown) { const links = header.current!.querySelectorAll<HTMLAnchorElement>("[data-header-dropdown] [data-menu-link]"); (pendingFocus.current === "last" ? links[links.length - 1] : links[0])?.focus(); pendingFocus.current = null; } else openMenu(dropdown); } }}
-                className="grid min-h-11 w-3.5 place-items-center text-[#0F1115] hover:text-white"><ChevronDown size={14} aria-hidden="true" className={`transition-transform duration-150 motion-reduce:transition-none ${menu === dropdown ? "rotate-180" : ""}`} /></button>}
-              {active && <span aria-hidden="true" className="absolute inset-x-0 -bottom-px h-0.5 bg-brand-glow" />}
+                className="grid min-h-11 w-3.5 place-items-center text-ink hover:text-brand"><ChevronDown size={14} aria-hidden="true" className={`transition-transform duration-150 motion-reduce:transition-none ${menu === dropdown ? "rotate-180" : ""}`} /></button>}
+              {active && <span aria-hidden="true" className="absolute inset-x-0 -bottom-px h-0.5 bg-brand" />}
             </div>;
           })}
         </nav>
         <div className="hidden justify-self-end min-[1100px]:block"><QuoteLink /></div>
         <button ref={trigger} type="button" aria-label="Open navigation menu" aria-expanded={mobileOpen} aria-controls="navigation-dialog" aria-haspopup="dialog"
-          onClick={() => { closeMenu(); motion.current?.show(); dialog.current?.showModal(); setMobileOpen(true); }} className="grid size-11 place-items-center justify-self-end text-white min-[1100px]:hidden"><ToggleIcon open={mobileOpen} /></button>
+          onClick={() => { closeMenu(); motion.current?.show(); dialog.current?.showModal(); setMobileOpen(true); }} className="grid size-11 place-items-center justify-self-end text-ink min-[1100px]:hidden"><ToggleIcon open={mobileOpen} /></button>
         {menu && <div id="header-dropdown" data-header-dropdown onPointerEnter={cancelClose} className="absolute inset-x-[var(--gutter)] top-full hidden pt-2 min-[1100px]:block"><MegaMenu kind={menu} onNavigate={closeMenu} /></div>}
       </div>
-      <dialog ref={dialog} id="navigation-dialog" aria-label="Primary navigation menu" data-tone="dark" className="fixed inset-0 m-0 h-dvh max-h-none w-screen max-w-none overflow-hidden border-0 on-dark bg-ink text-white backdrop:bg-ink"
+      <dialog ref={dialog} id="navigation-dialog" aria-label="Primary navigation menu" data-tone="dark" className="fixed inset-0 m-0 h-dvh max-h-none w-screen max-w-none overflow-hidden border-0 on-navy bg-surface-dark text-white backdrop:bg-surface-dark"
         onKeyDown={(event) => {
           if (event.key !== "Tab") return;
           const controls = [...event.currentTarget.querySelectorAll<HTMLElement>('a[href], button, summary, input, select, textarea, [tabindex="0"]')].filter((element) => {
@@ -186,7 +186,7 @@ export function Navbar() {
         }}
         onCancel={(event) => { event.preventDefault(); closeDialog(); }}
         onClose={() => { setMobileOpen(false); trigger.current?.focus(); }}>
-          <div className="mx-auto w-full flex h-full max-w-[1600px] flex-col px-[var(--gutter)] lg:px-[var(--gutter)]">
+          <div className="mx-auto w-full flex h-full max-w-site flex-col px-[var(--gutter)] lg:px-[var(--gutter)]">
           <div className="flex h-[68px] shrink-0 items-center justify-between"><BrandLogo onNavigate={closeDialog} /><button type="button" aria-label="Close navigation menu" aria-expanded={mobileOpen} onClick={closeDialog} className="grid size-11 place-items-center"><ToggleIcon open={mobileOpen} /></button></div>
           <div data-lenis-prevent className="min-h-0 flex-1 overflow-y-auto overscroll-contain py-6"><MobileMenu onNavigate={closeDialog} /></div>
           <div className="shrink-0 py-6"><QuoteLink mobile onNavigate={closeDialog} /></div>

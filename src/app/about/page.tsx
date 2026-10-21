@@ -24,7 +24,7 @@ export default function Page() {
             {real.expansion.description}
           </p>
         </div>
-        <section aria-labelledby="regional-growth-heading" className="mt-12 border-s-4 border-accent-2 on-dark bg-surface p-6 sm:p-8">
+        <section aria-labelledby="regional-growth-heading" className="mt-12 border-s-4 border-accent-2 on-light bg-surface p-6 sm:p-8">
           <p className="eyebrow mb-4 type-label">Our regional strategy</p>
           <h2 id="regional-growth-heading" className="mb-5">{real.expansion.title}</h2>
           <p className="max-w-3xl leading-relaxed text-[var(--fg-body)]">{real.expansion.commitment}</p>
@@ -72,16 +72,16 @@ export default function Page() {
           })}
         </div>
         <div className="mt-16 grid gap-8 md:grid-cols-2">
-          <section className="rounded-card border-t-4 border-accent-2 on-dark bg-surface p-8">
-            <h2 className="mb-5 text-accent-2">
+          <section className="rounded-card border-t-4 border-accent-2 on-light bg-surface p-8">
+            <h2 className="mb-5 text-[var(--fg-eyebrow)]">
               {real.mission.title} <ReviewBadge {...real.mission} />
             </h2>
             <p className="leading-relaxed text-[var(--fg-body)]">
               {real.mission.description}
             </p>
           </section>
-          <section className="rounded-card border-t-4 border-accent-2 on-dark bg-surface p-8">
-            <h2 className="mb-5 text-accent-2">
+          <section className="rounded-card border-t-4 border-accent-2 on-light bg-surface p-8">
+            <h2 className="mb-5 text-[var(--fg-eyebrow)]">
               {real.success.title} <ReviewBadge {...real.success} />
             </h2>
             <ul className="list-disc space-y-3 ps-5 text-[var(--fg-body)]">
@@ -91,7 +91,7 @@ export default function Page() {
             </ul>
           </section>
         </div>
-        <section className="my-16 grid gap-8 rounded-card border-s-4 border-accent-2 on-dark bg-surface p-6 sm:p-8 lg:grid-cols-[15rem_1fr] lg:items-center lg:gap-12">
+        <section className="my-16 grid gap-8 rounded-card border-s-4 border-accent-2 on-light bg-surface p-6 sm:p-8 lg:grid-cols-[15rem_1fr] lg:items-center lg:gap-12">
           <figure className="mx-auto w-full max-w-60">
             <div className="relative mx-auto aspect-[4/5] w-48 overflow-hidden rounded-[50%] border border-line on-light bg-white ring-4 ring-white sm:w-52">
               <Image

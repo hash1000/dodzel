@@ -33,7 +33,7 @@ export function ServiceGroup({
     return () => clearTimeout(timer);
   }, [previous, selected]);
   return (
-    <article className="flex h-full min-w-0 flex-col overflow-hidden rounded-card border border-line border-t-2 border-t-accent-2 on-dark bg-surface">
+    <article className="flex h-full min-w-0 flex-col overflow-hidden rounded-card border border-line border-t-2 border-t-accent-2 on-light bg-white">
       <div className="relative aspect-[16/9] overflow-hidden on-navy bg-surface-raised">
         {[
           ...new Set(

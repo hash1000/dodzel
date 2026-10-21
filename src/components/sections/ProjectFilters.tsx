@@ -26,7 +26,7 @@ export function ProjectFilters() {
             key={filter}
             aria-pressed={selected === filter}
             onClick={() => setSelected(filter)}
-            className={`min-h-11 rounded-full border px-5 text-sm ${selected === filter ? "border-accent bg-accent text-surface-dark" : "border-line on-dark bg-surface text-[var(--fg-link)] hover:border-accent-2"}`}
+            className={`min-h-11 rounded-full border px-5 text-sm ${selected === filter ? "border-accent bg-accent text-white" : "border-line on-light bg-surface text-[var(--fg-link)] hover:border-accent-2"}`}
           >
             {filter}
           </button>

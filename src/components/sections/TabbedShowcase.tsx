@@ -27,7 +27,7 @@ function ShowcaseContent({ item }: { item: ShowcaseItem }) {
     <div className="my-5 flex flex-wrap gap-2" aria-label="Related services awaiting confirmation">
       {item.chips.map(chip => {
         const content = <>{chip.label} <ReviewBadge todo={chip.todo} confirm={chip.confirm} /></>;
-        const className = `inline-flex min-h-11 items-center gap-2 rounded-sm border border-line on-dark bg-surface px-3 py-2 text-sm text-[var(--fg-link)] ${chip.reviewOnly ? "review-badge" : ""}`;
+        const className = `inline-flex min-h-11 items-center gap-2 rounded-sm border border-line on-light bg-surface px-3 py-2 text-sm text-[var(--fg-link)] ${chip.reviewOnly ? "review-badge" : ""}`;
         return chip.href ? <Link key={chip.label} href={chip.href} className={className}>{content}</Link> : <span key={chip.label} data-review-badge={chip.reviewOnly || undefined} className={className}>{content}</span>;
       })}
     </div>
@@ -84,7 +84,7 @@ export function TabbedShowcase({ eyebrow, title, intro, items }: { eyebrow: stri
         <div className="max-w-[60ch] text-body leading-relaxed text-[var(--fg-heading)]">{intro}</div>
       </header>
       {desktop ? <div className="grid grid-cols-12 items-start gap-x-6" data-showcase-mode="tabs">
-        <div role="tablist" aria-label={title} aria-orientation="vertical" className="col-span-12 lg:col-span-4 self-stretch border-t border-line on-dark bg-surface">{items.map(row)}</div>
+        <div role="tablist" aria-label={title} aria-orientation="vertical" className="col-span-12 lg:col-span-4 self-stretch border-t border-line on-light bg-surface">{items.map(row)}</div>
         <div className="showcase-preview col-span-12 lg:col-span-8 grid min-w-0">
           {items.map((item, index) => <div key={item.id} id={`${uid}-panel-${item.id}`} role="tabpanel" aria-labelledby={`${uid}-tab-${item.id}`} aria-hidden={active !== index} inert={active !== index} tabIndex={active === index ? 0 : -1} data-active={active === index} className="showcase-panel min-w-0 rounded-sm" style={{ gridArea: "1 / 1" }}>
             <ShowcaseImage item={item} index={index} active={active === index} /><ShowcaseContent item={item} />

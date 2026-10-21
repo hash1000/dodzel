@@ -1,6 +1,6 @@
 @import "tailwindcss";
 :root {
-  --loader-bg: var(--color-ink);
+  --loader-bg: var(--color-surface-dark);
   --gutter: clamp(1.25rem, 4vw, 4.5rem);
   --page-max-width: 1600px;
   --site-header-height: 68px;
@@ -15,43 +15,44 @@
 @theme {
   --text-sm: 0.9375rem;
   --text-sm--line-height: 1.6;
-  --text-label: 0.8125rem;
+  --text-label: 0.875rem;
   --text-label--line-height: 1.6;
-  --text-description: 0.9375rem;
+  --text-description: 1rem;
   --text-description--line-height: 1.6;
   --text-card: clamp(1.25rem, 2vw, 1.75rem);
   --text-card--line-height: 1.2;
   --text-lead: clamp(1.125rem, 1.5vw, 1.25rem);
   --text-lead--line-height: 1.6;
-  --color-brand: #b10304;
+  /* Brand accent source: logo red, button hover, and AA text/glow on dark surfaces. */
+  --color-brand: #B10304;
   --color-brand-hover: #c91415;
-  --color-brand-glow: #ff5a52;
+  --color-brand-glow: #ffaaa6;
   --color-brand-red: var(--color-brand);
   --color-blue-950: #0b2545;
   --color-blue-900: #10315c;
   --color-blue-600: #174474;
   --color-blue-700: #1d4e89;
   --color-honey-400: var(--color-brand);
-  --color-honey-300: var(--color-brand);
+  --color-honey-300: var(--color-brand-glow);
   --color-rust-600: var(--color-brand);
-  --color-rust-500: var(--color-brand);
+  --color-rust-500: var(--color-brand-hover);
   --color-white: #ffffff;
   --color-surface-dark: var(--color-blue-950);
   --color-surface-raised: var(--color-blue-900);
   --color-surface-elevated: var(--color-blue-700);
-  --color-surface: #1a1d23;
+  --color-surface: #edf2f7;
   --color-paper: #f6f5f3;
   --color-paper-darker: #ece8df;
   --color-on-dark: #ffffff;
   --color-on-dark-muted: #d8e1ec;
   --color-accent: var(--color-brand);
-  --color-accent-hover: var(--color-brand);
+  --color-accent-hover: var(--color-brand-hover);
   --color-accent-2: var(--color-brand);
   --color-accent-shape: var(--color-brand);
   --color-accent-on-light: var(--color-brand);
-  --color-link: var(--color-blue-700);
-  --color-focus: var(--color-blue-600);
-  --color-ink: #0f1115;
+  --color-link: var(--color-brand);
+  --color-focus: var(--color-brand);
+  --color-ink: var(--color-blue-950);
   --color-muted: #5b616b;
   --color-line: #d8dedf;
   --color-dark-line: #7c92ac;
@@ -79,15 +80,11 @@ body {
 }
 ::selection {
   background: var(--color-accent);
-  color: var(--color-surface-dark);
+  color: var(--color-white);
 }
 :focus-visible {
   outline: 2px solid var(--color-focus);
   outline-offset: 4px;
-}
-.bg-surface-dark :focus-visible,
-.bg-surface-raised :focus-visible {
-  outline-color: var(--color-accent);
 }
 button,
 summary {
@@ -135,7 +132,7 @@ textarea {
 }
 [data-step][data-completed="true"],
 [data-step][data-active="true"] {
-  border-block-start-color: var(--color-accent);
+  border-block-start-color: var(--fg-eyebrow);
 }
 [data-step][data-active="true"] {
   background: var(--color-surface-raised);
@@ -172,9 +169,6 @@ p {
 .tabular-nums {
   font-variant-numeric: tabular-nums;
 }
-[data-tone="dark"] :focus-visible {
-  outline-color: var(--color-accent);
-}
 @media (prefers-reduced-motion: reduce) {
   .hero-progress {
     width: 100%;
@@ -198,7 +192,7 @@ p {
   will-change: transform;
 }
 [data-step][data-active="true"] [data-step-number] {
-  color: var(--color-accent);
+  color: var(--fg-eyebrow);
 }
 
 .page-banner { min-height: 44vh; }
@@ -211,9 +205,9 @@ p {
 .service-card:hover .service-title, .service-card:focus-visible .service-title { text-decoration: underline; text-decoration-color: var(--color-accent-2); text-underline-offset: 5px; }
 
 .showcase-row { color: var(--fg-heading); background: var(--color-surface); border-inline-start-color: transparent; }
-.showcase-row:hover { background: var(--color-surface-raised); color: var(--fg-link-hover); }
-.showcase-row[data-active="true"] { background: var(--color-blue-950); color: var(--fg-heading); border-inline-start-color: var(--color-accent-2); }
-.showcase-row[data-active="true"]:focus-visible { outline-color: var(--color-accent); outline-offset: -5px; }
+.showcase-row:hover { background: var(--color-surface-raised); color: var(--color-on-dark); }
+.showcase-row[data-active="true"] { background: var(--color-blue-950); color: var(--color-on-dark); border-inline-start-color: var(--color-accent-2); }
+.showcase-row[data-active="true"]:focus-visible { outline-color: var(--color-brand-glow); outline-offset: -5px; }
 .showcase-panel { opacity: 0; visibility: hidden; pointer-events: none; transition: opacity 300ms ease, visibility 0s 300ms; }
 .showcase-panel[data-active="true"] { opacity: 1; visibility: visible; pointer-events: auto; transition-delay: 0s; }
 .showcase-image { transform: scale(1.03); transition: transform 300ms ease; }
@@ -233,7 +227,7 @@ p {
 
 /* Preserve the authoring environment's existing inherited palette. */
 body:has([data-studio-theme]) {
-  --color-brand-red: #A3201A;
+  --color-brand-red: var(--color-brand);
   --color-ink: var(--color-blue-950);
   --color-surface: #ffffff;
   --color-paper: #f6f4ef;
@@ -242,27 +236,30 @@ body:has([data-studio-theme]) {
 
 /* Text contexts follow each surface, including nested cards and the light map. */
 .on-dark {
+  --color-focus: var(--color-brand-glow);
   --fg-heading: #ffffff;
   --fg-body: #c9ced6;
   --fg-muted: #9aa3af;
-  --fg-eyebrow: #ff5a52;
+  --fg-eyebrow: var(--color-brand-glow);
   --fg-link: #ffffff;
-  --fg-link-hover: var(--color-brand);
+  --fg-link-hover: var(--color-brand-glow);
 }
 .on-navy {
+  --color-focus: var(--color-brand-glow);
   --fg-heading: #ffffff;
   --fg-body: #cbd5e6;
   --fg-muted: #9fb0cc;
-  --fg-eyebrow: #ff5a52;
+  --fg-eyebrow: var(--color-brand-glow);
   --fg-link: #ffffff;
-  --fg-link-hover: var(--color-brand);
+  --fg-link-hover: var(--color-brand-glow);
 }
 .on-light {
-  --fg-heading: #0f1115;
+  --color-focus: var(--color-brand);
+  --fg-heading: var(--color-blue-950);
   --fg-body: #3f4650;
   --fg-muted: #5b616b;
-  --fg-eyebrow: #c70500;
-  --fg-link: #0f1115;
+  --fg-eyebrow: var(--color-brand);
+  --fg-link: var(--color-blue-950);
   --fg-link-hover: var(--color-brand);
 }
 @layer base {
@@ -284,10 +281,10 @@ body:has([data-studio-theme]) {
 }
 .eyebrow, .type-label {
   font-family: var(--font-heading), sans-serif;
-  font-size: 0.8125rem;
-  font-weight: 500;
+  font-size: 0.875rem;
+  font-weight: 600;
   line-height: 1.6;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--fg-eyebrow);
 }
@@ -299,20 +296,20 @@ body:has([data-studio-theme]) {
 
 /* Presence map: gradients stay static; GSAP animates only SVG paths and transforms. */
 .presence-map-grid {
-  background-image: linear-gradient(rgb(255 255 255 / 0.045) 1px, transparent 1px), linear-gradient(90deg, rgb(255 255 255 / 0.045) 1px, transparent 1px);
+  background-image: linear-gradient(color-mix(in srgb, var(--color-blue-950) 8%, transparent) 1px, transparent 1px), linear-gradient(90deg, color-mix(in srgb, var(--color-blue-950) 8%, transparent) 1px, transparent 1px);
   background-size: 2rem 2rem;
   mask-image: radial-gradient(ellipse at center, black, transparent 85%);
 }
 .presence-map-glow {
-  background: radial-gradient(ellipse at 80% 40%, color-mix(in srgb, var(--color-brand) 16%, transparent), transparent 55%);
+  background: radial-gradient(ellipse at 80% 40%, color-mix(in srgb, var(--color-brand) 7%, transparent), transparent 55%);
 }
-.presence-traveller { filter: drop-shadow(0 0 4px white); }
-.presence-country[data-map-emphasis="true"] { filter: brightness(1.8); }
-.presence-connection[data-map-emphasis="true"] { filter: drop-shadow(0 0 4px var(--color-brand)); }
+.presence-traveller { filter: drop-shadow(0 0 4px var(--color-white)); }
+.presence-country[data-map-emphasis="true"] { filter: contrast(1.25); }
+.presence-connection[data-map-emphasis="true"] { filter: drop-shadow(0 0 4px var(--color-brand-glow)); }
 
 .site-header { height: var(--site-header-height); --header-icon-size: 36px; }
 @media (min-width: 1100px) {
-  :root { --site-header-height: 88px; }
+  :root { --site-header-height: 80px; }
   .site-header { --header-icon-size: 44px; }
 }
 .header-toggle span {
@@ -330,4 +327,44 @@ body:has([data-studio-theme]) {
 .header-dropdown a:hover::before, .header-dropdown a:focus-visible::before { opacity: 1; transform: none; }
 @media (prefers-reduced-motion: reduce) {
   .header-toggle span, .header-dropdown a::before { transition: none; }
+}
+
+/* Reference hero: navy and photography lead; logo red is a restrained detail. */
+.hero-reference-copy {
+  padding: 2.5rem var(--gutter) 3rem;
+}
+.site-typography .hero-reference-heading {
+  max-width: 12ch;
+  font-size: clamp(2.5rem, 4.3vw, 4.5rem);
+  line-height: 1.08;
+  letter-spacing: -0.035em;
+}
+.hero-reference-description {
+  max-width: 44ch;
+  font-size: clamp(1rem, 1.05vw, 1.125rem);
+  line-height: 1.8;
+}
+@media (min-width: 768px) {
+  .hero-reference-copy {
+    width: 46%;
+    min-height: max(44rem, calc(100svh - var(--site-header-height)));
+    padding-block: clamp(5rem, 12vh, 9rem) 6rem;
+    padding-inline-start: max(var(--gutter), calc((100vw - var(--container-site)) / 2 + 2.5rem));
+    padding-inline-end: clamp(1.5rem, 3vw, 4rem);
+  }
+}
+@media (min-width: 768px) and (max-width: 1099px) {
+  .site-typography .hero-reference-heading { font-size: clamp(2.25rem, 4.3vw, 3rem); }
+  .hero-reference .action { padding-inline: 1rem; font-size: 0.8125rem; }
+}
+
+/* Readability: use local surface tokens so nested light cards never inherit white copy. */
+.on-light :is(input, select, textarea) {
+  color: var(--color-ink);
+  background-color: var(--color-white);
+}
+.on-light :is(input, textarea)::placeholder { color: var(--color-muted); opacity: 1; }
+@layer components {
+  .on-light .action-arrow { color: var(--color-brand); }
+  .on-navy .action-arrow, .on-dark .action-arrow { color: var(--color-brand-glow); }
 }

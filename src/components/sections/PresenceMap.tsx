@@ -174,66 +174,66 @@ export function PresenceMap() {
   };
 
   return (
-    <section ref={root} data-presence-map data-highlighted={highlighted ?? ""} className="border-y border-line on-dark bg-surface py-section">
+    <section ref={root} data-presence-map data-highlighted={highlighted ?? ""} className="border-y border-line on-light bg-surface py-section">
       <Container>
         <SectionHeading eyebrow="07 / Regional growth" title={real.expansion.title} />
         <div className="grid gap-10 lg:grid-cols-[1.4fr_1fr]">
-          <div ref={panel} data-map-panel data-map-selected={selected ?? ""} className="presence-map-panel relative isolate aspect-square overflow-hidden rounded-2xl border border-white/10 bg-ink md:aspect-[4/3]">
+          <div ref={panel} data-map-panel data-map-selected={selected ?? ""} className="presence-map-panel relative isolate aspect-square overflow-hidden rounded-2xl border border-line on-light bg-white md:aspect-[4/3]">
             <div aria-hidden="true" className="presence-map-grid pointer-events-none absolute inset-0 -z-10" />
             <div aria-hidden="true" className="presence-map-glow pointer-events-none absolute inset-0 -z-10" />
             <svg ref={svg} viewBox={`${REGION_VIEW.x} ${REGION_VIEW.y} ${REGION_VIEW.width} ${REGION_VIEW.height}`} role="img"
               aria-label={`Dodzel regional strategy: home market in Pakistan, group expansion in Qatar, and expansion opportunities in Oman, Iraq and Saudi Arabia. Country markers do not indicate office locations.`}
               className="absolute inset-0 h-full w-full">
               <defs>
-                <pattern id={`${id}-quiet`} width="8" height="8" patternUnits="userSpaceOnUse"><circle cx="4" cy="4" r="1.4" fill="white" fillOpacity="0.1" /></pattern>
-                <pattern id={`${id}-presence`} width="8" height="8" patternUnits="userSpaceOnUse"><circle cx="4" cy="4" r="1.4" fill="white" fillOpacity="0.35" /></pattern>
+                <pattern id={`${id}-quiet`} width="8" height="8" patternUnits="userSpaceOnUse"><circle cx="4" cy="4" r="1.4" fill="var(--color-blue-950)" fillOpacity="0.18" /></pattern>
+                <pattern id={`${id}-presence`} width="8" height="8" patternUnits="userSpaceOnUse"><circle cx="4" cy="4" r="1.4" fill="var(--color-blue-950)" fillOpacity="0.35" /></pattern>
                 <pattern id={`${id}-hq`} width="8" height="8" patternUnits="userSpaceOnUse"><circle cx="4" cy="4" r="1.4" fill="var(--color-brand)" /></pattern>
-                <linearGradient id={`${id}-arc`} x1={LAHORE.x} y1={LAHORE.y} x2="250" y2="250" gradientUnits="userSpaceOnUse"><stop stopColor="var(--color-brand)" /><stop offset="1" stopColor="white" stopOpacity="0.6" /></linearGradient>
+                <linearGradient id={`${id}-arc`} x1={LAHORE.x} y1={LAHORE.y} x2="250" y2="250" gradientUnits="userSpaceOnUse"><stop stopColor="var(--color-brand)" /><stop offset="1" stopColor="var(--color-blue-950)" stopOpacity="0.6" /></linearGradient>
               </defs>
               <g data-map-dots>
                 {mapCountries.map((country) => {
                   const hq = country.name === "Pakistan";
                   const present = countries.some((item) => item.name === country.name);
                   return <g key={country.name} data-map-country={country.name} data-map-emphasis={highlighted === country.name} className="presence-country">
-                    <path d={country.path} fill={hq ? "var(--color-brand)" : "white"} fillOpacity={hq ? 0.09 : present ? 0.025 : 0} />
-                    <path d={country.path} fill={`url(#${id}-${hq ? "hq" : present ? "presence" : "quiet"})`} stroke="white" strokeOpacity={present ? 0.14 : 0.06} strokeWidth="0.75" vectorEffect="non-scaling-stroke" />
+                    <path d={country.path} fill={hq ? "var(--color-brand)" : "var(--color-blue-950)"} fillOpacity={hq ? 0.09 : present ? 0.025 : 0} />
+                    <path d={country.path} fill={`url(#${id}-${hq ? "hq" : present ? "presence" : "quiet"})`} stroke="var(--color-blue-950)" strokeOpacity={present ? 0.4 : 0.2} strokeWidth="0.75" vectorEffect="non-scaling-stroke" />
                   </g>;
                 })}
               </g>
               {mapCountries.filter((country) => country.name !== "Pakistan" && countries.some((item) => item.name === country.name)).map((country) => (
                 <g key={country.name} data-map-country={country.name} data-map-emphasis={highlighted === country.name} className="presence-connection">
                   <path data-map-arc data-country={country.name} d={connectionPath(country)} fill="none" stroke={`url(#${id}-arc)`} strokeWidth="1.5" vectorEffect="non-scaling-stroke" />
-                  <circle data-map-traveller={country.name} cx={LAHORE.x} cy={LAHORE.y} r="3" fill="white" className="presence-traveller motion-reduce:hidden" />
+                  <circle data-map-traveller={country.name} cx={LAHORE.x} cy={LAHORE.y} r="3" fill="var(--color-blue-950)" className="presence-traveller motion-reduce:hidden" />
                 </g>
               ))}
               {mapCountries.filter((country) => countries.some((item) => item.name === country.name)).map((country) => {
                 const hq = country.name === "Pakistan";
                 return <g key={country.name} data-map-country={country.name} data-map-emphasis={highlighted === country.name}>
                   {[0, ...(hq ? [1] : [])].map((ring) => <circle key={ring} data-map-pulse data-country={country.name} data-hq={hq ? "true" : undefined} data-delay={ring * 1.4}
-                    cx={country.marker.x} cy={country.marker.y} r={hq ? 10 : 8} fill="none" stroke={hq ? "var(--color-brand)" : "white"} strokeWidth="1" opacity="0" className="motion-reduce:hidden" vectorEffect="non-scaling-stroke" />)}
-                  <circle data-map-marker cx={country.marker.x} cy={country.marker.y} r={hq ? 8 : 6} fill={hq ? "var(--color-brand)" : "white"} stroke="var(--color-ink)" strokeWidth="2" vectorEffect="non-scaling-stroke" />
+                    cx={country.marker.x} cy={country.marker.y} r={hq ? 10 : 8} fill="none" stroke={hq ? "var(--color-brand)" : "var(--color-blue-950)"} strokeWidth="1" opacity="0" className="motion-reduce:hidden" vectorEffect="non-scaling-stroke" />)}
+                  <circle data-map-marker cx={country.marker.x} cy={country.marker.y} r={hq ? 8 : 6} fill={hq ? "var(--color-brand)" : "var(--color-blue-950)"} stroke="var(--color-ink)" strokeWidth="2" vectorEffect="non-scaling-stroke" />
                 </g>;
               })}
             </svg>
-            <svg aria-hidden="true" className="pointer-events-none absolute inset-0 h-full w-full overflow-visible"><path data-qatar-leader fill="none" stroke="white" strokeOpacity="0.4" strokeWidth="1" /></svg>
+            <svg aria-hidden="true" className="pointer-events-none absolute inset-0 h-full w-full overflow-visible"><path data-qatar-leader fill="none" stroke="var(--color-blue-950)" strokeOpacity="0.4" strokeWidth="1" /></svg>
             <div ref={labelLayer} data-map-labels aria-hidden="true" className="pointer-events-none absolute inset-0">
-              {mapCountries.filter((country) => countries.some((item) => item.name === country.name)).map((country) => <div key={country.name} data-map-label={country.name} data-map-country={country.name} data-map-emphasis={highlighted === country.name} className="presence-map-label absolute flex items-center gap-2 whitespace-nowrap rounded-full border border-white/15 bg-white/[0.08] px-3 py-1.5 font-body text-label text-[var(--fg-heading)] backdrop-blur-md">
-                <span className={`size-1.5 rounded-full ${country.name === "Pakistan" ? "bg-brand" : "bg-white"}`} />
+              {mapCountries.filter((country) => countries.some((item) => item.name === country.name)).map((country) => <div key={country.name} data-map-label={country.name} data-map-country={country.name} data-map-emphasis={highlighted === country.name} className="presence-map-label absolute flex items-center gap-2 whitespace-nowrap rounded-full border border-line bg-white px-3 py-1.5 font-body text-label text-[var(--fg-heading)] backdrop-blur-md">
+                <span className={`size-1.5 rounded-full ${country.name === "Pakistan" ? "bg-brand" : "bg-surface-dark"}`} />
                 {country.name}{country.name === "Pakistan" && <span className="text-xs text-[var(--fg-muted)]">· Lahore HQ</span>}
               </div>)}
             </div>
-            <div className="pointer-events-none absolute left-4 top-4 rounded-full border border-white/10 bg-ink/70 px-3 py-2 font-mono text-xs uppercase tracking-[0.12em] text-[var(--fg-body)] backdrop-blur-md">Home market · Regional growth</div>
-            {selected && <div data-map-info role="region" aria-label={`${selected} regional strategy`} className="absolute bottom-14 left-4 right-4 max-h-[45%] overflow-y-auto rounded-xl border border-white/15 bg-surface/90 p-4 text-[var(--fg-body)] shadow-xl backdrop-blur-xl sm:right-auto sm:w-[min(19rem,calc(100%-2rem))]">
+            <div className="pointer-events-none absolute left-4 top-4 rounded-full border border-line bg-surface px-3 py-2 font-mono text-xs uppercase tracking-[0.12em] text-[var(--fg-body)] backdrop-blur-md">Home market · Regional growth</div>
+            {selected && <div data-map-info role="region" aria-label={`${selected} regional strategy`} className="absolute bottom-14 left-4 right-4 max-h-[45%] overflow-y-auto rounded-xl border border-line bg-white p-4 text-[var(--fg-body)] shadow-xl backdrop-blur-xl sm:right-auto sm:w-[min(19rem,calc(100%-2rem))]">
               <div className="mb-2 flex items-start justify-between gap-3"><span className="font-heading text-lg font-semibold text-[var(--fg-heading)]">{selected}</span><button type="button" onClick={() => setSelected(null)} className="min-h-8 shrink-0 text-xs underline underline-offset-4 hover:text-[var(--fg-link-hover)]">Reset view</button></div>
-              <span className="inline-flex items-center gap-2 rounded-full border border-white/10 px-2 py-1 text-xs"><span className={`size-1.5 rounded-full ${selectedEntities.length ? "bg-brand" : "bg-white/40"}`} />{countries.find((country) => country.name === selected)?.status}</span>
+              <span className="inline-flex items-center gap-2 rounded-full border border-line px-2 py-1 text-xs"><span className={`size-1.5 rounded-full ${selectedEntities.length ? "bg-brand" : "bg-surface-dark"}`} />{countries.find((country) => country.name === selected)?.status}</span>
               <ul className="mt-3 space-y-2 text-xs">{selectedEntities.map((entity) => <li key={entity.name}>{entity.name}</li>)}</ul>
             </div>}
-            <div className="pointer-events-none absolute bottom-10 right-4 flex gap-4 font-body text-xs text-white/60"><span className="flex items-center gap-1.5"><span className="size-1.5 rounded-full bg-brand" />HQ</span><span className="flex items-center gap-1.5"><span className="size-1.5 rounded-full bg-white" />Regional focus</span></div>
-            <p className="pointer-events-none absolute bottom-3 left-4 right-4 text-xs text-white/40">Natural Earth · public-domain boundaries · simplified</p>
+            <div className="pointer-events-none absolute bottom-10 right-4 flex gap-4 font-body text-xs text-[var(--fg-body)]"><span className="flex items-center gap-1.5"><span className="size-1.5 rounded-full bg-brand" />HQ</span><span className="flex items-center gap-1.5"><span className="size-1.5 rounded-full bg-surface-dark" />Regional focus</span></div>
+            <p className="pointer-events-none absolute bottom-3 left-4 right-4 text-xs text-[var(--fg-muted)]">Natural Earth · public-domain boundaries · simplified</p>
           </div>
           <div>
             <p className="mb-4 text-description text-[var(--fg-body)]">{real.expansion.description}</p>
-            <ul className="divide-y divide-white/10" onMouseLeave={() => setHovered(null)}>
+            <ul className="divide-y divide-line" onMouseLeave={() => setHovered(null)}>
               {countries.map((country, index) => {
                 const entities = real.entities.filter((entity) => entity.country === country.name);
                 return <li key={country.name}>

@@ -97,7 +97,7 @@ export function Footer() {
               </p>
               <a
                 href={`mailto:${real.contact.email}`}
-                className="flex items-start gap-3 transition-colors hover:text-accent-shape focus-visible:text-accent-shape"
+                className="flex items-start gap-3 transition-colors hover:text-brand-glow focus-visible:text-brand-glow"
               >
                 <Mail size={18} className="mt-0.5 shrink-0" aria-hidden="true" />
                 <span className="min-w-0 break-words">{real.contact.email}</span>

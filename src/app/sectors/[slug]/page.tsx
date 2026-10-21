@@ -28,7 +28,7 @@ export default async function Page({params}: {params: Promise<{slug: string}>}) 
       <h2 className="mb-5">Related services <ReviewBadge confirm /></h2>
       <p className="mb-8 text-[var(--fg-body)]">Service applicability to this sector requires client confirmation.</p>
       <div className="flex flex-wrap gap-3">
-        {coreServiceChips.map(chip => <Link key={chip.label} href={chip.href!} className="inline-flex min-h-11 items-center gap-3 rounded-sm border border-line on-dark bg-surface px-4 py-3 text-[var(--fg-link)]">{chip.label} <ReviewBadge confirm /></Link>)}
+        {coreServiceChips.map(chip => <Link key={chip.label} href={chip.href!} className="inline-flex min-h-11 items-center gap-3 rounded-sm border border-line on-light bg-surface px-4 py-3 text-[var(--fg-link)]">{chip.label} <ReviewBadge confirm /></Link>)}
       </div>
     </Container>
     <section data-tone="dark" className="on-navy bg-surface-raised py-section text-[var(--fg-heading)]">

@@ -19,7 +19,7 @@ export default function Page() {
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {group.services.map(name => {
             const service = getService(name);
-            return <Link key={name} id={serviceHref(name).split("/").pop()} href={serviceHref(name)} className="service-card media-hover block overflow-hidden rounded-sm border border-line on-dark bg-surface">
+            return <Link key={name} id={serviceHref(name).split("/").pop()} href={serviceHref(name)} className="service-card media-hover block overflow-hidden rounded-sm border border-line on-light bg-surface">
               <MediaFrame reveal slot={name} className="aspect-[4/3] rounded-none" sizes="(max-width:640px) 100vw, (max-width:1024px) 50vw, 33vw" />
               <div className="p-6">
                 <h3 className="service-title mb-3">{name}</h3>

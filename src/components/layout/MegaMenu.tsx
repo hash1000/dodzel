@@ -16,9 +16,9 @@ export function MegaMenu({
   const featured = getService(selected);
   return (
     <div
-      data-tone="dark"
+      data-tone="light"
       data-lenis-prevent
-      className="header-dropdown max-h-[calc(100dvh-7rem)] overflow-y-auto border border-white/10 on-dark bg-surface p-8 text-white shadow-xl"
+      className="header-dropdown max-h-[calc(100dvh-7rem)] overflow-y-auto border border-line on-light bg-surface p-8 text-[var(--fg-body)] shadow-xl"
       onKeyDown={(event) => {
         if (
           ![
@@ -56,7 +56,7 @@ export function MegaMenu({
         links[next]?.focus();
       }}
     >
-      <Link data-menu-link href={kind === "Services" ? "/services" : "/sectors"} onClick={onNavigate} className="mb-6 inline-flex min-h-11 items-center font-heading text-sm text-white/80 hover:text-white">View all {kind.toLowerCase()}</Link>
+      <Link data-menu-link href={kind === "Services" ? "/services" : "/sectors"} onClick={onNavigate} className="mb-6 inline-flex min-h-11 items-center font-heading text-sm text-[var(--fg-link)] hover:text-brand">View all {kind.toLowerCase()}</Link>
       <div className="mx-auto grid max-w-site gap-10 lg:grid-cols-[2fr_1fr]">
         {kind === "Services" ? (
           <>
@@ -77,7 +77,7 @@ export function MegaMenu({
                             onClick={onNavigate}
                             onMouseEnter={() => setSelected(name)}
                             onFocus={() => setSelected(name)}
-                            className="inline-flex min-h-11 items-center py-3 text-sm text-white/80 hover:text-white"
+                            className="inline-flex min-h-11 items-center py-3 text-sm text-[var(--fg-link)] hover:text-brand"
                           >
                             {name} <ReviewBadge {...service} />
                           </Link>
@@ -88,7 +88,7 @@ export function MegaMenu({
                 </div>
               ))}
             </div>
-            <aside className="border-s border-dark-line ps-8">
+            <aside className="border-s border-line ps-8">
 
               <p className="mt-5 font-display text-xl font-semibold">
                 {featured.name} <ReviewBadge {...featured} />
@@ -109,11 +109,11 @@ export function MegaMenu({
                   data-menu-link
                   href={sectorHref(name)}
                   onClick={onNavigate}
-                  className="inline-flex min-h-11 items-center text-xl text-white/80 hover:text-white"
+                  className="inline-flex min-h-11 items-center text-xl text-[var(--fg-link)] hover:text-brand"
                 >
                   {name} <ReviewBadge confirm={name === "Cement"} />
                 </Link>
-                <Link data-menu-link href={sectorDetailHref(name)} onClick={onNavigate} className="mt-2 flex min-h-11 items-center text-sm text-white/80 hover:text-white underline underline-offset-4">Explore {name} →</Link>
+                <Link data-menu-link href={sectorDetailHref(name)} onClick={onNavigate} className="mt-2 flex min-h-11 items-center text-sm text-[var(--fg-link)] hover:text-brand underline underline-offset-4">Explore {name} →</Link>
                 {name === "Oil & Gas" && (
                   <ul className="mt-4 space-y-2 text-sm text-[var(--fg-body)]">
                     {placeholders.oilGasSubitems.map((item) => (

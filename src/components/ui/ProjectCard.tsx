@@ -10,7 +10,7 @@ export function ProjectCard({
   return (
     <article
       data-project-card
-      className="media-hover overflow-hidden rounded-card border border-line border-t-2 border-t-accent-2 on-dark bg-surface"
+      className="media-hover overflow-hidden rounded-card border border-line border-t-2 border-t-accent-2 on-light bg-surface"
     >
       <MediaFrame
         reveal

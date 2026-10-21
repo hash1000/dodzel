@@ -23,9 +23,9 @@ export default function Page() {
           {real.policies.map((policy) => (
             <section
               key={policy.title}
-              className="border-s-4 border-accent-2 on-dark bg-surface p-8"
+              className="border-s-4 border-accent-2 on-light bg-surface p-8"
             >
-              <h2 className="mb-4 text-accent-2">
+              <h2 className="mb-4 text-[var(--fg-eyebrow)]">
                 {policy.title} <ReviewBadge {...policy} />
               </h2>
               <p className="max-w-4xl leading-relaxed text-[var(--fg-body)]">

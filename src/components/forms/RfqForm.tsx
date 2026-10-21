@@ -43,7 +43,7 @@ export function RfqForm() {
     }
   };
   const fieldClass =
-    "mt-2 min-h-12 w-full border border-line on-dark bg-surface px-4 py-3 text-[var(--fg-heading)]";
+    "mt-2 min-h-12 w-full border border-line on-light bg-surface px-4 py-3 text-[var(--fg-heading)]";
   const error = (name: keyof RfqValues) =>
     errors[name] && (
       <p id={`${name}-error`} role="alert" className="mt-2 text-description text-error">
@@ -56,7 +56,7 @@ export function RfqForm() {
   });
   return (
     <div className="max-w-3xl">
-      <p className="mb-8 border-s-4 border-accent on-dark bg-surface p-5 text-description">
+      <p className="mb-8 border-s-4 border-accent on-light bg-surface p-5 text-description">
         {placeholders.rfq.notice} <TodoBadge />
       </p>
       <form
@@ -198,7 +198,7 @@ export function RfqForm() {
           <button
             type="submit"
             disabled={isSubmitting}
-            className="min-h-12 rounded-card bg-accent px-6 py-3 font-semibold text-surface-dark disabled:cursor-wait disabled:opacity-60"
+            className="min-h-12 rounded-card bg-accent px-6 py-3 font-semibold text-white disabled:cursor-wait disabled:opacity-60"
           >
             {isSubmitting ? "Validating…" : "Validate quote request"}
           </button>
@@ -208,7 +208,7 @@ export function RfqForm() {
             </p>
           )}
           {success && (
-            <p role="status" className="mt-6 border border-line on-dark bg-surface p-5">
+            <p role="status" className="mt-6 border border-line on-light bg-surface p-5">
               {placeholders.rfq.success} <TodoBadge />
             </p>
           )}
