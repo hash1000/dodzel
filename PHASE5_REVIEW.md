@@ -42,7 +42,7 @@ Service details use the matching service asset only in their PageHero; the repea
 | Projects | `image:offshore1` |
 | Insights | `image:pexels-joseph-russo-430180075-29590119` |
 | Careers | `image:scaffolding` |
-| Become a Vendor | `image:pipe-rack1` |
+| Become a Partner | `image:pipe-rack1` |
 | Request a Quote | `image:cement-plant` |
 | hero-1 | `video:oil-refinery` |
 | hero-2 | `video:pipeline-welding` |
@@ -99,7 +99,7 @@ These are measured patch ratios rather than a claim of pixel-by-pixel testing of
 | Insights | 79% | 9.55:1 | 4.64:1 |
 | Careers | 83% | 9.57:1 | 4.65:1 |
 | Conduct | 82% | 9.48:1 | 4.61:1 |
-| Become a Vendor | 81% | 9.68:1 | 4.70:1 |
+| Become a Partner | 81% | 9.68:1 | 4.70:1 |
 | Contact | 76% | 9.58:1 | 4.65:1 |
 | Request a Quote | 84% | 9.64:1 | 4.68:1 |
 
@@ -119,7 +119,7 @@ The higher tint strengths are intentional for AA honey text over bright skies/hi
 
 Run `npm run media:optimize`, `npm run lint`, `npm run build`, then start production on port 3100 and development on 3000; `npm run verify:phase5` uses Playwright with installed Chrome. Override PLAYWRIGHT_BASE_URL, PLAYWRIGHT_DEV_URL or PLAYWRIGHT_CHROME_PATH when needed. Playwright is a devDependency.
 
-Results are recorded in reports/phase5/verification.json. Screenshots include all requested pages at 1440px and 390px, plus Sectors, Projects, Insights, Vendors and RFQ. Process screenshots cover progress 0/25/50/75/100% and after release. A reduced-motion Services screenshot is included.
+Results are recorded in reports/phase5/verification.json. Screenshots include all requested pages at 1440px and 390px, plus Sectors, Projects, Insights, Partners and RFQ. Process screenshots cover progress 0/25/50/75/100% and after release. A reduced-motion Services screenshot is included.
 
 The first screenshot pass exposed an E&I filename URL issue, a Next/Image immediate-parent positioning warning and oversized mobile service-detail gutters. Fixes: encode each URL path segment including ampersands, position the reveal wrapper relatively, and reduce the 12-column mobile gutter width.
 

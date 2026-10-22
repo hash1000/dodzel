@@ -12,7 +12,7 @@ const intros: Record<string, string> = {
   Insights: "Perspectives and updates from Dodzel.",
   Careers: "Explore careers with Dodzel Engineering.",
   Conduct: "Professionalism, integrity, safety and respect at work.",
-  "Become a Vendor": "Connect with Dodzel as a supplier or vendor.",
+  "Become a Partner": "Connect with Dodzel as a supplier or partner.",
   Contact: "Start a conversation with Dodzel.",
   "Request a Quote": "Tell us about your project scope and requirements.",
 };

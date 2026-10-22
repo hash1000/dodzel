@@ -20,8 +20,8 @@ const descriptions: Record<string, string> = {
     "Contact Dodzel Engineering in Lahore, Pakistan at info@dodzel.com.",
   "/conduct":
     "Conduct information for Dodzel Engineering. Approved policies will be added.",
-  "/vendors":
-    "Vendor information for Dodzel Engineering. Registration details will be added.",
+  "/partners":
+    "Partner information for Dodzel Engineering. Registration details will be added.",
   "/request-a-quote":
     "Validate your project requirements with Dodzel Engineering’s quote request preview.",
 };

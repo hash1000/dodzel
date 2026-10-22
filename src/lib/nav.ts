@@ -41,7 +41,7 @@ export const navLinks = [
 navLinks.unshift({ label: "Home", href: "/" });
 export const secondaryLinks = [
   { label: "Conduct", href: "/conduct" },
-  { label: "Become a Vendor", href: "/vendors" },
+  { label: "Become a Partner", href: "/partners" },
   { label: "Contact", href: "/contact" },
 ];
 export const subsidiaries = real.subsidiaries;

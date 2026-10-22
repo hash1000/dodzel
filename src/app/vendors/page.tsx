@@ -5,12 +5,12 @@ import { TodoBadge } from "@/components/ui/TodoBadge";
 import { placeholders } from "@/content/placeholder";
 
 export function generateMetadata() {
-  return pageMetadata("Become a Vendor", "/vendors");
+  return pageMetadata("Become a Partner", "/partners");
 }
 export default function Page() {
   return (
     <main id="main-content">
-      <PageHero title="Become a Vendor" />
+      <PageHero title="Become a Partner" />
       <Container className="min-h-80 py-16">
         <p className="max-w-2xl text-lg leading-relaxed text-[var(--fg-body)]">
           {placeholders.stub.body} <TodoBadge />

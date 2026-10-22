@@ -10,7 +10,7 @@ export function IntentSelector() {
           {[
             { label: "Our Services", href: "/services" },
             { label: "A Career", href: "/careers" },
-            { label: "Become a Vendor", href: "/vendors" },
+            { label: "Become a Partner", href: "/partners" },
           ].map((item, index) => (
             <Link
               key={item.href}

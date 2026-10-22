@@ -5,7 +5,7 @@ const directory = 'reports/phase5';
 await fs.mkdir(directory, {recursive: true});
 const browser = await chromium.launch({executablePath: process.env.PLAYWRIGHT_CHROME_PATH ?? '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome', headless:true});
 const report = { routes: [], process: [], reduced: {}, development: [], details: [], hover: [], motion: {} };
-const routes = ['/', '/services', '/about', '/qhse', '/conduct', '/careers', '/contact', '/services/mechanical-piping', '/sectors', '/projects', '/insights', '/vendors', '/request-a-quote'];
+const routes = ['/', '/services', '/about', '/qhse', '/conduct', '/careers', '/contact', '/services/mechanical-piping', '/sectors', '/projects', '/insights', '/partners', '/request-a-quote'];
 for (const width of [1440, 390]) {
  const context = await browser.newContext({viewport:{width,height:width===1440?1000:844}, reducedMotion:'no-preference'});
  for (const route of routes) {

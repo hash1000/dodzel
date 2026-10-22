@@ -323,14 +323,14 @@
     },
     {
       "width": 1440,
-      "route": "/vendors",
+      "route": "/partners",
       "errors": [],
       "overflow": false,
       "duplicate": [],
       "broken": [],
       "images": [
         {
-          "slot": "Become a Vendor",
+          "slot": "Become a Partner",
           "file": "/media/images/pipe-rack1"
         }
       ],
@@ -674,14 +674,14 @@
     },
     {
       "width": 390,
-      "route": "/vendors",
+      "route": "/partners",
       "errors": [],
       "overflow": false,
       "duplicate": [],
       "broken": [],
       "images": [
         {
-          "slot": "Become a Vendor",
+          "slot": "Become a Partner",
           "file": "/media/images/pipe-rack1"
         }
       ],

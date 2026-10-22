@@ -40,7 +40,7 @@ The initial diagnostic request through `127.0.0.1:3000` also encountered Next.js
 - Verified LTI-free man-hours, measurement period, safety chart data and certifications with validity/artwork. The dashboard contains no fabricated chart values.
 - Insight articles, categories and publication dates. Category chips are static UI previews until editorial taxonomy is approved.
 - Office details beyond the supplied Lahore address; subsidiary office addresses; public telephone number.
-- Refining’s exact placement within the Oil & Gas submenu, plus page content for sectors, projects, insights, careers, conduct and vendors.
+- Refining’s exact placement within the Oil & Gas submenu, plus page content for sectors, projects, insights, careers, conduct and partners.
 - Legal notices, privacy policy and RFQ delivery/attachment requirements. The RFQ preview does not send requests.
 - Final social-sharing artwork. The generated navy/text OG image is marked TODO.
 
@@ -82,7 +82,7 @@ The initial diagnostic request through `127.0.0.1:3000` also encountered Next.js
 - `src/app/request-a-quote/page.tsx` — updated.
 - `src/app/sectors/page.tsx` — updated.
 - `src/app/services/page.tsx` — updated.
-- `src/app/vendors/page.tsx` — updated.
+- `src/app/partners/page.tsx` — updated.
 - `src/components/forms/RfqForm.tsx` — updated.
 - `src/components/layout/Footer.tsx` — updated.
 - `src/components/layout/MegaMenu.tsx` — updated.
