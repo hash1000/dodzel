@@ -14,7 +14,6 @@ import {
   secondaryLinks,
 } from "@/lib/nav";
 import { placeholders } from "@/content/placeholder";
-import { TodoBadge } from "@/components/ui/TodoBadge";
 import { Container } from "@/components/ui/Container";
 export function Footer() {
   return (
@@ -133,9 +132,10 @@ export function Footer() {
         </div>
         <div className="flex flex-wrap justify-between gap-4 border-t-4 border-accent-shape pt-6 text-xs text-[var(--fg-body)]">
           <p>© 2026 Dodzel Engineering Limited.</p>
-          <p>
-            {placeholders.legal.text} <TodoBadge />
-          </p>
+          <nav aria-label="Legal" className="flex flex-wrap gap-x-6 gap-y-3">
+            <Link href="/privacy-policy" className="underline-offset-4 hover:underline">Privacy Policy</Link>
+            <Link href="/terms-and-conditions" className="underline-offset-4 hover:underline">Terms &amp; Conditions</Link>
+          </nav>
         </div>
       </Container>
     </footer>

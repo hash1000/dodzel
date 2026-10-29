@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { real } from "@/content/real";
 const descriptions: Record<string, string> = {
+  "/privacy-policy": "How Dodzel Engineering handles personal information, website storage and project enquiries.",
+  "/terms-and-conditions": "Terms for using the Dodzel Engineering website, its content and project enquiry tools.",
   "/": "Dodzel Engineering Limited: engineering and construction for industrial, infrastructure and energy sectors. Founded in Pakistan, expanding through group companies in Qatar.",
   "/about":
     "Founded in 2020 and registered with SECP, Dodzel Engineering Limited is growing in Qatar through Belgrass Construction Company and Bimex Trading Company.",

@@ -10,6 +10,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
       ...navLinks.map((link) => link.href),
       ...secondaryLinks.map((link) => link.href),
       "/request-a-quote",
+      "/privacy-policy",
+      "/terms-and-conditions",
       ...serviceNames.map(serviceHref),
       ...sectorData.map(sector => sectorDetailHref(sector.name)),
     ]),
